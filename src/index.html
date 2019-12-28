@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+  <link rel="stylesheet" href="/build/soft-components.css">
+
+
+  <script type="module" src="/build/soft-components.esm.js"></script>
+  <script nomodule src="/build/soft-components.js"></script>
+
+  <style>
+    .mt {
+      margin-top: 20px;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div style="height: 100vh; display: flex; align-items: center; justify-content: center;">
+    <sc-card>
+      <sc-button class="mt" onclick="alert('yo')">Button</sc-button>
+      <sc-button class="mt" block> Block Button</sc-button>
+      <sc-button class="mt" href="/" target="_blank" rel="noreferral" title="button">Button
+      </sc-button>
+      <sc-button class="mt" href="/" icon>
+        <i class="la la-home"></i>
+      </sc-button>
+      <sc-button class="mt" icon>
+        <i class="la la-bars"></i>
+      </sc-button>
+    </sc-card>
+  </div>
+</body>
+
+</html>

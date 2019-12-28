@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`button should render a tag when href is applied 1`] = `
+<sc-button download="" href="#" rel="noreferrer" target="_blank">
+  <mock:shadow-root>
+    <a download="" href="#" rel="noreferrer" target="_blank">
+      <span class="button-inner">
+        <slot name="start"></slot>
+        <slot></slot>
+        <slot name="end"></slot>
+      </span>
+    </a>
+  </mock:shadow-root>
+  button
+</sc-button>
+`;
+
+exports[`button should render default button 1`] = `
+<sc-button>
+  <mock:shadow-root>
+    <button type="button">
+      <span class="button-inner">
+        <slot name="start"></slot>
+        <slot></slot>
+        <slot name="end"></slot>
+      </span>
+    </button>
+  </mock:shadow-root>
+  button
+</sc-button>
+`;

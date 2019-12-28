@@ -1,0 +1,79 @@
+:host {
+  /* button */
+  --sc-button-bg-color: var(--sc-bg-color);
+  --sc-button-text-color: var(--sc-text-color);
+  --sc-button-border-radius: var(--sc-border-radius);
+  --sc-button-padding-y: 1em;
+  --sc-button-padding-x: 2em;
+  --sc-button-variant-color: red;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  display: inline-block;
+
+  a {
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  a,
+  button {
+    cursor: pointer;
+    border: none;
+    background-color: var(--sc-button-bg-color);
+    color: var(--sc-button-text-color);
+    border-radius: var(--sc-button-border-radius);
+    font-size: 1.2em;
+    @include raised();
+    position: relative;
+    padding: 4px;
+
+    .button-inner {
+      transition: all 0.4s ease;
+      display: inline-block;
+      padding: var(--sc-button-padding-y) var(--sc-button-padding-x);
+      border-radius: calc(var(--sc-button-border-radius) - 4px);
+    }
+
+    &:active,
+    &:hover {
+      .button-inner {
+        @include engraved();
+      }
+    }
+  }
+}
+
+:host([icon]) {
+  a,
+  button {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    text-align: center;
+    line-height: calc(3em - 8px);
+    padding: 4px;
+
+    .button-inner {
+      padding: 0;
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+:host(.block) {
+  display: block;
+
+  a,
+  button {
+    width: 100%;
+
+    .button-inner {
+      width: 100%;
+    }
+  }
+}

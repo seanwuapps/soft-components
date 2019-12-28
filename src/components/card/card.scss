@@ -1,0 +1,7 @@
+:host {
+  --sc-card-outer-padding: 40px;
+  display: block;
+  padding: var(--sc-card-outer-padding);
+  border-radius: var(--sc-border-radius);
+  @include raised();
+}

@@ -1,0 +1,9 @@
+@mixin raised {
+  box-shadow: -5px -5px 20px 0 rgba(white, 1),
+    5px 5px 20px 0px rgba(black, 0.2);
+}
+
+@mixin engraved {
+  box-shadow: inset -5px -5px 20px 0 rgba(white, 0.7),
+    inset 5px 5px 20px 0px rgba(black, 0.2);
+}

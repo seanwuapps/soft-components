@@ -1,0 +1,12 @@
+:root,
+html {
+  /* colors */
+  --sc-bg-color: #EBF3FE;
+  --sc-text-color: #333333;
+  --sc-border-radius: 1em;
+}
+
+body {
+  background-color: var(--sc-bg-color);
+  color: var(--sc-text-color);
+}
