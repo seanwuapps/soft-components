@@ -5,6 +5,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property   | Attribute  | Description | Type      | Default |
+| ---------- | ---------- | ----------- | --------- | ------- |
+| `engraved` | `engraved` |             | `boolean` | `false` |
+
+
 ----------------------------------------------
 
-*Built with [StencilJS](https://stenciljs.com/)*
+*Inspired by Ionic, built with StencilJS*<br>*&#10084; from Sean Wu*

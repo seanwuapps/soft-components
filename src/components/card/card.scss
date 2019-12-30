@@ -5,3 +5,7 @@
   border-radius: var(--sc-border-radius);
   @include raised();
 }
+
+:host(.engraved) {
+  @include engraved();
+}

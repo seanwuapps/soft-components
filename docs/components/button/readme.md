@@ -1,9 +1,28 @@
 # sc-button
 
-
-
 <!-- Auto Generated Below -->
 
+## Usage
+
+### Button
+
+```html
+<!-- Default -->
+<sc-button onclick="alert('yo')">Button</sc-button>
+
+<!-- Anchor -->
+<sc-button href="/" target="_blank" rel="noreferrer" title="button"
+  >Anchor
+</sc-button>
+
+<!-- Block level -->
+<sc-button block> Block Button</sc-button>
+
+<!-- Icon -->
+<sc-button icon>
+  <i class="la la-home"></i>
+</sc-button>
+```
 
 ## Properties
 
@@ -18,7 +37,6 @@
 | `target`   | `target`   | Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.                                                                                                                                       | `string`                          | `undefined` |
 | `type`     | `type`     | The type of the button.                                                                                                                                                                                                                                                                   | `"button" \| "reset" \| "submit"` | `"button"`  |
 
-
 ## Events
 
 | Event        | Description                          | Type                |
@@ -27,14 +45,12 @@
 | `clickEvent` | Emitted when the button is clicked.  | `CustomEvent<void>` |
 | `focusEvent` | Emitted when the button has focus.   | `CustomEvent<void>` |
 
-
 ## Slots
 
 | Slot | Description                                                           |
 | ---- | --------------------------------------------------------------------- |
 |      | Content is placed between the named slots if provided without a slot. |
 
+---
 
-----------------------------------------------
-
-*Built with [StencilJS](https://stenciljs.com/)*
+_Inspired by Ionic, built with StencilJS_<br>_&#10084; from Sean Wu_

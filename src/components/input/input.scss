@@ -1,3 +1,24 @@
 :host {
   display: block;
+  /* input */
+  --sc-input-border-radius: var(--sc-border-radius);
+  --sc-input-padding-y: 1em;
+  --sc-input-padding-x: 1em;
+  --sc-input-bg-color: var(--sc-bg-color);
+  --sc-input-text-color: var(--sc-text-color);
+
+  * {
+    box-sizing: border-box;
+  }
+
+  input {
+    outline: none;
+    @include engraved(0.2);
+    border: none;
+    border-radius: var(--sc-input-border-radius);
+    padding: var(--sc-input-padding-y) var(--sc-input-padding-x);
+    background-color: var(--sc-input-bg-color);
+    color: var(--sc-input-text-color);
+    width: 100%;
+  }
 }

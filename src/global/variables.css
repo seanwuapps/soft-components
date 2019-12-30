@@ -4,9 +4,11 @@ html {
   --sc-bg-color: #EBF3FE;
   --sc-text-color: #333333;
   --sc-border-radius: 1em;
-}
-
-body {
-  background-color: var(--sc-bg-color);
-  color: var(--sc-text-color);
+  /* button */
+  --sc-button-bg-color: var(--sc-bg-color);
+  --sc-button-text-color: var(--sc-text-color);
+  --sc-button-border-radius: var(--sc-border-radius);
+  --sc-button-padding-y: 1em;
+  --sc-button-padding-x: 2em;
+  --sc-button-icon-size: 3em;
 }

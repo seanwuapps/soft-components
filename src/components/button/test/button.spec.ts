@@ -20,4 +20,20 @@ describe("button", () => {
     });
     expect(page.root).toMatchSnapshot();
   });
+
+  it("should render block button when block prop is applied", async () => {
+    const page = await newSpecPage({
+      components: [Button],
+      html: `<sc-button block>button</sc-button>`
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it("should render icon-only button when icon prop is applied", async () => {
+    const page = await newSpecPage({
+      components: [Button],
+      html: `<sc-button icon>I</sc-button>`
+    });
+    expect(page.root).toMatchSnapshot();
+  });
 });
