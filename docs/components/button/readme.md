@@ -1,6 +1,9 @@
 # sc-button
 
+
+
 <!-- Auto Generated Below -->
+
 
 ## Usage
 
@@ -24,6 +27,8 @@
 </sc-button>
 ```
 
+
+
 ## Properties
 
 | Property   | Attribute  | Description                                                                                                                                                                                                                                                                               | Type                              | Default     |
@@ -37,6 +42,7 @@
 | `target`   | `target`   | Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.                                                                                                                                       | `string`                          | `undefined` |
 | `type`     | `type`     | The type of the button.                                                                                                                                                                                                                                                                   | `"button" \| "reset" \| "submit"` | `"button"`  |
 
+
 ## Events
 
 | Event        | Description                          | Type                |
@@ -45,12 +51,26 @@
 | `clickEvent` | Emitted when the button is clicked.  | `CustomEvent<void>` |
 | `focusEvent` | Emitted when the button has focus.   | `CustomEvent<void>` |
 
+
 ## Slots
 
 | Slot | Description                                                           |
 | ---- | --------------------------------------------------------------------- |
 |      | Content is placed between the named slots if provided without a slot. |
 
----
 
-_Inspired by Ionic, built with StencilJS_<br>_&#10084; from Sean Wu_
+## CSS Custom Properties
+
+| Name                        | Description              |
+| --------------------------- | ------------------------ |
+| `--sc-button-bg-color`      | Background of the button |
+| `--sc-button-border-radius` | Button border radius     |
+| `--sc-button-icon-size`     | Icon button size         |
+| `--sc-button-padding-x`     | Horizontal paddings      |
+| `--sc-button-padding-y`     | Vertical paddings        |
+| `--sc-button-text-color`    | Button text color        |
+
+
+----------------------------------------------
+
+*Inspired by Ionic, built with StencilJS*<br>*&#10084; from Sean Wu*

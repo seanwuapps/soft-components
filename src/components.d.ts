@@ -324,6 +324,10 @@ declare namespace LocalJSX {
     */
     'name'?: string;
     /**
+    * Emitted when the input loses focus.
+    */
+    'onBlurEvent'?: (event: CustomEvent<void>) => void;
+    /**
     * Emitted when the value has changed.
     */
     'onChangeEvent'?: (event: CustomEvent<any>) => void;
@@ -335,10 +339,6 @@ declare namespace LocalJSX {
     * Emitted when a keyboard input occurred.
     */
     'onInputEvent'?: (event: CustomEvent<KeyboardEvent>) => void;
-    /**
-    * Emitted when the input loses focus.
-    */
-    'onIonBlur'?: (event: CustomEvent<void>) => void;
     /**
     * Emitted when a key is pressed down
     */

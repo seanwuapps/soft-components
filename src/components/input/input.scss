@@ -13,12 +13,18 @@
 
   input {
     outline: none;
-    @include engraved(0.2);
     border: none;
+    @include engraved(0.4);
     border-radius: var(--sc-input-border-radius);
     padding: var(--sc-input-padding-y) var(--sc-input-padding-x);
     background-color: var(--sc-input-bg-color);
     color: var(--sc-input-text-color);
-    width: 100%;
+    filter: saturate(1);
+    transition: all 0.3s ease;
+
+    &:focus {
+      filter: saturate(10);
+      @include engraved(0.1);
+    }
   }
 }

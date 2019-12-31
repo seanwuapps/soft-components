@@ -1,5 +1,6 @@
 import {
   Component,
+  ComponentInterface,
   Host,
   h,
   Prop,
@@ -7,13 +8,14 @@ import {
   EventEmitter,
   Method
 } from "@stencil/core";
+import { validityMessages } from "../../utils/validity-messages";
 
 @Component({
   tag: "sc-input",
   styleUrl: "input.scss",
   shadow: true
 })
-export class Input {
+export class Input implements ComponentInterface {
   private nativeInput?: HTMLInputElement;
 
   /**
@@ -55,11 +57,6 @@ export class Input {
    * If `true`, the user cannot interact with the input.
    */
   @Prop() disabled = false;
-
-  // @Watch("disabled")
-  // protected disabledChanged() {
-  //   // this.emitStyle();
-  // }
 
   /**
    * A hint to the browser for which keyboard to display.
@@ -170,24 +167,12 @@ export class Input {
   /**
    * Emitted when the input loses focus.
    */
-  @Event() ionBlur!: EventEmitter<void>;
+  @Event() blurEvent!: EventEmitter<void>;
 
   /**
    * Emitted when the input has focus.
    */
   @Event() focusEvent!: EventEmitter<void>;
-
-  /**
-   * Emitted when the input has been created.
-   * @internal
-   */
-  @Event() ionInputDidLoad!: EventEmitter<void>;
-
-  /**
-   * Emitted when the input has been removed.
-   * @internal
-   */
-  @Event() ionInputDidUnload!: EventEmitter<void>;
 
   /**
    * Emitted when a key is pressed down
@@ -213,45 +198,30 @@ export class Input {
     return Promise.resolve(this.nativeInput!);
   }
 
-  // private shouldClearOnEdit() {
-  //   const { type, clearOnEdit } = this;
-  //   return clearOnEdit === undefined ? type === "password" : clearOnEdit;
-  // }
-
   private getValue(): string {
     return this.value || "";
   }
-
-  // private emitStyle() {
-  //   this.ionStyle.emit({
-  //     interactive: true,
-  //     input: true,
-  //     "has-placeholder": this.placeholder != null,
-  //     "has-value": this.hasValue(),
-  //     "has-focus": this.hasFocus,
-  //     "interactive-disabled": this.disabled
-  //   });
-  // }
 
   private onInput = (ev: Event) => {
     const input = ev.target as HTMLInputElement | null;
     if (input) {
       this.value = input.value || "";
     }
+    console.log(input.validity);
+    for(var key in input.validity){
+      if (input.validity[key]) {
+      console.log(validityMessages(this)[key]);
+        
+      }
+ }
     this.inputEvent.emit(ev as KeyboardEvent);
   };
 
   private onBlur = () => {
-    // this.focusChanged();
-    // this.emitStyle();
-
-    this.ionBlur.emit();
+    this.blurEvent.emit();
   };
 
   private onFocus = () => {
-    // this.focusChanged();
-    // this.emitStyle();
-
     this.focusEvent.emit();
   };
 
@@ -276,13 +246,6 @@ export class Input {
       this.nativeInput.value = "";
     }
   };
-
-  // private focusChanged() {
-  //   // If clearOnEdit is enabled and the input blurred but has a value, set a flag
-  //   if (!this.hasFocus && this.shouldClearOnEdit() && this.hasValue()) {
-  //     this.didBlurAfterEdit = true;
-  //   }
-  // }
 
   private hasValue(): boolean {
     return this.getValue().length > 0;
