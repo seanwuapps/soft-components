@@ -4,7 +4,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-  <title>Stencil Component Starter</title>
+  <title>Soft Components</title>
+  <link href="https://fonts.googleapis.com/css?family=Kulim+Park|Open+Sans&display=swap" rel="stylesheet">
+
   <link rel="stylesheet"
     href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
   <link rel="stylesheet" href="/build/soft-components.css" />
@@ -13,6 +15,11 @@
   <script nomodule src="/build/soft-components.js"></script>
 
   <style>
+    html,
+    body {
+      font-family: 'Kulim Park', sans-serif;
+    }
+
     .mt {
       margin-top: 20px;
     }
@@ -30,18 +37,20 @@
 </head>
 
 <body>
+  <form action="">
+    <input class="mb" required name="password" maxlength="6" value="asdfasdf" id="password" type="password"></input>
+
+    <button type="submit">TEST</button></form>
   <div class="container">
     <form action="/" method="post" class="mt">
-      <div slot="title">
-        Login
-      </div>
       <label for="email">Email</label>
       <sc-input class="mb" required name="email" id="email" type="email"></sc-input>
 
       <label for="password">Password</label>
-      <sc-input class="mb" required name="password" id="password" type="password"></sc-input>
+      <sc-input class="mb" required name="password" maxlength="6" value="asdfasdf" id="password" type="password">
+      </sc-input>
 
-      <sc-button type="submit">TEST</sc-button>
+      <sc-button type="submit">Login</sc-button>
     </form>
   </div>
 </body>

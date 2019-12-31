@@ -4,9 +4,11 @@ import {
   Host,
   h,
   Prop,
+  // Element,
   Event,
   EventEmitter,
-  Method
+  Method,
+  State
 } from "@stencil/core";
 import { validityMessages } from "../../utils/validity-messages";
 
@@ -16,6 +18,7 @@ import { validityMessages } from "../../utils/validity-messages";
   shadow: true
 })
 export class Input implements ComponentInterface {
+  // @Element() el!: HTMLElement;
   private nativeInput?: HTMLInputElement;
 
   /**
@@ -198,6 +201,8 @@ export class Input implements ComponentInterface {
     return Promise.resolve(this.nativeInput!);
   }
 
+  @State() error: string = "";
+
   private getValue(): string {
     return this.value || "";
   }
@@ -208,12 +213,16 @@ export class Input implements ComponentInterface {
       this.value = input.value || "";
     }
     console.log(input.validity);
-    for(var key in input.validity){
+    for (var key in input.validity) {
       if (input.validity[key]) {
-      console.log(validityMessages(this)[key]);
-        
+        if (key === "valid") {
+          this.error = "";
+          break;
+        }
+        this.error = validityMessages(this)[key] || ""; // "" catch all
+        break;
       }
- }
+    }
     this.inputEvent.emit(ev as KeyboardEvent);
   };
 
@@ -251,6 +260,24 @@ export class Input implements ComponentInterface {
     return this.getValue().length > 0;
   }
 
+  // componentDidLoad() {
+  //   const input = this.el.shadowRoot.querySelector("input");
+  //   if (input) {
+  //     this.value = input.value || "";
+  //   }
+  //   console.log(input.validity);
+  //   for (var key in input.validity) {
+  //     if (input.validity[key]) {
+  //       if (key === "valid") {
+  //         this.error = "";
+  //         break;
+  //       }
+  //       this.error = validityMessages(this)[key] || ""; // "" catch all
+  //       break;
+  //     }
+  //   }
+  // }
+
   render() {
     const value = this.getValue();
 
@@ -258,7 +285,8 @@ export class Input implements ComponentInterface {
       <Host
         aria-disabled={this.disabled ? "true" : null}
         class={{
-          "has-value": this.hasValue()
+          "has-value": this.hasValue(),
+          "has-error": this.error.length > 0
         }}
       >
         <input
@@ -301,6 +329,9 @@ export class Input implements ComponentInterface {
             onTouchStart={this.clearTextInput}
             onMouseDown={this.clearTextInput}
           />
+        )}
+        {this.error && this.error.length > 0 && (
+          <div class="error-message">{this.error}</div>
         )}
       </Host>
     );

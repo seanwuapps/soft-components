@@ -1,9 +1,9 @@
 @mixin raised($factor: 1) {
-  box-shadow: -5px*$factor -5px*$factor 20px*$factor 0 rgba(white, 1),
-    5px*$factor 5px*$factor 20px*$factor 0 rgba(black, 0.2);
+  box-shadow: -5px*$factor -5px*$factor 20px*$factor 0 var(--sc-highlight-color),
+    5px*$factor 5px*$factor 20px*$factor 0 var(--sc-shadow-color);
 }
 
 @mixin engraved($factor: 1) {
-  box-shadow: inset -5px*$factor -5px*$factor 20px*$factor 0 rgba(white, 1),
-    inset 5px*$factor 5px*$factor 20px*$factor 0 rgba(black, 0.2);
+  box-shadow: inset -5px*$factor -5px*$factor 20px*$factor 0 var(--sc-highlight-color),
+    inset 5px*$factor 5px*$factor 20px*$factor 0 var(--sc-shadow-color);
 }
