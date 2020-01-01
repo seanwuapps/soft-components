@@ -1,18 +1,16 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h } from "@stencil/core";
 
 @Component({
-  tag: 'sc-toggle',
-  styleUrl: 'toggle.css',
-  shadow: true
+  tag: "sc-toggle",
+  styleUrl: "toggle.scss"
+  // shadow: true
 })
 export class Toggle {
-
   render() {
     return (
       <Host>
-        <slot></slot>
+        <input type="checkbox" />
       </Host>
     );
   }
-
 }

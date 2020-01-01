@@ -12,8 +12,8 @@ import {
  */
 @Component({
   tag: "sc-button",
-  styleUrl: "button.scss",
-  shadow: true
+  styleUrl: "button.scss"
+  // shadow: true // disabled for form submission
 })
 export class Button {
   @Element() el!: HTMLElement;

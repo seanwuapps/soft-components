@@ -14,8 +14,7 @@ import { validityMessages } from "../../utils/validity-messages";
 
 @Component({
   tag: "sc-input",
-  styleUrl: "input.scss",
-  shadow: true
+  styleUrl: "input.scss"
 })
 export class Input implements ComponentInterface {
   // @Element() el!: HTMLElement;

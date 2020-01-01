@@ -1,4 +1,4 @@
-:host {
+sc-input {
   display: inline-block;
   /* input */
   --sc-input-border-radius: var(--sc-border-radius);
@@ -33,15 +33,17 @@
       color: var(--sc-input-error-text-color);
     }
   }
-}
 
-:host(.has-error) {
-  input {
-    --sc-shadow-color: var(--sc-input-error-text-color);
+
+  &.has-error {
+    input {
+      --sc-shadow-color: var(--sc-input-error-text-color);
+    }
+
+    .error-message {
+      padding: 4px var(--sc-input-padding-x);
+      color: var(--sc-input-error-text-color);
+    }
   }
 
-  .error-message {
-    padding: 4px var(--sc-input-padding-x);
-    color: var(--sc-input-error-text-color);
-  }
 }

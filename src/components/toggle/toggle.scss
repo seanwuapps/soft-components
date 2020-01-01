@@ -1,0 +1,10 @@
+sc-toggle {
+  display: block;
+  input[type="checkbox"] {
+    border: none;
+    background: white;
+    &:checked {
+      background: red;
+    }
+  }
+}

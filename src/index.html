@@ -37,21 +37,29 @@
 </head>
 
 <body>
-  <form action="">
-    <input class="mb" required name="password" maxlength="6" value="asdfasdf" id="password" type="password"></input>
-
-    <button type="submit">TEST</button></form>
   <div class="container">
-    <form action="/" method="post" class="mt">
-      <label for="email">Email</label>
-      <sc-input class="mb" required name="email" id="email" type="email"></sc-input>
+    <sc-card>
+      <form action="/" method="get" class="mt" style="max-width: 400px;margin: 0 auto">
+        <style>
+          sc-input {
+            display: block;
+          }
 
-      <label for="password">Password</label>
-      <sc-input class="mb" required name="password" maxlength="6" value="asdfasdf" id="password" type="password">
-      </sc-input>
+        </style>
+        <label for="email">Email</label>
+        <sc-input class="mb" required name="email" id="email" type="email"></sc-input>
 
-      <sc-button type="submit">Login</sc-button>
-    </form>
+        <label for="password">Password</label>
+        <sc-input class="mb" required name="password" maxlength="6" value="asdfasdf" id="password" type="password">
+        </sc-input>
+
+        <sc-button block type="submit">Login</sc-button>
+      </form>
+    </sc-card>
+
+    <sc-card>
+      <sc-toggle></sc-toggle>
+    </sc-card>
   </div>
 </body>
 
