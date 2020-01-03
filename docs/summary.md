@@ -1,13 +1,9 @@
-# Get started
+# Table of contents
 
-## NPM CDN
-
-Add the following tags inside the `<head>` section of your html and start using it immediately:
-
-```html
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/soft-components@0.0.2/dist/soft-components/soft-components.css"
-/>
-<script src="https://unpkg.com/soft-components@latest/dist/soft-components/soft-components.js"></script>
-```
+- [Soft components](README.md)
+- [Summary​](summary.md)
+- [Components](components/README.md)
+  - [sc-toggle](components/toggle/readme.md)
+  - [sc-input](components/input/readme.md)
+  - [sc-card](components/card/readme.md)
+  - [sc-button](components/button/readme.md)
