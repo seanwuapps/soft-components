@@ -1,5 +1,3 @@
-# Summary​
-
 ## Components
 
 - [Button](components/button)
