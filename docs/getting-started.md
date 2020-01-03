@@ -28,8 +28,16 @@ applyPolyfills().then(() => {
 });
 ```
 
+## CSS framework integration
 
-## Framework integration
+Soft components should work with most frameworks as all the styles are scoped within each component. 
+
+All soft component CSS variables starts with `--sc-` to avoid collision.
+
+All CodePen demos you'll see will use Twitter Bootstrap's grid system. 
+
+
+## JS framework integration
 
 [StencilJs](https://stenciljs.com/) provides a comprehensive [documentation](https://stenciljs.com/docs/overview) on how the web components can be integrated with popular JavaScript frameworks, they can be found here:
 - [Angular](https://stenciljs.com/docs/angular)
