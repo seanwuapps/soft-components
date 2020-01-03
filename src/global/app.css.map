@@ -1,10 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,OAAO,CAAP,yEAAO;AAGP,AAAA,IAAI;AACJ,IAAI,CAAC;EACH,SAAS,EAAE,IAAI;EACf,gBAAgB,EAAE,kBAAkB;EACpC,KAAK,EAAE,oBAAoB;CAC5B;;AAED,AAAA,CAAC,CAAC;EACA,UAAU,EAAE,UAAU;CACvB;;AAGD,AAAA,OAAO,CAAC;ECdN,UAAU,EAAE,IAAY,CAAC,IAAY,CAAC,IAAY,CAAC,CAAC,CAAC,yBAAyB,EAC5E,GAAW,CAAC,GAAW,CAAC,IAAY,CAAC,CAAC,CAAC,sBAAsB;CDehE;;AAED,AAAA,SAAS,CAAC;ECbR,UAAU,EAAE,KAAK,CAAC,IAAY,CAAC,IAAY,CAAC,IAAY,CAAC,CAAC,CAAC,yBAAyB,EAClF,KAAK,CAAC,GAAW,CAAC,GAAW,CAAC,IAAY,CAAC,CAAC,CAAC,sBAAsB;CDctE",
-    "sources": [
-        "app.scss",
-        "mixins.scss"
-    ],
-    "names": [],
-    "file": "app.css"
-}
+{"version":3,"sourceRoot":"","sources":["app.scss","mixins.scss"],"names":[],"mappings":"AAAQ;AAGR;AAAA;EAEE;EACA;EACA;;;AAGF;EACE;;;AAIF;ECdE;;;ADkBF;ECbE","file":"app.css"}

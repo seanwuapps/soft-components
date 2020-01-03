@@ -1,4 +1,4 @@
-@import url(c:\Users\Sean\WebComponents\soft-components\src\global\variables.css);
+@import "variables.css";
 html,
 body {
   font-size: 16px;
@@ -7,17 +7,15 @@ body {
 }
 
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .raised {
-  -webkit-box-shadow: -5px -5px 20px 0 var(--sc-highlight-color), 5px 5px 20px 0 var(--sc-shadow-color);
-          box-shadow: -5px -5px 20px 0 var(--sc-highlight-color), 5px 5px 20px 0 var(--sc-shadow-color);
+  box-shadow: -5px -5px 20px 0 var(--sc-highlight-color), 5px 5px 20px 0 var(--sc-shadow-color);
 }
 
 .engraved {
-  -webkit-box-shadow: inset -5px -5px 20px 0 var(--sc-highlight-color), inset 5px 5px 20px 0 var(--sc-shadow-color);
-          box-shadow: inset -5px -5px 20px 0 var(--sc-highlight-color), inset 5px 5px 20px 0 var(--sc-shadow-color);
+  box-shadow: inset -5px -5px 20px 0 var(--sc-highlight-color), inset 5px 5px 20px 0 var(--sc-shadow-color);
 }
+
 /*# sourceMappingURL=app.css.map */

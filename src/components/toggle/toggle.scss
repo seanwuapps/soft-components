@@ -1,10 +1,80 @@
 sc-toggle {
-  display: block;
+  --sc-toggle-button-size: 24px; //calc(var(--sc-border-radius) * 2 + 1em);
+  --sc-toggle-active-bg-color: #d6e1eb;
+  --sc-toggle-active-btn-color: white;
+  * {
+    box-sizing: border-box;
+  }
+  .toggle {
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 2px;
+    @include raised(0.3);
+    border-radius: calc(var(--sc-toggle-button-size) / 2 - 4px);
+  }
+  .toggle--slider {
+    cursor: pointer;
+    display: block;
+    width: calc(var(--sc-toggle-button-size) * 2);
+    height: var(--sc-toggle-button-size);
+    position: relative;
+    @include engraved(0.5);
+    border-radius: calc(var(--sc-toggle-button-size) / 2 - 4px);
+    .toggle--dots {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      span {
+        position: absolute;
+        display: block;
+        width: calc(var(--sc-toggle-button-size) / 8);
+        height: calc(var(--sc-toggle-button-size) / 8);
+        border-radius: 50%;
+        @include raised(0.1);
+        &:nth-child(1) {
+          top: 30%;
+          left: 30%;
+        }
+        &:nth-child(2) {
+          top: 30%;
+          right: 30%;
+        }
+        &:nth-child(3) {
+          bottom: 30%;
+          left: 30%;
+        }
+        &:nth-child(4) {
+          bottom: 30%;
+          right: 30%;
+        }
+      }
+    }
+    .toggle--btn {
+      @include raised(1);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: var(--sc-toggle-button-size);
+      border-radius: calc(var(--sc-toggle-button-size) / 2 - 4px);
+      background-color: var(--sc-bg-color);
+      transition: left 0.3s ease;
+    }
+  }
   input[type="checkbox"] {
-    border: none;
-    background: white;
+    position: absolute;
+    width: 0;
+    height: 0;
+    visibility: hidden;
     &:checked {
-      background: red;
+      & + .toggle--slider {
+        background: var(--sc-toggle-active-bg-color);
+        .toggle--btn {
+          left: var(--sc-toggle-button-size);
+          background: var(--sc-toggle-active-btn-color);
+        }
+      }
     }
   }
 }

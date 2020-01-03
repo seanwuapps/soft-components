@@ -9,7 +9,19 @@ export class Toggle {
   render() {
     return (
       <Host>
-        <input type="checkbox" />
+        <label class="toggle">
+          <input type="checkbox" />
+          <span class="toggle--slider">
+            <span class="toggle--btn">
+              <span class="toggle--dots">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+            </span>
+          </span>
+        </label>
       </Host>
     );
   }
