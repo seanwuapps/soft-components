@@ -1,11 +1,8 @@
 # sc-button
-
-<p class="codepen" data-height="265" data-theme-id="default" data-default-tab="html,result" data-user="deseanwu" data-slug-hash="xxbPdeJ" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="SC Button">
-  <span>See the Pen <a href="https://codepen.io/deseanwu/pen/xxbPdeJ">
-  SC Button</a> by Sean Wu (<a href="https://codepen.io/deseanwu">@deseanwu</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<iframe height="265" style="width: 100%;" scrolling="no" title="SC Button" src="https://codepen.io/deseanwu/embed/xxbPdeJ?height=265&theme-id=default&default-tab=html,result" frameborder="no" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/deseanwu/pen/xxbPdeJ'>SC Button</a> by Sean Wu
+  (<a href='https://codepen.io/deseanwu'>@deseanwu</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
 
 <!-- Auto Generated Below -->
 
