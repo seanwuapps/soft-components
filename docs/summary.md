@@ -1,12 +1,13 @@
-# Summary​
+# Get started
 
-## Components
+## NPM CDN
 
-- [Button](components/button)
-- [Card](components/card)
-- [Input](components/input)
-- [Toggle](components/toggle)
+Add the following tags inside the `<head>` section of your html and start using it immediately:
 
-## test
-
-- [Yet another page](another-page.md)
+```html
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/soft-components@0.0.2/dist/soft-components/soft-components.css"
+/>
+<script src="https://unpkg.com/soft-components@latest/dist/soft-components/soft-components.js"></script>
+```
