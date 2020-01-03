@@ -11,6 +11,7 @@ sc-toggle {
     padding: 2px;
     @include raised(0.3);
     border-radius: calc(var(--sc-toggle-button-size) / 2 - 4px);
+    vertical-align: middle;
   }
   .toggle--slider {
     cursor: pointer;
@@ -64,9 +65,9 @@ sc-toggle {
   }
   input[type="checkbox"] {
     position: absolute;
-    width: 0;
-    height: 0;
-    visibility: hidden;
+    width: var(--sc-toggle-button-size);
+    opacity: 0;
+
     &:checked {
       & + .toggle--slider {
         background: var(--sc-toggle-active-bg-color);
@@ -76,5 +77,8 @@ sc-toggle {
         }
       }
     }
+  }
+  .toggle--label {
+    margin-left: 10px;
   }
 }

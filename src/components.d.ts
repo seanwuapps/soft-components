@@ -164,7 +164,12 @@ export namespace Components {
     */
     'value'?: string | null;
   }
-  interface ScToggle {}
+  interface ScToggle {
+    /**
+    * Label text to be displayed inline with the toggle
+    */
+    'label': string | undefined;
+  }
 }
 
 declare global {
@@ -380,7 +385,12 @@ declare namespace LocalJSX {
     */
     'value'?: string | null;
   }
-  interface ScToggle {}
+  interface ScToggle {
+    /**
+    * Label text to be displayed inline with the toggle
+    */
+    'label': string | undefined;
+  }
 
   interface IntrinsicElements {
     'sc-button': ScButton;

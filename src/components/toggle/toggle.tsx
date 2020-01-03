@@ -1,4 +1,4 @@
-import { Component, Host, h } from "@stencil/core";
+import { Component, Host, h, Prop } from "@stencil/core";
 
 @Component({
   tag: "sc-toggle",
@@ -6,6 +6,11 @@ import { Component, Host, h } from "@stencil/core";
   // shadow: true
 })
 export class Toggle {
+  /**
+   * Label text to be displayed inline with the toggle
+   */
+  @Prop() label!: string | undefined;
+
   render() {
     return (
       <Host>
@@ -22,6 +27,7 @@ export class Toggle {
             </span>
           </span>
         </label>
+        {this.label && <span class="toggle--label">{this.label}</span>}
       </Host>
     );
   }

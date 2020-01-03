@@ -11,11 +11,11 @@ body {
 }
 
 .raised {
-  box-shadow: -5px -5px 20px 0 var(--sc-highlight-color), 5px 5px 20px 0 var(--sc-shadow-color);
+  box-shadow: -5px -5px 16px 0 var(--sc-highlight-color), 5px 5px 16px 0 var(--sc-shadow-color);
 }
 
 .engraved {
-  box-shadow: inset -5px -5px 20px 0 var(--sc-highlight-color), inset 5px 5px 20px 0 var(--sc-shadow-color);
+  box-shadow: inset -5px -5px 16px 0 var(--sc-highlight-color), inset 5px 5px 16px 0 var(--sc-shadow-color);
 }
 
 /*# sourceMappingURL=app.css.map */
