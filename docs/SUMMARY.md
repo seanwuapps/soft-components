@@ -8,6 +8,6 @@
   * [sc-card](components/card/readme.md)
   * [sc-button](components/button.md)
 * [Styling](styling/README.md)
-  * [CSS Variables](css-vars.md)
-  * [Utilities](utilities.md)
+  * [CSS Variables](styling/css-vars.md)
+  * [Utilities](styling/utilities.md)
 
