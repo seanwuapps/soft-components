@@ -2,7 +2,7 @@
 
 * [Soft components](README.md)
 * [Summary​](summary.md)
-* [components](components/README.md)
+* [Components](components/README.md)
   * [toggle](components/toggle/README.md)
     * [sc-toggle](components/toggle/readme.md)
   * [input](components/input/README.md)
