@@ -1,9 +1,13 @@
 :host {
-  --sc-card-outer-padding: 40px;
+  --sc-card-outer-padding-x: 32px;
+  --sc-card-outer-padding-y: 24px;
+  --sc-card-bg-color: var(--sc-bg-color);
+
   display: block;
-  padding: var(--sc-card-outer-padding);
+  padding: var(--sc-card-outer-padding-y) var(--sc-card-outer-padding-x);
   border-radius: var(--sc-border-radius);
   @include raised();
+  background: var(--sc-card-bg-color);
 }
 
 :host(.engraved) {

@@ -5,6 +5,21 @@
 <!-- Auto Generated Below -->
 
 
+## Usage
+
+### Input
+
+```html
+<label for="email">Email</label>
+<sc-input type="email" required name="email" id="email"></sc-input>
+
+<label for="password">Password</label>
+<sc-input type="password" required name="password" maxlength="6" id="password">
+</sc-input>
+```
+
+
+
 ## Properties
 
 | Property         | Attribute         | Description                                                                                                                                                                                                                                                                                                                                          | Type                                                                                  | Default     |
@@ -40,10 +55,10 @@
 
 | Event          | Description                             | Type                         |
 | -------------- | --------------------------------------- | ---------------------------- |
+| `blurEvent`    | Emitted when the input loses focus.     | `CustomEvent<void>`          |
 | `changeEvent`  | Emitted when the value has changed.     | `CustomEvent<any>`           |
 | `focusEvent`   | Emitted when the input has focus.       | `CustomEvent<void>`          |
 | `inputEvent`   | Emitted when a keyboard input occurred. | `CustomEvent<KeyboardEvent>` |
-| `ionBlur`      | Emitted when the input loses focus.     | `CustomEvent<void>`          |
 | `keyDownEvent` | Emitted when a key is pressed down      | `CustomEvent<void>`          |
 
 
