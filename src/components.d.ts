@@ -183,6 +183,7 @@ export namespace Components {
     */
     'value'?: string | null;
   }
+  interface ScTabs {}
   interface ScToggle {
     /**
     * aria labelby
@@ -236,6 +237,12 @@ declare global {
     new (): HTMLScInputElement;
   };
 
+  interface HTMLScTabsElement extends Components.ScTabs, HTMLStencilElement {}
+  var HTMLScTabsElement: {
+    prototype: HTMLScTabsElement;
+    new (): HTMLScTabsElement;
+  };
+
   interface HTMLScToggleElement extends Components.ScToggle, HTMLStencilElement {}
   var HTMLScToggleElement: {
     prototype: HTMLScToggleElement;
@@ -245,6 +252,7 @@ declare global {
     'sc-button': HTMLScButtonElement;
     'sc-card': HTMLScCardElement;
     'sc-input': HTMLScInputElement;
+    'sc-tabs': HTMLScTabsElement;
     'sc-toggle': HTMLScToggleElement;
   }
 }
@@ -447,6 +455,7 @@ declare namespace LocalJSX {
     */
     'value'?: string | null;
   }
+  interface ScTabs {}
   interface ScToggle {
     /**
     * aria labelby
@@ -502,6 +511,7 @@ declare namespace LocalJSX {
     'sc-button': ScButton;
     'sc-card': ScCard;
     'sc-input': ScInput;
+    'sc-tabs': ScTabs;
     'sc-toggle': ScToggle;
   }
 }
@@ -515,6 +525,7 @@ declare module "@stencil/core" {
       'sc-button': LocalJSX.ScButton & JSXBase.HTMLAttributes<HTMLScButtonElement>;
       'sc-card': LocalJSX.ScCard & JSXBase.HTMLAttributes<HTMLScCardElement>;
       'sc-input': LocalJSX.ScInput & JSXBase.HTMLAttributes<HTMLScInputElement>;
+      'sc-tabs': LocalJSX.ScTabs & JSXBase.HTMLAttributes<HTMLScTabsElement>;
       'sc-toggle': LocalJSX.ScToggle & JSXBase.HTMLAttributes<HTMLScToggleElement>;
     }
   }
