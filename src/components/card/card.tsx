@@ -64,7 +64,7 @@ export class Card {
         <div class="overflow-menu">
           <slot name="overflow-menu" />
         </div>
-        <h2>
+        <div class="card-title-container">
           {this.hasCustomTitle ? (
             <slot name="custom-title" />
           ) : (
@@ -75,7 +75,7 @@ export class Card {
               )}
             </div>
           )}
-        </h2>
+        </div>
         <div class="card-content">
           <slot></slot>
         </div>
