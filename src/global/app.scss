@@ -20,3 +20,17 @@ body {
 .engraved {
   @include engraved();
 }
+
+@for $i from 1 to 9 {
+  .raised-#{$i} {
+    @include raised($i/10);
+  }
+
+  .engraved-#{$i} {
+    @include engraved($i/10);
+  }
+}
+
+.round {
+  border-radius: var(--sc-border-radius);
+}

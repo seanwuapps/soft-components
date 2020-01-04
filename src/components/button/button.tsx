@@ -54,6 +54,11 @@ export class Button {
   @Prop({ reflectToAttr: true }) icon?: boolean | undefined = false;
 
   /**
+   * If prop exists, button will have an engraved-styled border
+   */
+  @Prop({ reflectToAttr: true }) bordered?: boolean | undefined = false;
+
+  /**
    * Specifies where to display the linked URL.
    * Only applies when an `href` is provided.
    * Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.
@@ -93,7 +98,7 @@ export class Button {
   };
 
   render() {
-    const { type, disabled, rel, target, href, icon, block } = this;
+    const { type, disabled, rel, target, href, icon, block, bordered } = this;
     const TagType = href === undefined ? "button" : "a";
     const attrs =
       TagType === "button"
@@ -110,7 +115,8 @@ export class Button {
         aria-disabled={disabled ? "true" : null}
         class={{
           icon,
-          block
+          block,
+          bordered
         }}
       >
         <TagType

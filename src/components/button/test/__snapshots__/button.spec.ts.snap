@@ -1,31 +1,78 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`button should render a combination of different styles when props are applied 1`] = `
+<sc-button bordered="" class="bordered icon" icon="">
+  <!---->
+  <button type="button">
+    <span class="button-inner">
+      Button
+    </span>
+  </button>
+</sc-button>
+`;
+
+exports[`button should render a combination of different styles when props are applied 2`] = `
+<sc-button block="" bordered="" class="block bordered">
+  <!---->
+  <button type="button">
+    <span class="button-inner">
+      Button
+    </span>
+  </button>
+</sc-button>
+`;
+
 exports[`button should render a tag when href is applied 1`] = `
 <sc-button download="" href="#" rel="noreferrer" target="_blank">
-  <mock:shadow-root>
-    <a download="" href="#" rel="noreferrer" target="_blank">
-      <span class="button-inner">
-        <slot name="start"></slot>
-        <slot></slot>
-        <slot name="end"></slot>
-      </span>
-    </a>
-  </mock:shadow-root>
-  button
+  <!---->
+  <a download="" href="#" rel="noreferrer" target="_blank">
+    <span class="button-inner">
+      button
+    </span>
+  </a>
+</sc-button>
+`;
+
+exports[`button should render block button when block prop is applied 1`] = `
+<sc-button block="" class="block">
+  <!---->
+  <button type="button">
+    <span class="button-inner">
+      button
+    </span>
+  </button>
+</sc-button>
+`;
+
+exports[`button should render bordered button when bordered prop is applied 1`] = `
+<sc-button bordered="" class="bordered">
+  <!---->
+  <button type="button">
+    <span class="button-inner">
+      Button
+    </span>
+  </button>
 </sc-button>
 `;
 
 exports[`button should render default button 1`] = `
 <sc-button>
-  <mock:shadow-root>
-    <button type="button">
-      <span class="button-inner">
-        <slot name="start"></slot>
-        <slot></slot>
-        <slot name="end"></slot>
-      </span>
-    </button>
-  </mock:shadow-root>
-  button
+  <!---->
+  <button type="button">
+    <span class="button-inner">
+      button
+    </span>
+  </button>
+</sc-button>
+`;
+
+exports[`button should render icon-only button when icon prop is applied 1`] = `
+<sc-button class="icon" icon="">
+  <!---->
+  <button type="button">
+    <span class="button-inner">
+      I
+    </span>
+  </button>
 </sc-button>
 `;

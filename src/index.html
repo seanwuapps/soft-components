@@ -15,7 +15,7 @@
     />
 
     <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
       rel="stylesheet"
     />
 
@@ -31,12 +31,24 @@
     <style>
       html,
       body {
-        font-family: "Open Sans", sans-serif;
+        font-family: "Montserrat", sans-serif;
       }
     </style>
   </head>
 
-  <body>
+  <body class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <sc-button bordered>Bordered button</sc-button>
+        </div>
+        <div class="col">
+          <sc-button icon bordered>
+            <i class="la la-home"></i>
+          </sc-button>
+        </div>
+      </div>
+    </div>
     <div class="container pt-4">
       <form action="/" method="get">
         <sc-card
@@ -79,6 +91,15 @@
           <sc-button block type="submit">Login</sc-button>
         </sc-card>
       </form>
+    </div>
+
+    <!-- cards -->
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <sc-card bordered> </sc-card>
+        </div>
+      </div>
     </div>
   </body>
 </html>

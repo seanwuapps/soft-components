@@ -4,15 +4,10 @@ html {
   --sc-highlight-color: #ffffff;
   --sc-shadow-color: rgba(0, 0, 0, 0.2);
   /* colors */
-  --sc-bg-color: #E5EDF7;
+  --sc-bg-color: #EFEEEE;
   --sc-text-color: #333333;
   --sc-border-radius: 1em;
   --sc-error-color: #f70d1a;
-  /* button */
-  --sc-button-bg-color: var(--sc-bg-color);
-  --sc-button-text-color: var(--sc-text-color);
-  --sc-button-border-radius: var(--sc-border-radius);
-  --sc-button-padding-y: 1em;
-  --sc-button-padding-x: 2em;
-  --sc-button-icon-size: 3em;
+
+
 }

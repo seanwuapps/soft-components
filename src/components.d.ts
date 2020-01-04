@@ -16,6 +16,10 @@ export namespace Components {
     */
     'block'?: boolean | undefined;
     /**
+    * If prop exists, button will have an engraved-styled border
+    */
+    'bordered'?: boolean | undefined;
+    /**
     * If `true`, the user cannot interact with the button.
     */
     'disabled': boolean;
@@ -263,6 +267,10 @@ declare namespace LocalJSX {
     * The button shape.
     */
     'block'?: boolean | undefined;
+    /**
+    * If prop exists, button will have an engraved-styled border
+    */
+    'bordered'?: boolean | undefined;
     /**
     * If `true`, the user cannot interact with the button.
     */

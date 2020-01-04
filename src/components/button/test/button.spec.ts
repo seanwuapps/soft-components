@@ -9,7 +9,6 @@ describe("button", () => {
       components: [Button],
       html: `<sc-button>button</sc-button>`
     });
-    expect(page.root.shadowRoot).toBeTruthy();
     expect(page.root).toMatchSnapshot();
   });
 
@@ -33,6 +32,27 @@ describe("button", () => {
     const page = await newSpecPage({
       components: [Button],
       html: `<sc-button icon>I</sc-button>`
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+
+  it("should render bordered button when bordered prop is applied", async () => {
+    const page = await newSpecPage({
+      components: [Button],
+      html: `<sc-button bordered>Button</sc-button>`
+    });
+    expect(page.root).toMatchSnapshot();
+  });
+  it("should render a combination of different styles when props are applied", async () => {
+    let page = await newSpecPage({
+      components: [Button],
+      html: `<sc-button icon bordered>Button</sc-button>`
+    });
+    expect(page.root).toMatchSnapshot();
+
+    page = await newSpecPage({
+      components: [Button],
+      html: `<sc-button block bordered>Button</sc-button>`
     });
     expect(page.root).toMatchSnapshot();
   });
