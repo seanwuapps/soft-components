@@ -1,5 +1,5 @@
 sc-toggle {
-  --sc-toggle-button-size: 34px; //calc(var(--sc-border-radius) * 2 + 1em);
+  --sc-toggle-button-size: calc(var(--sc-border-radius) * 2 + 1em);
   --sc-toggle-active-bg-color: #d6e1eb;
   --sc-toggle-active-btn-color: white;
   * {
