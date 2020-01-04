@@ -9,6 +9,8 @@
 
 ### Input
 
+{% embed url="https://codepen.io/deseanwu/pen/vYEWaPK" %}
+
 ```html
 <label for="email">Email</label>
 <sc-input type="email" required name="email" id="email"></sc-input>

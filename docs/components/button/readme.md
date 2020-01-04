@@ -1,6 +1,5 @@
 # sc-button
 
-{% embed url="https://codepen.io/deseanwu/pen/xxbPdeJ" %}
 
 
 <!-- Auto Generated Below -->
@@ -9,6 +8,8 @@
 ## Usage
 
 ### Button
+
+{% embed url="https://codepen.io/deseanwu/pen/xxbPdeJ" %}
 
 ```html
 <!-- Default -->
