@@ -4,8 +4,5 @@
 
 Set of web components inspired by [Alex Plyuto](https://dribbble.com/alexplyuto)'s popular [skeuomorph design](https://dribbble.com/shots/8297803-Skeuomorph-Mobile-Banking-Continuation)
 
-## Components
 
-- [Button](docs/components/button/readme.md)
-- [Card](docs/components/card/readme.md)
-- [Input](docs/components/input/readme.md)
+[Documentation](https://seanwuapps.gitbook.io/soft-components/)
