@@ -6,7 +6,7 @@
   * [sc-toggle](components/toggle/readme.md)
   * [sc-input](components/input/readme.md)
   * [sc-card](components/card/readme.md)
-  * [sc-button](components/button/button.md)
+  * [sc-button](components/button/readme.md)
 * [Styling](styling/README.md)
   * [CSS Variables](styling/css-vars.md)
   * [Utilities](styling/utilities.md)
