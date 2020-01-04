@@ -45,7 +45,26 @@ export namespace Components {
     'type': "submit" | "reset" | "button";
   }
   interface ScCard {
+    /**
+    * Subtitle of the card
+    */
+    'cardSubtitle'?: string;
+    /**
+    * Title of the card
+    */
+    'cardTitle'?: string;
+    /**
+    * if true, card will appear engraved instead of raised by default.
+    */
     'engraved'?: boolean | undefined;
+    /**
+    * If this card has flat (border) style
+    */
+    'flat'?: boolean | undefined;
+    /**
+    * If this card is hoverable
+    */
+    'hoverable'?: boolean | undefined;
   }
   interface ScInput {
     /**
@@ -166,9 +185,33 @@ export namespace Components {
   }
   interface ScToggle {
     /**
+    * aria labelby
+    */
+    'ariaLabelledby'?: string;
+    /**
+    * This Boolean attribute lets you specify that a form control should have input focus when the page loads.
+    */
+    'autofocus': boolean;
+    /**
+    * If this toggle is on by default
+    */
+    'checked'?: boolean | undefined;
+    /**
+    * If `true`, the user cannot interact with the input.
+    */
+    'disabled': boolean;
+    /**
     * Label text to be displayed inline with the toggle
     */
     'label': string | undefined;
+    /**
+    * The name of the control, which is submitted with the form data.
+    */
+    'name': string;
+    /**
+    * The value of the input.
+    */
+    'value'?: string | null;
   }
 }
 
@@ -254,7 +297,26 @@ declare namespace LocalJSX {
     'type'?: "submit" | "reset" | "button";
   }
   interface ScCard {
+    /**
+    * Subtitle of the card
+    */
+    'cardSubtitle'?: string;
+    /**
+    * Title of the card
+    */
+    'cardTitle'?: string;
+    /**
+    * if true, card will appear engraved instead of raised by default.
+    */
     'engraved'?: boolean | undefined;
+    /**
+    * If this card has flat (border) style
+    */
+    'flat'?: boolean | undefined;
+    /**
+    * If this card is hoverable
+    */
+    'hoverable'?: boolean | undefined;
   }
   interface ScInput {
     /**
@@ -387,9 +449,53 @@ declare namespace LocalJSX {
   }
   interface ScToggle {
     /**
+    * aria labelby
+    */
+    'ariaLabelledby'?: string;
+    /**
+    * This Boolean attribute lets you specify that a form control should have input focus when the page loads.
+    */
+    'autofocus'?: boolean;
+    /**
+    * If this toggle is on by default
+    */
+    'checked'?: boolean | undefined;
+    /**
+    * If `true`, the user cannot interact with the input.
+    */
+    'disabled'?: boolean;
+    /**
     * Label text to be displayed inline with the toggle
     */
     'label': string | undefined;
+    /**
+    * The name of the control, which is submitted with the form data.
+    */
+    'name'?: string;
+    /**
+    * Emitted when the input loses focus.
+    */
+    'onBlurEvent'?: (event: CustomEvent<void>) => void;
+    /**
+    * Emitted when the value has changed.
+    */
+    'onChangeEvent'?: (event: CustomEvent<any>) => void;
+    /**
+    * Emitted when the input has focus.
+    */
+    'onFocusEvent'?: (event: CustomEvent<void>) => void;
+    /**
+    * Emitted when a keyboard input occurred.
+    */
+    'onInputEvent'?: (event: CustomEvent<KeyboardEvent>) => void;
+    /**
+    * Emitted when a key is pressed down
+    */
+    'onKeyDownEvent'?: (event: CustomEvent<void>) => void;
+    /**
+    * The value of the input.
+    */
+    'value'?: string | null;
   }
 
   interface IntrinsicElements {

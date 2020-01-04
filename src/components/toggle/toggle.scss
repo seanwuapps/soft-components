@@ -1,5 +1,5 @@
 sc-toggle {
-  --sc-toggle-button-size: 24px; //calc(var(--sc-border-radius) * 2 + 1em);
+  --sc-toggle-button-size: 34px; //calc(var(--sc-border-radius) * 2 + 1em);
   --sc-toggle-active-bg-color: #d6e1eb;
   --sc-toggle-active-btn-color: white;
   * {
@@ -32,7 +32,9 @@ sc-toggle {
         width: calc(var(--sc-toggle-button-size) / 8);
         height: calc(var(--sc-toggle-button-size) / 8);
         border-radius: 50%;
-        @include raised(0.1);
+        --sc-shadow-color: #666;
+        @include raised(0.2);
+
         &:nth-child(1) {
           top: 30%;
           left: 30%;
@@ -74,6 +76,11 @@ sc-toggle {
         .toggle--btn {
           left: var(--sc-toggle-button-size);
           background: var(--sc-toggle-active-btn-color);
+          .toggle--dots {
+            span {
+              --sc-shadow-color: #aaa;
+            }
+          }
         }
       }
     }

@@ -13,3 +13,8 @@
 :host(.engraved) {
   @include engraved();
 }
+
+:host(.hoverable) {
+}
+:host(.flat) {
+}

@@ -7,11 +7,11 @@
  * @prop --sc-button-icon-size:  Icon button size
  */
 sc-button {
+  display: inline-block;
+  -webkit-appearance: none !important;
   * {
     box-sizing: border-box;
   }
-
-  display: inline-block;
 
   a {
     text-decoration: none;
@@ -21,7 +21,6 @@ sc-button {
   a,
   button {
     cursor: pointer;
-    -webkit-appearance: none;
     border: none;
     background-color: var(--sc-button-bg-color);
     color: var(--sc-button-text-color);

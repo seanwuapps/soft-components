@@ -1,5 +1,6 @@
 sc-input {
   display: inline-block;
+  vertical-align: middle;
   /* input */
   --sc-input-border-radius: var(--sc-border-radius);
   --sc-input-padding-y: 1em;
@@ -34,7 +35,6 @@ sc-input {
     }
   }
 
-
   &.has-error {
     input {
       --sc-shadow-color: var(--sc-input-error-text-color);
@@ -45,5 +45,4 @@ sc-input {
       color: var(--sc-input-error-text-color);
     }
   }
-
 }

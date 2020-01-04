@@ -211,7 +211,6 @@ export class Input implements ComponentInterface {
     if (input) {
       this.value = input.value || "";
     }
-    console.log(input.validity);
     for (var key in input.validity) {
       if (input.validity[key]) {
         if (key === "valid") {
