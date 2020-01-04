@@ -21,6 +21,7 @@ sc-button {
   a,
   button {
     cursor: pointer;
+    -webkit-appearance: none;
     border: none;
     background-color: var(--sc-button-bg-color);
     color: var(--sc-button-text-color);
