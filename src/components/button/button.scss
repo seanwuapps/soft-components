@@ -8,7 +8,12 @@
  */
 sc-button {
   display: inline-block;
-  -webkit-appearance: none !important;
+  &[type] {
+    -webkit-appearance: none;
+    &:focus {
+      outline: none;
+    }
+  }
   * {
     box-sizing: border-box;
   }
@@ -28,10 +33,11 @@ sc-button {
     @include raised();
     position: relative;
     padding: 4px;
-    outline: none;
     font-size: 1em;
     font-family: inherit;
-
+    &:focus {
+      outline: none;
+    }
     .button-inner {
       transition: all 0.4s ease;
       display: inline-block;

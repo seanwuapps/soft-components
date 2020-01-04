@@ -19,8 +19,9 @@ sc-toggle {
     width: calc(var(--sc-toggle-button-size) * 2);
     height: var(--sc-toggle-button-size);
     position: relative;
-    @include engraved(0.5);
+    @include engraved(0.3);
     border-radius: calc(var(--sc-toggle-button-size) / 2 - 4px);
+    transition: all 0.3s ease;
     .toggle--dots {
       display: block;
       position: relative;
@@ -69,7 +70,11 @@ sc-toggle {
     position: absolute;
     width: var(--sc-toggle-button-size);
     opacity: 0;
-
+    &:focus {
+      & + .toggle--slider {
+        @include engraved(0.7);
+      }
+    }
     &:checked {
       & + .toggle--slider {
         background: var(--sc-toggle-active-bg-color);
