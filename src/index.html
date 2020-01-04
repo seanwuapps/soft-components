@@ -27,30 +27,26 @@
 </head>
 
 <body>
-  <div class="container">
-    <sc-card>
-      <form action="/" method="get" class="mt" style="max-width: 400px;margin: 0 auto">
-        <div class="row">
-          <label class="col-12" for="email">Email</label>
-          <sc-input class="col-12 mb-3" required name="email" id="email" type="email"></sc-input>
+  <div class="container pt-4">
+    <form action="/" method="get" class="mt" style="max-width: 400px;margin: 0 auto">
+      <div class="row">
+        <label class="col-12" for="email">Email</label>
+        <sc-input class="col-12 mb-3" required name="email" id="email" type="email"></sc-input>
 
-          <label class="col-12" for="password">Password</label>
-          <sc-input class="col-12 mb-3" required name="password" maxlength="6" value="asdfasdf" id="password"
-            type="password">
-          </sc-input>
+        <label class="col-12" for="password">Password</label>
+        <sc-input class="col-12 mb-3" required name="password" maxlength="6" value="asdfasdf" id="password"
+          type="password">
+        </sc-input>
+      </div>
+
+      <div class="row">
+        <div class="col-12 mb-3">
+          <sc-toggle name="remember" value="1" checked="checked" label="Remember me"></sc-toggle>
         </div>
+      </div>
+      <sc-button block type="submit">Login</sc-button>
+    </form>
 
-        <div class="row">
-          <div class="col-12 mb-3">
-            <sc-toggle name="remember" value="1" checked="checked" label="Remember me"></sc-toggle>
-          </div>
-        </div>
-        <sc-button block type="submit">Login</sc-button>
-      </form>
-    </sc-card>
-
-    <sc-card>
-    </sc-card>
   </div>
 </body>
 
