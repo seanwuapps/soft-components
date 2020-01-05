@@ -7,6 +7,8 @@ html {
     * @prop --sc-button-padding-y:  Vertical paddings
     * @prop --sc-button-padding-x:  Horizontal paddings
     * @prop --sc-button-icon-size:  Icon button size
+    * @prop --sc-button-bordered-border-radius:  Bordered-style border radius
+    * @prop --sc-button-bordered-border-width:  Bordered-style border width
     */
   --sc-button-bg-color: var(--sc-bg-color);
   --sc-button-text-color: var(--sc-text-color);
@@ -14,6 +16,8 @@ html {
   --sc-button-padding-y: 1em;
   --sc-button-padding-x: 2em;
   --sc-button-icon-size: 2.5em;
+  --sc-button-bordered-border-radius: var(--sc-button-border-radius);
+  --sc-button-bordered-border-width: 2px;
 }
 sc-button {
   display: inline-block;
@@ -100,10 +104,10 @@ sc-button {
     }
   }
   &.bordered {
-    --sc-button-bordered-border-radius: var(--sc-button-border-radius);
     a,
     button {
       position: relative;
+      padding: calc(4px + var(--sc-button-bordered-border-width));
       &::before {
         content: "";
         position: absolute;
@@ -113,11 +117,15 @@ sc-button {
         right: 3px;
         border-radius: var(--sc-button-bordered-border-radius);
         background-image: linear-gradient(
-            -45deg,
-            var(--sc-highlight-color) 15%,
+            to bottom right,
+            var(--sc-shadow-color) -10%,
             transparent 45%
           ),
-          linear-gradient(135deg, var(--sc-shadow-color) 25%, transparent 45%);
+          linear-gradient(
+            to bottom right,
+            transparent 40%,
+            var(--sc-highlight-color) 110%
+          );
       }
       .button-inner {
         position: relative;
@@ -129,6 +137,11 @@ sc-button {
       a,
       button {
         --sc-button-bordered-border-radius: 50%;
+        line-height: calc(
+          var(--sc-button-icon-size) - 8px -
+            var(--sc-button-bordered-border-width) -
+            var(--sc-button-bordered-border-width)
+        );
         .button-inner {
           border-radius: 50%;
         }
