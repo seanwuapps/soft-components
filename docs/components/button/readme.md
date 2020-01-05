@@ -36,6 +36,7 @@
 | Property   | Attribute  | Description                                                                                                                                                                                                                                                                               | Type                              | Default     |
 | ---------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----------- |
 | `block`    | `block`    | The button shape.                                                                                                                                                                                                                                                                         | `boolean`                         | `false`     |
+| `bordered` | `bordered` | If prop exists, button will have an engraved-styled border                                                                                                                                                                                                                                | `boolean`                         | `false`     |
 | `disabled` | `disabled` | If `true`, the user cannot interact with the button.                                                                                                                                                                                                                                      | `boolean`                         | `false`     |
 | `download` | `download` | This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want). | `string`                          | `undefined` |
 | `href`     | `href`     | Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.                                                                                                                                                                   | `string`                          | `undefined` |
@@ -63,14 +64,16 @@
 
 ## CSS Custom Properties
 
-| Name                        | Description              |
-| --------------------------- | ------------------------ |
-| `--sc-button-bg-color`      | Background of the button |
-| `--sc-button-border-radius` | Button border radius     |
-| `--sc-button-icon-size`     | Icon button size         |
-| `--sc-button-padding-x`     | Horizontal paddings      |
-| `--sc-button-padding-y`     | Vertical paddings        |
-| `--sc-button-text-color`    | Button text color        |
+| Name                                 | Description                  |
+| ------------------------------------ | ---------------------------- |
+| `--sc-button-bg-color`               | Background of the button     |
+| `--sc-button-border-radius`          | Button border radius         |
+| `--sc-button-bordered-border-radius` | Bordered-style border radius |
+| `--sc-button-bordered-border-width`  | Bordered-style border width  |
+| `--sc-button-icon-size`              | Icon button size             |
+| `--sc-button-padding-x`              | Horizontal paddings          |
+| `--sc-button-padding-y`              | Vertical paddings            |
+| `--sc-button-text-color`             | Button text color            |
 
 
 ----------------------------------------------

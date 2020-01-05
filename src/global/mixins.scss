@@ -8,3 +8,16 @@
       var(--sc-highlight-color),
     inset 5px * $factor 5px * $factor 16px * $factor 0 var(--sc-shadow-color);
 }
+
+@mixin engraved-border-gradient() {
+  background-image: linear-gradient(
+      to bottom right,
+      var(--sc-shadow-color) -10%,
+      transparent 45%
+    ),
+    linear-gradient(
+      to bottom right,
+      transparent 60%,
+      var(--sc-highlight-color) 120%
+    );
+}

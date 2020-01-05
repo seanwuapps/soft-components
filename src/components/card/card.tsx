@@ -26,14 +26,9 @@ export class Card {
   cardSubtitle?: string;
 
   /**
-   * If this card is hoverable
+   * If this card has bordered style
    */
-  @Prop({ reflectToAttr: true }) hoverable?: boolean | undefined = false;
-
-  /**
-   * If this card has flat (border) style
-   */
-  @Prop({ reflectToAttr: true }) flat?: boolean | undefined = false;
+  @Prop({ reflectToAttr: true }) bordered?: boolean | undefined = false;
 
   @State()
   hasCustomTitle: boolean;
@@ -45,39 +40,36 @@ export class Card {
     // this.hasFooter = isSlotEmpty(this.el, 'footer')
     this.hasCustomTitle = isSlotEmpty(this.el, "custom-title");
     this.hasOverflowMenu = isSlotEmpty(this.el, "overflow-menu");
-
-    if (this.flat) {
-      this.el.classList.add("flat");
-    }
-
-    // const footer = this.el.querySelector('.card-footer')
-    // footer.addEventListener('click', e => {
-    //   console.log(e.target)
-    //   e.stopPropagation()
-    // })
   }
 
   render() {
-    const { engraved, hoverable, flat } = this;
+    const { engraved, bordered } = this;
     return (
-      <Host class={{ engraved, hoverable, flat }}>
-        <div class="overflow-menu">
-          <slot name="overflow-menu" />
-        </div>
-        <div class="card-title-container">
-          {this.hasCustomTitle ? (
-            <slot name="custom-title" />
-          ) : (
-            <div>
-              {this.cardTitle && <div class="card-title">{this.cardTitle}</div>}
-              {this.cardSubtitle && (
-                <div class="card-subtitle">{this.cardSubtitle}</div>
+      <Host class={{ engraved, bordered }}>
+        <div class="card-inner">
+          <div class="overflow-menu">
+            <slot name="overflow-menu" />
+          </div>
+          {this.hasCustomTitle || this.cardTitle || this.cardSubtitle ? (
+            <div class="card-title-container">
+              {this.hasCustomTitle ? (
+                <slot name="custom-title" />
+              ) : (
+                <div>
+                  {this.cardTitle && (
+                    <div class="card-title">{this.cardTitle}</div>
+                  )}
+                  {this.cardSubtitle && (
+                    <div class="card-subtitle">{this.cardSubtitle}</div>
+                  )}
+                </div>
               )}
             </div>
-          )}
-        </div>
-        <div class="card-content">
-          <slot></slot>
+          ) : null}
+
+          <div class="card-content">
+            <slot></slot>
+          </div>
         </div>
       </Host>
     );

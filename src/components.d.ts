@@ -50,6 +50,10 @@ export namespace Components {
   }
   interface ScCard {
     /**
+    * If this card has bordered style
+    */
+    'bordered'?: boolean | undefined;
+    /**
     * Subtitle of the card
     */
     'cardSubtitle'?: string;
@@ -61,14 +65,6 @@ export namespace Components {
     * if true, card will appear engraved instead of raised by default.
     */
     'engraved'?: boolean | undefined;
-    /**
-    * If this card has flat (border) style
-    */
-    'flat'?: boolean | undefined;
-    /**
-    * If this card is hoverable
-    */
-    'hoverable'?: boolean | undefined;
   }
   interface ScInput {
     /**
@@ -314,6 +310,10 @@ declare namespace LocalJSX {
   }
   interface ScCard {
     /**
+    * If this card has bordered style
+    */
+    'bordered'?: boolean | undefined;
+    /**
     * Subtitle of the card
     */
     'cardSubtitle'?: string;
@@ -325,14 +325,6 @@ declare namespace LocalJSX {
     * if true, card will appear engraved instead of raised by default.
     */
     'engraved'?: boolean | undefined;
-    /**
-    * If this card has flat (border) style
-    */
-    'flat'?: boolean | undefined;
-    /**
-    * If this card is hoverable
-    */
-    'hoverable'?: boolean | undefined;
   }
   interface ScInput {
     /**

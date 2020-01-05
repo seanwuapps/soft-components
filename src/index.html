@@ -15,7 +15,7 @@
     />
 
     <link
-      href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap"
       rel="stylesheet"
     />
 
@@ -43,7 +43,7 @@
           <sc-button bordered>Bordered button</sc-button>
         </div>
         <div class="col">
-          <sc-button icon bordered>
+          <sc-button icon>
             <i class="la la-home"></i>
           </sc-button>
         </div>
@@ -88,16 +88,28 @@
               ></sc-toggle>
             </div>
           </div>
-          <sc-button bordered block type="submit">Login</sc-button>
+          <sc-button block type="submit">Login</sc-button>
         </sc-card>
       </form>
     </div>
 
     <!-- cards -->
-    <div class="container">
+    <div class="container mt-5">
       <div class="row">
-        <div class="col-4">
-          <sc-card bordered> </sc-card>
+        <div class="col-md-4">
+          <sc-card>
+            <div class="row align-items-center">
+              <div class="col-4">
+                <i class="la la-bell"></i>
+              </div>
+            </div>
+          </sc-card>
+        </div>
+        <div class="col-md-4">
+          <sc-card engraved card-subtitle="I'm engraved"> </sc-card>
+        </div>
+        <div class="col-md-4">
+          <sc-card bordered card-subtitle="I'm bordered"> </sc-card>
         </div>
       </div>
     </div>

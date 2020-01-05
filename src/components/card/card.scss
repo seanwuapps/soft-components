@@ -2,35 +2,38 @@
   /* card vars */
   --sc-card-outer-padding-x: 32px;
   --sc-card-outer-padding-y: 24px;
-  --sc-card-inner-padding-y: 12px;
+  --sc-card-inner-padding-y: 18px;
   --sc-card-bg-color: var(--sc-bg-color);
   --sc-card-title-font-size: 26px;
-  --sc-card-title-font-weight: bold;
+  --sc-card-title-font-weight: 700;
   --sc-card-title-text-color: var(--sc-text-color);
   --sc-card-subtitle-font-size: 18px;
   --sc-card-subtitle-font-weight: normal;
   --sc-card-subtitle-text-color: #696969;
+  --sc-card-bordered-width: 2px;
   //--- card ---//
   display: block;
-  padding: var(--sc-card-outer-padding-y) var(--sc-card-outer-padding-x);
-  border-radius: var(--sc-border-radius);
   @include raised();
   background: var(--sc-card-bg-color);
+  border-radius: var(--sc-border-radius);
+  .card-inner {
+    border-radius: var(--sc-border-radius);
+    padding: var(--sc-card-outer-padding-y) var(--sc-card-outer-padding-x);
+    .card-title-container {
+      padding-bottom: var(--sc-card-inner-padding-y);
 
-  .card-title-container {
-    padding-bottom: var(--sc-card-inner-padding-y);
-
-    .card-title {
-      font-size: var(--sc-card-title-font-size);
-      font-weight: var(--sc-card-title-font-weight);
-      color: var(--sc-card-title-text-color);
-      line-height: 2;
-    }
-    .card-subtitle {
-      font-size: var(--sc-card-subtitle-font-size);
-      font-weight: var(--sc-card-subtitle-font-weight);
-      color: var(--sc-card-subtitle-text-color);
-      line-height: 1.5;
+      .card-title {
+        font-size: var(--sc-card-title-font-size);
+        font-weight: var(--sc-card-title-font-weight);
+        color: var(--sc-card-title-text-color);
+        line-height: 2;
+      }
+      .card-subtitle {
+        font-size: var(--sc-card-subtitle-font-size);
+        font-weight: var(--sc-card-subtitle-font-weight);
+        color: var(--sc-card-subtitle-text-color);
+        line-height: 1.5;
+      }
     }
   }
 }
@@ -40,6 +43,15 @@
 }
 
 :host(.hoverable) {
+  &:hover {
+    @include engraved();
+  }
 }
-:host(.flat) {
+
+:host(.bordered) {
+  @include engraved-border-gradient();
+  padding: var(--sc-card-bordered-width);
+  .card-inner {
+    background-color: var(--sc-card-bg-color);
+  }
 }
