@@ -1,7 +1,13 @@
 sc-toggle {
   --sc-toggle-button-size: calc(var(--sc-border-radius) * 2 + 1em);
-  --sc-toggle-active-bg-color: #d6e1eb;
+  --sc-toggle-active-bg-color: var(--sc-active-color);
   --sc-toggle-active-btn-color: white;
+  --sc-toggle-button-dot-shadow-color: var(--sc-shadow-color);
+  @media (prefers-color-scheme: dark) {
+    --sc-toggle-active-bg-color: var(--sc-secondary-color);
+    --sc-toggle-active-btn-color: var(--sc-active-color);
+    --sc-toggle-button-dot-shadow-color: #1a1a1a;
+  }
   * {
     box-sizing: border-box;
   }
@@ -33,7 +39,7 @@ sc-toggle {
         width: calc(var(--sc-toggle-button-size) / 8);
         height: calc(var(--sc-toggle-button-size) / 8);
         border-radius: 50%;
-        --sc-shadow-color: #666;
+        --sc-shadow-color: var(--sc-toggle-button-dot-shadow-color);
         @include raised(0.2);
 
         &:nth-child(1) {
@@ -83,7 +89,7 @@ sc-toggle {
           background: var(--sc-toggle-active-btn-color);
           .toggle--dots {
             span {
-              --sc-shadow-color: #aaa;
+              --sc-shadow-color: var(--sc-toggle-button-dot-shadow-color);
             }
           }
         }

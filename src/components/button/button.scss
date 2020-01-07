@@ -18,6 +18,7 @@ html {
   --sc-button-icon-size: 2.5em;
   --sc-button-bordered-border-radius: var(--sc-button-border-radius);
   --sc-button-bordered-border-width: 2px;
+  --sc-button-text-hover-color: var(--sc-active-color);
 }
 sc-button {
   display: inline-block;
@@ -60,6 +61,7 @@ sc-button {
 
     &:hover,
     &:focus {
+      color: var(--sc-button-text-hover-color);
       .button-inner {
         @include engraved(0.7);
       }

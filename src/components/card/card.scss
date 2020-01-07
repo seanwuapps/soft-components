@@ -1,8 +1,8 @@
 :host {
   /* card vars */
-  --sc-card-outer-padding-x: 32px;
-  --sc-card-outer-padding-y: 24px;
-  --sc-card-inner-padding-y: 18px;
+  --sc-card-outer-padding-x: 40px;
+  --sc-card-outer-padding-y: 40px;
+  --sc-card-inner-padding-y: 22px;
   --sc-card-bg-color: var(--sc-bg-color);
   --sc-card-title-font-size: 26px;
   --sc-card-title-font-weight: 700;
@@ -16,6 +16,17 @@
   @include raised();
   background: var(--sc-card-bg-color);
   border-radius: var(--sc-border-radius);
+  a {
+    display: block;
+    color: currentColor;
+    text-decoration: none;
+    transition: box-shadow 0.3s ease;
+    &:hover,
+    &:focus {
+      border-radius: var(--sc-border-radius);
+      @include engraved();
+    }
+  }
   .card-inner {
     border-radius: var(--sc-border-radius);
     padding: var(--sc-card-outer-padding-y) var(--sc-card-outer-padding-x);
