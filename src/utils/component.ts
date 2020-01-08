@@ -1,6 +1,6 @@
-export const isSlotEmpty: (HTMLElement, string) => boolean = (
+export const isSlotEmpty: (HTMLElement, string?) => boolean = (
   parentEl: HTMLElement,
-  slotName: string
+  slotName?: string
 ) => {
   return !!parentEl.querySelector('[slot="' + slotName + '"'); // cast boolean
 };

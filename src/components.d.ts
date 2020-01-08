@@ -183,6 +183,32 @@ export namespace Components {
     */
     'value'?: string | null;
   }
+  interface ScTab {}
+  interface ScTabButton {
+    /**
+    * When prop is set, this tab is shown, only one `<sc-tab>` element can be active inside `<sc-tabs>`
+    */
+    'active': boolean | undefined;
+    /**
+    * The button shape.
+    */
+    'block'?: boolean | undefined;
+    /**
+    * If prop exists, button will have an engraved-styled border
+    */
+    'bordered'?: boolean | undefined;
+    /**
+    * Icon only button
+    */
+    'icon'?: boolean | undefined;
+    'setActive': (emitEvent?: boolean) => Promise<void>;
+    'setInactive': (emitEvent?: boolean) => Promise<void>;
+    /**
+    * id of the target `sc-tab-content` tag
+    */
+    'target': string;
+  }
+  interface ScTabContent {}
   interface ScTabs {}
   interface ScToggle {
     /**
@@ -237,6 +263,24 @@ declare global {
     new (): HTMLScInputElement;
   };
 
+  interface HTMLScTabElement extends Components.ScTab, HTMLStencilElement {}
+  var HTMLScTabElement: {
+    prototype: HTMLScTabElement;
+    new (): HTMLScTabElement;
+  };
+
+  interface HTMLScTabButtonElement extends Components.ScTabButton, HTMLStencilElement {}
+  var HTMLScTabButtonElement: {
+    prototype: HTMLScTabButtonElement;
+    new (): HTMLScTabButtonElement;
+  };
+
+  interface HTMLScTabContentElement extends Components.ScTabContent, HTMLStencilElement {}
+  var HTMLScTabContentElement: {
+    prototype: HTMLScTabContentElement;
+    new (): HTMLScTabContentElement;
+  };
+
   interface HTMLScTabsElement extends Components.ScTabs, HTMLStencilElement {}
   var HTMLScTabsElement: {
     prototype: HTMLScTabsElement;
@@ -252,6 +296,9 @@ declare global {
     'sc-button': HTMLScButtonElement;
     'sc-card': HTMLScCardElement;
     'sc-input': HTMLScInputElement;
+    'sc-tab': HTMLScTabElement;
+    'sc-tab-button': HTMLScTabButtonElement;
+    'sc-tab-content': HTMLScTabContentElement;
     'sc-tabs': HTMLScTabsElement;
     'sc-toggle': HTMLScToggleElement;
   }
@@ -455,6 +502,32 @@ declare namespace LocalJSX {
     */
     'value'?: string | null;
   }
+  interface ScTab {}
+  interface ScTabButton {
+    /**
+    * When prop is set, this tab is shown, only one `<sc-tab>` element can be active inside `<sc-tabs>`
+    */
+    'active'?: boolean | undefined;
+    /**
+    * The button shape.
+    */
+    'block'?: boolean | undefined;
+    /**
+    * If prop exists, button will have an engraved-styled border
+    */
+    'bordered'?: boolean | undefined;
+    /**
+    * Icon only button
+    */
+    'icon'?: boolean | undefined;
+    'onActiveEvent'?: (event: CustomEvent<HTMLElement>) => void;
+    'onInactiveEvent'?: (event: CustomEvent<HTMLElement>) => void;
+    /**
+    * id of the target `sc-tab-content` tag
+    */
+    'target': string;
+  }
+  interface ScTabContent {}
   interface ScTabs {}
   interface ScToggle {
     /**
@@ -511,6 +584,9 @@ declare namespace LocalJSX {
     'sc-button': ScButton;
     'sc-card': ScCard;
     'sc-input': ScInput;
+    'sc-tab': ScTab;
+    'sc-tab-button': ScTabButton;
+    'sc-tab-content': ScTabContent;
     'sc-tabs': ScTabs;
     'sc-toggle': ScToggle;
   }
@@ -525,6 +601,9 @@ declare module "@stencil/core" {
       'sc-button': LocalJSX.ScButton & JSXBase.HTMLAttributes<HTMLScButtonElement>;
       'sc-card': LocalJSX.ScCard & JSXBase.HTMLAttributes<HTMLScCardElement>;
       'sc-input': LocalJSX.ScInput & JSXBase.HTMLAttributes<HTMLScInputElement>;
+      'sc-tab': LocalJSX.ScTab & JSXBase.HTMLAttributes<HTMLScTabElement>;
+      'sc-tab-button': LocalJSX.ScTabButton & JSXBase.HTMLAttributes<HTMLScTabButtonElement>;
+      'sc-tab-content': LocalJSX.ScTabContent & JSXBase.HTMLAttributes<HTMLScTabContentElement>;
       'sc-tabs': LocalJSX.ScTabs & JSXBase.HTMLAttributes<HTMLScTabsElement>;
       'sc-toggle': LocalJSX.ScToggle & JSXBase.HTMLAttributes<HTMLScToggleElement>;
     }

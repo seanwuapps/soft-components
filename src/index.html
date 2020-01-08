@@ -1,122 +1,138 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
-    />
-    <title>Soft Components</title>
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Soft Components</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
-    <link
-      rel="stylesheet"
-      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
-    />
-    <link rel="stylesheet" href="/build/soft-components.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet" />
 
-    <script type="module" src="/build/soft-components.esm.js"></script>
-    <script nomodule src="/build/soft-components.js"></script>
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+  <link rel="stylesheet" href="/build/soft-components.css" />
 
-    <style>
-      html,
-      body {
-        font-family: "Montserrat", sans-serif;
-      }
-    </style>
-  </head>
+  <script type="module" src="/build/soft-components.esm.js"></script>
+  <script nomodule src="/build/soft-components.js"></script>
 
-  <body class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col">
-          <sc-button bordered>
-            <i class="la la-back"></i> Bordered button</sc-button
-          >
-        </div>
-        <div class="col">
-          <sc-button icon>
-            <i class="la la-home"></i>
-          </sc-button>
-        </div>
+  <style>
+    html,
+    body {
+      font-family: "Montserrat", sans-serif;
+    }
+
+  </style>
+</head>
+
+<body class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <sc-button bordered>
+          <i class="la la-back"></i> Bordered button
+        </sc-button>
+      </div>
+      <div class="col">
+        <sc-button icon>
+          <i class="la la-home"></i>
+        </sc-button>
       </div>
     </div>
-    <div class="container pt-4">
-      <form action="/" method="get">
-        <sc-card
-          card-title="Login"
-          card-subtitle="Welcome back, please fill all fields and click login button."
-        >
-          <div class="row">
-            <label class="col-12" for="email">Email</label>
-            <sc-input
-              class="col-12 mb-3"
-              required
-              name="email"
-              id="email"
-              type="email"
-            ></sc-input>
+  </div>
+  <div class="container pt-4">
+    <form action="/" method="get">
+      <sc-card card-title="Login" card-subtitle="Welcome back, please fill all fields and click login button.">
+        <div class="row">
+          <label class="col-12" for="email">Email</label>
+          <sc-input class="col-12 mb-3" required name="email" id="email" type="email"></sc-input>
 
-            <label class="col-12" for="password">Password</label>
-            <sc-input
-              class="col-12 mb-3"
-              required
-              name="password"
-              maxlength="6"
-              value="asdfasdf"
-              id="password"
-              type="password"
-            >
-            </sc-input>
+          <label class="col-12" for="password">Password</label>
+          <sc-input class="col-12 mb-3" required name="password" maxlength="6" value="asdfasdf" id="password"
+            type="password">
+          </sc-input>
+        </div>
+
+        <div class="row">
+          <div class="col-12 mb-3">
+            <sc-toggle name="remember" value="1" checked="checked" label="Remember me"></sc-toggle>
           </div>
+        </div>
+        <sc-button block type="submit">Login</sc-button>
+      </sc-card>
+    </form>
+  </div>
 
-          <div class="row">
-            <div class="col-12 mb-3">
-              <sc-toggle
-                name="remember"
-                value="1"
-                checked="checked"
-                label="Remember me"
-              ></sc-toggle>
+  <!-- cards -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4">
+        <sc-button block href="#">
+          <div class="row align-items-center">
+            <div class="col-4">
+              <i class="la la-bell" style="font-size: 48px;"></i>
+            </div>
+            <div class="col-8">
+              My notification
             </div>
           </div>
-          <sc-button block type="submit">Login</sc-button>
-        </sc-card>
-      </form>
-    </div>
-
-    <!-- cards -->
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-md-4">
-          <sc-button block href="#">
-            <div class="row align-items-center">
-              <div class="col-4">
-                <i class="la la-bell" style="font-size: 48px;"></i>
-              </div>
-              <div class="col-8">
-                My notification
-              </div>
-            </div>
-          </sc-button>
-        </div>
-        <div class="col-md-4">
-          <sc-card engraved card-subtitle="I'm engraved"> </sc-card>
-        </div>
-        <div class="col-md-4">
-          <sc-card bordered card-subtitle="I'm bordered"> </sc-card>
-        </div>
+        </sc-button>
+      </div>
+      <div class="col-md-4">
+        <sc-card engraved card-subtitle="I'm engraved"> </sc-card>
+      </div>
+      <div class="col-md-4">
+        <sc-card bordered card-subtitle="I'm bordered"> </sc-card>
       </div>
     </div>
-  </body>
+  </div>
+
+  <!-- tabs -->
+  <div class="container mt-5">
+    <sc-tabs>
+      <div class="row">
+        <div class="col">
+          <sc-tab-button block target="tab1">
+            First
+          </sc-tab-button>
+        </div>
+        <div class="col">
+          <sc-tab-button block active target="tab2">
+            Second
+          </sc-tab-button>
+        </div>
+      </div>
+      <sc-tab-content id="tab1">
+        <h1>im first tab</h1>
+      </sc-tab-content>
+      <sc-tab-content id="tab2">
+        <h2>im second tab</h2>
+      </sc-tab-content>
+    </sc-tabs>
+  </div>
+  <div class="container mt-2">
+    <sc-tabs>
+      <div class="row">
+        <div class="col text-center">
+          <sc-tab-button icon target="dogtab">
+            <i class="la la-dog"></i>
+          </sc-tab-button>
+        </div>
+        <div class="col text-center">
+          <sc-tab-button icon active target="cattab">
+            <i class="la la-cat"></i>
+          </sc-tab-button>
+        </div>
+      </div>
+      <sc-tab-content id="dogtab">
+        <h2>im dog tab</h2>
+      </sc-tab-content>
+      <sc-tab-content id="cattab">
+        <h2>im cat tab</h2>
+      </sc-tab-content>
+    </sc-tabs>
+  </div>
+</body>
+
 </html>

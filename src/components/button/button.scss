@@ -9,6 +9,8 @@ html {
     * @prop --sc-button-icon-size:  Icon button size
     * @prop --sc-button-bordered-border-radius:  Bordered-style border radius
     * @prop --sc-button-bordered-border-width:  Bordered-style border width
+    * @prop --sc-button-text-hover-color:  Text color on hover
+    * @prop --sc-button-text-active-color:  Text color with active prop
     */
   --sc-button-bg-color: var(--sc-bg-color);
   --sc-button-text-color: var(--sc-text-color);
@@ -18,7 +20,8 @@ html {
   --sc-button-icon-size: 2.5em;
   --sc-button-bordered-border-radius: var(--sc-button-border-radius);
   --sc-button-bordered-border-width: 2px;
-  --sc-button-text-hover-color: var(--sc-active-color);
+  --sc-button-text-hover-color: var(--sc-secondary-color);
+  --sc-button-text-active-color: var(--sc-active-color);
 }
 sc-button {
   display: inline-block;
@@ -138,6 +141,15 @@ sc-button {
         .button-inner {
           border-radius: 50%;
         }
+      }
+    }
+  }
+  &.active {
+    a,
+    button {
+      color: var(--sc-button-text-active-color);
+      .button-inner {
+        @include engraved();
       }
     }
   }

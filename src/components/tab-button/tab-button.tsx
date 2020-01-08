@@ -1,0 +1,97 @@
+import {
+  Component,
+  Host,
+  h,
+  Prop,
+  Method,
+  Event,
+  EventEmitter,
+  Element
+} from "@stencil/core";
+
+@Component({
+  tag: "sc-tab-button",
+  styleUrl: "tab-button.scss",
+  shadow: true
+})
+export class TabButton {
+  @Element() el: HTMLElement;
+  /**
+   * When prop is set, this tab is shown, only one `<sc-tab>` element can be active inside `<sc-tabs>`
+   */
+  @Prop({ reflectToAttr: true, mutable: true }) active: boolean | undefined;
+
+  /**
+   * id of the target `sc-tab-content` tag
+   */
+  @Prop() target!: string;
+
+  /**
+   * The button shape.
+   */
+  @Prop({ reflectToAttr: true }) block?: boolean | undefined = false;
+
+  /**
+   * Icon only button
+   */
+  @Prop({ reflectToAttr: true }) icon?: boolean | undefined = false;
+
+  /**
+   * If prop exists, button will have an engraved-styled border
+   */
+  @Prop({ reflectToAttr: true }) bordered?: boolean | undefined = false;
+
+  @Event() activeEvent: EventEmitter<HTMLElement>;
+  @Event() inactiveEvent: EventEmitter<HTMLElement>;
+
+  targetEl: HTMLElement;
+
+  @Method()
+  async setActive(emitEvent: boolean = true) {
+    this.active = true;
+    this.targetEl.style.display = "block";
+    if (emitEvent) {
+      this.activeEvent.emit(this.el);
+    }
+  }
+
+  @Method()
+  async setInactive(emitEvent: boolean = true) {
+    this.active = false;
+    this.targetEl.style.display = "none";
+    if (emitEvent) {
+      this.inactiveEvent.emit(this.el);
+    }
+  }
+
+  async componentDidLoad() {
+    this.targetEl = document.getElementById(this.target);
+    if (this.active) {
+      this.setActive();
+    }
+  }
+
+  private onClick = () => {
+    this.setActive();
+  };
+
+  render() {
+    const { active, target, block, icon, bordered } = this;
+    return (
+      <Host class={{ active }}>
+        <sc-button
+          {...{
+            block,
+            icon,
+            bordered
+          }}
+          class={{ active, "tab-button": true }}
+          href={`#${target}`}
+          onClick={this.onClick}
+        >
+          <slot></slot>
+        </sc-button>
+      </Host>
+    );
+  }
+}
