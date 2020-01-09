@@ -183,7 +183,6 @@ export namespace Components {
     */
     'value'?: string | null;
   }
-  interface ScTab {}
   interface ScTabButton {
     /**
     * When prop is set, this tab is shown, only one `<sc-tab>` element can be active inside `<sc-tabs>`
@@ -263,12 +262,6 @@ declare global {
     new (): HTMLScInputElement;
   };
 
-  interface HTMLScTabElement extends Components.ScTab, HTMLStencilElement {}
-  var HTMLScTabElement: {
-    prototype: HTMLScTabElement;
-    new (): HTMLScTabElement;
-  };
-
   interface HTMLScTabButtonElement extends Components.ScTabButton, HTMLStencilElement {}
   var HTMLScTabButtonElement: {
     prototype: HTMLScTabButtonElement;
@@ -296,7 +289,6 @@ declare global {
     'sc-button': HTMLScButtonElement;
     'sc-card': HTMLScCardElement;
     'sc-input': HTMLScInputElement;
-    'sc-tab': HTMLScTabElement;
     'sc-tab-button': HTMLScTabButtonElement;
     'sc-tab-content': HTMLScTabContentElement;
     'sc-tabs': HTMLScTabsElement;
@@ -502,7 +494,6 @@ declare namespace LocalJSX {
     */
     'value'?: string | null;
   }
-  interface ScTab {}
   interface ScTabButton {
     /**
     * When prop is set, this tab is shown, only one `<sc-tab>` element can be active inside `<sc-tabs>`
@@ -584,7 +575,6 @@ declare namespace LocalJSX {
     'sc-button': ScButton;
     'sc-card': ScCard;
     'sc-input': ScInput;
-    'sc-tab': ScTab;
     'sc-tab-button': ScTabButton;
     'sc-tab-content': ScTabContent;
     'sc-tabs': ScTabs;
@@ -601,7 +591,6 @@ declare module "@stencil/core" {
       'sc-button': LocalJSX.ScButton & JSXBase.HTMLAttributes<HTMLScButtonElement>;
       'sc-card': LocalJSX.ScCard & JSXBase.HTMLAttributes<HTMLScCardElement>;
       'sc-input': LocalJSX.ScInput & JSXBase.HTMLAttributes<HTMLScInputElement>;
-      'sc-tab': LocalJSX.ScTab & JSXBase.HTMLAttributes<HTMLScTabElement>;
       'sc-tab-button': LocalJSX.ScTabButton & JSXBase.HTMLAttributes<HTMLScTabButtonElement>;
       'sc-tab-content': LocalJSX.ScTabContent & JSXBase.HTMLAttributes<HTMLScTabContentElement>;
       'sc-tabs': LocalJSX.ScTabs & JSXBase.HTMLAttributes<HTMLScTabsElement>;

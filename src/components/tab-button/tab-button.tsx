@@ -78,7 +78,7 @@ export class TabButton {
   render() {
     const { active, target, block, icon, bordered } = this;
     return (
-      <Host class={{ active }}>
+      <Host class={{ active, block }}>
         <sc-button
           {...{
             block,

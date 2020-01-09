@@ -1,4 +1,5 @@
 :host {
+  --sc-tab-content-margin-y: 20px;
   display: block;
-  margin: 20px 0;
+  margin: var(--sc-tab-content-margin-y) 0;
 }
