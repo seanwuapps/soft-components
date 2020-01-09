@@ -11,6 +11,7 @@ html {
     * @prop --sc-button-bordered-border-width:  Bordered-style border width
     * @prop --sc-button-text-hover-color:  Text color on hover
     * @prop --sc-button-text-active-color:  Text color with active prop
+    * @prop --sc-button-width:  Set fixed width for button (default to auto)
     */
   --sc-button-bg-color: var(--sc-bg-color);
   --sc-button-text-color: var(--sc-text-color);
@@ -22,6 +23,7 @@ html {
   --sc-button-bordered-border-width: 2px;
   --sc-button-text-hover-color: var(--sc-secondary-color);
   --sc-button-text-active-color: var(--sc-active-color);
+  --sc-button-width: auto;
 }
 sc-button {
   display: inline-block;
@@ -52,6 +54,7 @@ sc-button {
     padding: 4px;
     font-size: 1em;
     font-family: inherit;
+    width: var(--sc-button-width);
     &:focus {
       outline: none;
     }
@@ -60,6 +63,7 @@ sc-button {
       display: inline-block;
       padding: var(--sc-button-padding-y) var(--sc-button-padding-x);
       border-radius: calc(var(--sc-button-border-radius) - 4px);
+      width: var(--sc-button-width);
     }
 
     &:hover,

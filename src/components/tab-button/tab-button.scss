@@ -1,5 +1,9 @@
 :host {
+  --sc-tab-button-width: auto;
   display: inline-block;
+  sc-button {
+    --sc-button-width: var(--sc-tab-button-width);
+  }
 }
 :host(.block) {
   display: block;

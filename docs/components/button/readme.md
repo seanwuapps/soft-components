@@ -64,17 +64,33 @@
 
 ## CSS Custom Properties
 
-| Name                                 | Description                  |
-| ------------------------------------ | ---------------------------- |
-| `--sc-button-bg-color`               | Background of the button     |
-| `--sc-button-border-radius`          | Button border radius         |
-| `--sc-button-bordered-border-radius` | Bordered-style border radius |
-| `--sc-button-bordered-border-width`  | Bordered-style border width  |
-| `--sc-button-icon-size`              | Icon button size             |
-| `--sc-button-padding-x`              | Horizontal paddings          |
-| `--sc-button-padding-y`              | Vertical paddings            |
-| `--sc-button-text-color`             | Button text color            |
+| Name                                 | Description                                  |
+| ------------------------------------ | -------------------------------------------- |
+| `--sc-button-bg-color`               | Background of the button                     |
+| `--sc-button-border-radius`          | Button border radius                         |
+| `--sc-button-bordered-border-radius` | Bordered-style border radius                 |
+| `--sc-button-bordered-border-width`  | Bordered-style border width                  |
+| `--sc-button-icon-size`              | Icon button size                             |
+| `--sc-button-padding-x`              | Horizontal paddings                          |
+| `--sc-button-padding-y`              | Vertical paddings                            |
+| `--sc-button-text-active-color`      | Text color with active prop                  |
+| `--sc-button-text-color`             | Button text color                            |
+| `--sc-button-text-hover-color`       | Text color on hover                          |
+| `--sc-button-width`                  | Set fixed width for button (default to auto) |
 
+
+## Dependencies
+
+### Used by
+
+ - [sc-tab-button](../tab-button)
+
+### Graph
+```mermaid
+graph TD;
+  sc-tab-button --> sc-button
+  style sc-button fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

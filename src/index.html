@@ -33,6 +33,11 @@
       body {
         font-family: "Montserrat", sans-serif;
       }
+
+      .tab-button-custom-class {
+        text-align: center;
+        --sc-tab-button-width: 200px;
+      }
     </style>
   </head>
 
@@ -126,11 +131,11 @@
       <sc-tabs>
         <div class="row">
           <div class="col">
-            <sc-tab-button target="tab1" class="text-center">
+            <sc-tab-button target="tab1" class="tab-button-custom-class">
               <i class="la la-home" style="font-size: 2em;"></i>
               <p>Home</p>
             </sc-tab-button>
-            <sc-tab-button active target="tab2" class="text-center">
+            <sc-tab-button active target="tab2" class="tab-button-custom-class">
               <i class="la la-podcast" style="font-size: 2em;"></i>
               <p>Podcasts</p>
             </sc-tab-button>
