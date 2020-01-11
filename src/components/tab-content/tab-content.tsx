@@ -34,7 +34,7 @@ export class TabContent {
     console.log("transition start " + this.el.id);
 
     if (this.animationDirection === "in") {
-      this.el.style.display = "block";
+      // this.el.style.display = "block";
     }
     this.el.classList.add("animating");
     this.el.classList.remove("animated");
@@ -46,7 +46,7 @@ export class TabContent {
       this.activeCompleted.emit();
     } else {
       this.inactiveCompleted.emit();
-      this.el.style.display = "none";
+      // this.el.style.display = "none";
     }
     this.animationDirection = "";
   }
