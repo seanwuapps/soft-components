@@ -7,9 +7,6 @@
 
 ## Usage
 
-<iframe src="https://wu-components-docs.firebaseapp.com/"></iframe>
-
-
 ### Button
 
 
