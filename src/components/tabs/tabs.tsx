@@ -1,15 +1,17 @@
-import { Component, Host, h, Element } from "@stencil/core";
+import { Component, Host, h, Element, Prop } from "@stencil/core";
 import { isSlotEmpty } from "../../utils/component";
 
 @Component({
   tag: "sc-tabs",
-  styleUrl: "tabs.scss",
-  shadow: true
+  styleUrl: "tabs.scss"
+  // shadow: true
 })
 export class Tabs {
   @Element() el: HTMLElement;
 
   tabButtons: HTMLScTabButtonElement[] = [];
+
+  @Prop() transition: string | undefined = "";
 
   async connectedCallback() {
     if (!isSlotEmpty(this.el)) {
@@ -25,8 +27,14 @@ export class Tabs {
   }
 
   render() {
+    const { transition } = this;
     return (
-      <Host class="tabs" onActiveEvent={e => this.handleActive(e)}>
+      <Host
+        class={`tabs${
+          transition.length > 0 ? " transition-" + transition : ""
+        }`}
+        onActiveEvent={e => this.handleActive(e)}
+      >
         <slot></slot>
       </Host>
     );

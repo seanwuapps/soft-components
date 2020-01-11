@@ -3,10 +3,10 @@
   --sc-card-outer-padding-x: 40px;
   --sc-card-outer-padding-y: 40px;
   --sc-card-inner-padding-y: 22px;
-  --sc-card-bg-color: var(--sc-bg-color);
+  --sc-card-bg-color: var(--sc-bg-color, #e5e5e5);
   --sc-card-title-font-size: 26px;
   --sc-card-title-font-weight: 700;
-  --sc-card-title-text-color: var(--sc-text-color);
+  --sc-card-title-text-color: var(--sc-text-color, #333333);
   --sc-card-subtitle-font-size: 18px;
   --sc-card-subtitle-font-weight: normal;
   --sc-card-subtitle-text-color: #696969;
@@ -15,7 +15,7 @@
   display: block;
   @include raised();
   background: var(--sc-card-bg-color);
-  border-radius: var(--sc-border-radius);
+  border-radius: var(--sc-border-radius, 1em);
   a {
     display: block;
     color: currentColor;
@@ -23,12 +23,12 @@
     transition: box-shadow 0.3s ease;
     &:hover,
     &:focus {
-      border-radius: var(--sc-border-radius);
+      border-radius: var(--sc-border-radius, 1em);
       @include engraved();
     }
   }
   .card-inner {
-    border-radius: var(--sc-border-radius);
+    border-radius: var(--sc-border-radius, 1em);
     padding: var(--sc-card-outer-padding-y) var(--sc-card-outer-padding-x);
     .card-title-container {
       padding-bottom: var(--sc-card-inner-padding-y);

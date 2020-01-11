@@ -208,7 +208,9 @@ export namespace Components {
     'target': string;
   }
   interface ScTabContent {}
-  interface ScTabs {}
+  interface ScTabs {
+    'transition': string | undefined;
+  }
   interface ScToggle {
     /**
     * aria labelby
@@ -519,7 +521,9 @@ declare namespace LocalJSX {
     'target': string;
   }
   interface ScTabContent {}
-  interface ScTabs {}
+  interface ScTabs {
+    'transition'?: string | undefined;
+  }
   interface ScToggle {
     /**
     * aria labelby

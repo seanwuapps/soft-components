@@ -1,7 +1,9 @@
 @import "variables.css";
+
 @media (prefers-color-scheme: dark) {
+
   :root,
-html {
+  html {
     --sc-bg-color: #15202b;
     --sc-text-color: white;
     --sc-highlight-color: rgba(255, 255, 255, 0.2);
@@ -10,11 +12,12 @@ html {
     --sc-active-color: #c586c0;
   }
 }
+
 html,
 body {
   font-size: 16px;
-  background-color: var(--sc-bg-color);
-  color: var(--sc-text-color);
+  background-color: var(--sc-bg-color, #E5E5E5);
+  color: var(--sc-text-color, #333333);
 }
 
 * {

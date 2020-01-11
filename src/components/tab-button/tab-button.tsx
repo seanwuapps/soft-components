@@ -49,7 +49,7 @@ export class TabButton {
   @Method()
   async setActive(emitEvent: boolean = true) {
     this.active = true;
-    this.targetEl.style.display = "block";
+    this.targetEl.classList.add("active");
     if (emitEvent) {
       this.activeEvent.emit(this.el);
     }
@@ -58,14 +58,15 @@ export class TabButton {
   @Method()
   async setInactive(emitEvent: boolean = true) {
     this.active = false;
-    this.targetEl.style.display = "none";
+    this.targetEl.classList.remove("active");
     if (emitEvent) {
       this.inactiveEvent.emit(this.el);
     }
   }
 
   async componentDidLoad() {
-    this.targetEl = document.getElementById(this.target);
+    const container = this.el.closest("sc-tabs") as HTMLElement;
+    this.targetEl = container.querySelector("#" + this.target);
     if (this.active) {
       this.setActive();
     }

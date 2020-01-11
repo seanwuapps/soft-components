@@ -1,6 +1,19 @@
-:host {
+sc-tabs {
   display: block;
   sc-tab-content {
     display: none;
+    &.active {
+      display: block;
+    }
+  }
+
+  &.transition-fade {
+    sc-tab-content {
+      opacity: 0;
+      transition: opacity 1s ease;
+      &.active {
+        opacity: 1;
+      }
+    }
   }
 }

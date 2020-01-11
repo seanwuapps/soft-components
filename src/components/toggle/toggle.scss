@@ -1,11 +1,14 @@
 sc-toggle {
-  --sc-toggle-button-size: calc(var(--sc-border-radius) * 2 + 1em);
-  --sc-toggle-active-bg-color: var(--sc-active-color);
+  --sc-toggle-button-size: calc(var(--sc-border-radius, 1em) * 2 + 1em);
+  --sc-toggle-active-bg-color: var(--sc-active-color, #c586c0);
   --sc-toggle-active-btn-color: white;
-  --sc-toggle-button-dot-shadow-color: var(--sc-shadow-color);
+  --sc-toggle-button-dot-shadow-color: var(
+    --sc-shadow-color,
+    rgba(0, 0, 0, 0.2)
+  );
   @media (prefers-color-scheme: dark) {
-    --sc-toggle-active-bg-color: var(--sc-secondary-color);
-    --sc-toggle-active-btn-color: var(--sc-active-color);
+    --sc-toggle-active-bg-color: var(--sc-secondary-color, #646695);
+    --sc-toggle-active-btn-color: var(--sc-active-color, #c586c0);
     --sc-toggle-button-dot-shadow-color: #1a1a1a;
   }
   * {
@@ -68,7 +71,7 @@ sc-toggle {
       left: 0;
       width: var(--sc-toggle-button-size);
       border-radius: calc(var(--sc-toggle-button-size) / 2 - 4px);
-      background-color: var(--sc-bg-color);
+      background-color: var(--sc-bg-color, #e5e5e5);
       transition: left 0.3s ease;
     }
   }

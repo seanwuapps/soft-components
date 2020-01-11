@@ -36,7 +36,6 @@
 
       .tab-button-custom-class {
         text-align: center;
-        --sc-tab-button-width: 200px;
       }
     </style>
   </head>
@@ -128,7 +127,7 @@
 
     <!-- tabs -->
     <div class="container mt-5">
-      <sc-tabs>
+      <sc-tabs transition="fade">
         <div class="row">
           <div class="col">
             <sc-tab-button target="tab1" class="tab-button-custom-class">
@@ -147,15 +146,10 @@
         <sc-tab-content id="tab2">
           <h2>im second tab</h2>
         </sc-tab-content>
-      </sc-tabs>
+      </sc-tabs transition="fade">
     </div>
     <div class="container mt-2">
-      <sc-tabs>
-        <style>
-          sc-tab-button {
-            margin-right: 20px;
-          }
-        </style>
+      <sc-tabs transition="fade">
         <sc-tab-button icon target="dogtab">
           <i class="la la-dog"></i>
         </sc-tab-button>
@@ -172,6 +166,31 @@
             <p>im cat tab</p>
           </sc-card>
         </sc-tab-content>
+      </sc-tabs>
+    </div>
+    <!-- vertical tabs -->
+    <div class="container mt-2">
+      <sc-tabs class="row">
+        <div class="col-md-4">
+          <sc-tab-button block active target="dogtab">
+            <i class="la la-dog"></i> Dogs
+          </sc-tab-button>
+          <sc-tab-button block target="cattab">
+            <i class="la la-cat"></i> Cats
+          </sc-tab-button>
+        </div>
+        <div class="col-md-8">
+          <sc-tab-content id="dogtab">
+            <sc-card card-title="dog tab">
+              <p>im dog tab</p>
+            </sc-card>
+          </sc-tab-content>
+          <sc-tab-content id="cattab">
+            <sc-card card-title="cat tab">
+              <p>im cat tab</p>
+            </sc-card>
+          </sc-tab-content>
+        </div>
       </sc-tabs>
     </div>
   </body>

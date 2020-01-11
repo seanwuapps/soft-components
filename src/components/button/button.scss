@@ -13,16 +13,16 @@ html {
     * @prop --sc-button-text-active-color:  Text color with active prop
     * @prop --sc-button-width:  Set fixed width for button (default to auto)
     */
-  --sc-button-bg-color: var(--sc-bg-color);
-  --sc-button-text-color: var(--sc-text-color);
-  --sc-button-border-radius: var(--sc-border-radius);
+  --sc-button-bg-color: var(--sc-bg-color, #e5e5e5);
+  --sc-button-text-color: var(--sc-text-color, #333333);
+  --sc-button-border-radius: var(--sc-border-radius, 1em);
   --sc-button-padding-y: 1em;
   --sc-button-padding-x: 2em;
   --sc-button-icon-size: 2.5em;
   --sc-button-bordered-border-radius: var(--sc-button-border-radius);
   --sc-button-bordered-border-width: 2px;
-  --sc-button-text-hover-color: var(--sc-secondary-color);
-  --sc-button-text-active-color: var(--sc-active-color);
+  --sc-button-text-hover-color: var(--sc-secondary-color, #646695);
+  --sc-button-text-active-color: var(--sc-active-color, #c586c0);
   --sc-button-width: auto;
 }
 sc-button {
