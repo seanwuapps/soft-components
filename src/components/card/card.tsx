@@ -36,7 +36,7 @@ export class Card {
   @State()
   hasOverflowMenu: boolean;
 
-  componentDidLoad() {
+  componentWillLoad() {
     // this.hasFooter = isSlotEmpty(this.el, 'footer')
     this.hasCustomTitle = isSlotEmpty(this.el, "custom-title");
     this.hasOverflowMenu = isSlotEmpty(this.el, "overflow-menu");
