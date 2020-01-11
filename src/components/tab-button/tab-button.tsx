@@ -44,12 +44,12 @@ export class TabButton {
   @Event() activeEvent: EventEmitter<HTMLElement>;
   @Event() inactiveEvent: EventEmitter<HTMLElement>;
 
-  targetEl: HTMLElement;
+  targetEl: HTMLScTabContentElement;
 
   @Method()
   async setActive(emitEvent: boolean = true) {
     this.active = true;
-    this.targetEl.classList.add("active");
+    this.targetEl.setActive();
     if (emitEvent) {
       this.activeEvent.emit(this.el);
     }
@@ -58,7 +58,7 @@ export class TabButton {
   @Method()
   async setInactive(emitEvent: boolean = true) {
     this.active = false;
-    this.targetEl.classList.remove("active");
+    this.targetEl.setInactive();
     if (emitEvent) {
       this.inactiveEvent.emit(this.el);
     }

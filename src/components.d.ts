@@ -207,7 +207,10 @@ export namespace Components {
     */
     'target': string;
   }
-  interface ScTabContent {}
+  interface ScTabContent {
+    'setActive': () => Promise<void>;
+    'setInactive': () => Promise<void>;
+  }
   interface ScTabs {
     'transition': string | undefined;
   }
@@ -520,7 +523,10 @@ declare namespace LocalJSX {
     */
     'target': string;
   }
-  interface ScTabContent {}
+  interface ScTabContent {
+    'onActiveCompleted'?: (event: CustomEvent<void>) => void;
+    'onInactiveCompleted'?: (event: CustomEvent<void>) => void;
+  }
   interface ScTabs {
     'transition'?: string | undefined;
   }

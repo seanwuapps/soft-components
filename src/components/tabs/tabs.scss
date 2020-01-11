@@ -6,14 +6,4 @@ sc-tabs {
       display: block;
     }
   }
-
-  &.transition-fade {
-    sc-tab-content {
-      opacity: 0;
-      transition: opacity 1s ease;
-      &.active {
-        opacity: 1;
-      }
-    }
-  }
 }
