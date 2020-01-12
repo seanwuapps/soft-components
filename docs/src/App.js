@@ -1,9 +1,16 @@
 import React from "react";
 import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
-
+import { Header, LeftSidebar, RightSidebar, Footer } from "./components/layout";
 function App() {
   return (
     <Router basename="/">
+      <Header />
+      <div>
+        <LeftSidebar />
+        <main></main>
+      </div>
+      <RightSidebar />
+      <Footer />
       <div>
         <ul>
           <li>

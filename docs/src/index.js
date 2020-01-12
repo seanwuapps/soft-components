@@ -1,12 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "soft-components/dist/soft-components/soft-components.css";
+import "./scss/app.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import {
-  applyPolyfills,
-  defineCustomElements
-} from "soft-components/dist/soft-components";
+
+import { applyPolyfills, defineCustomElements } from "soft-components/loader";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

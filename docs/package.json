@@ -10,9 +10,10 @@
     "markdown-it": "^10.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-grid-system": "^6.0.7",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
-    "soft-components": "0.0.13"
+    "soft-components": "file:.."
   },
   "scripts": {
     "predeploy": "npm run build",
