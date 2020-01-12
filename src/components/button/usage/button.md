@@ -1,4 +1,3 @@
-{% embed url="https://codepen.io/deseanwu/pen/xxbPdeJ" %}
 
 ```html
 <!-- Default -->

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Soft Components</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/soft-components@latest/dist/soft-components/soft-components.css" />
+
+  <script type="module" src="https://unpkg.com/soft-components@latest/dist/soft-components/soft-components.esm.js">
+  </script>
+  <script nomodule src="https://unpkg.com/soft-components@latest/dist/soft-components/soft-components.js"></script>
+
+  <style>
+    html,
+    body {
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .tab-button-custom-class {
+      text-align: center;
+    }
+
+  </style>
+</head>
+
+<body class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <sc-button bordered>
+          <i class="la la-back"></i> Bordered button
+        </sc-button>
+      </div>
+      <div class="col">
+        <sc-button icon>
+          <i class="la la-home"></i>
+        </sc-button>
+      </div>
+    </div>
+  </div>
+  <div class="container pt-4">
+    <form action="/" method="get">
+      <sc-card card-title="Login" card-subtitle="Welcome back, please fill all fields and click login button.">
+        <div class="row">
+          <label class="col-12" for="email">Email</label>
+          <sc-input class="col-12 mb-3" required name="email" id="email" type="email"></sc-input>
+
+          <label class="col-12" for="password">Password</label>
+          <sc-input class="col-12 mb-3" required name="password" maxlength="6" value="asdfasdf" id="password"
+            type="password">
+          </sc-input>
+        </div>
+
+        <div class="row">
+          <div class="col-12 mb-3">
+            <sc-toggle name="remember" value="1" checked="checked" label="Remember me"></sc-toggle>
+          </div>
+        </div>
+        <sc-button block type="submit">Login</sc-button>
+      </sc-card>
+    </form>
+  </div>
+
+  <!-- cards -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4">
+        <sc-button block href="#">
+          <div class="row align-items-center">
+            <div class="col-4">
+              <i class="la la-bell" style="font-size: 48px;"></i>
+            </div>
+            <div class="col-8">
+              My notification
+            </div>
+          </div>
+        </sc-button>
+      </div>
+      <div class="col-md-4">
+        <sc-card engraved card-title="Card" card-subtitle="I'm engraved">
+        </sc-card>
+      </div>
+      <div class="col-md-4">
+        <sc-card bordered card-title="Card" card-subtitle="I'm bordered">
+        </sc-card>
+      </div>
+    </div>
+  </div>
+
+  <!-- tabs -->
+  <div class="container mt-5">
+    <sc-tabs transition="fade">
+      <div class="row">
+        <div class="col">
+          <sc-tab-button target="tab1" class="tab-button-custom-class">
+            <i class="la la-home" style="font-size: 1.5em;"></i>
+            <!-- <div>One</div> -->
+          </sc-tab-button>
+          <sc-tab-button target="tab2" class="tab-button-custom-class">
+            <i class="la la-podcast" style="font-size: 1.5em;"></i>
+            <!-- <div>Two</div> -->
+          </sc-tab-button>
+        </div>
+      </div>
+      <sc-tab-content id="tab1">
+        <h1>im first tab</h1>
+      </sc-tab-content>
+      <sc-tab-content id="tab2">
+        <h2>im second tab</h2>
+      </sc-tab-content>
+    </sc-tabs transition="fade">
+  </div>
+  <!-- <div class="container mt-2">
+    <sc-tabs transition="fade">
+      <sc-tab-button icon target="dogtab">
+        <i class="la la-dog"></i>
+      </sc-tab-button>
+      <sc-tab-button icon active target="cattab">
+        <i class="la la-cat"></i>
+      </sc-tab-button>
+      <sc-tab-content id="dogtab">
+        <sc-card card-title="dog tab">
+          <p>im dog tab</p>
+        </sc-card>
+      </sc-tab-content>
+      <sc-tab-content id="cattab">
+        <sc-card card-title="cat tab">
+          <p>im cat tab</p>
+        </sc-card>
+      </sc-tab-content>
+    </sc-tabs>
+  </div> -->
+  <!-- vertical tabs -->
+  <!-- <div class="container mt-2">
+    <sc-tabs class="row">
+      <div class="col-md-4">
+        <sc-tab-button block active target="dogtab">
+          <i class="la la-dog"></i> Dogs
+        </sc-tab-button>
+        <sc-tab-button block target="cattab">
+          <i class="la la-cat"></i> Cats
+        </sc-tab-button>
+      </div>
+      <div class="col-md-8">
+        <sc-tab-content id="dogtab">
+          <sc-card card-title="dog tab">
+            <p>im dog tab</p>
+          </sc-card>
+        </sc-tab-content>
+        <sc-tab-content id="cattab">
+          <sc-card card-title="cat tab">
+            <p>im cat tab</p>
+          </sc-card>
+        </sc-tab-content>
+      </div>
+    </sc-tabs>
+  </div> -->
+</body>
+
+</html>

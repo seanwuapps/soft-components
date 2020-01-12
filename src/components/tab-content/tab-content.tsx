@@ -52,13 +52,13 @@ export class TabContent {
   }
 
   @Method()
-  setActive() {
+  async setActive() {
     this.animationDirection = "in";
     this.el.classList.add("active");
   }
 
   @Method()
-  setInactive() {
+  async setInactive() {
     this.animationDirection = "out";
     this.el.classList.remove("active");
   }

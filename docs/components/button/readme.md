@@ -9,7 +9,6 @@
 
 ### Button
 
-
 ```html
 <!-- Default -->
 <sc-button onclick="alert('yo')">Button</sc-button>
@@ -59,6 +58,23 @@
 | Slot | Description                                                           |
 | ---- | --------------------------------------------------------------------- |
 |      | Content is placed between the named slots if provided without a slot. |
+
+
+## CSS Custom Properties
+
+| Name                                 | Description                                  |
+| ------------------------------------ | -------------------------------------------- |
+| `--sc-button-bg-color`               | Background of the button                     |
+| `--sc-button-border-radius`          | Button border radius                         |
+| `--sc-button-bordered-border-radius` | Bordered-style border radius                 |
+| `--sc-button-bordered-border-width`  | Bordered-style border width                  |
+| `--sc-button-icon-size`              | Icon button size                             |
+| `--sc-button-padding-x`              | Horizontal paddings                          |
+| `--sc-button-padding-y`              | Vertical paddings                            |
+| `--sc-button-text-active-color`      | Text color with active prop                  |
+| `--sc-button-text-color`             | Button text color                            |
+| `--sc-button-text-hover-color`       | Text color on hover                          |
+| `--sc-button-width`                  | Set fixed width for button (default to auto) |
 
 
 ## Dependencies

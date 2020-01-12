@@ -26,7 +26,7 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "ver:patch": "git add . && git commit -m \"version patch\" && npm version patch && npm publish"
+    "docs.data": "stencil build --docs-json docs/docs.json"
   },
   "devDependencies": {
     "@stencil/core": "^1.3.3",
