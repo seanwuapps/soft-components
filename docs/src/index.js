@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "soft-components/dist/soft-components/soft-components.css";
-import "./scss/app.css";
+import "flexboxgrid/dist/flexboxgrid.min.css";
+import "./scss/app.scss";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 

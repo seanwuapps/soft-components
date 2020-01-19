@@ -13,7 +13,7 @@ export const config: Config = {
     },
     {
       type: "docs-readme",
-      dir: "docs/src/md",
+      dir: "docs/public/md",
       footer:
         "*Inspired by Ionic, built with StencilJS*<br>*&#10084; from Sean Wu*"
     },

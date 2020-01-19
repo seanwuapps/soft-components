@@ -71,7 +71,7 @@ sc-toggle {
       left: 0;
       width: var(--sc-toggle-button-size);
       border-radius: calc(var(--sc-toggle-button-size) / 2 - 4px);
-      background-color: var(--sc-bg-color, #e5e5e5);
+      background-color: var(--sc-bg-color, #fafafa);
       transition: left 0.3s ease;
     }
   }

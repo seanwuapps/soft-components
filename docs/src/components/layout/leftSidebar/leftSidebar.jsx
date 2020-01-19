@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+import { Menu } from "../menu/menu";
 export class LeftSidebar extends Component {
   // Render:
   // 1. TOC from md
 
   render() {
-    return <h3>Left sidebar</h3>;
+    return (
+      <div>
+        <Menu />
+      </div>
+    );
   }
 }
