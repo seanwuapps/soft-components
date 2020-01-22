@@ -1,0 +1,14 @@
+.search-field {
+  position: relative;
+  display: block;
+  .search-input{
+    display: block;
+  }
+  .search-icon {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    width: 24px;
+    height: 24px;
+  }
+}

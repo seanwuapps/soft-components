@@ -7,6 +7,6 @@ export class Footer extends Component {
   // 2. "work with me" link
   // 3.
   render() {
-    return <div>footer</div>;
+    return <div className="container">footer</div>;
   }
 }

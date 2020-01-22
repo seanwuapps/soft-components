@@ -6,22 +6,16 @@ import "highlight.js/styles/dracula.css";
 export class Markdown extends Component {
   render() {
     const __html = md({
+      html: true,
+      linkify: true,
       highlight: function(str, lang) {
         if (lang && hljs.getLanguage(lang)) {
           try {
-            return (
-              '<pre class="hljs"><code>' +
-              hljs.highlight(lang, str, true).value +
-              "</code></pre>"
-            );
+            return hljs.highlight(lang, str).value;
           } catch (__) {}
         }
 
-        return (
-          '<pre class="hljs"><code>' +
-          md.utils.escapeHtml(str) +
-          "</code></pre>"
-        );
+        return ""; // use external default escaping
       }
     }).render(this.props.src);
     return <div dangerouslySetInnerHTML={{ __html }}></div>;

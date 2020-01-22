@@ -6,7 +6,7 @@ function App() {
   return (
     <Router basename="/">
       <Header />
-      <main>
+      <main className="container">
         <div className="row">
           <div className="col-md-2">
             <LeftSidebar />

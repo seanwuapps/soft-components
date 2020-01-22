@@ -6,7 +6,7 @@ export class LeftSidebar extends Component {
 
   render() {
     return (
-      <div>
+      <div className="d-none d-md-block">
         <Menu />
       </div>
     );

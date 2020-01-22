@@ -28,13 +28,16 @@ class MdPageComponent extends Component {
    */
   async getMDFilePath(path) {
     if (path.endsWith("/")) {
-      // load front page
       path = path.substring(0, path.length - 1);
     }
-
     let file = `/md${path}.md`;
     let readmeFile = `/md${path}/readme.md`;
     let indexFile = `/md${path}/index.md`;
+
+    if(path === ''){
+      // load front page
+      file = '/md/readme.md'
+    }
 
     let status = await fetch(file, { method: "head" });
     if (status.ok) {
