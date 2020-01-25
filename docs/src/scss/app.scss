@@ -8,9 +8,14 @@ body {
 
 $opensans: "Open Sans", sans-serif;
 $mont: "Montserrat", sans-serif;
+
 body {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+
   font-family: $opensans;
   font-size: 16px;
+  overflow-x: hidden;
 }
 
 h1,

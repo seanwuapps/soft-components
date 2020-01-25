@@ -8,10 +8,10 @@ function App() {
       <Header />
       <main className="container">
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-5 col-xl-3">
             <LeftSidebar />
           </div>
-          <div className="col-md-9">
+          <div className="col-md-7 col-xl-9">
             <SiteRoutes />
           </div>
         </div>
