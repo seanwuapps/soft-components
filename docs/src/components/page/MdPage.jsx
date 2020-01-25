@@ -47,17 +47,18 @@ class MdPageComponent extends Component {
     }
 
     let status = await fetch(file, { method: "head" });
-    if (status.ok) {
+
+    if (status.ok && !status.redirected) {
       return file;
     }
 
     status = await fetch(readmeFile, { method: "head" });
-    if (status.ok) {
+    if (status.ok && !status.redirected) {
       return readmeFile;
     }
 
     status = await fetch(indexFile, { method: "head" });
-    if (status.ok) {
+    if (status.ok && !status.redirected) {
       return indexFile;
     }
 
