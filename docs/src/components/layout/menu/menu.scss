@@ -1,5 +1,10 @@
 .menu {
-  ul {
-    list-style: none;
+  padding: 20px;
+  padding-top: 0;
+  .item {
+    margin-top: 20px;
+    .children {
+      margin-left: 40px;
+    }
   }
 }

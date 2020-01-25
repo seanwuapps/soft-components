@@ -1,7 +1,7 @@
 .search-field {
   position: relative;
   display: block;
-  .search-input{
+  .search-input {
     display: block;
   }
   .search-icon {
@@ -10,5 +10,6 @@
     right: 1em;
     width: 24px;
     height: 24px;
+    fill: currentColor;
   }
 }

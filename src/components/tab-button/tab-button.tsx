@@ -72,7 +72,8 @@ export class TabButton {
     }
   }
 
-  private onClick = () => {
+  private onClick = e => {
+    e.preventDefault();
     this.setActive();
   };
 
@@ -88,7 +89,7 @@ export class TabButton {
           }}
           class={{ active, "tab-button": true }}
           href={`#${target}`}
-          onClick={this.onClick}
+          onClick={e => this.onClick(e)}
         >
           <slot></slot>
         </sc-button>

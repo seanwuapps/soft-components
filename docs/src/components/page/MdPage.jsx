@@ -9,7 +9,8 @@ class MdPageComponent extends Component {
   state = {
     file: "/md/readme.md",
     content: "",
-    notfound: false
+    notfound: false,
+    isComponent: false
   };
   componentDidUpdate(prevProps) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
@@ -34,9 +35,15 @@ class MdPageComponent extends Component {
     let readmeFile = `/md${path}/readme.md`;
     let indexFile = `/md${path}/index.md`;
 
-    if(path === ''){
+    if (path === "") {
       // load front page
-      file = '/md/readme.md'
+      file = "/md/readme.md";
+    }
+
+    if (file.includes("/components/")) {
+      this.setState({ isComponent: true });
+    } else {
+      this.setState({ isComponent: false });
     }
 
     let status = await fetch(file, { method: "head" });
@@ -83,7 +90,10 @@ class MdPageComponent extends Component {
     }
     return (
       <div>
-        <Markdown src={this.state.content} />
+        <Markdown
+          src={this.state.content}
+          isComponent={this.state.isComponent}
+        />
       </div>
     );
   }

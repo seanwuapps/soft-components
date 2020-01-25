@@ -1,6 +1,6 @@
 import React from "react";
 import { HashRouter as Router } from "react-router-dom";
-import { Header, LeftSidebar, RightSidebar, Footer } from "./components/layout";
+import { Header, LeftSidebar, Footer } from "./components/layout";
 import SiteRoutes from "./SiteRoutes";
 function App() {
   return (
@@ -8,14 +8,11 @@ function App() {
       <Header />
       <main className="container">
         <div className="row">
-          <div className="col-md-2">
+          <div className="col-md-3">
             <LeftSidebar />
           </div>
-          <div className="col-md-8">
+          <div className="col-md-9">
             <SiteRoutes />
-          </div>
-          <div className="col-md-2">
-            <RightSidebar />
           </div>
         </div>
       </main>

@@ -20,3 +20,59 @@ h4,
 h5 {
   font-family: $mont;
 }
+
+main {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+}
+
+table {
+  border: 1px solid #707070;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  th,
+  td {
+    border: 1px solid #707070;
+    padding: 10px;
+    vertical-align: top;
+  }
+}
+
+@media (min-width: 1900px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1440px;
+  }
+}
+.footer {
+  sc-button {
+    margin-right: 40px;
+  }
+}
+a {
+  color: currentColor;
+}
+
+.text-center {
+  text-align: center;
+}
+
+sc-tab-content {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.preview-card {
+  border: 1px solid #fb8c00;
+}
