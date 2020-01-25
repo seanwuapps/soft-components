@@ -3,22 +3,50 @@ import "./SearchField.scss";
 import { getMenuStructure } from "../";
 export class SearchField extends Component {
   state = {
-    query: ""
+    menu: [],
+    query: "",
+    suggestions: []
   };
 
   componentDidMount() {
     getMenuStructure().then(menu => {
-      console.log({ menu });
+      this.setState({ menu });
     });
   }
   onSearchInputChange(e) {
-    this.setState({ query: e.target.value });
+    let query = e.target.value;
+    let suggestions = [];
+    this.state.menu.map(item => {
+      if (item.text.toLowerCase().includes(query)) {
+        suggestions.push(item);
+      }
+      item.children.map(childItem => {
+        if (childItem.text.toLowerCase().includes(query)) {
+          suggestions.push(childItem);
+        }
+      });
+    });
+
+    this.setState({ query, suggestions });
+  }
+
+  highlight(needle, haystack) {
+    return haystack.replace(
+      new RegExp(needle, "gi"),
+      str => `<strong>${str}</strong>`
+    );
+  }
+
+  clearSearch(){
+    this.setState({
+      query: '',
+      suggestions:[]
+    })
   }
 
   render() {
     return (
       <div className="search-field">
-        {this.state.query}
         <sc-input
           type="search"
           value={this.state.query}
@@ -34,7 +62,25 @@ export class SearchField extends Component {
         </svg>
 
         {this.state.query.length > 0 ? (
-          <div className="search-results"></div>
+          <div className="search-results">
+            {this.state.suggestions.length > 0 ? (
+              <div>
+                {this.state.suggestions.map(item => (
+                  <div className="suggestion-item">
+                    <a
+                      href={item.link}
+                      dangerouslySetInnerHTML={{
+                        __html: this.highlight(this.state.query, item.text)
+                      }}
+                      onClick={() => this.clearSearch()}
+                    ></a>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div>No result</div>
+            )}
+          </div>
         ) : null}
       </div>
     );

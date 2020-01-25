@@ -1,9 +1,11 @@
+@import "./variables.scss";
 html,
 body {
   * {
     box-sizing: border-box;
   }
 }
+
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Open+Sans&display=swap");
 
 $opensans: "Open Sans", sans-serif;
@@ -80,4 +82,15 @@ sc-tab-content {
 
 .preview-card {
   border: 1px solid #fb8c00;
+}
+.logo-button{
+  text-align: center;
+  h2{
+    margin: 0
+  }
+}
+.logo{
+  width: 60px;
+  height: 60px;
+  fill: currentColor;
 }

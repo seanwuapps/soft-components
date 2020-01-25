@@ -1,5 +1,6 @@
 .search-field {
   position: relative;
+  z-index: 8;
   display: block;
   .search-input {
     display: block;
@@ -11,5 +12,19 @@
     width: 24px;
     height: 24px;
     fill: currentColor;
+  }
+  .search-results {
+    border-radius: var(--sc-border-radius);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--docs-search-box-bg-color);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    padding: 0 1em;
+    padding-top: 1em;
+    .suggestion-item {
+      padding-bottom: 1em;
+    }
   }
 }

@@ -1,0 +1,10 @@
+:root,
+html {
+  --docs-search-box-bg-color: white;
+}
+@media (prefers-color-scheme: dark) {
+  :root,
+  html {
+    --docs-search-box-bg-color: #{darken(#15202b, 10%)};
+  }
+}
