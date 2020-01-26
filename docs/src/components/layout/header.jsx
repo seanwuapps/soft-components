@@ -67,7 +67,9 @@ export class Header extends Component {
                   </switch>
                 </svg>
 
-                <h2>Soft Components</h2>
+                <div>
+                  <strong>Soft Components</strong>
+                </div>
               </sc-button>
               <div className="d-md-none">
                 <sc-button icon title="Menu" onClick={() => this.showMenu()}>
