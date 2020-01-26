@@ -33,7 +33,7 @@
     right: 0;
     bottom: 0;
     background-color: rgba(black, 0.3);
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(10px);
   }
   $orange: #5bc0de;
   $lighten-orange: lighten($orange, 40%);
@@ -41,10 +41,14 @@
     padding-top: 20px;
     height: 100%;
     overflow: auto;
-    // sc-button {
-    //   --sc-button-bg-color: #{$orange};
-    //   --sc-button-text-color: white;
-    //   --sc-highlight-color: #{$lighten-orange};
-    // }
+    sc-button {
+      --sc-secondary-color: #bdbdbd;
+      --sc-button-text-hover-color: #bdbdbd;
+      backdrop-filter: blur(20px);
+      --sc-button-bg-color: transparent;
+      --sc-button-text-color: white;
+      --sc-button-hover-text-color: #999;
+      --sc-highlight-color: white;
+    }
   }
 }

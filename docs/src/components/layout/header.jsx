@@ -51,7 +51,21 @@ export class Header extends Component {
                 //   "--sc-button-text-hover-color": "white"
                 // }}
               >
-                <svg className="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><switch><g><path d="M19.5 50l15.3 26.5h30.6L80.6 50 65.3 23.6H34.7L19.5 50M29 13.6L7.9 50 29 86.5l2.9-5L13.7 50l18.2-31.5h36.3l2.9-5H29M27.5 89L5 50l22.5-39h45L95 50 72.5 89h-45" fill-rule="evenodd" clip-rule="evenodd"/></g></switch></svg>
+                <svg
+                  className="logo"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 100 100"
+                >
+                  <switch>
+                    <g>
+                      <path
+                        d="M19.5 50l15.3 26.5h30.6L80.6 50 65.3 23.6H34.7L19.5 50M29 13.6L7.9 50 29 86.5l2.9-5L13.7 50l18.2-31.5h36.3l2.9-5H29M27.5 89L5 50l22.5-39h45L95 50 72.5 89h-45"
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                      />
+                    </g>
+                  </switch>
+                </svg>
 
                 <h2>Soft Components</h2>
               </sc-button>
