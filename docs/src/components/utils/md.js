@@ -24,9 +24,7 @@ export const renderMarkdown = (src, isComponent) => {
             </div>
           </div>
 <sc-tab-content id="preview">
-  <sc-card>
     ${str}
-  </sc-card>
 </sc-tab-content>
 <sc-tab-content id="code">
 <pre class="hljs"><code>${hljs.highlight(lang, str, true).value}</code></pre>

@@ -40,7 +40,7 @@ class MdPageComponent extends Component {
       file = "/md/readme.md";
     }
 
-    if (file.includes("/components/")) {
+    if (file.includes("/components/") || file.includes("/examples/")) {
       this.setState({ isComponent: true });
     } else {
       this.setState({ isComponent: false });

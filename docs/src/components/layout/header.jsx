@@ -41,6 +41,7 @@ export class Header extends Component {
           <div className="row">
             <div className="col-12 col-md-6 d-flex justify-content-between ">
               <sc-button
+                bordered
                 href="/"
                 class="logo-button"
                 // style={{

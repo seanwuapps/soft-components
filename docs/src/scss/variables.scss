@@ -1,7 +1,10 @@
 :root,
 html {
+  --sc-bg-color: #90ee90;
+  --sc-highlight-color: #c3f6c3;
   --docs-search-box-bg-color: white;
 }
+
 @media (prefers-color-scheme: dark) {
   :root,
   html {
