@@ -2,8 +2,10 @@
 
 # Soft components
 
-Set of web components inspired by [Alex Plyuto](https://dribbble.com/alexplyuto)'s popular [skeuomorph design](https://dribbble.com/shots/8297803-Skeuomorph-Mobile-Banking-Continuation)
+What if I told you that skeuomorphism is making a comeback?
 
-![Screenshot](docs/_assets/images/soft-components.png)
+Soft Components is a set of Web Components inspired by [Alex Plyuto](https://dribbble.com/alexplyuto)'s popular [skeuomorph design](https://dribbble.com/shots/8297803-Skeuomorph-Mobile-Banking-Continuation)
 
-[Documentation](https://seanwuapps.gitbook.io/soft-components/)
+Use these components with any framework you wish or no framework at all!
+
+[Documentation](https://soft-components-docs.web.app/)
