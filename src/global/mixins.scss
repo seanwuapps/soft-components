@@ -5,10 +5,10 @@
 }
 
 @mixin engraved($factor: 1) {
-  box-shadow: inset -5px * $factor -5px * $factor 16px * $factor 0
+  box-shadow: inset -5px * $factor -5px * $factor 24px * $factor 0
       var(--sc-highlight-color, #ffffff),
-    inset 5px * $factor 5px * $factor 16px * $factor 0
-      var(--sc-shadow-color, rgba(0, 0, 0, 0.2));
+    inset 5px * $factor 5px * $factor 24px * $factor 0
+      var(--sc-shadow-color, rgba(0, 0, 0, 0.1));
 }
 
 @mixin engraved-border-gradient() {
