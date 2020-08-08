@@ -1,6 +1,6 @@
 @mixin raised($factor: 1) {
-  box-shadow: -5px * $factor -5px * $factor 16px * $factor 0 var(--sc-highlight-color, #ffffff),
-    5px * $factor 5px * $factor 16px * $factor 0
+  box-shadow: -5px * $factor -5px * $factor 26px * $factor 0 var(--sc-highlight-color, #ffffff),
+    5px * $factor 5px * $factor 26px * $factor 0
       var(--sc-shadow-color, rgba(0, 0, 0, 0.2));
 }
 
@@ -22,4 +22,12 @@
       transparent 60%,
       var(--sc-highlight-color, #ffffff) 120%
     );
+}
+
+@mixin ease-in-component() {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  &.hydrated {
+    opacity: 1;
+  }
 }

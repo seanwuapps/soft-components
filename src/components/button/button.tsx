@@ -5,14 +5,14 @@ import {
   EventEmitter,
   Host,
   Prop,
-  h
+  h,
 } from "@stencil/core";
 /**
  * @slot - Content is placed between the named slots if provided without a slot.
  */
 @Component({
   tag: "sc-button",
-  styleUrl: "button.scss"
+  styleUrl: "button.scss",
   // shadow: true // disabled for form submission
 })
 export class Button {
@@ -71,6 +71,11 @@ export class Button {
   @Prop() type: "submit" | "reset" | "button" = "button";
 
   /**
+   * If component will fade in on load
+   */
+  @Prop() fadeIn?: boolean | undefined = false;
+
+  /**
    * Emitted when the button has focus.
    */
   @Event() focusEvent!: EventEmitter<void>;
@@ -98,7 +103,17 @@ export class Button {
   };
 
   render() {
-    const { type, disabled, rel, target, href, icon, block, bordered } = this;
+    const {
+      type,
+      disabled,
+      rel,
+      target,
+      href,
+      icon,
+      block,
+      bordered,
+      fadeIn,
+    } = this;
     const TagType = href === undefined ? "button" : "a";
     const attrs =
       TagType === "button"
@@ -107,7 +122,7 @@ export class Button {
             download: this.download,
             href,
             rel,
-            target
+            target,
           };
 
     return (
@@ -116,7 +131,8 @@ export class Button {
         class={{
           icon,
           block,
-          bordered
+          bordered,
+          fadeIn,
         }}
       >
         <TagType

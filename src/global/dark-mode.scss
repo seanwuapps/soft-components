@@ -1,11 +1,19 @@
+@mixin darkColours() {
+  --sc-bg-color: #15202b;
+  --sc-text-color: white;
+  --sc-highlight-color: rgba(255, 255, 255, 0.2);
+  --sc-shadow-color: rgba(0, 0, 0, 0.8);
+  --sc-secondary-color: #646695;
+  --sc-active-color: #c586c0;
+}
+
+html.dark {
+  @include darkColours();
+}
+
 @media (prefers-color-scheme: dark) {
   :root,
   html {
-    --sc-bg-color: #15202b;
-    --sc-text-color: white;
-    --sc-highlight-color: rgba(255, 255, 255, 0.2);
-    --sc-shadow-color: rgba(0, 0, 0, 0.8);
-    --sc-secondary-color: #646695;
-    --sc-active-color: #c586c0;
+    @include darkColours();
   }
 }
