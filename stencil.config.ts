@@ -9,23 +9,23 @@ export const config: Config = {
   outputTargets: [
     {
       type: "dist",
-      esmLoaderPath: "../loader"
+      esmLoaderPath: "../loader",
     },
     {
       type: "docs-readme",
       dir: "docs/public/md",
       footer:
-        "*Inspired by Ionic, built with StencilJS*<br>*&#10084; from Sean Wu*"
+        "*Inspired by Ionic, built with StencilJS*<br>*&#10084; from [Sean Wu](https://seanwuapps.com)*",
     },
     {
       type: "www",
-      serviceWorker: null // disable service workers
-    }
+      serviceWorker: null, // disable service workers
+    },
   ],
   globalStyle: "src/global/app.css",
   plugins: [
     sass({
-      injectGlobalPaths: ["src/global/mixins.scss"]
+      injectGlobalPaths: ["src/global/mixins.scss"],
     }),
     postcss({
       plugins: [
@@ -33,9 +33,9 @@ export const config: Config = {
         pxtorem({
           propList: ["*"],
           selectorBlackList: [":root", "html", "body"],
-          replace: false
-        })
-      ]
-    })
-  ]
+          replace: false,
+        }),
+      ],
+    }),
+  ],
 };
