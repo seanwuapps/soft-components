@@ -6,32 +6,84 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AppLogo {
+    }
+    interface AppNav {
+    }
     interface AppRoot {
+    }
+    interface PageHome {
+    }
+    interface PageNotfound {
     }
 }
 declare global {
+    interface HTMLAppLogoElement extends Components.AppLogo, HTMLStencilElement {
+    }
+    var HTMLAppLogoElement: {
+        prototype: HTMLAppLogoElement;
+        new (): HTMLAppLogoElement;
+    };
+    interface HTMLAppNavElement extends Components.AppNav, HTMLStencilElement {
+    }
+    var HTMLAppNavElement: {
+        prototype: HTMLAppNavElement;
+        new (): HTMLAppNavElement;
+    };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
     var HTMLAppRootElement: {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLPageHomeElement extends Components.PageHome, HTMLStencilElement {
+    }
+    var HTMLPageHomeElement: {
+        prototype: HTMLPageHomeElement;
+        new (): HTMLPageHomeElement;
+    };
+    interface HTMLPageNotfoundElement extends Components.PageNotfound, HTMLStencilElement {
+    }
+    var HTMLPageNotfoundElement: {
+        prototype: HTMLPageNotfoundElement;
+        new (): HTMLPageNotfoundElement;
+    };
     interface HTMLElementTagNameMap {
+        "app-logo": HTMLAppLogoElement;
+        "app-nav": HTMLAppNavElement;
         "app-root": HTMLAppRootElement;
+        "page-home": HTMLPageHomeElement;
+        "page-notfound": HTMLPageNotfoundElement;
     }
 }
 declare namespace LocalJSX {
+    interface AppLogo {
+    }
+    interface AppNav {
+    }
     interface AppRoot {
     }
+    interface PageHome {
+    }
+    interface PageNotfound {
+    }
     interface IntrinsicElements {
+        "app-logo": AppLogo;
+        "app-nav": AppNav;
         "app-root": AppRoot;
+        "page-home": PageHome;
+        "page-notfound": PageNotfound;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-logo": LocalJSX.AppLogo & JSXBase.HTMLAttributes<HTMLAppLogoElement>;
+            "app-nav": LocalJSX.AppNav & JSXBase.HTMLAttributes<HTMLAppNavElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
+            "page-notfound": LocalJSX.PageNotfound & JSXBase.HTMLAttributes<HTMLPageNotfoundElement>;
         }
     }
 }

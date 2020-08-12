@@ -1,5 +1,6 @@
 import { Config } from '@stencil/core';
 import { postcss } from '@stencil/postcss';
+import { sass } from '@stencil/sass';
 import autoprefixer from 'autoprefixer';
 import pxtorem from 'postcss-pxtorem';
 import builtins from 'rollup-plugin-node-builtins';
@@ -8,7 +9,7 @@ import nodePolyfills from 'rollup-plugin-node-polyfills';
 // https://stenciljs.com/docs/config
 
 export const config: Config = {
-  globalStyle: 'src/global/app.css',
+  globalStyle: 'src/global/app.scss',
   globalScript: 'src/global/app.ts',
   outputTargets: [
     {
@@ -19,6 +20,7 @@ export const config: Config = {
     },
   ],
   plugins: [
+    sass(),
     postcss({
       plugins: [
         autoprefixer(),
