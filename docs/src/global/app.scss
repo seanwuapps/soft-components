@@ -8,5 +8,11 @@
   Any global CSS variables should also be applied here.
 */
 
-@import '../../node_modules/flexboxgrid/dist/flexboxgrid.min.css';
 @import '../../node_modules/soft-components/dist/soft-components/soft-components.css';
+
+@import 'app/variables.scss';
+@import 'app/mixins.scss';
+
+@import 'app/baseline.scss';
+@import 'app/margin-padding.scss';
+@import 'app/grid.scss';

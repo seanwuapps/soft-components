@@ -6,18 +6,38 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AppDocs {
+    }
+    interface AppHeader {
+    }
     interface AppLogo {
     }
     interface AppNav {
     }
     interface AppRoot {
     }
+    interface PageHelperClasses {
+    }
     interface PageHome {
     }
     interface PageNotfound {
     }
+    interface StylingSandbox {
+    }
 }
 declare global {
+    interface HTMLAppDocsElement extends Components.AppDocs, HTMLStencilElement {
+    }
+    var HTMLAppDocsElement: {
+        prototype: HTMLAppDocsElement;
+        new (): HTMLAppDocsElement;
+    };
+    interface HTMLAppHeaderElement extends Components.AppHeader, HTMLStencilElement {
+    }
+    var HTMLAppHeaderElement: {
+        prototype: HTMLAppHeaderElement;
+        new (): HTMLAppHeaderElement;
+    };
     interface HTMLAppLogoElement extends Components.AppLogo, HTMLStencilElement {
     }
     var HTMLAppLogoElement: {
@@ -36,6 +56,12 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLPageHelperClassesElement extends Components.PageHelperClasses, HTMLStencilElement {
+    }
+    var HTMLPageHelperClassesElement: {
+        prototype: HTMLPageHelperClassesElement;
+        new (): HTMLPageHelperClassesElement;
+    };
     interface HTMLPageHomeElement extends Components.PageHome, HTMLStencilElement {
     }
     var HTMLPageHomeElement: {
@@ -48,42 +74,68 @@ declare global {
         prototype: HTMLPageNotfoundElement;
         new (): HTMLPageNotfoundElement;
     };
+    interface HTMLStylingSandboxElement extends Components.StylingSandbox, HTMLStencilElement {
+    }
+    var HTMLStylingSandboxElement: {
+        prototype: HTMLStylingSandboxElement;
+        new (): HTMLStylingSandboxElement;
+    };
     interface HTMLElementTagNameMap {
+        "app-docs": HTMLAppDocsElement;
+        "app-header": HTMLAppHeaderElement;
         "app-logo": HTMLAppLogoElement;
         "app-nav": HTMLAppNavElement;
         "app-root": HTMLAppRootElement;
+        "page-helper-classes": HTMLPageHelperClassesElement;
         "page-home": HTMLPageHomeElement;
         "page-notfound": HTMLPageNotfoundElement;
+        "styling-sandbox": HTMLStylingSandboxElement;
     }
 }
 declare namespace LocalJSX {
+    interface AppDocs {
+    }
+    interface AppHeader {
+    }
     interface AppLogo {
     }
     interface AppNav {
     }
     interface AppRoot {
     }
+    interface PageHelperClasses {
+    }
     interface PageHome {
     }
     interface PageNotfound {
     }
+    interface StylingSandbox {
+    }
     interface IntrinsicElements {
+        "app-docs": AppDocs;
+        "app-header": AppHeader;
         "app-logo": AppLogo;
         "app-nav": AppNav;
         "app-root": AppRoot;
+        "page-helper-classes": PageHelperClasses;
         "page-home": PageHome;
         "page-notfound": PageNotfound;
+        "styling-sandbox": StylingSandbox;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-docs": LocalJSX.AppDocs & JSXBase.HTMLAttributes<HTMLAppDocsElement>;
+            "app-header": LocalJSX.AppHeader & JSXBase.HTMLAttributes<HTMLAppHeaderElement>;
             "app-logo": LocalJSX.AppLogo & JSXBase.HTMLAttributes<HTMLAppLogoElement>;
             "app-nav": LocalJSX.AppNav & JSXBase.HTMLAttributes<HTMLAppNavElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "page-helper-classes": LocalJSX.PageHelperClasses & JSXBase.HTMLAttributes<HTMLPageHelperClassesElement>;
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
             "page-notfound": LocalJSX.PageNotfound & JSXBase.HTMLAttributes<HTMLPageNotfoundElement>;
+            "styling-sandbox": LocalJSX.StylingSandbox & JSXBase.HTMLAttributes<HTMLStylingSandboxElement>;
         }
     }
 }

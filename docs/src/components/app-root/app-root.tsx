@@ -8,15 +8,7 @@ export class AppRoot {
   render() {
     return (
       <Host>
-        <div class="row between-xs">
-          <div class="col-xs">
-            <app-logo></app-logo>
-          </div>
-          <div class="col-xs">
-            <app-nav></app-nav>
-          </div>
-        </div>
-
+        <app-header></app-header>
         <main>
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>

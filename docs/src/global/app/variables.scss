@@ -1,0 +1,36 @@
+//Colors
+$colors: (
+  'white': #ffffff,
+  'yellow': #fff200,
+  'grey': #717171,
+  'black': #000000,
+  'grey-79': #797979,
+);
+
+// function to get color like c("blue") will return #282f44
+@function c($name) {
+  @return map-get($colors, $name);
+}
+
+:root,
+html {
+  // make colors available as css vars
+  @each $name, $hex in $colors {
+    --color-#{$name}: #{$hex};
+  }
+  --base-font-size: vw(16px);
+}
+
+$body-font: poppins, sans-serif;
+$title-font: Arial;
+
+// spacing
+$spacing: 8px;
+
+// breakpoints
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1440px,
+) !default;

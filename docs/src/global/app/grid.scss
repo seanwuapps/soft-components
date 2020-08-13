@@ -1,0 +1,75 @@
+.flex {
+  display: flex;
+  flex-direction: column;
+  @include media(md) {
+    flex-direction: row;
+  }
+}
+.container {
+  display: block;
+  width: 100%;
+  padding: 0 7%;
+  @include media(xl) {
+    padding: 0;
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+// helpers
+$align-positions: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  stretch: stretch,
+);
+$justify-positions: (
+  start: flex-start,
+  center: center,
+  end: flex-end,
+  around: space-around,
+  between: space-between,
+  evenly: space-evenly,
+);
+
+@each $className, $value in $align-positions {
+  .align-#{$className} {
+    align-items: $value;
+  }
+  @each $media, $width in $breakpoints {
+    // align
+    .align-#{$className}-#{$media} {
+      @media (min-width: $width) {
+        align-items: $value;
+      }
+    }
+  }
+}
+
+@each $className, $value in $justify-positions {
+  .justify-#{$className} {
+    justify-content: $value;
+  }
+  @each $media, $width in $breakpoints {
+    // justify
+    .justify-#{$className}-#{$media} {
+      @media (min-width: $width) {
+        justify-content: $value;
+      }
+    }
+  }
+}
+
+// text alignment
+@each $media, $width in $breakpoints {
+  .text-left-#{$media} {
+    @media (min-width: $width) {
+      text-align: left;
+    }
+  }
+  .text-right-#{$media} {
+    @media (min-width: $width) {
+      text-align: right;
+    }
+  }
+}

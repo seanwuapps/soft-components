@@ -1,0 +1,14 @@
+app-nav {
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    li {
+      padding: 5px;
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}

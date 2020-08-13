@@ -7,13 +7,21 @@ interface NavItem {
 
 @Component({
   tag: 'app-nav',
-  styleUrl: 'app-nav.css',
+  styleUrl: 'app-nav.scss',
 })
 export class AppNav {
-  private links: [NavItem] = [
+  private links: NavItem[] = [
     {
-      text: '',
-      url: '/',
+      text: 'Docs',
+      url: '/docs',
+    },
+    {
+      text: 'Docs',
+      url: '/docs',
+    },
+    {
+      text: 'Docs',
+      url: '/docs',
     },
   ];
   render() {
