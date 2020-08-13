@@ -73,3 +73,9 @@ $justify-positions: (
     }
   }
 }
+
+@for $i from 1 to 11 {
+  .w-#{$i} {
+    flex-basis: $i * 10%;
+  }
+}
