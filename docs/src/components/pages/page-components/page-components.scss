@@ -1,0 +1,13 @@
+page-components {
+  border: 1px solid blue;
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+  aside {
+    display: none;
+    @include media(sm) {
+      display: block;
+    }
+    border: 1px solid red;
+  }
+}

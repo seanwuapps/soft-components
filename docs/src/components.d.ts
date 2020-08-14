@@ -5,9 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { MatchResults } from "@stencil/router";
 export namespace Components {
-    interface AppDocs {
-    }
     interface AppHeader {
     }
     interface AppLogo {
@@ -15,6 +14,12 @@ export namespace Components {
     interface AppNav {
     }
     interface AppRoot {
+    }
+    interface PageComponents {
+        /**
+          * url params matcher
+         */
+        "match": MatchResults;
     }
     interface PageHelperClasses {
     }
@@ -26,12 +31,6 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLAppDocsElement extends Components.AppDocs, HTMLStencilElement {
-    }
-    var HTMLAppDocsElement: {
-        prototype: HTMLAppDocsElement;
-        new (): HTMLAppDocsElement;
-    };
     interface HTMLAppHeaderElement extends Components.AppHeader, HTMLStencilElement {
     }
     var HTMLAppHeaderElement: {
@@ -55,6 +54,12 @@ declare global {
     var HTMLAppRootElement: {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
+    };
+    interface HTMLPageComponentsElement extends Components.PageComponents, HTMLStencilElement {
+    }
+    var HTMLPageComponentsElement: {
+        prototype: HTMLPageComponentsElement;
+        new (): HTMLPageComponentsElement;
     };
     interface HTMLPageHelperClassesElement extends Components.PageHelperClasses, HTMLStencilElement {
     }
@@ -81,11 +86,11 @@ declare global {
         new (): HTMLStylingSandboxElement;
     };
     interface HTMLElementTagNameMap {
-        "app-docs": HTMLAppDocsElement;
         "app-header": HTMLAppHeaderElement;
         "app-logo": HTMLAppLogoElement;
         "app-nav": HTMLAppNavElement;
         "app-root": HTMLAppRootElement;
+        "page-components": HTMLPageComponentsElement;
         "page-helper-classes": HTMLPageHelperClassesElement;
         "page-home": HTMLPageHomeElement;
         "page-notfound": HTMLPageNotfoundElement;
@@ -93,8 +98,6 @@ declare global {
     }
 }
 declare namespace LocalJSX {
-    interface AppDocs {
-    }
     interface AppHeader {
     }
     interface AppLogo {
@@ -102,6 +105,12 @@ declare namespace LocalJSX {
     interface AppNav {
     }
     interface AppRoot {
+    }
+    interface PageComponents {
+        /**
+          * url params matcher
+         */
+        "match"?: MatchResults;
     }
     interface PageHelperClasses {
     }
@@ -112,11 +121,11 @@ declare namespace LocalJSX {
     interface StylingSandbox {
     }
     interface IntrinsicElements {
-        "app-docs": AppDocs;
         "app-header": AppHeader;
         "app-logo": AppLogo;
         "app-nav": AppNav;
         "app-root": AppRoot;
+        "page-components": PageComponents;
         "page-helper-classes": PageHelperClasses;
         "page-home": PageHome;
         "page-notfound": PageNotfound;
@@ -127,11 +136,11 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "app-docs": LocalJSX.AppDocs & JSXBase.HTMLAttributes<HTMLAppDocsElement>;
             "app-header": LocalJSX.AppHeader & JSXBase.HTMLAttributes<HTMLAppHeaderElement>;
             "app-logo": LocalJSX.AppLogo & JSXBase.HTMLAttributes<HTMLAppLogoElement>;
             "app-nav": LocalJSX.AppNav & JSXBase.HTMLAttributes<HTMLAppNavElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "page-components": LocalJSX.PageComponents & JSXBase.HTMLAttributes<HTMLPageComponentsElement>;
             "page-helper-classes": LocalJSX.PageHelperClasses & JSXBase.HTMLAttributes<HTMLPageHelperClassesElement>;
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
             "page-notfound": LocalJSX.PageNotfound & JSXBase.HTMLAttributes<HTMLPageNotfoundElement>;

@@ -13,9 +13,8 @@ export const config: Config = {
     },
     {
       type: "docs-readme",
-      dir: "docs/public/md",
-      footer:
-        "*Inspired by Ionic, built with StencilJS*<br>*&#10084; from [Sean Wu](https://seanwuapps.com)*",
+      dir: "docs/src/docs/",
+      strict: true,
     },
     {
       type: "www",

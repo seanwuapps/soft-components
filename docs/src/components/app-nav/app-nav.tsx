@@ -12,16 +12,8 @@ interface NavItem {
 export class AppNav {
   private links: NavItem[] = [
     {
-      text: 'Docs',
-      url: '/docs',
-    },
-    {
-      text: 'Docs',
-      url: '/docs',
-    },
-    {
-      text: 'Docs',
-      url: '/docs',
+      text: 'Components',
+      url: '/components/get-started',
     },
   ];
   render() {

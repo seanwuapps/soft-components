@@ -16,11 +16,14 @@ export const config: Config = {
       type: 'www',
       // comment the following line to disable service workers in production
       serviceWorker: null,
-      baseUrl: 'https://myapp.local/',
+      baseUrl: 'http://localhost:3333/',
+      copy: [{ src: 'docs' }],
     },
   ],
   plugins: [
-    sass(),
+    sass({
+      injectGlobalPaths: ['src/global/app/variables.scss', 'src/global/app/mixins.scss'],
+    }),
     postcss({
       plugins: [
         autoprefixer(),

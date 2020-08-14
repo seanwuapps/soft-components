@@ -8,7 +8,7 @@ export class AppHeader {
   render() {
     return (
       <Host>
-        <div class="raised-6 mb-6 py-2">
+        <div class="raised-6 py-2">
           <div class="container">
             <div class="flex align-center justify-between">
               <app-logo></app-logo>

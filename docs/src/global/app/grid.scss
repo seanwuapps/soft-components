@@ -60,22 +60,36 @@ $justify-positions: (
   }
 }
 
+@for $i from 1 to 11 {
+  .w-#{$i} {
+    flex-basis: $i * 10%;
+  }
+}
+
 // text alignment
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
 @each $media, $width in $breakpoints {
   .text-left-#{$media} {
     @media (min-width: $width) {
       text-align: left;
     }
   }
+  .text-center-#{$media} {
+    @media (min-width: $width) {
+      text-align: center;
+    }
+  }
   .text-right-#{$media} {
     @media (min-width: $width) {
       text-align: right;
     }
-  }
-}
-
-@for $i from 1 to 11 {
-  .w-#{$i} {
-    flex-basis: $i * 10%;
   }
 }
