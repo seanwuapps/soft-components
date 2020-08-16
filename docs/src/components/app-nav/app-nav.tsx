@@ -1,10 +1,5 @@
 import { Component, Host, h } from '@stencil/core';
-
-interface NavItem {
-  text: string;
-  url: string;
-}
-
+import { NavItem } from '../../helpers/defs';
 @Component({
   tag: 'app-nav',
   styleUrl: 'app-nav.scss',

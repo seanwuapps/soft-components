@@ -34,3 +34,11 @@ $breakpoints: (
   lg: 992px,
   xl: 1440px,
 ) !default;
+
+$radius-big: 30px;
+$radius-small: 20px;
+:root,
+html {
+  --radius-big: #{$radius-big};
+  --radius-small: #{$radius-small};
+}

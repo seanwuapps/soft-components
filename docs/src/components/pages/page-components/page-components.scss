@@ -8,6 +8,16 @@ page-components {
     @include media(sm) {
       display: block;
     }
-    border: 1px solid red;
+    nav {
+      .nav-item {
+        margin-bottom: 4 * $spacing;
+      }
+      .submenu {
+        margin-top: 2 * $spacing;
+        .nav-item {
+          margin-bottom: 2 * $spacing;
+        }
+      }
+    }
   }
 }

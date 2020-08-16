@@ -12,7 +12,6 @@ export class AppHeader {
           <div class="container">
             <div class="flex align-center justify-between">
               <app-logo></app-logo>
-              <app-nav></app-nav>
             </div>
           </div>
         </div>

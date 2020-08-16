@@ -1,9 +1,31 @@
 app-root {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   min-height: 100vh;
-  align-items: stretch;
-  main {
-    flex: 1;
+  grid-template-columns: 240px auto 120px;
+  grid-template-rows: auto 1fr auto;
+  gap: 0px 0px;
+  grid-template-areas:
+    'left-side  header  right-side'
+    'left-side  main    right-side'
+    'left-side  footer  right-side';
+
+  .header {
+    grid-area: header;
+  }
+
+  .main {
+    grid-area: main;
+  }
+
+  .footer {
+    grid-area: footer;
+  }
+
+  .right-side {
+    grid-area: right-side;
+  }
+
+  .left-side {
+    grid-area: left-side;
   }
 }

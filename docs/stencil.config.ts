@@ -16,7 +16,8 @@ export const config: Config = {
       type: 'www',
       // comment the following line to disable service workers in production
       serviceWorker: null,
-      baseUrl: 'http://localhost:3333/',
+      baseUrl: 'https://soft-components.web.app/',
+      prerenderConfig: './prerender.config.ts',
       copy: [{ src: 'docs' }],
     },
   ],
