@@ -1,25 +1,32 @@
 app-nav {
   ul {
+    padding: 0;
     list-style: none;
   }
   .nav {
-    padding-left: $spacing * 3;
     display: block;
 
     .nav-item {
       margin-bottom: 2 * $spacing;
 
       a {
-        padding: $spacing * 4;
+        padding: $spacing * 2;
         transform: translateX(3px);
         border-top-left-radius: var(--radius);
         border-bottom-left-radius: var(--radius);
         display: block;
         text-decoration: none;
+        text-transform: capitalize;
         &.active {
           background: var(--sc-bg-color);
         }
       }
+    }
+  }
+  .sub-nav {
+    margin-left: $spacing * 3;
+    .nav-item {
+      margin-bottom: 0;
     }
   }
 }

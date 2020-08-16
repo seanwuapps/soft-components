@@ -39,7 +39,7 @@ export class AppNav {
           {navItem.text}
         </stencil-route-link>
 
-        {navItem.children && <ul class="submenu">{navItem.children.map(child => this.buildNavItemDOM(child))}</ul>}
+        {navItem.children && <ul class="sub-nav">{navItem.children.map(child => this.buildNavItemDOM(child))}</ul>}
       </li>
     );
   }
