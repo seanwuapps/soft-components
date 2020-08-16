@@ -19,6 +19,7 @@ app-root {
     overflow-x: hidden;
     border-top-right-radius: var(--radius);
     border-bottom-right-radius: var(--radius);
+    padding: $spacing * 2 $spacing * 4;
   }
 
   .footer {
