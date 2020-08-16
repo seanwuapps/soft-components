@@ -1,28 +1,28 @@
 app-root {
   display: grid;
   min-height: 100vh;
-  grid-template-columns: 240px auto 120px;
+  grid-template-columns: 220px auto;
   grid-template-rows: auto 1fr auto;
   gap: 0px 0px;
   grid-template-areas:
-    'left-side  header  right-side'
-    'left-side  main    right-side'
-    'left-side  footer  right-side';
+    'header  header'
+    'left-side  main'
+    'footer  footer';
 
   .header {
     grid-area: header;
   }
 
   .main {
+    margin-bottom: 20px;
     grid-area: main;
+    overflow-x: hidden;
+    border-top-right-radius: var(--round);
+    border-bottom-right-radius: var(--round);
   }
 
   .footer {
     grid-area: footer;
-  }
-
-  .right-side {
-    grid-area: right-side;
   }
 
   .left-side {

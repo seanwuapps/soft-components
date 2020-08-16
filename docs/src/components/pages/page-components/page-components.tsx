@@ -71,7 +71,7 @@ export class PageComponents {
       <Host>
         <div class="container">
           <div class="flex">
-            <aside class="w-3 pa-4 text-right-md">
+            <aside class="w-3 py-2 pr-2">
               <nav>
                 <div>{this.components.map(component => this.buildComponentNavDOM(component))}</div>
               </nav>

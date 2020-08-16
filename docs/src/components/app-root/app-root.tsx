@@ -1,6 +1,5 @@
 import { Component, Host, h } from '@stencil/core';
 import 'soft-components';
-import 'boxicons';
 
 @Component({
   tag: 'app-root',
@@ -15,7 +14,8 @@ export class AppRoot {
         </div>
 
         <app-header class="header"></app-header>
-        <main class="main">
+
+        <main class="main engraved-2">
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="page-home" exact={true} />
@@ -24,8 +24,7 @@ export class AppRoot {
             </stencil-route-switch>
           </stencil-router>
         </main>
-        <div class="footer">seanwuapps | github | twitter</div>
-        <aside class="right-side">right</aside>
+        <div class="footer engraved-2 pa-4 round">seanwuapps | github | twitter</div>
       </Host>
     );
   }

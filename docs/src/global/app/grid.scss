@@ -9,10 +9,13 @@
   display: block;
   width: 100%;
   padding: 0 7%;
-  @include media(xl) {
+  @include media(lg) {
     padding: 0;
-    max-width: 1024px;
+    max-width: 970px;
     margin: 0 auto;
+  }
+  @include media(xl) {
+    max-width: 1024px;
   }
 }
 
