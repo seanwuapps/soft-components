@@ -5,19 +5,19 @@ app-nav {
   }
   .nav {
     display: block;
-
     .nav-item {
       margin-bottom: 2 * $spacing;
 
       a {
         padding: $spacing * 2;
-        transform: translateX(3px);
         border-top-left-radius: var(--radius);
         border-bottom-left-radius: var(--radius);
         display: block;
         text-decoration: none;
         text-transform: capitalize;
+        position: relative;
         &.active {
+          transform: translateX(8px);
           background: var(--sc-bg-color);
         }
       }

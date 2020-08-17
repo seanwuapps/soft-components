@@ -35,7 +35,7 @@ export class AppNav {
   buildNavItemDOM(navItem: NavItem) {
     return (
       <li class="nav-item">
-        <stencil-route-link url={navItem.url} activeClass="active engraved-2">
+        <stencil-route-link url={navItem.url} activeClass="active engraved-4">
           {navItem.text}
         </stencil-route-link>
 
