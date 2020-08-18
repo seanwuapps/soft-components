@@ -8,13 +8,13 @@ import {
   Event,
   EventEmitter,
   Method,
-  State
+  State,
 } from "@stencil/core";
 import { validityMessages } from "../../utils/validity-messages";
 
 @Component({
   tag: "sc-input",
-  styleUrl: "input.scss"
+  styleUrl: "input.scss",
 })
 export class Input implements ComponentInterface {
   // @Element() el!: HTMLElement;
@@ -124,11 +124,6 @@ export class Input implements ComponentInterface {
    * If `true`, the user must fill in a value before submitting a form.
    */
   @Prop() required = false;
-
-  /**
-   * If `true`, the element will have its spelling and grammar checked.
-   */
-  @Prop() spellcheck = false;
 
   /**
    * Works with the min and max attributes to limit the increments at which a value can be set.
@@ -284,12 +279,12 @@ export class Input implements ComponentInterface {
         aria-disabled={this.disabled ? "true" : null}
         class={{
           "has-value": this.hasValue(),
-          "has-error": this.error.length > 0
+          "has-error": this.error.length > 0,
         }}
       >
         <input
           class="native-input"
-          ref={input => (this.nativeInput = input)}
+          ref={(input) => (this.nativeInput = input)}
           aria-labelledby={this.ariaLabelledby}
           disabled={this.disabled}
           accept={this.accept}
@@ -308,7 +303,6 @@ export class Input implements ComponentInterface {
           placeholder={this.placeholder || ""}
           readOnly={this.readonly}
           required={this.required}
-          spellCheck={this.spellcheck}
           step={this.step}
           size={this.size}
           type={this.type}
@@ -317,7 +311,7 @@ export class Input implements ComponentInterface {
           onBlur={this.onBlur}
           onFocus={this.onFocus}
           onKeyDown={this.onKeydown}
-          onChange={e => this.changeEvent.emit(e)}
+          onChange={(e) => this.changeEvent.emit(e)}
         />
         {this.clearInput && !this.readonly && !this.disabled && (
           <button
