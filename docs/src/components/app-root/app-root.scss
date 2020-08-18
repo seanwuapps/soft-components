@@ -6,7 +6,7 @@ app-root {
   grid-template-rows: auto 1fr auto;
   gap: 0px 0px;
   grid-template-areas:
-    'header  header'
+    'left-side  header'
     'left-side  main'
     'footer  footer';
 
@@ -17,9 +17,9 @@ app-root {
   .main {
     grid-area: main;
     overflow-x: hidden;
-    border-top-right-radius: var(--radius);
-    border-bottom-right-radius: var(--radius);
+    border-radius: var(--radius);
     padding: $spacing * 2 $spacing * 4;
+    margin-bottom: $spacing * 4;
   }
 
   .footer {

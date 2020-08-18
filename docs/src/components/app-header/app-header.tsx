@@ -9,11 +9,7 @@ export class AppHeader {
     return (
       <Host>
         <div class="py-2">
-          <div class="container">
-            <div class="flex align-center justify-between">
-              <app-logo></app-logo>
-            </div>
-          </div>
+          <div class="container"></div>
         </div>
       </Host>
     );

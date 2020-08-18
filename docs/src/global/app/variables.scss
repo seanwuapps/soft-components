@@ -36,7 +36,9 @@ $breakpoints: (
 ) !default;
 
 $radius: 20px;
+$radius-small: 10px;
 :root,
 html {
   --radius: #{$radius};
+  --radius-small: #{$radius-small};
 }

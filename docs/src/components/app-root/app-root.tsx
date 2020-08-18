@@ -10,6 +10,10 @@ export class AppRoot {
     return (
       <Host>
         <div class="left-side">
+          <stencil-route-link url="/" exact={true}>
+            <app-logo class="mb-3"></app-logo>
+          </stencil-route-link>
+
           <app-nav></app-nav>
         </div>
 

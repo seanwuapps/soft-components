@@ -29,7 +29,7 @@
     "docs.data": "stencil build --docs-json docs/docs.json"
   },
   "devDependencies": {
-    "@stencil/core": "^1.8.5",
+    "@stencil/core": "^1.17.3",
     "@stencil/postcss": "^1.0.1",
     "@stencil/sass": "^1.1.1",
     "@types/autoprefixer": "^9.6.1",

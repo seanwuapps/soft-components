@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Watch } from '@stencil/core';
+import { Component, Host, h, Prop, Watch, State } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 import { renderMarkdown } from '../../../helpers/md.js';
 import 'highlight.js/styles/dracula.css';
@@ -12,12 +12,11 @@ export class PageComponents {
    */
   @Prop() match: MatchResults;
 
-  content: string;
+  @State() content: string;
 
   @Watch('match')
   async loadContent() {
     const { name } = this.match.params;
-
     if (name.startsWith('sc-')) {
       const componentName = name.replace('sc-', '');
 
@@ -40,9 +39,7 @@ export class PageComponents {
   render() {
     return (
       <Host>
-        <div class="flex">
-          <div innerHTML={this.content}></div>
-        </div>
+        <div innerHTML={this.content}></div>
       </Host>
     );
   }
