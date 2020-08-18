@@ -1,6 +1,9 @@
 import { Component, Host, h, Prop, Watch, State } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
-import { renderMarkdown } from '../../../helpers/md.js';
+import docsData from '../../../../docs-data';
+import { JsonDocsComponent } from '../../../../docs-data';
+import { Title } from '../../docs-parts';
+
 import 'highlight.js/styles/dracula.css';
 @Component({
   tag: 'page-components',
@@ -12,34 +15,28 @@ export class PageComponents {
    */
   @Prop() match: MatchResults;
 
-  @State() content: string;
+  @State() component: JsonDocsComponent;
 
   @Watch('match')
-  async loadContent() {
+  async loadComponent() {
     const { name } = this.match.params;
     if (name.startsWith('sc-')) {
-      const componentName = name.replace('sc-', '');
-
-      const filePath = `/docs/components/${componentName}/readme.md`;
-
-      try {
-        //file exists
-        const md = await fetch(filePath).then(res => res.text());
-        this.content = renderMarkdown(md, true);
-      } catch (err) {
-        console.log({ err });
-      }
+      this.component = this.getComponentData(name);
     }
   }
 
+  getComponentData(tag) {
+    return docsData.components.find(component => component.tag === tag);
+  }
+
   async componentWillLoad() {
-    this.loadContent();
+    this.loadComponent();
   }
 
   render() {
     return (
       <Host>
-        <div innerHTML={this.content}></div>
+        <Title component={this.component}></Title>
       </Host>
     );
   }
