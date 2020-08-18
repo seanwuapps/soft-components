@@ -26,7 +26,7 @@
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "docs.data": "stencil build --docs-json docs/docs.json"
+    "docs.data": "stencil build --docs-json"
   },
   "devDependencies": {
     "@stencil/core": "^1.17.3",

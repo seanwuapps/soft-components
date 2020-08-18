@@ -12,14 +12,10 @@ export const config: Config = {
       esmLoaderPath: "../loader",
     },
     {
-      type: "docs-readme",
-      dir: "docs/src/docs/",
-      strict: true,
-    },
-    {
       type: "www",
       serviceWorker: null, // disable service workers
     },
+    { type: "docs-json", file: "docs/docs-data.json" },
   ],
   globalStyle: "src/global/app.css",
   plugins: [
