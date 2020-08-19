@@ -21,12 +21,11 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs",
+    "build": "stencil build --docs-json",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate",
-    "docs.data": "stencil build --docs-json"
+    "generate": "stencil generate"
   },
   "devDependencies": {
     "@stencil/core": "^1.17.3",

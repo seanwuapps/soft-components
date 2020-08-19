@@ -8,13 +8,22 @@ export class PageHome {
   render() {
     return (
       <Host>
-        <div class="container">
-          <div class="flex">
-            <h1 class="w-5">Soft components</h1>
-            <p class="w-5 ">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic magnam dolorem, quidem ex ducimus consequatur molestiae sunt est eveniet placeat porro sint excepturi
-              voluptatum aperiam maxime id alias, sit deleniti?
+        <div class="flex">
+          <h1>Soft components</h1>
+          <div>
+            <h2>A set of neumorphism components</h2>
+            <h3>Framework agnostic</h3>
+            <p>
+              Soft components are{' '}
+              <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">
+                Web Components
+              </a>
+              , utilising the browser's capability, the components work with (and without) any JavaScript framework.
             </p>
+            <p>
+              Find out <stencil-route-link url="/framework-integration"> how to integrate with your favourite framework</stencil-route-link>.
+            </p>
+            <h3>Highly customisable</h3>
           </div>
         </div>
       </Host>

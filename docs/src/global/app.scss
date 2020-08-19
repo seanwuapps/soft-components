@@ -18,3 +18,19 @@
 @import 'app/typography.scss';
 @import 'app/margin-padding.scss';
 @import 'app/grid.scss';
+
+/* Color theme */
+:root,
+html {
+  // 'white': #ffffff,
+  // 'blue': #0acdff,
+  // 'green': #45cb85,
+  // 'black': #153131,
+  // 'almond': #fdeac4,
+  --sc-bg-color: var(--color-blue);
+  --sc-text-color: var(--color-white);
+  --sc-highlight-color: rgba(255, 255, 255, 0.8);
+  --sc-shadow-color: rgba(0, 0, 0, 0.6);
+  --sc-secondary-color: ;
+  --sc-active-color: #c586c0;
+}

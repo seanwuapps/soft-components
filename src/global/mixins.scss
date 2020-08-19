@@ -1,14 +1,17 @@
+@function highlight($factor: 1) {
+  @return -5px * $factor -5px * $factor 26px * $factor 0 var(--sc-highlight-color, #ffffff);
+}
+@function shadow($factor: 1) {
+  @return 5px * $factor 5px * $factor 26px * $factor 0
+    var(--sc-shadow-color, rgba(0, 0, 0, 0.2));
+}
+
 @mixin raised($factor: 1) {
-  box-shadow: -5px * $factor -5px * $factor 26px * $factor 0 var(--sc-highlight-color, #ffffff),
-    5px * $factor 5px * $factor 26px * $factor 0
-      var(--sc-shadow-color, rgba(0, 0, 0, 0.2));
+  box-shadow: highlight($factor), shadow($factor);
 }
 
 @mixin engraved($factor: 1) {
-  box-shadow: inset -5px * $factor -5px * $factor 24px * $factor 0
-      var(--sc-highlight-color, #ffffff),
-    inset 5px * $factor 5px * $factor 24px * $factor 0
-      var(--sc-shadow-color, rgba(0, 0, 0, 0.1));
+  box-shadow: inset highlight($factor), inset shadow($factor);
 }
 
 @mixin engraved-border-gradient() {

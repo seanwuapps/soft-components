@@ -17,7 +17,7 @@ app-nav {
         text-transform: capitalize;
         position: relative;
         &.active {
-          transform: translateX(8px);
+          transform: translateX(3px);
           background: var(--sc-bg-color);
         }
       }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-08-18T11:11:44",
+  "timestamp": "2020-08-18T23:13:10",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.17.3",
@@ -10,6 +10,7 @@
       "filePath": "./src/components/button/button.tsx",
       "encapsulation": "none",
       "tag": "sc-button",
+      "readme": "# sc-button\n\n\n",
       "docs": "",
       "docsTags": [
         {
@@ -306,6 +307,7 @@
       "filePath": "./src/components/card/card.tsx",
       "encapsulation": "shadow",
       "tag": "sc-card",
+      "readme": "# sc-card\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -393,6 +395,7 @@
       "filePath": "./src/components/input/input.tsx",
       "encapsulation": "none",
       "tag": "sc-input",
+      "readme": "# sc-input\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -918,6 +921,7 @@
       "filePath": "./src/components/tab-button/tab-button.tsx",
       "encapsulation": "shadow",
       "tag": "sc-tab-button",
+      "readme": "# sc-tab-button\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1068,6 +1072,7 @@
       "filePath": "./src/components/tab-content/tab-content.tsx",
       "encapsulation": "shadow",
       "tag": "sc-tab-content",
+      "readme": "# sc-tab-content\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -1139,6 +1144,7 @@
       "filePath": "./src/components/tabs/tabs.tsx",
       "encapsulation": "none",
       "tag": "sc-tabs",
+      "readme": "# sc-tabs\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -1177,6 +1183,7 @@
       "filePath": "./src/components/toggle/toggle.tsx",
       "encapsulation": "none",
       "tag": "sc-toggle",
+      "readme": "# sc-toggle\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {

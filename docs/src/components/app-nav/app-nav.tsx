@@ -12,12 +12,20 @@ export class AppNav {
       url: '/getting-started',
       children: [
         {
+          text: 'Why soft components?',
+          url: '/why-soft-components',
+        },
+        {
           text: 'Install',
           url: '/install',
         },
         {
           text: 'Framework integration',
           url: '/framework-integration',
+        },
+        {
+          text: 'Theme builder',
+          url: '/theme-builder',
         },
       ],
     },
@@ -27,15 +35,15 @@ export class AppNav {
       children: buildComponentNavArray(),
     },
     {
-      text: 'Why soft components?',
-      url: '/why-soft-components',
+      text: 'Helper classes',
+      url: '/helper-classes',
     },
   ];
 
   buildNavItemDOM(navItem: NavItem) {
     return (
       <li class="nav-item">
-        <stencil-route-link url={navItem.url} activeClass="active engraved-4">
+        <stencil-route-link url={navItem.url} activeClass="active engraved-shadow-4">
           {navItem.text}
         </stencil-route-link>
 
