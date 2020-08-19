@@ -1,8 +1,8 @@
 @function highlight($factor: 1) {
-  @return -5px * $factor -5px * $factor 26px * $factor 0 var(--sc-highlight-color, #ffffff);
+  @return -10px * $factor -10px * $factor 10px * $factor 0 var(--sc-highlight-color, #ffffff);
 }
 @function shadow($factor: 1) {
-  @return 5px * $factor 5px * $factor 26px * $factor 0
+  @return 10px * $factor 10px * $factor 10px * $factor 0
     var(--sc-shadow-color, rgba(0, 0, 0, 0.2));
 }
 
