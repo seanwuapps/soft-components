@@ -1,8 +1,8 @@
 :root,
 html {
   /* shadow colors*/
-  --sc-highlight-color: #ffffff;
-  --sc-shadow-color: rgba(0, 0, 0, 0.2);
+  --sc-highlight-color: rgba(255, 255, 255, 0.8);
+  --sc-shadow-color: rgba(80, 80, 80, 0.2);
   /* colors */
   --sc-bg-color: #f6f6f8;
   --sc-text-color: #333333;

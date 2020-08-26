@@ -1,12 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 @font-face {
   font-family: Quicksand;
   src: url('/assets/fonts/Quicksand-VF.ttf') format('truetype-variations');
 }
 
-$title-font: Quicksand, sans-serif;
-$body-font: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+$title-font: 'Montserrat', sans-serif;
+$body-font: Quicksand, sans-serif;
 body {
   font-family: $body-font;
+  font-size: 16px;
 }
 h1,
 h2,
@@ -15,17 +17,7 @@ h4,
 h5,
 h6 {
   font-family: $title-font;
-  line-height: 1.4em;
-}
-h1,
-h2,
-h3 {
-  font-variation-settings: 'wght' 600;
-}
-h4,
-h5,
-h6 {
-  font-variation-settings: 'wght' 500;
+  line-height: 1em;
 }
 
 h1 {
@@ -43,4 +35,9 @@ h4 {
 h5,
 h6 {
   font-size: 2 * $spacing;
+}
+
+p {
+  font-size: 16px;
+  padding-top: 4px;
 }

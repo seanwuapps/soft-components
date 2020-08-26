@@ -16,9 +16,12 @@ app-nav {
         text-decoration: none;
         text-transform: capitalize;
         position: relative;
+        color: var(--sc-text-color);
+
         &.active {
-          transform: translateX(3px);
           background: var(--sc-bg-color);
+          box-shadow: -5px 0 20px var(--sc-shadow-color) inset;
+          transform: translateX(10px);
         }
       }
     }

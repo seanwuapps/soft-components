@@ -12,6 +12,10 @@ export class AppNav {
       url: '/getting-started',
       children: [
         {
+          text: 'The theory',
+          url: '/theory',
+        },
+        {
           text: 'Why soft components?',
           url: '/why-soft-components',
         },
@@ -43,7 +47,7 @@ export class AppNav {
   buildNavItemDOM(navItem: NavItem) {
     return (
       <li class="nav-item">
-        <stencil-route-link url={navItem.url} activeClass="active engraved-shadow-4">
+        <stencil-route-link url={navItem.url} activeClass="active">
           {navItem.text}
         </stencil-route-link>
 

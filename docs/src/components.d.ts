@@ -27,6 +27,8 @@ export namespace Components {
     }
     interface PageNotfound {
     }
+    interface PageStandard {
+    }
     interface StylingSandbox {
     }
 }
@@ -79,6 +81,12 @@ declare global {
         prototype: HTMLPageNotfoundElement;
         new (): HTMLPageNotfoundElement;
     };
+    interface HTMLPageStandardElement extends Components.PageStandard, HTMLStencilElement {
+    }
+    var HTMLPageStandardElement: {
+        prototype: HTMLPageStandardElement;
+        new (): HTMLPageStandardElement;
+    };
     interface HTMLStylingSandboxElement extends Components.StylingSandbox, HTMLStencilElement {
     }
     var HTMLStylingSandboxElement: {
@@ -94,6 +102,7 @@ declare global {
         "page-helper-classes": HTMLPageHelperClassesElement;
         "page-home": HTMLPageHomeElement;
         "page-notfound": HTMLPageNotfoundElement;
+        "page-standard": HTMLPageStandardElement;
         "styling-sandbox": HTMLStylingSandboxElement;
     }
 }
@@ -118,6 +127,8 @@ declare namespace LocalJSX {
     }
     interface PageNotfound {
     }
+    interface PageStandard {
+    }
     interface StylingSandbox {
     }
     interface IntrinsicElements {
@@ -129,6 +140,7 @@ declare namespace LocalJSX {
         "page-helper-classes": PageHelperClasses;
         "page-home": PageHome;
         "page-notfound": PageNotfound;
+        "page-standard": PageStandard;
         "styling-sandbox": StylingSandbox;
     }
 }
@@ -144,6 +156,7 @@ declare module "@stencil/core" {
             "page-helper-classes": LocalJSX.PageHelperClasses & JSXBase.HTMLAttributes<HTMLPageHelperClassesElement>;
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
             "page-notfound": LocalJSX.PageNotfound & JSXBase.HTMLAttributes<HTMLPageNotfoundElement>;
+            "page-standard": LocalJSX.PageStandard & JSXBase.HTMLAttributes<HTMLPageStandardElement>;
             "styling-sandbox": LocalJSX.StylingSandbox & JSXBase.HTMLAttributes<HTMLStylingSandboxElement>;
         }
     }
