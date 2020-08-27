@@ -17,7 +17,7 @@ export const config: Config = {
     },
     { type: "docs-json", file: "docs/docs-data.json" },
   ],
-  globalStyle: "src/global/app.css",
+  globalStyle: "src/global/app.scss",
   plugins: [
     sass({
       injectGlobalPaths: ["src/global/mixins.scss"],
