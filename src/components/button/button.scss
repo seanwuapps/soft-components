@@ -1,5 +1,4 @@
-:root,
-html {
+sc-button {
   /**
     * @prop --sc-button-bg-color: Background of the button
     * @prop --sc-button-text-color:  Button text color
@@ -24,8 +23,7 @@ html {
   --sc-button-text-hover-color: var(--sc-secondary-color, #646695);
   --sc-button-text-active-color: var(--sc-active-color, #c586c0);
   --sc-button-width: auto;
-}
-sc-button {
+  //----------------------------//
   display: inline-block;
   &[type] {
     -webkit-appearance: none;

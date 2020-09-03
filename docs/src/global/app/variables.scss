@@ -41,9 +41,4 @@ $radius-small: 10px;
 html {
   --radius: #{$radius};
   --radius-small: #{$radius-small};
-
-  // also set these to get styles working correctly
-  --sc-border-radius: #{$radius-small};
-  --sc-button-padding-x: 40px;
-  --sc-button-padding-y: 40px;
 }
