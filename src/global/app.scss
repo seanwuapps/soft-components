@@ -1,11 +1,11 @@
-@import "variables.css";
+// @import "variables.css";
 @import "mixins";
 @import "dark-mode"; // @todo move dark mode into own css file
 
 html,
 body {
   font-size: 16px;
-  background-color: var(--sc-bg-color, #f6f6f8);
+  background-color: var(--sc-bg-color, #aa7fc6);
   color: var(--sc-text-color, #333333);
 }
 

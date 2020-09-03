@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { MatchResults } from "@stencil/router";
+import { MatchResults, RouterHistory } from "@stencil/router";
 export namespace Components {
     interface AppHeader {
     }
@@ -28,6 +28,11 @@ export namespace Components {
     interface PageNotfound {
     }
     interface PageStandard {
+        "history": RouterHistory;
+        /**
+          * url params matcher
+         */
+        "match": MatchResults;
     }
     interface StylingSandbox {
     }
@@ -128,6 +133,11 @@ declare namespace LocalJSX {
     interface PageNotfound {
     }
     interface PageStandard {
+        "history"?: RouterHistory;
+        /**
+          * url params matcher
+         */
+        "match"?: MatchResults;
     }
     interface StylingSandbox {
     }

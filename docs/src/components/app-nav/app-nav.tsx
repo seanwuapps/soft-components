@@ -47,10 +47,9 @@ export class AppNav {
   buildNavItemDOM(navItem: NavItem) {
     return (
       <li class="nav-item">
-        <stencil-route-link url={navItem.url} activeClass="active">
+        <stencil-route-link url={navItem.url} activeClass="active engraved-2">
           {navItem.text}
         </stencil-route-link>
-
         {navItem.children && <ul class="sub-nav">{navItem.children.map(child => this.buildNavItemDOM(child))}</ul>}
       </li>
     );

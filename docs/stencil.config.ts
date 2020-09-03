@@ -18,6 +18,11 @@ export const config: Config = {
       serviceWorker: null,
       baseUrl: 'https://soft-components.web.app/',
       prerenderConfig: './prerender.config.ts',
+      copy: [
+        {
+          src: 'site-content',
+        },
+      ],
     },
   ],
   plugins: [

@@ -19,7 +19,7 @@ export class AppRoot {
 
         <app-header class="header"></app-header>
 
-        <main class="main engraved-4">
+        <main class="main">
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="page-home" exact={true} />
@@ -29,7 +29,7 @@ export class AppRoot {
             </stencil-route-switch>
           </stencil-router>
         </main>
-        <div class="footer engraved-4 pa-4 round">seanwuapps | github | twitter</div>
+        <div class="footer pa-4 round">seanwuapps | github | twitter</div>
       </Host>
     );
   }

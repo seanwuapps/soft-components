@@ -10,8 +10,7 @@ app-nav {
 
       a {
         padding: $spacing * 2;
-        border-top-left-radius: var(--radius-small);
-        border-bottom-left-radius: var(--radius-small);
+        border-radius: var(--radius-small);
         display: block;
         text-decoration: none;
         text-transform: capitalize;
@@ -20,8 +19,6 @@ app-nav {
 
         &.active {
           background: var(--sc-bg-color);
-          box-shadow: -5px 0 20px var(--sc-shadow-color) inset;
-          transform: translateX(10px);
         }
       }
     }
