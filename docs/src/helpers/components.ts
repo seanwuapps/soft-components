@@ -1,8 +1,12 @@
 import { NavItem } from './defs';
-export const list = ['button', 'card', 'input', 'tab-button', 'tab-content', 'tabs', 'toggle'];
+import { JsonDocsComponent } from '../../docs-data';
+export const componentList = ['button', 'card', 'input', 'tab-button', 'tab-content', 'tabs', 'toggle'];
 export const buildComponentNavArray: () => NavItem[] = function () {
-  return list.map(item => ({
+  return componentList.map(item => ({
     text: item,
     url: '/components/sc-' + item,
   }));
 };
+
+export const getKey = (component: JsonDocsComponent) => component.tag.replace('sc-', '');
+export const getName = (component: JsonDocsComponent) => getKey(component).replace(new RegExp('-', 'g'), ' ');

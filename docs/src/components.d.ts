@@ -15,6 +15,11 @@ export namespace Components {
     }
     interface AppRoot {
     }
+    interface ComponentSidebar {
+    }
+    interface DocUsage {
+        "usage": string;
+    }
     interface PageComponents {
         /**
           * url params matcher
@@ -62,6 +67,18 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLComponentSidebarElement extends Components.ComponentSidebar, HTMLStencilElement {
+    }
+    var HTMLComponentSidebarElement: {
+        prototype: HTMLComponentSidebarElement;
+        new (): HTMLComponentSidebarElement;
+    };
+    interface HTMLDocUsageElement extends Components.DocUsage, HTMLStencilElement {
+    }
+    var HTMLDocUsageElement: {
+        prototype: HTMLDocUsageElement;
+        new (): HTMLDocUsageElement;
+    };
     interface HTMLPageComponentsElement extends Components.PageComponents, HTMLStencilElement {
     }
     var HTMLPageComponentsElement: {
@@ -103,6 +120,8 @@ declare global {
         "app-logo": HTMLAppLogoElement;
         "app-nav": HTMLAppNavElement;
         "app-root": HTMLAppRootElement;
+        "component-sidebar": HTMLComponentSidebarElement;
+        "doc-usage": HTMLDocUsageElement;
         "page-components": HTMLPageComponentsElement;
         "page-helper-classes": HTMLPageHelperClassesElement;
         "page-home": HTMLPageHomeElement;
@@ -119,6 +138,11 @@ declare namespace LocalJSX {
     interface AppNav {
     }
     interface AppRoot {
+    }
+    interface ComponentSidebar {
+    }
+    interface DocUsage {
+        "usage"?: string;
     }
     interface PageComponents {
         /**
@@ -146,6 +170,8 @@ declare namespace LocalJSX {
         "app-logo": AppLogo;
         "app-nav": AppNav;
         "app-root": AppRoot;
+        "component-sidebar": ComponentSidebar;
+        "doc-usage": DocUsage;
         "page-components": PageComponents;
         "page-helper-classes": PageHelperClasses;
         "page-home": PageHome;
@@ -162,6 +188,8 @@ declare module "@stencil/core" {
             "app-logo": LocalJSX.AppLogo & JSXBase.HTMLAttributes<HTMLAppLogoElement>;
             "app-nav": LocalJSX.AppNav & JSXBase.HTMLAttributes<HTMLAppNavElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "component-sidebar": LocalJSX.ComponentSidebar & JSXBase.HTMLAttributes<HTMLComponentSidebarElement>;
+            "doc-usage": LocalJSX.DocUsage & JSXBase.HTMLAttributes<HTMLDocUsageElement>;
             "page-components": LocalJSX.PageComponents & JSXBase.HTMLAttributes<HTMLPageComponentsElement>;
             "page-helper-classes": LocalJSX.PageHelperClasses & JSXBase.HTMLAttributes<HTMLPageHelperClassesElement>;
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;

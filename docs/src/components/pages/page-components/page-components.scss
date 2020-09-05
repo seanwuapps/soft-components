@@ -1,8 +1,13 @@
 page-components {
-  display: flex;
-  align-items: stretch;
   min-height: 100vh;
-  aside {
+  main {
+    .component-title {
+      h1 {
+        text-transform: capitalize;
+      }
+    }
+  }
+  component-sidebar {
     display: none;
     @include media(sm) {
       display: block;

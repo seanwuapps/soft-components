@@ -2,7 +2,7 @@ import { Component, Host, h, Prop, Watch, State } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 import docsData from '../../../../docs-data';
 import { JsonDocsComponent } from '../../../../docs-data';
-import { Title } from '../../docs-parts';
+import { getName, getKey } from '../../../helpers/components';
 
 @Component({
   tag: 'page-components',
@@ -33,9 +33,23 @@ export class PageComponents {
   }
 
   render() {
+    const key = getKey(this.component);
+    const name = getName(this.component);
+    console.log({ name });
     return (
       <Host>
-        <Title component={this.component}></Title>
+        <div class="flex align-stretch">
+          {/* Main */}
+          <main class="w-8">
+            <div class="component-title">
+              <h1>{name}</h1>
+              <code>&lt;{this.component.tag}&gt;</code>
+            </div>
+
+            {/* usage */}
+            {this.component.usage[key] && <doc-usage usage={this.component.usage[key]}></doc-usage>}
+          </main>
+        </div>
       </Host>
     );
   }

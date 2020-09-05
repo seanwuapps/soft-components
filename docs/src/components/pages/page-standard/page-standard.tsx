@@ -1,8 +1,6 @@
 import { Component, Host, h, Prop, Watch, State } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
-import md from 'markdown-it';
-import hljs from 'highlight.js';
-
+import md from '../../../helpers/md';
 @Component({
   tag: 'page-standard',
   styleUrl: 'page-standard.scss',
@@ -20,17 +18,6 @@ export class PageStandard {
 
   @Prop() history: RouterHistory;
 
-  private md = md({
-    highlight: function (str, lang) {
-      if (lang && hljs.getLanguage(lang)) {
-        try {
-          return '<pre class="hljs"><code>' + hljs.highlight(lang, str, true).value + '</code></pre>';
-        } catch (__) {}
-      }
-      return '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>';
-    },
-  });
-
   // private content = '';
   @Watch('match')
   async loadPage() {
@@ -44,7 +31,7 @@ export class PageStandard {
 
       this.notfound = false;
       let text = await response.text();
-      this.content = this.md.render(text);
+      this.content = md.render(text);
     } catch (error) {
       this.notfound = true;
     } finally {
