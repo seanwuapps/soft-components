@@ -53,22 +53,12 @@ export class PageStandard {
   }
 
   componentDidLoad() {
-    console.log('will load');
     this.loadPage();
   }
 
   render() {
     if (this.notfound) {
-      return (
-        <div class="page-not-found">
-          <div>
-            <h1>Sorry, that page doesn't exist.</h1>
-            <sc-button block href="/">
-              Back to safety
-            </sc-button>
-          </div>
-        </div>
-      );
+      return <page-notfound></page-notfound>;
     }
 
     if (this.loading) {

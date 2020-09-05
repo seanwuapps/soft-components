@@ -8,10 +8,10 @@ export class PageHome {
   render() {
     return (
       <Host>
-        <h1>Soft components</h1>
-        <p>A set of neumorphism components</p>
         <div class="flex justify-between">
           <div class="w-6">
+            <h1>Soft components</h1>
+            <p>A set of neumorphism components</p>
             <h4>Framework agnostic</h4>
             <p>
               Soft components are{' '}
