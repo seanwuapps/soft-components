@@ -4,7 +4,6 @@ import docsData from '../../../../docs-data';
 import { JsonDocsComponent } from '../../../../docs-data';
 import { Title } from '../../docs-parts';
 
-import 'highlight.js/styles/dracula.css';
 @Component({
   tag: 'page-components',
   styleUrl: 'page-components.scss',

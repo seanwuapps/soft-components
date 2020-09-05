@@ -1,24 +1,28 @@
-.flex {
-  display: flex;
-  flex-direction: column;
-  @include media(md) {
-    flex-direction: row;
+body {
+  .flex {
+    display: flex;
+    flex-direction: column;
+    @include media(md) {
+      flex-direction: row;
+      > * {
+        margin-top: 0;
+      }
+    }
+  }
+  .container {
+    display: block;
+    width: 100%;
+    padding: 0 7%;
+    @include media(lg) {
+      padding: 0;
+      max-width: 970px;
+      margin: 0 auto;
+    }
+    @include media(xl) {
+      max-width: 1024px;
+    }
   }
 }
-.container {
-  display: block;
-  width: 100%;
-  padding: 0 7%;
-  @include media(lg) {
-    padding: 0;
-    max-width: 970px;
-    margin: 0 auto;
-  }
-  @include media(xl) {
-    max-width: 1024px;
-  }
-}
-
 // helpers
 $align-positions: (
   start: flex-start,

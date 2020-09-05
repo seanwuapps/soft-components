@@ -110,6 +110,12 @@ sc-button {
       }
     }
   }
+  &.icon-text {
+    .button-inner {
+      display: flex;
+      align-items: center;
+    }
+  }
   &.bordered {
     a,
     button {

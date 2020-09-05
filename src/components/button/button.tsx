@@ -71,9 +71,14 @@ export class Button {
   @Prop() type: "submit" | "reset" | "button" = "button";
 
   /**
-   * If component will fade in on load
+   * If this button has both icon and text
    */
-  @Prop() fadeIn?: boolean | undefined = false;
+  @Prop() iconText?: boolean | undefined = false;
+
+  /**
+   * If this button has both icon and text
+   */
+  @Prop() iconSelector?: string = "i";
 
   /**
    * Emitted when the button has focus.
@@ -112,7 +117,7 @@ export class Button {
       icon,
       block,
       bordered,
-      fadeIn,
+      iconText,
     } = this;
     const TagType = href === undefined ? "button" : "a";
     const attrs =
@@ -124,7 +129,6 @@ export class Button {
             rel,
             target,
           };
-
     return (
       <Host
         aria-disabled={disabled ? "true" : null}
@@ -132,7 +136,7 @@ export class Button {
           icon,
           block,
           bordered,
-          fadeIn,
+          "icon-text": iconText,
         }}
       >
         <TagType

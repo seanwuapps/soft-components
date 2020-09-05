@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-09-03T10:53:40",
+  "timestamp": "2020-09-05T06:04:13",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.17.3",
@@ -90,23 +90,6 @@
           "required": false
         },
         {
-          "name": "fadeIn",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "fade-in",
-          "reflectToAttr": false,
-          "docs": "If component will fade in on load",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "href",
           "type": "string",
           "mutable": false,
@@ -129,6 +112,40 @@
           "attr": "icon",
           "reflectToAttr": true,
           "docs": "Icon only button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "iconSelector",
+          "type": "string",
+          "mutable": false,
+          "attr": "icon-selector",
+          "reflectToAttr": false,
+          "docs": "If this button has both icon and text",
+          "docsTags": [],
+          "default": "\"i\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "iconText",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "icon-text",
+          "reflectToAttr": false,
+          "docs": "If this button has both icon and text",
           "docsTags": [],
           "default": "false",
           "values": [

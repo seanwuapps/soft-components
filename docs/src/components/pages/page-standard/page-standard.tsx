@@ -2,12 +2,10 @@ import { Component, Host, h, Prop, Watch, State } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 import md from 'markdown-it';
 import hljs from 'highlight.js';
-import 'highlight.js/styles/darcula.css';
 
 @Component({
   tag: 'page-standard',
   styleUrl: 'page-standard.scss',
-  shadow: true,
 })
 export class PageStandard {
   /**

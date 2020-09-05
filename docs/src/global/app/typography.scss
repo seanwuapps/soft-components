@@ -6,38 +6,57 @@
 
 $title-font: 'Montserrat', sans-serif;
 $body-font: Quicksand, sans-serif;
+$font-scale-ratio: 1.2;
+
+//----------------------------//
+// Math.pow function
+// Credit: https://css-tricks.com/snippets/sass/power-function/
+//----------------------------//
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
 body {
   font-family: $body-font;
   font-size: 16px;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $title-font;
-  line-height: 1em;
-}
-
-h1 {
-  font-size: 12 * $spacing;
-}
-h2 {
-  font-size: 9 * $spacing;
-}
-h3 {
-  font-size: 6 * $spacing;
-}
-h4 {
-  font-size: 4 * $spacing;
-}
-h5,
-h6 {
-  font-size: 2 * $spacing;
+  font-variation-settings: 'wght' 500;
+  p {
+    font-size: 1em;
+  }
+  @for $i from 1 through 6 {
+    h#{7-$i} {
+      font-size: #{pow($font-scale-ratio, $i)}em;
+      // font-size: #{$i * $font-scale-ratio}em;
+      line-height: 1.1em;
+    }
+  }
 }
 
-p {
-  font-size: 16px;
-  padding-top: 4px;
+.main {
+  * + * {
+    margin-top: 2rem;
+  }
+  sc-button {
+    &[icon-text] {
+      box-icon {
+        margin-right: $spacing;
+      }
+    }
+
+    .button-inner {
+      * {
+        margin-top: 0;
+      }
+    }
+  }
+  a {
+    color: var(--color-white);
+  }
 }

@@ -7,7 +7,6 @@
 
   Any global CSS variables should also be applied here.
 */
-
 @import '../../node_modules/soft-components/dist/soft-components/soft-components.css';
 @import '../../node_modules/boxicons/css/boxicons.min.css';
 
@@ -18,6 +17,7 @@
 @import 'app/typography.scss';
 @import 'app/margin-padding.scss';
 @import 'app/grid.scss';
+@import 'app/code.scss';
 
 /* Color theme */
 :root,
@@ -30,7 +30,7 @@ html {
   --sc-bg-color: var(--color-blue);
   --sc-text-color: var(--color-white);
   --sc-highlight-color: rgba(255, 255, 255, 0.4);
-  --sc-shadow-color: rgba(0, 0, 0, 0.2);
+  --sc-shadow-color: #00000033;
   --sc-secondary-color: var(--color-almond);
   --sc-active-color: #c586c0;
 }
