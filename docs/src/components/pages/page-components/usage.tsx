@@ -1,5 +1,4 @@
 import { Component, h, Prop } from '@stencil/core';
-import md from '../../../helpers/md';
 
 @Component({
   tag: 'doc-usage',
@@ -7,6 +6,10 @@ import md from '../../../helpers/md';
 export class Usage {
   @Prop() usage: string;
   render() {
-    return <div innerHTML={md.render(this.usage)}></div>;
+    return (
+      <div>
+        <code-block code={this.usage}></code-block>
+      </div>
+    );
   }
 }

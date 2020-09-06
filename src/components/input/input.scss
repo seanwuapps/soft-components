@@ -46,7 +46,8 @@ sc-input {
 
   &.has-error {
     input {
-      --sc-shadow-color: var(--sc-input-error-text-color);
+      border: 1px solid var(--sc-input-error-text-color);
+      // --sc-shadow-color: var(--sc-input-error-text-color);
     }
 
     .error-message {

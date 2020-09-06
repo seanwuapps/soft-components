@@ -11,7 +11,9 @@ export class PageHome {
         <div class="flex justify-between">
           <div class="w-6">
             <h1>Soft components</h1>
-            <p>A set of neumorphism components</p>
+            <p>
+              A set of <strong>decorative</strong> neumorphism components
+            </p>
             <h4>Framework agnostic</h4>
             <p>
               Soft components are{' '}
@@ -30,7 +32,7 @@ export class PageHome {
           </div>
           <div class="w-4 px-2">
             <sc-card>
-              <h4>Get connected</h4>
+              <h5>Get in touch</h5>
               <p>I love talking to people to see how things can be improved.</p>
               <sc-button
                 block

@@ -33,22 +33,29 @@ export class PageComponents {
   }
 
   render() {
+    if (!this.component) {
+      return (
+        <div>
+          <h1>Components</h1>
+          <p>Use the site navigation to find a component you desire.</p>
+        </div>
+      );
+    }
     const key = getKey(this.component);
     const name = getName(this.component);
-    console.log({ name });
     return (
       <Host>
         <div class="flex align-stretch">
           {/* Main */}
-          <main class="w-8">
+          <section class="w-8">
             <div class="component-title">
               <h1>{name}</h1>
               <code>&lt;{this.component.tag}&gt;</code>
             </div>
 
             {/* usage */}
-            {this.component.usage[key] && <doc-usage usage={this.component.usage[key]}></doc-usage>}
-          </main>
+            {this.component.usage[key] && <code-block code={this.component.usage[key]}></code-block>}
+          </section>
         </div>
       </Host>
     );

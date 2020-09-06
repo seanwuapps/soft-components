@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@font-face {
-  font-family: Quicksand;
-  src: url('/assets/fonts/Quicksand-VF.ttf') format('truetype-variations');
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu&display=swap');
+// @font-face {
+//   font-family: Quicksand;
+//   src: url('/assets/fonts/Quicksand-VF.ttf') format('truetype-variations');
+// }
 
-$title-font: 'Montserrat', sans-serif;
-$body-font: Quicksand, sans-serif;
+$title-font: 'Ubuntu', sans-serif;
+$body-font: 'Montserrat', sans-serif;
 $font-scale-ratio: 1.2;
 
 //----------------------------//

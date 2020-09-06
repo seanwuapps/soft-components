@@ -15,6 +15,9 @@ export namespace Components {
     }
     interface AppRoot {
     }
+    interface CodeBlock {
+        "code": string;
+    }
     interface ComponentSidebar {
     }
     interface DocUsage {
@@ -66,6 +69,12 @@ declare global {
     var HTMLAppRootElement: {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
+    };
+    interface HTMLCodeBlockElement extends Components.CodeBlock, HTMLStencilElement {
+    }
+    var HTMLCodeBlockElement: {
+        prototype: HTMLCodeBlockElement;
+        new (): HTMLCodeBlockElement;
     };
     interface HTMLComponentSidebarElement extends Components.ComponentSidebar, HTMLStencilElement {
     }
@@ -120,6 +129,7 @@ declare global {
         "app-logo": HTMLAppLogoElement;
         "app-nav": HTMLAppNavElement;
         "app-root": HTMLAppRootElement;
+        "code-block": HTMLCodeBlockElement;
         "component-sidebar": HTMLComponentSidebarElement;
         "doc-usage": HTMLDocUsageElement;
         "page-components": HTMLPageComponentsElement;
@@ -138,6 +148,9 @@ declare namespace LocalJSX {
     interface AppNav {
     }
     interface AppRoot {
+    }
+    interface CodeBlock {
+        "code"?: string;
     }
     interface ComponentSidebar {
     }
@@ -170,6 +183,7 @@ declare namespace LocalJSX {
         "app-logo": AppLogo;
         "app-nav": AppNav;
         "app-root": AppRoot;
+        "code-block": CodeBlock;
         "component-sidebar": ComponentSidebar;
         "doc-usage": DocUsage;
         "page-components": PageComponents;
@@ -188,6 +202,7 @@ declare module "@stencil/core" {
             "app-logo": LocalJSX.AppLogo & JSXBase.HTMLAttributes<HTMLAppLogoElement>;
             "app-nav": LocalJSX.AppNav & JSXBase.HTMLAttributes<HTMLAppNavElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "code-block": LocalJSX.CodeBlock & JSXBase.HTMLAttributes<HTMLCodeBlockElement>;
             "component-sidebar": LocalJSX.ComponentSidebar & JSXBase.HTMLAttributes<HTMLComponentSidebarElement>;
             "doc-usage": LocalJSX.DocUsage & JSXBase.HTMLAttributes<HTMLDocUsageElement>;
             "page-components": LocalJSX.PageComponents & JSXBase.HTMLAttributes<HTMLPageComponentsElement>;

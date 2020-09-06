@@ -1,4 +1,3 @@
-```html
 <!-- Default -->
 <sc-button onclick="alert('yo')">Alert</sc-button>
 
@@ -19,5 +18,3 @@
 <sc-button bordered>
   <i class="la la-back"></i> Bordered button
 </sc-button>
-
-```

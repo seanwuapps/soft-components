@@ -1,6 +1,5 @@
 @import '../../../node_modules/highlight.js/scss/ir-black.scss';
 .hljs {
-  border-top-left-radius: var(--radius-small);
-  border-bottom-right-radius: var(--radius-small);
-  padding: $spacing;
+  border-radius: var(--radius-small);
+  padding: $spacing * 4;
 }

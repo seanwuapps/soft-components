@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-09-05T09:19:48",
+  "timestamp": "2020-09-06T08:52:45",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.17.3",
@@ -19,7 +19,7 @@
         }
       ],
       "usage": {
-        "button": "```html\n<!-- Default -->\n<sc-button onclick=\"alert('yo')\">Alert</sc-button>\n\n<!-- Anchor -->\n<sc-button href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\"\n  >Anchor\n</sc-button>\n\n<!-- Block level -->\n<sc-button block>Block Button</sc-button>\n\n<!-- Icon -->\n<sc-button icon>\n  <i class=\"la la-home\"></i>\n</sc-button>\n\n<!-- Bordered -->\n<sc-button bordered>\n  <i class=\"la la-back\"></i> Bordered button\n</sc-button>\n\n```\n"
+        "button": "<!-- Default -->\n<sc-button onclick=\"alert('yo')\">Alert</sc-button>\n\n<!-- Anchor -->\n<sc-button href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\"\n  >Anchor\n</sc-button>\n\n<!-- Block level -->\n<sc-button block>Block Button</sc-button>\n\n<!-- Icon -->\n<sc-button icon>\n  <i class=\"la la-home\"></i>\n</sc-button>\n\n<!-- Bordered -->\n<sc-button bordered>\n  <i class=\"la la-back\"></i> Bordered button\n</sc-button>"
       },
       "props": [
         {
@@ -328,7 +328,7 @@
       "docs": "",
       "docsTags": [],
       "usage": {
-        "card": "```html\r\n<sc-card card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\r\n<sc-card engraved card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\r\n<sc-card bordered card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\r\n```\r\n"
+        "card": "<sc-card card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n<sc-card engraved card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n<sc-card bordered card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n"
       },
       "props": [
         {
@@ -416,7 +416,7 @@
       "docs": "",
       "docsTags": [],
       "usage": {
-        "input": "```html\n<label for=\"email\">Email</label>\n<sc-input type=\"email\" required name=\"email\" id=\"email\"></sc-input>\n\n<label for=\"password\">Password</label>\n<sc-input type=\"password\" required name=\"password\" maxlength=\"6\" id=\"password\">\n</sc-input>\n```"
+        "input": "<label for=\"email\">Email</label>\n<sc-input type=\"email\" required name=\"email\" id=\"email\"></sc-input>\n\n<label for=\"password\">Password</label>\n<sc-input type=\"password\" required name=\"password\" maxlength=\"6\" id=\"password\">\n</sc-input>\n"
       },
       "props": [
         {
@@ -1204,7 +1204,7 @@
       "docs": "",
       "docsTags": [],
       "usage": {
-        "toggle": "```html\n<!-- Use it like a checkbox -->\n<sc-toggle name=\"remember\" value=\"1\" checked=\"checked\" label=\"Remember me\"></sc-toggle>\n```"
+        "toggle": "<!-- Use it like a checkbox -->\n<sc-toggle name=\"remember\" value=\"1\" checked=\"checked\" label=\"Remember me\"></sc-toggle>\n"
       },
       "props": [
         {
@@ -1374,6 +1374,24 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/sc-tooltip/sc-tooltip.tsx",
+      "encapsulation": "shadow",
+      "tag": "sc-tooltip",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [],
+      "events": [],
       "listeners": [],
       "styles": [],
       "slots": [],

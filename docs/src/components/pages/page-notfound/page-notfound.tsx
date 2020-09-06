@@ -9,7 +9,7 @@ export class PageNotfound {
   render() {
     return (
       <Host>
-        <div class="page-not-found pt-4">
+        <div class="page-not-found">
           <sc-card engraved class="text-center pa-4">
             <img class="not-found-image mb-2" src={notFoundSVG} alt="Alien abduction illustration" />
             <h2 class="mb-2">Sorry, that page has been abducted.</h2>
