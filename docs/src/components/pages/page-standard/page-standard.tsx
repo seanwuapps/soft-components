@@ -1,11 +1,14 @@
-import { Component, Host, h, Prop, Watch, State } from '@stencil/core';
+import { Component, Host, h, Prop, Watch, State, Element } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 import md from '../../../helpers/md';
+import SimpleBar from 'simplebar';
 @Component({
   tag: 'page-standard',
   styleUrl: 'page-standard.scss',
 })
 export class PageStandard {
+  @Element() el: HTMLElement;
+
   /**
    * url params matcher
    */
@@ -41,6 +44,13 @@ export class PageStandard {
 
   componentDidLoad() {
     this.loadPage();
+  }
+
+  componentDidRender() {
+    this.el.querySelectorAll('.hljs').forEach(el => {
+      new SimpleBar(el as HTMLElement, { autoHide: false });
+      el.classList.add('raised-4');
+    });
   }
 
   render() {

@@ -59,4 +59,14 @@ body {
   a {
     color: var(--color-white);
   }
+
+  [data-simplebar] {
+    .simplebar-content:before,
+    .simplebar-content:after {
+      content: none;
+    }
+    * + * {
+      margin-top: 0;
+    }
+  }
 }
