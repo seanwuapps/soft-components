@@ -34,4 +34,7 @@ html {
   --sc-shadow-color: #00000033;
   --sc-secondary-color: var(--color-almond);
   --sc-active-color: #c586c0;
+
+  // scrollbar color in code-block
+  --code-block-scrollbar-color: var(--color-green);
 }

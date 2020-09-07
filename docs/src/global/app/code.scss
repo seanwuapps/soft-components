@@ -3,4 +3,7 @@
   border-radius: var(--radius-small);
   padding: $spacing * 4 $spacing * 2;
   max-height: $spacing * 20;
+  .simplebar-scrollbar:before {
+    background: var(--code-block-scrollbar-color, #333);
+  }
 }

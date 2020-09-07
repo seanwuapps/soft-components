@@ -1,12 +1,21 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, Element } from '@stencil/core';
 import hljs from 'highlight.js';
+import SimpleBar from 'simplebar';
 
 @Component({
   tag: 'code-block',
   styleUrls: ['code-block.scss'],
 })
 export class CodeBlock {
+  @Element() el: HTMLElement;
   @Prop() code: string;
+
+  componentDidRender() {
+    this.el.querySelectorAll('.hljs').forEach(el => {
+      new SimpleBar(el as HTMLElement, { autoHide: false });
+      el.classList.add('raised-4');
+    });
+  }
 
   render() {
     return (

@@ -16,7 +16,9 @@ app-nav {
         text-transform: capitalize;
         position: relative;
         color: var(--sc-text-color);
-
+        &:hover {
+          background: rgba(c('black'), 0.1);
+        }
         &.active {
           background: var(--sc-bg-color);
         }
