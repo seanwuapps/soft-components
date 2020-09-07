@@ -16,11 +16,9 @@ app-nav {
         text-transform: capitalize;
         position: relative;
         color: var(--sc-text-color);
+        background: var(--sc-bg-color);
         &:hover {
-          background: rgba(c('black'), 0.1);
-        }
-        &.active {
-          background: var(--sc-bg-color);
+          background: linear-gradient(to bottom right, rgba(c('black'), 0.1), transparent);
         }
       }
     }
