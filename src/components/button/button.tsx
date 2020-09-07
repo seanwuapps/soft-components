@@ -76,9 +76,9 @@ export class Button {
   @Prop() iconText?: boolean | undefined = false;
 
   /**
-   * If this button has both icon and text
+   * Set active state for the button
    */
-  @Prop() iconSelector?: string = "i";
+  @Prop() active?: boolean = false;
 
   /**
    * Emitted when the button has focus.

@@ -33,7 +33,8 @@ export class PageComponents {
   }
 
   render() {
-    if (!this.component) {
+    const { name } = this.match.params;
+    if (!name) {
       return (
         <div>
           <h1>Components</h1>
@@ -42,19 +43,44 @@ export class PageComponents {
       );
     }
     const key = getKey(this.component);
-    const name = getName(this.component);
+    const componentName = getName(this.component);
+
+    console.log(this.component);
     return (
       <Host>
         <div class="flex align-stretch">
           {/* Main */}
           <section class="w-8">
             <div class="component-title">
-              <h1>{name}</h1>
+              <h1>{componentName}</h1>
               <code>&lt;{this.component.tag}&gt;</code>
             </div>
-
             {/* usage */}
-            {this.component.usage[key] && <code-block code={this.component.usage[key]}></code-block>}
+
+            {this.component.usage[key] && (
+              <div>
+                <linkable-title anchor="usage">Usage</linkable-title>
+                <code-block code={this.component.usage[key]}></code-block>
+              </div>
+            )}
+
+            {/* Props */}
+            {this.component.props && (
+              <div>
+                <linkable-title anchor="usage">Props</linkable-title>
+                {this.component.props.map(prop => (
+                  <div class="prop">
+                    <linkable-title anchor={`props-${prop.name}`} tag="h6" class="prop__title">
+                      {prop.name}
+                    </linkable-title>
+                    <div class="prop__default">
+                      <strong>Default</strong>: <em>{prop.default || `null`}</em>
+                    </div>
+                    <p>{prop.docs}</p>
+                  </div>
+                ))}
+              </div>
+            )}
           </section>
         </div>
       </Host>

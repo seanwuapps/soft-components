@@ -9,3 +9,9 @@
     @warn 'Invalid breakpoint #{$breakpoint}.';
   }
 }
+
+@mixin unspacing() {
+  * + * {
+    margin-top: 0;
+  }
+}

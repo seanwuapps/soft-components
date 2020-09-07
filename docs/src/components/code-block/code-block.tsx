@@ -13,16 +13,24 @@ export class CodeBlock {
   componentDidRender() {
     this.el.querySelectorAll('.hljs').forEach(el => {
       new SimpleBar(el as HTMLElement, { autoHide: false });
-      el.classList.add('raised-4');
     });
   }
 
   render() {
     return (
-      <div>
+      <div class="raised-2 round pa-2">
+        <div class="control-bar text-right">
+          <sc-button icon class="ml-2 active">
+            <box-icon name="code" color="var(--sc-button-text-color)"></box-icon>
+          </sc-button>
+          <sc-button icon class="ml-2">
+            <box-icon name="github" type="logo" color="var(--sc-button-text-color)"></box-icon>
+          </sc-button>
+        </div>
+
         <div class="preview" innerHTML={this.code}></div>
 
-        <pre class="hljs raised-4">
+        <pre class="hljs">
           <code innerHTML={hljs.highlight('html', this.code, true).value}></code>
         </pre>
       </div>

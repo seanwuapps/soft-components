@@ -1,13 +1,13 @@
 {
-  "timestamp": "2020-09-06T23:47:57",
+  "timestamp": "2020-09-07T06:03:52",
   "compiler": {
     "name": "@stencil/core",
-    "version": "1.17.3",
-    "typescriptVersion": "3.9.7"
+    "version": "1.8.5",
+    "typescriptVersion": "3.7.2"
   },
   "components": [
     {
-      "filePath": "./src/components/button/button.tsx",
+      "filePath": "src\\components\\button\\button.tsx",
       "encapsulation": "none",
       "tag": "sc-button",
       "readme": "# sc-button\n\n\n",
@@ -22,6 +22,23 @@
         "button": "<!-- Default -->\n<sc-button onclick=\"alert('yo')\">Alert</sc-button>\n\n<!-- Anchor -->\n<sc-button href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\"\n  >Anchor\n</sc-button>\n\n<!-- Block level -->\n<sc-button block>Block Button</sc-button>\n\n<!-- Icon -->\n<sc-button icon>\n  <i class=\"la la-home\"></i>\n</sc-button>\n\n<!-- Bordered -->\n<sc-button bordered>\n  <i class=\"la la-back\"></i> Bordered button\n</sc-button>"
       },
       "props": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "active",
+          "reflectToAttr": false,
+          "docs": "Set active state for the button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
         {
           "name": "block",
           "type": "boolean",
@@ -117,23 +134,6 @@
           "values": [
             {
               "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "iconSelector",
-          "type": "string",
-          "mutable": false,
-          "attr": "icon-selector",
-          "reflectToAttr": false,
-          "docs": "If this button has both icon and text",
-          "docsTags": [],
-          "default": "\"i\"",
-          "values": [
-            {
-              "type": "string"
             }
           ],
           "optional": true,
@@ -245,7 +245,6 @@
           "docsTags": []
         }
       ],
-      "listeners": [],
       "styles": [
         {
           "name": "--sc-button-bg-color",
@@ -309,7 +308,6 @@
           "docs": "Content is placed between the named slots if provided without a slot."
         }
       ],
-      "parts": [],
       "dependents": [
         "sc-tab-button"
       ],
@@ -321,7 +319,7 @@
       }
     },
     {
-      "filePath": "./src/components/card/card.tsx",
+      "filePath": "src\\components\\card\\card.tsx",
       "encapsulation": "shadow",
       "tag": "sc-card",
       "readme": "# sc-card\n\n\n",
@@ -400,16 +398,14 @@
       ],
       "methods": [],
       "events": [],
-      "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/input/input.tsx",
+      "filePath": "src\\components\\input\\input.tsx",
       "encapsulation": "none",
       "tag": "sc-input",
       "readme": "# sc-input\n\n\n",
@@ -926,16 +922,14 @@
           "docsTags": []
         }
       ],
-      "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/tab-button/tab-button.tsx",
+      "filePath": "src\\components\\tab-button\\tab-button.tsx",
       "encapsulation": "shadow",
       "tag": "sc-tab-button",
       "readme": "# sc-tab-button\n\n\n",
@@ -1071,10 +1065,8 @@
           "docsTags": []
         }
       ],
-      "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
       "dependents": [],
       "dependencies": [
         "sc-button"
@@ -1086,7 +1078,7 @@
       }
     },
     {
-      "filePath": "./src/components/tab-content/tab-content.tsx",
+      "filePath": "src\\components\\tab-content\\tab-content.tsx",
       "encapsulation": "shadow",
       "tag": "sc-tab-content",
       "readme": "# sc-tab-content\n\n\n",
@@ -1138,27 +1130,14 @@
           "docsTags": []
         }
       ],
-      "listeners": [
-        {
-          "event": "transitionstart",
-          "capture": false,
-          "passive": false
-        },
-        {
-          "event": "transitionend",
-          "capture": false,
-          "passive": false
-        }
-      ],
       "styles": [],
       "slots": [],
-      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/tabs/tabs.tsx",
+      "filePath": "src\\components\\tabs\\tabs.tsx",
       "encapsulation": "none",
       "tag": "sc-tabs",
       "readme": "# sc-tabs\n\n\n",
@@ -1188,16 +1167,14 @@
       ],
       "methods": [],
       "events": [],
-      "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/toggle/toggle.tsx",
+      "filePath": "src\\components\\toggle\\toggle.tsx",
       "encapsulation": "none",
       "tag": "sc-toggle",
       "readme": "# sc-toggle\n\n\n",
@@ -1374,16 +1351,14 @@
           "docsTags": []
         }
       ],
-      "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/sc-tooltip/sc-tooltip.tsx",
+      "filePath": "src\\components\\sc-tooltip\\sc-tooltip.tsx",
       "encapsulation": "shadow",
       "tag": "sc-tooltip",
       "docs": "",
@@ -1392,10 +1367,8 @@
       "props": [],
       "methods": [],
       "events": [],
-      "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}

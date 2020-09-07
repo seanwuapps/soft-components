@@ -31,4 +31,9 @@ page-components {
       }
     }
   }
+
+  .prop {
+    @include unspacing;
+    max-height: 50vh;
+  }
 }

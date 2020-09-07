@@ -65,8 +65,6 @@ body {
     .simplebar-content:after {
       content: none;
     }
-    * + * {
-      margin-top: 0;
-    }
+    @include unspacing;
   }
 }

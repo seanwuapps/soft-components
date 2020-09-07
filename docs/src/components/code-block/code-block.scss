@@ -3,9 +3,14 @@
 code-block {
   display: block;
   .preview {
-    border-top-left-radius: 0;
-    * + * {
-      margin-top: 0;
+    @include unspacing;
+  }
+  .control-bar {
+    --sc-card-outer-padding-x: #{$spacing};
+    --sc-card-outer-padding-y: #{$spacing};
+    @include unspacing;
+    sc-button {
+      --sc-button-icon-size: #{$spacing * 6};
     }
   }
 }
