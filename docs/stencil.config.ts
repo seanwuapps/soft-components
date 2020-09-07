@@ -5,6 +5,7 @@ import autoprefixer from 'autoprefixer';
 import pxtorem from 'postcss-pxtorem';
 import builtins from 'rollup-plugin-node-builtins';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 // https://stenciljs.com/docs/config
 
@@ -45,6 +46,7 @@ export const config: Config = {
       builtins({
         preferBuiltins: false,
       }),
+      nodeResolve(),
     ],
     after: [nodePolyfills()],
   },

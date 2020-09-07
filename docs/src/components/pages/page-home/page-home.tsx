@@ -31,7 +31,7 @@ export class PageHome {
             <p>There is a sandbox area for each component in the docs.</p>
           </div>
           <div class="w-4 px-2">
-            <sc-card>
+            <sc-card engraved>
               <h5>Get in touch</h5>
               <p>I love talking to people to see how things can be improved.</p>
               <sc-button
