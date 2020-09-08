@@ -3,7 +3,7 @@ import { isSlotEmpty } from "../../utils/component";
 
 @Component({
   tag: "sc-tabs",
-  styleUrl: "tabs.scss"
+  styleUrl: "sc-tabs.scss",
   // shadow: true
 })
 export class Tabs {
@@ -25,7 +25,7 @@ export class Tabs {
   }
 
   handleActive(tb: HTMLScTabButtonElement) {
-    this.tabButtons.map(el => {
+    this.tabButtons.map((el) => {
       el.setInactive();
     });
     tb.setActive(false);
@@ -38,7 +38,7 @@ export class Tabs {
         class={`tabs${
           transition.length > 0 ? " transition-" + transition : ""
         }`}
-        onActiveEvent={e => this.handleActive(e.target)}
+        onActiveEvent={(e) => this.handleActive(e.target)}
       >
         <slot></slot>
       </Host>

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-09-07T06:03:52",
+  "timestamp": "2020-09-08T22:48:27",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.8.5",
@@ -7,11 +7,11 @@
   },
   "components": [
     {
-      "filePath": "src\\components\\button\\button.tsx",
+      "filePath": "src\\components\\sc-button\\sc-button.tsx",
       "encapsulation": "none",
       "tag": "sc-button",
-      "readme": "# sc-button\n\n\n",
-      "docs": "",
+      "readme": "# sc-button\nhello world\n\n",
+      "docs": "hello world",
       "docsTags": [
         {
           "text": "- Content is placed between the named slots if provided without a slot.",
@@ -19,7 +19,7 @@
         }
       ],
       "usage": {
-        "button": "<!-- Default -->\n<sc-button onclick=\"alert('yo')\">Alert</sc-button>\n\n<!-- Anchor -->\n<sc-button href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\"\n  >Anchor\n</sc-button>\n\n<!-- Block level -->\n<sc-button block>Block Button</sc-button>\n\n<!-- Icon -->\n<sc-button icon>\n  <i class=\"la la-home\"></i>\n</sc-button>\n\n<!-- Bordered -->\n<sc-button bordered>\n  <i class=\"la la-back\"></i> Bordered button\n</sc-button>"
+        "sc-button": "<p>Normal button</p>\n<sc-button onclick=\"alert('yo')\">Button</sc-button>\n\n<!-- Anchor -->\n<p>Give it a <code>href</code> and it becomes a styled link</p>\n<sc-button href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\"\n  >Anchor\n</sc-button>\n\n<!-- Block level -->\n<p>Use <code>block</code> prop to make it full width</p>\n<sc-button block>Block Button</sc-button>\n\n\n<!-- Icon -->\n<p>Use <code>icon</code> prop to make it a circular button perfect for single icon</p>\n<sc-button icon>\n  <i class=\"la la-home\"></i>\n</sc-button>\n\n<!-- Bordered -->\n<p>Use <code>bordered</code> prop to add a bit of flare to it</p>\n<sc-button bordered>\n  <i class=\"la la-back\"></i> Bordered button\n</sc-button>"
       },
       "props": [
         {
@@ -319,14 +319,14 @@
       }
     },
     {
-      "filePath": "src\\components\\card\\card.tsx",
+      "filePath": "src\\components\\sc-card\\sc-card.tsx",
       "encapsulation": "shadow",
       "tag": "sc-card",
       "readme": "# sc-card\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
-        "card": "<sc-card card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n<sc-card engraved card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n<sc-card bordered card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n"
+        "sc-card": "<sc-card card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n<sc-card engraved card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n<sc-card bordered card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n"
       },
       "props": [
         {
@@ -405,14 +405,14 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\input\\input.tsx",
+      "filePath": "src\\components\\sc-input\\sc-input.tsx",
       "encapsulation": "none",
       "tag": "sc-input",
       "readme": "# sc-input\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
-        "input": "<label for=\"email\">Email</label>\n<sc-input type=\"email\" required name=\"email\" id=\"email\"></sc-input>\n\n<label for=\"password\">Password</label>\n<sc-input type=\"password\" required name=\"password\" maxlength=\"6\" id=\"password\">\n</sc-input>\n"
+        "sc-input": "<label for=\"email\">Email</label>\n<sc-input type=\"email\" required name=\"email\" id=\"email\"></sc-input>\n\n<label for=\"password\">Password</label>\n<sc-input type=\"password\" required name=\"password\" maxlength=\"6\" id=\"password\">\n</sc-input>\n"
       },
       "props": [
         {
@@ -929,7 +929,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\tab-button\\tab-button.tsx",
+      "filePath": "src\\components\\sc-tab-button\\sc-tab-button.tsx",
       "encapsulation": "shadow",
       "tag": "sc-tab-button",
       "readme": "# sc-tab-button\n\n\n",
@@ -1078,7 +1078,7 @@
       }
     },
     {
-      "filePath": "src\\components\\tab-content\\tab-content.tsx",
+      "filePath": "src\\components\\sc-tab-content\\sc-tab-content.tsx",
       "encapsulation": "shadow",
       "tag": "sc-tab-content",
       "readme": "# sc-tab-content\n\n\n",
@@ -1137,14 +1137,14 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\tabs\\tabs.tsx",
+      "filePath": "src\\components\\sc-tabs\\sc-tabs.tsx",
       "encapsulation": "none",
       "tag": "sc-tabs",
       "readme": "# sc-tabs\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
-        "tabs": ""
+        "sc-tabs": ""
       },
       "props": [
         {
@@ -1174,14 +1174,14 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\toggle\\toggle.tsx",
+      "filePath": "src\\components\\sc-toggle\\sc-toggle.tsx",
       "encapsulation": "none",
       "tag": "sc-toggle",
       "readme": "# sc-toggle\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
-        "toggle": "<!-- Use it like a checkbox -->\n<sc-toggle name=\"remember\" value=\"1\" checked=\"checked\" label=\"Remember me\"></sc-toggle>\n"
+        "sc-toggle": "<!-- Use it like a checkbox -->\n<sc-toggle name=\"remember\" value=\"1\" checked=\"checked\" label=\"Remember me\"></sc-toggle>\n"
       },
       "props": [
         {
@@ -1351,22 +1351,6 @@
           "docsTags": []
         }
       ],
-      "styles": [],
-      "slots": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "src\\components\\sc-tooltip\\sc-tooltip.tsx",
-      "encapsulation": "shadow",
-      "tag": "sc-tooltip",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [],
-      "methods": [],
-      "events": [],
       "styles": [],
       "slots": [],
       "dependents": [],

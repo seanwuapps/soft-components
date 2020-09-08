@@ -3,8 +3,8 @@ import { isSlotEmpty } from "../../utils/component";
 
 @Component({
   tag: "sc-card",
-  styleUrl: "card.scss",
-  shadow: true
+  styleUrl: "sc-card.scss",
+  shadow: true,
 })
 export class Card {
   @Element() el: HTMLElement;

@@ -4,17 +4,20 @@ linkable-title {
   &.highlight {
     animation: blinker 1s ease 1s;
   }
-  &:hover {
-    .anchor {
-      visibility: visible;
+  a {
+    text-decoration: none;
+    &:hover {
+      .anchor {
+        visibility: visible;
+      }
     }
-  }
-  .anchor {
-    position: absolute;
-    bottom: 0;
-    right: 100%;
-    opacity: 0.9;
-    visibility: hidden;
+    .anchor {
+      position: absolute;
+      bottom: 0;
+      right: 100%;
+      opacity: 0.9;
+      visibility: hidden;
+    }
   }
 }
 

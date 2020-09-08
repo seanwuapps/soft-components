@@ -2,7 +2,7 @@ import { Component, Host, h, Prop, Event, EventEmitter } from "@stencil/core";
 
 @Component({
   tag: "sc-toggle",
-  styleUrl: "toggle.scss"
+  styleUrl: "sc-toggle.scss",
   // shadow: true
 })
 export class Toggle {
@@ -66,7 +66,7 @@ export class Toggle {
    */
   @Prop({ reflectToAttr: true }) checked?: boolean | undefined = false;
 
-  private onInput = e => {
+  private onInput = (e) => {
     this.inputEvent.emit(e);
   };
 
@@ -82,7 +82,7 @@ export class Toggle {
     this.keyDownEvent.emit();
   };
 
-  private onChange = e => {
+  private onChange = (e) => {
     this.changeEvent.emit(e);
   };
 

@@ -12,7 +12,7 @@ import {
  */
 @Component({
   tag: "sc-button",
-  styleUrl: "button.scss",
+  styleUrl: "sc-button.scss",
   // shadow: true // disabled for form submission
 })
 export class Button {

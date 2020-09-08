@@ -248,7 +248,6 @@ export namespace Components {
     */
     'value'?: string | null;
   }
-  interface ScTooltip {}
 }
 
 declare global {
@@ -295,12 +294,6 @@ declare global {
     prototype: HTMLScToggleElement;
     new (): HTMLScToggleElement;
   };
-
-  interface HTMLScTooltipElement extends Components.ScTooltip, HTMLStencilElement {}
-  var HTMLScTooltipElement: {
-    prototype: HTMLScTooltipElement;
-    new (): HTMLScTooltipElement;
-  };
   interface HTMLElementTagNameMap {
     'sc-button': HTMLScButtonElement;
     'sc-card': HTMLScCardElement;
@@ -309,7 +302,6 @@ declare global {
     'sc-tab-content': HTMLScTabContentElement;
     'sc-tabs': HTMLScTabsElement;
     'sc-toggle': HTMLScToggleElement;
-    'sc-tooltip': HTMLScTooltipElement;
   }
 }
 
@@ -596,7 +588,6 @@ declare namespace LocalJSX {
     */
     'value'?: string | null;
   }
-  interface ScTooltip {}
 
   interface IntrinsicElements {
     'sc-button': ScButton;
@@ -606,7 +597,6 @@ declare namespace LocalJSX {
     'sc-tab-content': ScTabContent;
     'sc-tabs': ScTabs;
     'sc-toggle': ScToggle;
-    'sc-tooltip': ScTooltip;
   }
 }
 
@@ -623,7 +613,6 @@ declare module "@stencil/core" {
       'sc-tab-content': LocalJSX.ScTabContent & JSXBase.HTMLAttributes<HTMLScTabContentElement>;
       'sc-tabs': LocalJSX.ScTabs & JSXBase.HTMLAttributes<HTMLScTabsElement>;
       'sc-toggle': LocalJSX.ScToggle & JSXBase.HTMLAttributes<HTMLScToggleElement>;
-      'sc-tooltip': LocalJSX.ScTooltip & JSXBase.HTMLAttributes<HTMLScTooltipElement>;
     }
   }
 }

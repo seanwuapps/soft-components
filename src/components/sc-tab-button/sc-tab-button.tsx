@@ -6,13 +6,13 @@ import {
   Method,
   Event,
   EventEmitter,
-  Element
+  Element,
 } from "@stencil/core";
 
 @Component({
   tag: "sc-tab-button",
-  styleUrl: "tab-button.scss",
-  shadow: true
+  styleUrl: "sc-tab-button.scss",
+  shadow: true,
 })
 export class TabButton {
   @Element() el: HTMLElement;
@@ -72,7 +72,7 @@ export class TabButton {
     }
   }
 
-  private onClick = e => {
+  private onClick = (e) => {
     e.preventDefault();
     this.setActive();
   };
@@ -85,11 +85,11 @@ export class TabButton {
           {...{
             block,
             icon,
-            bordered
+            bordered,
           }}
           class={{ active, "tab-button": true }}
           href={`#${target}`}
-          onClick={e => this.onClick(e)}
+          onClick={(e) => this.onClick(e)}
         >
           <slot></slot>
         </sc-button>

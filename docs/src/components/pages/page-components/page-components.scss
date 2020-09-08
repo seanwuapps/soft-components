@@ -1,19 +1,18 @@
 page-components {
   min-height: 100vh;
-  section {
-    .component-title {
-      h1 {
-        text-transform: capitalize;
-      }
-      code {
-        display: block;
-        margin-top: $spacing;
-      }
+  .component-title {
+    h1 {
+      text-transform: capitalize;
     }
-    doc-usage {
+    code {
       display: block;
+      margin-top: $spacing;
     }
   }
+  doc-usage {
+    display: block;
+  }
+
   component-sidebar {
     display: none;
     @include media(sm) {
@@ -32,8 +31,7 @@ page-components {
     }
   }
 
-  .prop {
+  .props-container {
     @include unspacing;
-    max-height: 50vh;
   }
 }

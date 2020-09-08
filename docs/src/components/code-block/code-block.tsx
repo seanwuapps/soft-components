@@ -1,4 +1,4 @@
-import { Component, Prop, h, Element } from '@stencil/core';
+import { Component, Prop, h, Element, State } from '@stencil/core';
 import hljs from 'highlight.js';
 import SimpleBar from 'simplebar';
 
@@ -10,6 +10,8 @@ export class CodeBlock {
   @Element() el: HTMLElement;
   @Prop() code: string;
 
+  @State() showingCode: boolean = false;
+
   componentDidRender() {
     this.el.querySelectorAll('.hljs').forEach(el => {
       new SimpleBar(el as HTMLElement, { autoHide: false });
@@ -20,7 +22,7 @@ export class CodeBlock {
     return (
       <div class="raised-2 round pa-2">
         <div class="control-bar text-right">
-          <sc-button icon class="ml-2 active">
+          <sc-button icon class={`ml-2 ${this.showingCode && 'active'}`}>
             <box-icon name="code" color="var(--sc-button-text-color)"></box-icon>
           </sc-button>
           <sc-button icon class="ml-2">
@@ -29,10 +31,11 @@ export class CodeBlock {
         </div>
 
         <div class="preview" innerHTML={this.code}></div>
-
-        <pre class="hljs">
-          <code innerHTML={hljs.highlight('html', this.code, true).value}></code>
-        </pre>
+        {this.showingCode && (
+          <pre class="hljs">
+            <code innerHTML={hljs.highlight('html', this.code, true).value}></code>
+          </pre>
+        )}
       </div>
     );
   }

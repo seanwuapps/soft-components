@@ -7,13 +7,13 @@ import {
   Method,
   State,
   Event,
-  EventEmitter
+  EventEmitter,
 } from "@stencil/core";
 
 @Component({
   tag: "sc-tab-content",
-  styleUrl: "tab-content.scss",
-  shadow: true
+  styleUrl: "sc-tab-content.scss",
+  shadow: true,
 })
 export class TabContent {
   @Element() el: HTMLElement;
