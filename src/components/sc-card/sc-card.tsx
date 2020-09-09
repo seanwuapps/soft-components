@@ -28,7 +28,7 @@ export class Card {
   /**
    * If this card has bordered style
    */
-  @Prop({ reflectToAttr: true }) bordered?: boolean | undefined = false;
+  @Prop({ reflect: true }) bordered?: boolean | undefined = false;
 
   @State()
   hasCustomTitle: boolean;

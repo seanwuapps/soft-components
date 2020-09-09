@@ -21,7 +21,7 @@ export class Button {
   /**
    * If `true`, the user cannot interact with the button.
    */
-  @Prop({ reflectToAttr: true }) disabled = false;
+  @Prop({ reflect: true }) disabled = false;
 
   /**
    * This attribute instructs browsers to download a URL instead of navigating to
@@ -46,17 +46,17 @@ export class Button {
   /**
    * The button shape.
    */
-  @Prop({ reflectToAttr: true }) block?: boolean | undefined = false;
+  @Prop({ reflect: true }) block?: boolean | undefined = false;
 
   /**
    * Icon only button
    */
-  @Prop({ reflectToAttr: true }) icon?: boolean | undefined = false;
+  @Prop({ reflect: true }) icon?: boolean | undefined = false;
 
   /**
    * If prop exists, button will have an engraved-styled border
    */
-  @Prop({ reflectToAttr: true }) bordered?: boolean | undefined = false;
+  @Prop({ reflect: true }) bordered?: boolean | undefined = false;
 
   /**
    * Specifies where to display the linked URL.

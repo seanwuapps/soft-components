@@ -29,7 +29,7 @@ export class Toggle {
   /**
    * aria labelby
    */
-  @Prop({ reflectToAttr: true }) ariaLabelledby?: string = "";
+  @Prop({ reflect: true }) ariaLabelledby?: string = "";
 
   /**
    * The value of the input.
@@ -64,7 +64,7 @@ export class Toggle {
   /**
    * If this toggle is on by default
    */
-  @Prop({ reflectToAttr: true }) checked?: boolean | undefined = false;
+  @Prop({ reflect: true }) checked?: boolean | undefined = false;
 
   private onInput = (e) => {
     this.inputEvent.emit(e);

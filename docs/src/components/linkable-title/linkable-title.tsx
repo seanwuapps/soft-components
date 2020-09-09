@@ -7,7 +7,7 @@ import { Component, Host, h, Prop, Element, State } from '@stencil/core';
 export class LinkableTitle {
   @Element() el: HTMLElement;
   @Prop() tag: string = 'h3';
-  @Prop({ reflectToAttr: true }) anchor: string;
+  @Prop({ reflect: true }) anchor: string;
 
   @State() highlight: boolean = false;
 

@@ -23,10 +23,10 @@ export class CodeBlock {
       <div class="raised-2 round pa-2">
         <div class="control-bar text-right">
           <sc-button icon class={`ml-2 ${this.showingCode && 'active'}`}>
-            <box-icon name="code" color="var(--sc-button-text-color)"></box-icon>
+            <box-icon name="code" color="currentColor"></box-icon>
           </sc-button>
           <sc-button icon class="ml-2">
-            <box-icon name="github" type="logo" color="var(--sc-button-text-color)"></box-icon>
+            <box-icon name="github" type="logo" color="currentColor"></box-icon>
           </sc-button>
         </div>
 

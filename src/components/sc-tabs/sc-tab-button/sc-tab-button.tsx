@@ -19,7 +19,7 @@ export class TabButton {
   /**
    * When prop is set, this tab is shown, only one `<sc-tab>` element can be active inside `<sc-tabs>`
    */
-  @Prop({ reflectToAttr: true, mutable: true }) active: boolean | undefined;
+  @Prop({ reflect: true, mutable: true }) active: boolean | undefined;
 
   /**
    * id of the target `sc-tab-content` tag
@@ -29,17 +29,17 @@ export class TabButton {
   /**
    * The button shape.
    */
-  @Prop({ reflectToAttr: true }) block?: boolean | undefined = false;
+  @Prop({ reflect: true }) block?: boolean | undefined = false;
 
   /**
    * Icon only button
    */
-  @Prop({ reflectToAttr: true }) icon?: boolean | undefined = false;
+  @Prop({ reflect: true }) icon?: boolean | undefined = false;
 
   /**
    * If prop exists, button will have an engraved-styled border
    */
-  @Prop({ reflectToAttr: true }) bordered?: boolean | undefined = false;
+  @Prop({ reflect: true }) bordered?: boolean | undefined = false;
 
   @Event() activeEvent: EventEmitter<HTMLElement>;
   @Event() inactiveEvent: EventEmitter<HTMLElement>;

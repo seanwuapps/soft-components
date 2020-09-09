@@ -149,7 +149,7 @@ export class Input implements ComponentInterface {
   /**
    * aria labelby
    */
-  @Prop({ reflectToAttr: true }) ariaLabelledby?: string = "";
+  @Prop({ reflect: true }) ariaLabelledby?: string = "";
 
   /**
    * Emitted when a keyboard input occurred.

@@ -34,4 +34,25 @@ page-components {
   .props-container {
     @include unspacing;
   }
+
+  .search-btn {
+    cursor: pointer;
+  }
+
+  .props-search-bar {
+    position: absolute;
+    width: auto;
+    background: var(--sc-bg-color);
+    top: 100%;
+    right: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    &.active {
+      opacity: 1;
+      pointer-events: initial;
+    }
+  }
 }

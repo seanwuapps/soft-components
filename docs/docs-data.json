@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-09-08T22:48:27",
+  "timestamp": "2020-09-09T01:02:08",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.8.5",
@@ -19,7 +19,7 @@
         }
       ],
       "usage": {
-        "sc-button": "<p>Normal button</p>\n<sc-button onclick=\"alert('yo')\">Button</sc-button>\n\n<!-- Anchor -->\n<p>Give it a <code>href</code> and it becomes a styled link</p>\n<sc-button href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\"\n  >Anchor\n</sc-button>\n\n<!-- Block level -->\n<p>Use <code>block</code> prop to make it full width</p>\n<sc-button block>Block Button</sc-button>\n\n\n<!-- Icon -->\n<p>Use <code>icon</code> prop to make it a circular button perfect for single icon</p>\n<sc-button icon>\n  <i class=\"la la-home\"></i>\n</sc-button>\n\n<!-- Bordered -->\n<p>Use <code>bordered</code> prop to add a bit of flare to it</p>\n<sc-button bordered>\n  <i class=\"la la-back\"></i> Bordered button\n</sc-button>"
+        "sc-button": "<sc-button onclick=\"alert('yo')\">Button</sc-button>\n\n<!-- Anchor -->\n<sc-button href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\"\n  >Anchor\n</sc-button>\n\n<!-- Block level -->\n<sc-button block>Block Button</sc-button>\n\n\n<!-- Icon -->\n<sc-button icon>\n  <i class=\"la la-home\"></i>\n</sc-button>\n\n<!-- Icon and Text -->\n\n<sc-button iconText>\n  <i class=\"la la-home\"></i>\n  Text\n</sc-button>\n\n\n<!-- Bordered -->\n<sc-button bordered>\n  <i class=\"la la-back\"></i> Bordered button\n</sc-button>"
       },
       "props": [
         {
@@ -929,7 +929,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\sc-tab-button\\sc-tab-button.tsx",
+      "filePath": "src\\components\\sc-tabs\\sc-tab-button\\sc-tab-button.tsx",
       "encapsulation": "shadow",
       "tag": "sc-tab-button",
       "readme": "# sc-tab-button\n\n\n",
@@ -1078,7 +1078,7 @@
       }
     },
     {
-      "filePath": "src\\components\\sc-tab-content\\sc-tab-content.tsx",
+      "filePath": "src\\components\\sc-tabs\\sc-tab-content\\sc-tab-content.tsx",
       "encapsulation": "shadow",
       "tag": "sc-tab-content",
       "readme": "# sc-tab-content\n\n\n",
