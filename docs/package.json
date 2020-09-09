@@ -8,7 +8,8 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "prerender": "stencil build --prerender"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^9.0.0",
