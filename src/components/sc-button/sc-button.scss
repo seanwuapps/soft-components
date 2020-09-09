@@ -47,12 +47,14 @@ sc-button {
     background-color: var(--sc-button-bg-color);
     color: var(--sc-button-text-color);
     border-radius: var(--sc-button-border-radius);
-    @include raised();
     position: relative;
     padding: 4px;
     font-size: 1em;
     font-family: inherit;
     width: var(--sc-button-width);
+    &:not(.flat) {
+      @include raised();
+    }
     &:focus {
       outline: none;
     }

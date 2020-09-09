@@ -37,55 +37,39 @@
 
 <body class="py-5">
 
+  <sc-button onclick="alert('yo')">Button</sc-button>
 
-  <sc-table>
-    <sc-thead>
-      <sc-tr>
-        <sc-td>
-          Name
-        </sc-td>
+  <!-- Anchor -->
+  <sc-button href="/" target="_blank" rel="noreferrer" title="button">Anchor
+  </sc-button>
 
-        <sc-td>
-          Description
-        </sc-td>
-
-        <sc-td>
-          Type
-        </sc-td>
-      </sc-tr>
-    </sc-thead>
-    <sc-tbody>
-      <sc-tr>
-        <sc-td>Lorem, ipsum dolor</sc-td>
-        <sc-td>Voluptate, itaque temporibus.</sc-td>
-        <sc-td>Voluptate, itaque temporibus.</sc-td>
-      </sc-tr>
-    </sc-tbody>
-  </sc-table>
+  <!-- Block level -->
+  <sc-button block>Block Button</sc-button>
 
 
+  <!-- Icon -->
+  <sc-button icon>
+    <i class="la la-home"></i>
+  </sc-button>
 
-  <div class="container">
-    <h2 class="text-outline">TEXT outline</h2>
-    <div class="row">
-      <div class="col">
-        <sc-button bordered>
-          <i class="la la-back"></i> Bordered button
-        </sc-button>
-      </div>
-      <div class="col">
-        <sc-button icon>
-          <i class="la la-home"></i>
-        </sc-button>
-      </div>
-      <div class="col">
-        <sc-button icon-text>
-          <i class="la la-home"></i>
-          Some text
-        </sc-button>
-      </div>
-    </div>
-  </div>
+  <!-- Icon and Text -->
+
+  <sc-button iconText>
+    <i class="la la-home"></i>
+    Text
+  </sc-button>
+
+
+  <!-- Bordered -->
+  <sc-button bordered>
+    <i class="la la-back"></i> Bordered button
+  </sc-button>
+
+  <sc-button flat>
+    Flat button
+  </sc-button>
+
+
   <div class="container pt-4">
     <form action="/" method="get">
       <sc-card card-title="Login" card-subtitle="Welcome back, please fill all fields and click login button.">

@@ -44,7 +44,7 @@ export class Button {
   @Prop() rel: string | undefined;
 
   /**
-   * The button shape.
+   * Make button `display: block`
    */
   @Prop({ reflect: true }) block?: boolean | undefined = false;
 
@@ -79,6 +79,11 @@ export class Button {
    * Set active state for the button
    */
   @Prop() active?: boolean = false;
+
+  /**
+   * Make button flat
+   */
+  @Prop() flat?: boolean = false;
 
   /**
    * Emitted when the button has focus.
@@ -118,6 +123,7 @@ export class Button {
       block,
       bordered,
       iconText,
+      flat,
     } = this;
     const TagType = href === undefined ? "button" : "a";
     const attrs =
@@ -137,6 +143,7 @@ export class Button {
           block,
           bordered,
           "icon-text": iconText,
+          flat,
         }}
       >
         <TagType

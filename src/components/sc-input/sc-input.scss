@@ -17,7 +17,6 @@ sc-input {
   input {
     outline: none;
     border: none;
-    @include engraved(0.3);
     border-radius: var(--sc-input-border-radius);
     padding: var(--sc-input-padding-y) var(--sc-input-padding-x);
     background-color: var(--sc-input-bg-color);
@@ -25,10 +24,6 @@ sc-input {
     transition: all 0.3s ease;
     font-size: var(--sc-input-font-size);
     width: 100%;
-
-    &:focus {
-      @include engraved(0.7);
-    }
 
     &:invalid {
       color: var(--sc-input-error-text-color);

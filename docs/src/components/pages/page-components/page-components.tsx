@@ -1,7 +1,7 @@
-import { Component, Host, h, Prop, Watch, State, Element } from '@stencil/core';
+import { Component, Host, h, Prop, Watch, State, Element, Build } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 import docsData from '../../../../docs-data';
-import { JsonDocsComponent } from '../../../../docs-data';
+import { JsonDocsComponent, JsonDocsProp } from '../../../../docs-data';
 import { getName } from '../../../helpers/components';
 import md from '../../../helpers/md';
 import SimpleBar from 'simplebar';
@@ -19,11 +19,14 @@ export class PageComponents {
   @State() component: JsonDocsComponent;
   @State() searchBarOpen: boolean = false;
 
+  @State() filteredProps: Array<JsonDocsProp> = [];
+
   @Watch('match')
   async loadComponent() {
     const { tag } = this.match.params;
     if (tag.startsWith('sc-')) {
       this.component = this.getComponentData(tag);
+      this.filteredProps = this.component.props;
     }
   }
 
@@ -36,18 +39,31 @@ export class PageComponents {
   }
 
   componentDidRender() {
-    this.el.querySelectorAll('.table-body').forEach(el => {
-      new SimpleBar(el as HTMLElement, { autoHide: false });
-    });
+    if (Build.isBrowser) {
+      this.el.querySelectorAll('.table-body').forEach(el => {
+        new SimpleBar(el as HTMLElement, { autoHide: false });
+      });
+    }
   }
 
   togglePropSearchBar() {
     this.searchBarOpen = !this.searchBarOpen;
+    if (this.searchBarOpen) {
+      const searchField = this.el.querySelector('#prop-search-input') as any;
+      searchField.setFocus();
+    }
   }
 
   search(e) {
     const query = e.target.value;
-    console.log({ query });
+    if (query === '') {
+      this.filteredProps = this.component.props;
+    }
+
+    const filteredProps = this.component.props.filter(prop => {
+      return JSON.stringify(prop).toLowerCase().includes(query.toLowerCase());
+    });
+    this.filteredProps = [...filteredProps];
   }
 
   render() {
@@ -87,22 +103,28 @@ export class PageComponents {
                 <linkable-title anchor="props">Props</linkable-title>
 
                 <div class="props-container table">
-                  <div class="table-head py-2 flex raised-2 sticky">
-                    <div class={`props-search-bar raised-shadow-1 round pa-1 ${this.searchBarOpen && 'active'}`}>
-                      <sc-input type="search" placeholder="Search" onInput={e => this.search(e)}></sc-input>
-                    </div>
-                    <div class="w-2 pl-2">Name</div>
+                  <div class="table-head py-2 align-center raised-2 sticky">
+                    <div class="w-2 pl-3">Name</div>
                     <div class="w-4">Description</div>
                     <div class="w-2">Type</div>
                     <div class="w-2">Default</div>
-                    <div class="w-1 pr-1 text-right">
-                      <box-icon class="search-btn" onClick={() => this.togglePropSearchBar()} name="search" color="currentColor"></box-icon>
+                    <div class="w-1 text-center">
+                      <sc-button class="w-1 search-btn" icon onClick={() => this.togglePropSearchBar()}>
+                        <box-icon class="search-btn" name="search" color="currentColor"></box-icon>
+                      </sc-button>
+                    </div>
+                    <div class={`props-search-bar ${this.searchBarOpen && 'active'}`}>
+                      <sc-input engraved="2" class="w-9" id="prop-search-input" type="search" placeholder="Search" onInput={e => this.search(e)}></sc-input>
+
+                      <sc-button flat class="w-1 px-1 search-btn" icon onClick={() => this.togglePropSearchBar()}>
+                        <box-icon name="x" color="currentColor"></box-icon>
+                      </sc-button>
                     </div>
                   </div>
                   <div class="table-body engraved-1">
-                    {this.component.props.map(prop => (
+                    {this.filteredProps.map(prop => (
                       <div class="flex">
-                        <div class="w-2 py-2 pl-2">
+                        <div class="w-2 py-2 pl-3">
                           <linkable-title anchor={`props-${prop.name}`} tag="code" class="prop__title">
                             {prop.name}
                           </linkable-title>
@@ -124,7 +146,8 @@ export class PageComponents {
 
             {/* Customisation */}
             <section>
-              <h6>How can I customise this component?</h6>
+              <linkable-title anchor="customisation">Customisation</linkable-title>
+              <h6>How should you customise this component?</h6>
               <div class="mt-1">{this.component.encapsulation === 'shadow' ? 'CSS variables only' : 'All styles can be overridden with CSS'}</div>
             </section>
           </main>

@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Watch, State, Element } from '@stencil/core';
+import { Component, Host, h, Prop, Watch, State, Element, Build } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
 import md from '../../../helpers/md';
 import SimpleBar from 'simplebar';
@@ -47,10 +47,12 @@ export class PageStandard {
   }
 
   componentDidRender() {
-    this.el.querySelectorAll('.hljs').forEach(el => {
-      new SimpleBar(el as HTMLElement, { autoHide: false });
-      el.classList.add('raised-4');
-    });
+    if (Build.isBrowser) {
+      this.el.querySelectorAll('.hljs').forEach(el => {
+        new SimpleBar(el as HTMLElement, { autoHide: false });
+        el.classList.add('raised-4');
+      });
+    }
   }
 
   render() {

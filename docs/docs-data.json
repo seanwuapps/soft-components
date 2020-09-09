@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-09-09T01:02:08",
+  "timestamp": "2020-09-09T07:28:02",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.8.5",
@@ -45,7 +45,7 @@
           "mutable": false,
           "attr": "block",
           "reflectToAttr": true,
-          "docs": "The button shape.",
+          "docs": "Make button `display: block`",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -104,6 +104,23 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "flat",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "flat",
+          "reflectToAttr": false,
+          "docs": "Make button flat",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {
@@ -437,7 +454,7 @@
           "mutable": false,
           "attr": "aria-labelledby",
           "reflectToAttr": true,
-          "docs": "aria labelby",
+          "docs": "Aria labelby",
           "docsTags": [],
           "default": "\"\"",
           "values": [
@@ -527,39 +544,6 @@
           "required": false
         },
         {
-          "name": "clearInput",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "clear-input",
-          "reflectToAttr": false,
-          "docs": "If `true`, a clear icon will appear in the input when there is a value. Clicking it clears the input.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": false,
-          "required": false
-        },
-        {
-          "name": "clearOnEdit",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "clear-on-edit",
-          "reflectToAttr": false,
-          "docs": "If `true`, the value will be cleared after focus upon edit. Defaults to `true` when `type` is `\"password\"`, `false` for all other types.",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
           "name": "disabled",
           "type": "boolean",
           "mutable": false,
@@ -574,6 +558,23 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "engraved",
+          "type": "number",
+          "mutable": false,
+          "attr": "engraved",
+          "reflectToAttr": false,
+          "docs": "Engrave level (0-9) note if 0 there will be no visible border around the element, so you'll need to add border via css.",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {

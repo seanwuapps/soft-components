@@ -16,7 +16,7 @@ export namespace Components {
     */
     'active'?: boolean;
     /**
-    * The button shape.
+    * Make button `display: block`
     */
     'block'?: boolean | undefined;
     /**
@@ -31,6 +31,10 @@ export namespace Components {
     * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
     */
     'download': string | undefined;
+    /**
+    * Make button flat
+    */
+    'flat'?: boolean;
     /**
     * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
     */
@@ -80,7 +84,7 @@ export namespace Components {
     */
     'accept'?: string;
     /**
-    * aria labelby
+    * Aria labelby
     */
     'ariaLabelledby'?: string;
     /**
@@ -100,17 +104,13 @@ export namespace Components {
     */
     'autofocus': boolean;
     /**
-    * If `true`, a clear icon will appear in the input when there is a value. Clicking it clears the input.
-    */
-    'clearInput': boolean;
-    /**
-    * If `true`, the value will be cleared after focus upon edit. Defaults to `true` when `type` is `"password"`, `false` for all other types.
-    */
-    'clearOnEdit'?: boolean;
-    /**
     * If `true`, the user cannot interact with the input.
     */
     'disabled': boolean;
+    /**
+    * Engrave level (0-9) note if 0 there will be no visible border around the element, so you'll need to add border via css.
+    */
+    'engraved'?: number;
     /**
     * Returns the native `<input>` element used under the hood.
     */
@@ -167,7 +167,7 @@ export namespace Components {
     */
     'required': boolean;
     /**
-    * Sets focus on the specified `ion-input`. Use this method instead of the global `input.focus()`.
+    * Sets focus on the specified `sc-input`. Use this method instead of the global `input.focus()`.
     */
     'setFocus': () => Promise<void>;
     /**
@@ -312,7 +312,7 @@ declare namespace LocalJSX {
     */
     'active'?: boolean;
     /**
-    * The button shape.
+    * Make button `display: block`
     */
     'block'?: boolean | undefined;
     /**
@@ -327,6 +327,10 @@ declare namespace LocalJSX {
     * This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want).
     */
     'download'?: string | undefined;
+    /**
+    * Make button flat
+    */
+    'flat'?: boolean;
     /**
     * Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.
     */
@@ -388,7 +392,7 @@ declare namespace LocalJSX {
     */
     'accept'?: string;
     /**
-    * aria labelby
+    * Aria labelby
     */
     'ariaLabelledby'?: string;
     /**
@@ -408,17 +412,13 @@ declare namespace LocalJSX {
     */
     'autofocus'?: boolean;
     /**
-    * If `true`, a clear icon will appear in the input when there is a value. Clicking it clears the input.
-    */
-    'clearInput'?: boolean;
-    /**
-    * If `true`, the value will be cleared after focus upon edit. Defaults to `true` when `type` is `"password"`, `false` for all other types.
-    */
-    'clearOnEdit'?: boolean;
-    /**
     * If `true`, the user cannot interact with the input.
     */
     'disabled'?: boolean;
+    /**
+    * Engrave level (0-9) note if 0 there will be no visible border around the element, so you'll need to add border via css.
+    */
+    'engraved'?: number;
     /**
     * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
     */

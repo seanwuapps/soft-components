@@ -28,14 +28,14 @@ export class AppNav {
           url: '/framework-integration',
         },
         {
-          text: 'Theme builder',
-          url: '/theme-builder',
+          text: 'Theme store',
+          url: '/theme-store',
         },
       ],
     },
     {
       text: 'Components',
-      url: '/components/get-started',
+      url: '/components',
       children: buildComponentNavArray(),
     },
     {

@@ -9,7 +9,7 @@
   --sc-card-title-text-color: var(--sc-text-color, #333333);
   --sc-card-subtitle-font-size: 18px;
   --sc-card-subtitle-font-weight: normal;
-  --sc-card-subtitle-text-color: #696969;
+  --sc-card-subtitle-text-color: var(--sc-text-color, #696969);
   --sc-card-bordered-width: 2px;
   //--- card ---//
   display: block;

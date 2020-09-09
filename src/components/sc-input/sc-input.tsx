@@ -46,16 +46,6 @@ export class Input implements ComponentInterface {
   @Prop() autofocus = false;
 
   /**
-   * If `true`, a clear icon will appear in the input when there is a value. Clicking it clears the input.
-   */
-  @Prop() clearInput = false;
-
-  /**
-   * If `true`, the value will be cleared after focus upon edit. Defaults to `true` when `type` is `"password"`, `false` for all other types.
-   */
-  @Prop() clearOnEdit?: boolean;
-
-  /**
    * If `true`, the user cannot interact with the input.
    */
   @Prop() disabled = false;
@@ -147,9 +137,14 @@ export class Input implements ComponentInterface {
   @Prop({ mutable: true }) value?: string | null = "";
 
   /**
-   * aria labelby
+   * Aria labelby
    */
   @Prop({ reflect: true }) ariaLabelledby?: string = "";
+
+  /**
+   * Engrave level (0-9) note if 0 there will be no visible border around the element, so you'll need to add border via css.
+   */
+  @Prop() engraved?: number = 1;
 
   /**
    * Emitted when a keyboard input occurred.
@@ -177,7 +172,7 @@ export class Input implements ComponentInterface {
   @Event() keyDownEvent: EventEmitter<void>;
 
   /**
-   * Sets focus on the specified `ion-input`. Use this method instead of the global
+   * Sets focus on the specified `sc-input`. Use this method instead of the global
    * `input.focus()`.
    */
   @Method()
@@ -196,6 +191,8 @@ export class Input implements ComponentInterface {
   }
 
   @State() error: string = "";
+
+  @State() focused: boolean = false;
 
   private getValue(): string {
     return this.value || "";
@@ -221,59 +218,26 @@ export class Input implements ComponentInterface {
 
   private onBlur = () => {
     this.blurEvent.emit();
+    this.focused = false;
   };
 
   private onFocus = () => {
     this.focusEvent.emit();
+    this.focused = true;
   };
 
   private onKeydown = () => {
     this.keyDownEvent.emit();
   };
 
-  private clearTextInput = (ev?: Event) => {
-    if (this.clearInput && !this.readonly && !this.disabled && ev) {
-      ev.preventDefault();
-      ev.stopPropagation();
-    }
-
-    this.value = "";
-
-    /**
-     * This is needed for clearOnEdit
-     * Otherwise the value will not be cleared
-     * if user is inside the input
-     */
-    if (this.nativeInput) {
-      this.nativeInput.value = "";
-    }
-  };
-
   private hasValue(): boolean {
     return this.getValue().length > 0;
   }
 
-  // componentDidLoad() {
-  //   const input = this.el.shadowRoot.querySelector("input");
-  //   if (input) {
-  //     this.value = input.value || "";
-  //   }
-  //   console.log(input.validity);
-  //   for (var key in input.validity) {
-  //     if (input.validity[key]) {
-  //       if (key === "valid") {
-  //         this.error = "";
-  //         break;
-  //       }
-  //       this.error = validityMessages(this)[key] || ""; // "" catch all
-  //       break;
-  //     }
-  //   }
-  // }
-
   render() {
     const value = this.getValue();
 
+    const engravedLevel = this.focused ? this.engraved + 1 : this.engraved;
     return (
       <Host
         aria-disabled={this.disabled ? "true" : null}
@@ -283,7 +247,7 @@ export class Input implements ComponentInterface {
         }}
       >
         <input
-          class="native-input"
+          class={`engraved-${engravedLevel}`}
           ref={(input) => (this.nativeInput = input)}
           aria-labelledby={this.ariaLabelledby}
           disabled={this.disabled}
@@ -313,15 +277,7 @@ export class Input implements ComponentInterface {
           onKeyDown={this.onKeydown}
           onChange={(e) => this.changeEvent.emit(e)}
         />
-        {this.clearInput && !this.readonly && !this.disabled && (
-          <button
-            type="button"
-            class="input-clear-icon"
-            tabindex="-1"
-            onTouchStart={this.clearTextInput}
-            onMouseDown={this.clearTextInput}
-          />
-        )}
+
         {this.error && this.error.length > 0 && (
           <div class="error-message">{this.error}</div>
         )}
