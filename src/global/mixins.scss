@@ -1,27 +1,32 @@
+@function highlight($factor: 1) {
+  @return (-10px * $factor) (-10px * $factor) (30px * $factor) 0
+    highlightColor();
+}
+@function shadow($factor: 1) {
+  @return (10px * $factor) (10px * $factor) (30px * $factor) 0 shadowColor();
+}
+@function highlightColor() {
+  @return var(--sc-highlight-color, rgba(255, 255, 255, 0.2));
+}
+@function shadowColor() {
+  @return var(--sc-shadow-color, rgba(0, 0, 0, 0.2));
+}
+
 @mixin raised($factor: 1) {
-  box-shadow: -5px * $factor -5px * $factor 26px * $factor 0 var(--sc-highlight-color, #ffffff),
-    5px * $factor 5px * $factor 26px * $factor 0
-      var(--sc-shadow-color, rgba(0, 0, 0, 0.2));
+  box-shadow: highlight($factor), shadow($factor);
 }
 
 @mixin engraved($factor: 1) {
-  box-shadow: inset -5px * $factor -5px * $factor 24px * $factor 0
-      var(--sc-highlight-color, #ffffff),
-    inset 5px * $factor 5px * $factor 24px * $factor 0
-      var(--sc-shadow-color, rgba(0, 0, 0, 0.1));
+  box-shadow: inset highlight($factor), inset shadow($factor);
 }
 
 @mixin engraved-border-gradient() {
   background-image: linear-gradient(
       to bottom right,
-      var(--sc-shadow-color, rgba(0, 0, 0, 0.2)) -10%,
+      shadowColor() -10%,
       transparent 45%
     ),
-    linear-gradient(
-      to bottom right,
-      transparent 60%,
-      var(--sc-highlight-color, #ffffff) 120%
-    );
+    linear-gradient(to bottom right, transparent 60%, highlightColor() 120%);
 }
 
 @mixin ease-in-component() {

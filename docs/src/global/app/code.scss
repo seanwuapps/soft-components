@@ -1,0 +1,9 @@
+@import '../../../node_modules/highlight.js/scss/ir-black.scss';
+.hljs {
+  border-radius: var(--radius-small);
+  padding: $spacing * 4 $spacing * 2;
+  max-height: $spacing * 40;
+  .simplebar-scrollbar:before {
+    background: var(--code-block-scrollbar-color, #333);
+  }
+}

@@ -1,0 +1,32 @@
+app-nav {
+  ul {
+    padding: 0;
+    list-style: none;
+  }
+  .nav {
+    display: block;
+    .nav-item {
+      margin-bottom: 2 * $spacing;
+
+      a {
+        padding: $spacing * 2;
+        border-radius: var(--radius-small);
+        display: block;
+        text-decoration: none;
+        text-transform: capitalize;
+        position: relative;
+        color: var(--sc-text-color);
+        background: var(--sc-bg-color);
+        &:hover {
+          background: linear-gradient(to bottom right, rgba(c('black'), 0.1), transparent);
+        }
+      }
+    }
+  }
+  .sub-nav {
+    margin-left: $spacing * 2;
+    .nav-item {
+      margin-bottom: 0;
+    }
+  }
+}

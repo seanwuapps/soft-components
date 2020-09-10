@@ -1,0 +1,34 @@
+linkable-title {
+  display: inline-block;
+  position: relative;
+  &.highlight {
+    animation: blinker 1s ease 1s;
+  }
+  a {
+    text-decoration: none;
+    &:hover {
+      .anchor {
+        visibility: visible;
+      }
+    }
+    .anchor {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 100%;
+      opacity: 0.9;
+      visibility: hidden;
+    }
+  }
+}
+
+@keyframes blinker {
+  25%,
+  75% {
+    opacity: 0;
+  }
+  0%,
+  50% {
+    opacity: 1;
+  }
+}

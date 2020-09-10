@@ -1,0 +1,62 @@
+page-components {
+  min-height: 100vh;
+  .component-title {
+    h1 {
+      text-transform: capitalize;
+    }
+    code {
+      display: block;
+      margin-top: $spacing;
+    }
+  }
+  doc-usage {
+    display: block;
+  }
+
+  component-sidebar {
+    display: none;
+    @include media(sm) {
+      display: block;
+    }
+    nav {
+      .nav-item {
+        margin-bottom: 4 * $spacing;
+      }
+      .submenu {
+        margin-top: 2 * $spacing;
+        .nav-item {
+          margin-bottom: 2 * $spacing;
+        }
+      }
+    }
+  }
+
+  .props-container {
+    @include unspacing;
+  }
+
+  .search-btn {
+    --sc-button-icon-size: #{$spacing * 6};
+  }
+
+  .props-search-bar {
+    position: absolute;
+    background: var(--sc-bg-color);
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 50%;
+    height: 100%;
+    padding: $spacing;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    border-top-right-radius: var(--radius-small);
+    &.active {
+      opacity: 1;
+      pointer-events: initial;
+    }
+  }
+}

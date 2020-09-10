@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu&display=swap');
+// @font-face {
+//   font-family: Quicksand;
+//   src: url('/assets/fonts/Quicksand-VF.ttf') format('truetype-variations');
+// }
+
+$title-font: 'Ubuntu', sans-serif;
+$body-font: 'Montserrat', sans-serif;
+$font-scale-ratio: 1.2;
+
+//----------------------------//
+// Math.pow function
+// Credit: https://css-tricks.com/snippets/sass/power-function/
+//----------------------------//
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+body {
+  font-family: $body-font;
+  font-size: 16px;
+  font-variation-settings: 'wght' 500;
+  p {
+    font-size: 1em;
+  }
+  @for $i from 1 through 6 {
+    h#{7-$i} {
+      font-size: #{pow($font-scale-ratio, $i)}em;
+      // font-size: #{$i * $font-scale-ratio}em;
+      line-height: 1.1em;
+    }
+  }
+}
+
+.main {
+  * + * {
+    margin-top: 2rem;
+  }
+  ul {
+    list-style: circle;
+    li + li {
+      margin-top: $spacing;
+    }
+    li {
+      margin-left: $spacing;
+    }
+  }
+  sc-button {
+    &[icon-text] {
+      box-icon {
+        margin-right: $spacing;
+      }
+    }
+
+    .button-inner {
+      * {
+        margin-top: 0;
+      }
+    }
+  }
+  a {
+    color: var(--color-white);
+  }
+
+  [data-simplebar] {
+    .simplebar-content:before,
+    .simplebar-content:after {
+      content: none;
+    }
+    @include unspacing;
+  }
+}

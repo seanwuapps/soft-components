@@ -1,0 +1,26 @@
+@import url('https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css');
+
+code-block {
+  display: block;
+  .preview {
+    margin-top: $spacing * 2;
+    @include unspacing;
+  }
+  .control-bar {
+    --sc-card-outer-padding-x: #{$spacing};
+    --sc-card-outer-padding-y: #{$spacing};
+    @include unspacing;
+    sc-button {
+      --sc-button-icon-size: #{$spacing * 6};
+    }
+  }
+
+  .code-block {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    &.open {
+      max-height: 100vh;
+    }
+  }
+}

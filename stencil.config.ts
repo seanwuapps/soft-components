@@ -9,23 +9,18 @@ export const config: Config = {
   outputTargets: [
     {
       type: "dist",
-      esmLoaderPath: "../loader"
-    },
-    {
-      type: "docs-readme",
-      dir: "docs/public/md",
-      footer:
-        "*Inspired by Ionic, built with StencilJS*<br>*&#10084; from Sean Wu*"
+      esmLoaderPath: "../loader",
     },
     {
       type: "www",
-      serviceWorker: null // disable service workers
-    }
+      serviceWorker: null, // disable service workers
+    },
+    { type: "docs-json", file: "docs/docs-data.json" },
   ],
-  globalStyle: "src/global/app.css",
+  globalStyle: "src/global/app.scss",
   plugins: [
     sass({
-      injectGlobalPaths: ["src/global/mixins.scss"]
+      injectGlobalPaths: ["src/global/mixins.scss"],
     }),
     postcss({
       plugins: [
@@ -33,9 +28,9 @@ export const config: Config = {
         pxtorem({
           propList: ["*"],
           selectorBlackList: [":root", "html", "body"],
-          replace: false
-        })
-      ]
-    })
-  ]
+          replace: false,
+        }),
+      ],
+    }),
+  ],
 };

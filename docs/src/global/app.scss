@@ -1,0 +1,41 @@
+/*
+  Global App CSS
+  ----------------------
+  Use this file for styles that should be applied to all components.
+  For example, "font-family" within the "body" selector is a CSS property
+  most apps will want applied to all components.
+
+  Any global CSS variables should also be applied here.
+*/
+@import '../../node_modules/soft-components/dist/soft-components/soft-components.css';
+@import '../../node_modules/boxicons/css/boxicons.min.css';
+@import '../../node_modules/simplebar/dist/simplebar.css';
+
+@import 'app/variables.scss';
+@import 'app/mixins.scss';
+
+@import 'app/baseline.scss';
+@import 'app/typography.scss';
+@import 'app/margin-padding.scss';
+@import 'app/grid.scss';
+@import 'app/code.scss';
+@import 'app/table.scss';
+
+/* Color theme */
+:root,
+html {
+  // 'white': #ffffff,
+  // 'blue': #0acdff,
+  // 'green': #45cb85,
+  // 'black': #153131,
+  // 'almond': #fdeac4,
+  --sc-bg-color: var(--color-blue);
+  --sc-text-color: var(--color-white);
+  --sc-highlight-color: rgba(255, 255, 255, 0.4);
+  --sc-shadow-color: #00000033;
+  --sc-secondary-color: var(--color-almond);
+  --sc-active-color: #c586c0;
+
+  // scrollbar color in code-block
+  --code-block-scrollbar-color: var(--color-green);
+}

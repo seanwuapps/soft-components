@@ -27,24 +27,49 @@
       text-align: center;
     }
 
+    .test-block {
+      margin: 40px 0;
+      padding: 20px;
+    }
+
   </style>
 </head>
 
 <body class="py-5">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <sc-button bordered>
-          <i class="la la-back"></i> Bordered button
-        </sc-button>
-      </div>
-      <div class="col">
-        <sc-button icon>
-          <i class="la la-home"></i>
-        </sc-button>
-      </div>
-    </div>
-  </div>
+
+  <sc-button onclick="alert('yo')">Button</sc-button>
+
+  <!-- Anchor -->
+  <sc-button href="/" target="_blank" rel="noreferrer" title="button">Anchor
+  </sc-button>
+
+  <!-- Block level -->
+  <sc-button block>Block Button</sc-button>
+
+
+  <!-- Icon -->
+  <sc-button icon>
+    <i class="la la-home"></i>
+  </sc-button>
+
+  <!-- Icon and Text -->
+
+  <sc-button iconText>
+    <i class="la la-home"></i>
+    Text
+  </sc-button>
+
+
+  <!-- Bordered -->
+  <sc-button bordered>
+    <i class="la la-back"></i> Bordered button
+  </sc-button>
+
+  <sc-button flat>
+    Flat button
+  </sc-button>
+
+
   <div class="container pt-4">
     <form action="/" method="get">
       <sc-card card-title="Login" card-subtitle="Welcome back, please fill all fields and click login button.">
@@ -65,6 +90,80 @@
         </div>
         <sc-button block type="submit">Login</sc-button>
       </sc-card>
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="test-block round raised">
+            <h2>raised</h2>
+          </div>
+          <div class="test-block round raised-0">
+            <h2>raised 0</h2>
+          </div>
+          <div class="test-block round raised-1">
+            <h2>raised 1</h2>
+          </div>
+          <div class="test-block round raised-2">
+            <h2>raised 2</h2>
+          </div>
+          <div class="test-block round raised-3">
+            <h2>raised 3</h2>
+          </div>
+          <div class="test-block round raised-4">
+            <h2>raised 4</h2>
+          </div>
+          <div class="test-block round raised-5">
+            <h2>raised 5</h2>
+          </div>
+          <div class="test-block round raised-6">
+            <h2>raised 6</h2>
+          </div>
+          <div class="test-block round raised-7">
+            <h2>raised 7</h2>
+          </div>
+          <div class="test-block round raised-8">
+            <h2>raised 8</h2>
+          </div>
+          <div class="test-block round raised-9">
+            <h2>raised 9</h2>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="test-block round engraved">
+            <h2>engraved</h2>
+          </div>
+          <div class="test-block round engraved-0">
+            <h2>engraved 0</h2>
+          </div>
+          <div class="test-block round engraved-1">
+            <h2>engraved 1</h2>
+          </div>
+          <div class="test-block round engraved-2">
+            <h2>engraved 2</h2>
+          </div>
+          <div class="test-block round engraved-3">
+            <h2>engraved 3</h2>
+          </div>
+          <div class="test-block round engraved-4">
+            <h2>engraved 4</h2>
+          </div>
+          <div class="test-block round engraved-5">
+            <h2>engraved 5</h2>
+          </div>
+          <div class="test-block round engraved-6">
+            <h2>engraved 6</h2>
+          </div>
+          <div class="test-block round engraved-7">
+            <h2>engraved 7</h2>
+          </div>
+          <div class="test-block round engraved-8">
+            <h2>engraved 8</h2>
+          </div>
+          <div class="test-block round engraved-9">
+            <h2>engraved 9</h2>
+          </div>
+        </div>
+
+      </div>
     </form>
   </div>
 

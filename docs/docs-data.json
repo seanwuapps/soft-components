@@ -1,0 +1,1388 @@
+{
+  "timestamp": "2020-09-10T02:13:12",
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "2.0.3",
+    "typescriptVersion": "4.0.2"
+  },
+  "components": [
+    {
+      "filePath": "./src/components/sc-button/sc-button.tsx",
+      "encapsulation": "none",
+      "tag": "sc-button",
+      "readme": "# sc-button\nhello world\n\n",
+      "docs": "hello world",
+      "docsTags": [
+        {
+          "text": "- Content is placed between the named slots if provided without a slot.",
+          "name": "slot"
+        }
+      ],
+      "usage": {
+        "sandbox": "<sc-button>Button</sc-button>",
+        "sc-button": "<sc-button onclick=\"alert('yo')\">Button</sc-button>\n\n<!-- Anchor -->\n<sc-button href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\"\n  >Anchor\n</sc-button>\n\n<!-- Block level -->\n<sc-button block>Block Button</sc-button>\n\n\n<!-- Icon -->\n<sc-button icon>\n  <i class=\"la la-home\"></i>\n</sc-button>\n\n<!-- Icon and Text -->\n\n<sc-button iconText>\n  <i class=\"la la-home\"></i>\n  Text\n</sc-button>\n\n\n<!-- Bordered -->\n<sc-button bordered>\n  <i class=\"la la-back\"></i> Bordered button\n</sc-button>\n\n\n<!-- Flat -->\n<sc-button flat>\n  <i class=\"la la-back\"></i> Flat button\n</sc-button>"
+      },
+      "props": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "active",
+          "reflectToAttr": false,
+          "docs": "Set active state for the button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "block",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "block",
+          "reflectToAttr": true,
+          "docs": "Make button `display: block`",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "bordered",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "bordered",
+          "reflectToAttr": true,
+          "docs": "If prop exists, button will have an engraved-styled border",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "If `true`, the user cannot interact with the button.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "download",
+          "type": "string",
+          "mutable": false,
+          "attr": "download",
+          "reflectToAttr": false,
+          "docs": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want).",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "flat",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "flat",
+          "reflectToAttr": false,
+          "docs": "Make button flat",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "href",
+          "type": "string",
+          "mutable": false,
+          "attr": "href",
+          "reflectToAttr": false,
+          "docs": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": true,
+          "docs": "Icon only button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "iconText",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "icon-text",
+          "reflectToAttr": false,
+          "docs": "If this button has both icon and text",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "rel",
+          "type": "string",
+          "mutable": false,
+          "attr": "rel",
+          "reflectToAttr": false,
+          "docs": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "mutable": false,
+          "attr": "target",
+          "reflectToAttr": false,
+          "docs": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "\"button\" | \"reset\" | \"submit\"",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "The type of the button.",
+          "docsTags": [],
+          "default": "\"button\"",
+          "values": [
+            {
+              "value": "button",
+              "type": "string"
+            },
+            {
+              "value": "reset",
+              "type": "string"
+            },
+            {
+              "value": "submit",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "blurEvent",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the button loses focus.",
+          "docsTags": []
+        },
+        {
+          "event": "clickEvent",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the button is clicked.",
+          "docsTags": []
+        },
+        {
+          "event": "focusEvent",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the button has focus.",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--sc-button-bg-color",
+          "annotation": "prop",
+          "docs": "Background of the button"
+        },
+        {
+          "name": "--sc-button-border-radius",
+          "annotation": "prop",
+          "docs": "Button border radius"
+        },
+        {
+          "name": "--sc-button-bordered-border-radius",
+          "annotation": "prop",
+          "docs": "Bordered-style border radius"
+        },
+        {
+          "name": "--sc-button-bordered-border-width",
+          "annotation": "prop",
+          "docs": "Bordered-style border width"
+        },
+        {
+          "name": "--sc-button-icon-size",
+          "annotation": "prop",
+          "docs": "Icon button size"
+        },
+        {
+          "name": "--sc-button-padding-x",
+          "annotation": "prop",
+          "docs": "Horizontal paddings"
+        },
+        {
+          "name": "--sc-button-padding-y",
+          "annotation": "prop",
+          "docs": "Vertical paddings"
+        },
+        {
+          "name": "--sc-button-text-active-color",
+          "annotation": "prop",
+          "docs": "Text color with active prop"
+        },
+        {
+          "name": "--sc-button-text-color",
+          "annotation": "prop",
+          "docs": "Button text color"
+        },
+        {
+          "name": "--sc-button-text-hover-color",
+          "annotation": "prop",
+          "docs": "Text color on hover"
+        },
+        {
+          "name": "--sc-button-width",
+          "annotation": "prop",
+          "docs": "Set fixed width for button (default to auto)"
+        }
+      ],
+      "slots": [
+        {
+          "name": "",
+          "docs": "Content is placed between the named slots if provided without a slot."
+        }
+      ],
+      "parts": [],
+      "dependents": [
+        "sc-tab-button"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "sc-tab-button": [
+          "sc-button"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/sc-card/sc-card.tsx",
+      "encapsulation": "shadow",
+      "tag": "sc-card",
+      "readme": "# sc-card\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "sc-card": "<sc-card card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n<sc-card engraved card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n<sc-card bordered card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n"
+      },
+      "props": [
+        {
+          "name": "bordered",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "bordered",
+          "reflectToAttr": true,
+          "docs": "If this card has bordered style",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "cardSubtitle",
+          "type": "string",
+          "mutable": false,
+          "attr": "card-subtitle",
+          "reflectToAttr": false,
+          "docs": "Subtitle of the card",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "cardTitle",
+          "type": "string",
+          "mutable": false,
+          "attr": "card-title",
+          "reflectToAttr": false,
+          "docs": "Title of the card",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "engraved",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "engraved",
+          "reflectToAttr": false,
+          "docs": "if true, card will appear engraved instead of raised by default.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/sc-input/sc-input.tsx",
+      "encapsulation": "none",
+      "tag": "sc-input",
+      "readme": "# sc-input\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "sc-input": "<label for=\"email\">Email</label>\n<sc-input type=\"email\" required name=\"email\" id=\"email\"></sc-input>\n\n<label for=\"password\">Password</label>\n<sc-input type=\"password\" required name=\"password\" maxlength=\"6\" id=\"password\">\n</sc-input>\n"
+      },
+      "props": [
+        {
+          "name": "accept",
+          "type": "string",
+          "mutable": false,
+          "attr": "accept",
+          "reflectToAttr": false,
+          "docs": "If the value of the type attribute is `\"file\"`, then this attribute will indicate the types of files that the server accepts, otherwise it will be ignored. The value must be a comma-separated list of unique content type specifiers.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "ariaLabelledby",
+          "type": "string",
+          "mutable": false,
+          "attr": "aria-labelledby",
+          "reflectToAttr": true,
+          "docs": "Aria labelby",
+          "docsTags": [],
+          "default": "\"\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "autocapitalize",
+          "type": "string",
+          "mutable": false,
+          "attr": "autocapitalize",
+          "reflectToAttr": false,
+          "docs": "Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.",
+          "docsTags": [],
+          "default": "\"off\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "autocomplete",
+          "type": "\"off\" | \"on\"",
+          "mutable": false,
+          "attr": "autocomplete",
+          "reflectToAttr": false,
+          "docs": "Indicates whether the value of the control can be automatically completed by the browser.",
+          "docsTags": [],
+          "default": "\"off\"",
+          "values": [
+            {
+              "value": "off",
+              "type": "string"
+            },
+            {
+              "value": "on",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "autocorrect",
+          "type": "\"off\" | \"on\"",
+          "mutable": false,
+          "attr": "autocorrect",
+          "reflectToAttr": false,
+          "docs": "Whether auto correction should be enabled when the user is entering/editing the text value.",
+          "docsTags": [],
+          "default": "\"off\"",
+          "values": [
+            {
+              "value": "off",
+              "type": "string"
+            },
+            {
+              "value": "on",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "autofocus",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "autofocus",
+          "reflectToAttr": false,
+          "docs": "This Boolean attribute lets you specify that a form control should have input focus when the page loads.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "If `true`, the user cannot interact with the input.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "engraved",
+          "type": "number",
+          "mutable": false,
+          "attr": "engraved",
+          "reflectToAttr": false,
+          "docs": "Engrave level (0-9) note if 0 there will be no visible border around the element, so you'll need to add border via css.",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "inputmode",
+          "type": "\"decimal\" | \"email\" | \"none\" | \"numeric\" | \"search\" | \"tel\" | \"text\" | \"url\"",
+          "mutable": false,
+          "attr": "inputmode",
+          "reflectToAttr": false,
+          "docs": "A hint to the browser for which keyboard to display.\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "decimal",
+              "type": "string"
+            },
+            {
+              "value": "email",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "value": "numeric",
+              "type": "string"
+            },
+            {
+              "value": "search",
+              "type": "string"
+            },
+            {
+              "value": "tel",
+              "type": "string"
+            },
+            {
+              "value": "text",
+              "type": "string"
+            },
+            {
+              "value": "url",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "max",
+          "type": "string",
+          "mutable": false,
+          "attr": "max",
+          "reflectToAttr": false,
+          "docs": "The maximum value, which must not be less than its minimum (min attribute) value.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "maxlength",
+          "type": "number",
+          "mutable": false,
+          "attr": "maxlength",
+          "reflectToAttr": false,
+          "docs": "If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the maximum number of characters that the user can enter.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "string",
+          "mutable": false,
+          "attr": "min",
+          "reflectToAttr": false,
+          "docs": "The minimum value, which must not be greater than its maximum (max attribute) value.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "minlength",
+          "type": "number",
+          "mutable": false,
+          "attr": "minlength",
+          "reflectToAttr": false,
+          "docs": "If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the minimum number of characters that the user can enter.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "multiple",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "multiple",
+          "reflectToAttr": false,
+          "docs": "If `true`, the user can enter more than one value. This attribute applies when the type attribute is set to `\"email\"` or `\"file\"`, otherwise it is ignored.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "The name of the control, which is submitted with the form data.",
+          "docsTags": [],
+          "default": "\"\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "pattern",
+          "type": "string",
+          "mutable": false,
+          "attr": "pattern",
+          "reflectToAttr": false,
+          "docs": "A regular expression that the value is checked against. The pattern must match the entire value, not just some subset. Use the title attribute to describe the pattern to help the user. This attribute applies when the value of the type attribute is `\"text\"`, `\"search\"`, `\"tel\"`, `\"url\"`, `\"email\"`, or `\"password\"`, otherwise it is ignored.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Instructional text that shows before the input has a value.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "readonly",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "readonly",
+          "reflectToAttr": false,
+          "docs": "If `true`, the user cannot modify the value.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "required",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "required",
+          "reflectToAttr": false,
+          "docs": "If `true`, the user must fill in a value before submitting a form.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "The initial size of the control. This value is in pixels unless the value of the type attribute is `\"text\"` or `\"password\"`, in which case it is an integer number of characters. This attribute applies only when the `type` attribute is set to `\"text\"`, `\"search\"`, `\"tel\"`, `\"url\"`, `\"email\"`, or `\"password\"`, otherwise it is ignored.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "step",
+          "type": "string",
+          "mutable": false,
+          "attr": "step",
+          "reflectToAttr": false,
+          "docs": "Works with the min and max attributes to limit the increments at which a value can be set.\nPossible values are: `\"any\"` or a positive floating point number.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "mutable": false,
+          "attr": "type",
+          "reflectToAttr": false,
+          "docs": "The type of control to display. The default type is text.",
+          "docsTags": [],
+          "default": "\"text\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The value of the input.",
+          "docsTags": [],
+          "default": "\"\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "getInputElement",
+          "returns": {
+            "type": "Promise<HTMLInputElement>",
+            "docs": ""
+          },
+          "signature": "getInputElement() => Promise<HTMLInputElement>",
+          "parameters": [],
+          "docs": "Returns the native `<input>` element used under the hood.",
+          "docsTags": []
+        },
+        {
+          "name": "setFocus",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setFocus() => Promise<void>",
+          "parameters": [],
+          "docs": "Sets focus on the specified `sc-input`. Use this method instead of the global\n`input.focus()`.",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "blurEvent",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the input loses focus.",
+          "docsTags": []
+        },
+        {
+          "event": "changeEvent",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the value has changed.",
+          "docsTags": []
+        },
+        {
+          "event": "focusEvent",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the input has focus.",
+          "docsTags": []
+        },
+        {
+          "event": "inputEvent",
+          "detail": "KeyboardEvent",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when a keyboard input occurred.",
+          "docsTags": []
+        },
+        {
+          "event": "keyDownEvent",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when a key is pressed down",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/sc-tabs/sc-tab-button/sc-tab-button.tsx",
+      "encapsulation": "shadow",
+      "tag": "sc-tab-button",
+      "readme": "# sc-tab-button\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "active",
+          "type": "boolean",
+          "mutable": true,
+          "attr": "active",
+          "reflectToAttr": true,
+          "docs": "When prop is set, this tab is shown, only one `<sc-tab>` element can be active inside `<sc-tabs>`",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "block",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "block",
+          "reflectToAttr": true,
+          "docs": "The button shape.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "bordered",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "bordered",
+          "reflectToAttr": true,
+          "docs": "If prop exists, button will have an engraved-styled border",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "icon",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "icon",
+          "reflectToAttr": true,
+          "docs": "Icon only button",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "target",
+          "type": "string",
+          "mutable": false,
+          "attr": "target",
+          "reflectToAttr": false,
+          "docs": "id of the target `sc-tab-content` tag",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        }
+      ],
+      "methods": [
+        {
+          "name": "setActive",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setActive(emitEvent?: boolean) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "setInactive",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setInactive(emitEvent?: boolean) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "activeEvent",
+          "detail": "HTMLElement",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "inactiveEvent",
+          "detail": "HTMLElement",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "sc-button"
+      ],
+      "dependencyGraph": {
+        "sc-tab-button": [
+          "sc-button"
+        ]
+      }
+    },
+    {
+      "filePath": "./src/components/sc-tabs/sc-tab-content/sc-tab-content.tsx",
+      "encapsulation": "shadow",
+      "tag": "sc-tab-content",
+      "readme": "# sc-tab-content\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [],
+      "methods": [
+        {
+          "name": "setActive",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setActive() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "name": "setInactive",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setInactive() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "activeCompleted",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "inactiveCompleted",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "transitionstart",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "transitionend",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/sc-tabs/sc-tabs.tsx",
+      "encapsulation": "none",
+      "tag": "sc-tabs",
+      "readme": "# sc-tabs\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "sc-tabs": ""
+      },
+      "props": [
+        {
+          "name": "transition",
+          "type": "string",
+          "mutable": false,
+          "attr": "transition",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "\"\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/sc-toggle/sc-toggle.tsx",
+      "encapsulation": "none",
+      "tag": "sc-toggle",
+      "readme": "# sc-toggle\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {
+        "sc-toggle": "<!-- Use it like a checkbox -->\n<sc-toggle name=\"remember\" value=\"1\" checked=\"checked\" label=\"Remember me\"></sc-toggle>\n"
+      },
+      "props": [
+        {
+          "name": "ariaLabelledby",
+          "type": "string",
+          "mutable": false,
+          "attr": "aria-labelledby",
+          "reflectToAttr": true,
+          "docs": "aria labelby",
+          "docsTags": [],
+          "default": "\"\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "autofocus",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "autofocus",
+          "reflectToAttr": false,
+          "docs": "This Boolean attribute lets you specify that a form control should have input focus when the page loads.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "checked",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "checked",
+          "reflectToAttr": true,
+          "docs": "If this toggle is on by default",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "If `true`, the user cannot interact with the input.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Label text to be displayed inline with the toggle",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "mutable": false,
+          "attr": "name",
+          "reflectToAttr": false,
+          "docs": "The name of the control, which is submitted with the form data.",
+          "docsTags": [],
+          "default": "\"\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "The value of the input.",
+          "docsTags": [],
+          "default": "\"\"",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "blurEvent",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the input loses focus.",
+          "docsTags": []
+        },
+        {
+          "event": "changeEvent",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the value has changed.",
+          "docsTags": []
+        },
+        {
+          "event": "focusEvent",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the input has focus.",
+          "docsTags": []
+        },
+        {
+          "event": "inputEvent",
+          "detail": "KeyboardEvent",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when a keyboard input occurred.",
+          "docsTags": []
+        },
+        {
+          "event": "keyDownEvent",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when a key is pressed down",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    }
+  ]
+}
