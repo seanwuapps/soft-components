@@ -43,6 +43,15 @@ body {
   * + * {
     margin-top: 2rem;
   }
+  ul {
+    list-style: circle;
+    li + li {
+      margin-top: $spacing;
+    }
+    li {
+      margin-left: $spacing;
+    }
+  }
   sc-button {
     &[icon-text] {
       box-icon {

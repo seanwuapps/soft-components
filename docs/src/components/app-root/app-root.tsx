@@ -19,7 +19,7 @@ export class AppRoot {
 
         <app-header class="header"></app-header>
 
-        <main class="main">
+        <main class="main pl-1 py-4">
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="page-home" exact={true} />
