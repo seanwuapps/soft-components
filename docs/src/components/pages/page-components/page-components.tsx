@@ -103,11 +103,11 @@ export class PageComponents {
                 <linkable-title anchor="props">Props</linkable-title>
 
                 <div class="props-container table">
-                  <div class="table-head py-2 align-center raised-2 sticky">
-                    <div class="w-2 pl-3">Name</div>
-                    <div class="w-4">Description</div>
+                  <div class="table-head py-1 align-center raised-2 sticky">
+                    <div class="w-2 pl-2">Name</div>
+                    <div class="w-5">Description</div>
                     <div class="w-2">Type</div>
-                    <div class="w-2">Default</div>
+                    <div class="w-1">Default</div>
                     <div class="w-1 text-center">
                       <sc-button class="w-1 search-btn" icon onClick={() => this.togglePropSearchBar()}>
                         <box-icon class="search-btn" name="search" color="currentColor"></box-icon>
@@ -124,16 +124,16 @@ export class PageComponents {
                   <div class="table-body engraved-1">
                     {this.filteredProps.map(prop => (
                       <div class="flex">
-                        <div class="w-2 py-2 pl-3">
+                        <div class="w-2 py-2 pl-2">
                           <linkable-title anchor={`props-${prop.name}`} tag="code" class="prop__title">
                             {prop.name}
                           </linkable-title>
                         </div>
-                        <div class="w-4 py-2" innerHTML={md.render(prop.docs)}></div>
+                        <div class="w-5 py-2" innerHTML={md.render(prop.docs)}></div>
                         <div class="w-2 py-2">
                           <code>{prop.type}</code>
                         </div>
-                        <div class="w-2 py-2">
+                        <div class="w-1 py-2">
                           <code>{prop.default}</code>
                         </div>
                         <div class="w-1 pr-1">&nbsp;</div>

@@ -36,22 +36,24 @@ page-components {
   }
 
   .search-btn {
-    --sc-button-icon-size: #{$spacing * 5};
+    --sc-button-icon-size: #{$spacing * 6};
   }
 
   .props-search-bar {
     position: absolute;
     background: var(--sc-bg-color);
     top: 50%;
-    right: $spacing;
+    right: 0;
     transform: translateY(-50%);
     width: 50%;
-    padding: $spacing / 2;
+    height: 100%;
+    padding: $spacing;
     opacity: 0;
     transition: opacity 0.3s ease;
     pointer-events: none;
     display: flex;
     align-items: center;
+    border-top-right-radius: var(--radius-small);
     &.active {
       opacity: 1;
       pointer-events: initial;

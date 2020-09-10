@@ -31,7 +31,7 @@ export class CodeBlock {
           <sc-button icon class={` ${this.sourceCodeOpen && 'active'}`} onClick={() => this.toggleSourceCode()}>
             <box-icon name="code" color="currentColor"></box-icon>
           </sc-button>
-          <sc-button icon class="ml-1">
+          <sc-button icon class="ml-2" href="">
             <box-icon name="github" type="logo" color="currentColor"></box-icon>
           </sc-button>
           <codepen-link
@@ -44,7 +44,7 @@ export class CodeBlock {
             css-external="//maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css;//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700;//unpkg.com/soft-components@latest/dist/soft-components/soft-components.css"
             js-external="//unpkg.com/soft-components@latest/dist/soft-components/soft-components.js"
           >
-            <sc-button icon class="ml-1">
+            <sc-button icon class="ml-2">
               <box-icon type="logo" name="codepen" color="currentColor"></box-icon>
             </sc-button>
           </codepen-link>
