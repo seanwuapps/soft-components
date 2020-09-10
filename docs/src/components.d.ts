@@ -18,6 +18,51 @@ export namespace Components {
     interface CodeBlock {
         "code": string;
     }
+    interface CodepenLink {
+        "css"?: string;
+        /**
+          * semi-colon separate multiple files
+         */
+        "css_external"?: string;
+        "css_pre_processor"?: 'none' | 'less' | 'scss' | 'sass' | 'stylus';
+        "css_prefix"?: 'autoprefixer' | 'prefixfree' | 'neither';
+        "css_starter"?: 'normalize' | 'reset' | 'neither';
+        /**
+          * Description of new pen
+         */
+        "description"?: string;
+        /**
+          * Set which editors are open. In this example HTML open, CSS closed, JS open
+         */
+        "editors"?: string;
+        "head"?: string;
+        "html"?: string;
+        "html_classes"?: string;
+        "html_pre_processor"?: 'none' | 'slim' | 'haml' | 'markdown';
+        /**
+          * When the Pen is saved, it will save as Private if logged in user has that privledge, otherwise it will save as public
+         */
+        "isPrivate"?: boolean;
+        "js"?: string;
+        /**
+          * semi-colon separate multiple files
+         */
+        "js_external"?: string;
+        "js_pre_processor"?: 'none' | 'coffeescript' | 'babel' | 'livescript' | 'typescript';
+        "layout"?: 'top' | 'left' | 'right';
+        /**
+          * If supplied, the Pen will save as a fork of this id. Note it's not the slug, but ID. You can find the ID of a Pen with `window.CP.pen.id` in the browser console.
+         */
+        "parent"?: string;
+        /**
+          * Title of new pen
+         */
+        "penTitle"?: string;
+        /**
+          * an array of strings
+         */
+        "tags"?: Array<string>;
+    }
     interface ComponentSidebar {
     }
     interface DocUsage {
@@ -45,8 +90,6 @@ export namespace Components {
           * url params matcher
          */
         "match": MatchResults;
-    }
-    interface StylingSandbox {
     }
 }
 declare global {
@@ -79,6 +122,12 @@ declare global {
     var HTMLCodeBlockElement: {
         prototype: HTMLCodeBlockElement;
         new (): HTMLCodeBlockElement;
+    };
+    interface HTMLCodepenLinkElement extends Components.CodepenLink, HTMLStencilElement {
+    }
+    var HTMLCodepenLinkElement: {
+        prototype: HTMLCodepenLinkElement;
+        new (): HTMLCodepenLinkElement;
     };
     interface HTMLComponentSidebarElement extends Components.ComponentSidebar, HTMLStencilElement {
     }
@@ -128,18 +177,13 @@ declare global {
         prototype: HTMLPageStandardElement;
         new (): HTMLPageStandardElement;
     };
-    interface HTMLStylingSandboxElement extends Components.StylingSandbox, HTMLStencilElement {
-    }
-    var HTMLStylingSandboxElement: {
-        prototype: HTMLStylingSandboxElement;
-        new (): HTMLStylingSandboxElement;
-    };
     interface HTMLElementTagNameMap {
         "app-header": HTMLAppHeaderElement;
         "app-logo": HTMLAppLogoElement;
         "app-nav": HTMLAppNavElement;
         "app-root": HTMLAppRootElement;
         "code-block": HTMLCodeBlockElement;
+        "codepen-link": HTMLCodepenLinkElement;
         "component-sidebar": HTMLComponentSidebarElement;
         "doc-usage": HTMLDocUsageElement;
         "linkable-title": HTMLLinkableTitleElement;
@@ -148,7 +192,6 @@ declare global {
         "page-home": HTMLPageHomeElement;
         "page-notfound": HTMLPageNotfoundElement;
         "page-standard": HTMLPageStandardElement;
-        "styling-sandbox": HTMLStylingSandboxElement;
     }
 }
 declare namespace LocalJSX {
@@ -162,6 +205,51 @@ declare namespace LocalJSX {
     }
     interface CodeBlock {
         "code"?: string;
+    }
+    interface CodepenLink {
+        "css"?: string;
+        /**
+          * semi-colon separate multiple files
+         */
+        "css_external"?: string;
+        "css_pre_processor"?: 'none' | 'less' | 'scss' | 'sass' | 'stylus';
+        "css_prefix"?: 'autoprefixer' | 'prefixfree' | 'neither';
+        "css_starter"?: 'normalize' | 'reset' | 'neither';
+        /**
+          * Description of new pen
+         */
+        "description"?: string;
+        /**
+          * Set which editors are open. In this example HTML open, CSS closed, JS open
+         */
+        "editors"?: string;
+        "head"?: string;
+        "html"?: string;
+        "html_classes"?: string;
+        "html_pre_processor"?: 'none' | 'slim' | 'haml' | 'markdown';
+        /**
+          * When the Pen is saved, it will save as Private if logged in user has that privledge, otherwise it will save as public
+         */
+        "isPrivate"?: boolean;
+        "js"?: string;
+        /**
+          * semi-colon separate multiple files
+         */
+        "js_external"?: string;
+        "js_pre_processor"?: 'none' | 'coffeescript' | 'babel' | 'livescript' | 'typescript';
+        "layout"?: 'top' | 'left' | 'right';
+        /**
+          * If supplied, the Pen will save as a fork of this id. Note it's not the slug, but ID. You can find the ID of a Pen with `window.CP.pen.id` in the browser console.
+         */
+        "parent"?: string;
+        /**
+          * Title of new pen
+         */
+        "penTitle"?: string;
+        /**
+          * an array of strings
+         */
+        "tags"?: Array<string>;
     }
     interface ComponentSidebar {
     }
@@ -191,14 +279,13 @@ declare namespace LocalJSX {
          */
         "match"?: MatchResults;
     }
-    interface StylingSandbox {
-    }
     interface IntrinsicElements {
         "app-header": AppHeader;
         "app-logo": AppLogo;
         "app-nav": AppNav;
         "app-root": AppRoot;
         "code-block": CodeBlock;
+        "codepen-link": CodepenLink;
         "component-sidebar": ComponentSidebar;
         "doc-usage": DocUsage;
         "linkable-title": LinkableTitle;
@@ -207,7 +294,6 @@ declare namespace LocalJSX {
         "page-home": PageHome;
         "page-notfound": PageNotfound;
         "page-standard": PageStandard;
-        "styling-sandbox": StylingSandbox;
     }
 }
 export { LocalJSX as JSX };
@@ -219,6 +305,7 @@ declare module "@stencil/core" {
             "app-nav": LocalJSX.AppNav & JSXBase.HTMLAttributes<HTMLAppNavElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "code-block": LocalJSX.CodeBlock & JSXBase.HTMLAttributes<HTMLCodeBlockElement>;
+            "codepen-link": LocalJSX.CodepenLink & JSXBase.HTMLAttributes<HTMLCodepenLinkElement>;
             "component-sidebar": LocalJSX.ComponentSidebar & JSXBase.HTMLAttributes<HTMLComponentSidebarElement>;
             "doc-usage": LocalJSX.DocUsage & JSXBase.HTMLAttributes<HTMLDocUsageElement>;
             "linkable-title": LocalJSX.LinkableTitle & JSXBase.HTMLAttributes<HTMLLinkableTitleElement>;
@@ -227,7 +314,6 @@ declare module "@stencil/core" {
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
             "page-notfound": LocalJSX.PageNotfound & JSXBase.HTMLAttributes<HTMLPageNotfoundElement>;
             "page-standard": LocalJSX.PageStandard & JSXBase.HTMLAttributes<HTMLPageStandardElement>;
-            "styling-sandbox": LocalJSX.StylingSandbox & JSXBase.HTMLAttributes<HTMLStylingSandboxElement>;
         }
     }
 }

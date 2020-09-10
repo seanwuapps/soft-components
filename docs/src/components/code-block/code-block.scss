@@ -13,4 +13,13 @@ code-block {
       --sc-button-icon-size: #{$spacing * 6};
     }
   }
+
+  .code-block {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+    &.open {
+      max-height: 100vh;
+    }
+  }
 }
