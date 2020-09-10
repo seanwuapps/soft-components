@@ -28,7 +28,7 @@ export class LinkableTitle {
       <Host class={{ highlight }}>
         <Tag>
           <a href={`#${this.anchor}`}>
-            <box-icon name="link" color="var(--sc-text-color)" class="anchor"></box-icon>
+            <box-icon size="1.4em" name="link" color="var(--sc-text-color)" class="anchor"></box-icon>
             <slot></slot>
           </a>
         </Tag>

@@ -19,14 +19,26 @@ export namespace Components {
         "code": string;
     }
     interface CodepenLink {
+        /**
+          * CSS code
+         */
         "css"?: string;
         /**
           * semi-colon separate multiple files
          */
-        "css_external"?: string;
-        "css_pre_processor"?: 'none' | 'less' | 'scss' | 'sass' | 'stylus';
-        "css_prefix"?: 'autoprefixer' | 'prefixfree' | 'neither';
-        "css_starter"?: 'normalize' | 'reset' | 'neither';
+        "cssExternal"?: string;
+        /**
+          * CSS preprocessor
+         */
+        "cssPreProcessor"?: 'none' | 'less' | 'scss' | 'sass' | 'stylus';
+        /**
+          * CSS prefix
+         */
+        "cssPrefix"?: 'autoprefixer' | 'prefixfree' | 'neither';
+        /**
+          * CSS reset or normalisation
+         */
+        "cssStarter"?: 'normalize' | 'reset' | 'neither';
         /**
           * Description of new pen
          */
@@ -35,20 +47,41 @@ export namespace Components {
           * Set which editors are open. In this example HTML open, CSS closed, JS open
          */
         "editors"?: string;
+        /**
+          * Code that should go inside <head></head>
+         */
         "head"?: string;
+        /**
+          * HTML code
+         */
         "html"?: string;
-        "html_classes"?: string;
-        "html_pre_processor"?: 'none' | 'slim' | 'haml' | 'markdown';
+        /**
+          * HTML classes
+         */
+        "htmlClasses"?: string;
+        /**
+          * HTML preprocessor
+         */
+        "htmlPreProcessor"?: 'none' | 'slim' | 'haml' | 'markdown';
         /**
           * When the Pen is saved, it will save as Private if logged in user has that privledge, otherwise it will save as public
          */
         "isPrivate"?: boolean;
+        /**
+          * JavaScript code
+         */
         "js"?: string;
         /**
           * semi-colon separate multiple files
          */
-        "js_external"?: string;
-        "js_pre_processor"?: 'none' | 'coffeescript' | 'babel' | 'livescript' | 'typescript';
+        "jsExternal"?: string;
+        /**
+          * JavaScript preprocessor
+         */
+        "jsPreProcessor"?: 'none' | 'coffeescript' | 'babel' | 'livescript' | 'typescript';
+        /**
+          * Layout of the new pen
+         */
         "layout"?: 'top' | 'left' | 'right';
         /**
           * If supplied, the Pen will save as a fork of this id. Note it's not the slug, but ID. You can find the ID of a Pen with `window.CP.pen.id` in the browser console.
@@ -207,14 +240,26 @@ declare namespace LocalJSX {
         "code"?: string;
     }
     interface CodepenLink {
+        /**
+          * CSS code
+         */
         "css"?: string;
         /**
           * semi-colon separate multiple files
          */
-        "css_external"?: string;
-        "css_pre_processor"?: 'none' | 'less' | 'scss' | 'sass' | 'stylus';
-        "css_prefix"?: 'autoprefixer' | 'prefixfree' | 'neither';
-        "css_starter"?: 'normalize' | 'reset' | 'neither';
+        "cssExternal"?: string;
+        /**
+          * CSS preprocessor
+         */
+        "cssPreProcessor"?: 'none' | 'less' | 'scss' | 'sass' | 'stylus';
+        /**
+          * CSS prefix
+         */
+        "cssPrefix"?: 'autoprefixer' | 'prefixfree' | 'neither';
+        /**
+          * CSS reset or normalisation
+         */
+        "cssStarter"?: 'normalize' | 'reset' | 'neither';
         /**
           * Description of new pen
          */
@@ -223,20 +268,41 @@ declare namespace LocalJSX {
           * Set which editors are open. In this example HTML open, CSS closed, JS open
          */
         "editors"?: string;
+        /**
+          * Code that should go inside <head></head>
+         */
         "head"?: string;
+        /**
+          * HTML code
+         */
         "html"?: string;
-        "html_classes"?: string;
-        "html_pre_processor"?: 'none' | 'slim' | 'haml' | 'markdown';
+        /**
+          * HTML classes
+         */
+        "htmlClasses"?: string;
+        /**
+          * HTML preprocessor
+         */
+        "htmlPreProcessor"?: 'none' | 'slim' | 'haml' | 'markdown';
         /**
           * When the Pen is saved, it will save as Private if logged in user has that privledge, otherwise it will save as public
          */
         "isPrivate"?: boolean;
+        /**
+          * JavaScript code
+         */
         "js"?: string;
         /**
           * semi-colon separate multiple files
          */
-        "js_external"?: string;
-        "js_pre_processor"?: 'none' | 'coffeescript' | 'babel' | 'livescript' | 'typescript';
+        "jsExternal"?: string;
+        /**
+          * JavaScript preprocessor
+         */
+        "jsPreProcessor"?: 'none' | 'coffeescript' | 'babel' | 'livescript' | 'typescript';
+        /**
+          * Layout of the new pen
+         */
         "layout"?: 'top' | 'left' | 'right';
         /**
           * If supplied, the Pen will save as a fork of this id. Note it's not the slug, but ID. You can find the ID of a Pen with `window.CP.pen.id` in the browser console.

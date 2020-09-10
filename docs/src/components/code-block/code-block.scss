@@ -3,6 +3,7 @@
 code-block {
   display: block;
   .preview {
+    margin-top: $spacing * 2;
     @include unspacing;
   }
   .control-bar {

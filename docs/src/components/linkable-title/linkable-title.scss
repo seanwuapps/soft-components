@@ -13,7 +13,8 @@ linkable-title {
     }
     .anchor {
       position: absolute;
-      bottom: 0;
+      top: 50%;
+      transform: translateY(-50%);
       right: 100%;
       opacity: 0.9;
       visibility: hidden;
