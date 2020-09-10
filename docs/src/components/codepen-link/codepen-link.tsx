@@ -1,10 +1,12 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, Element } from '@stencil/core';
 
 @Component({
   tag: 'codepen-link',
   styleUrl: 'codepen-link.scss',
 })
 export class CodepenLink {
+  @Element() el: HTMLElement;
+
   /**
    * JSON options defined here:
    * https://blog.codepen.io/documentation/prefill/
@@ -62,6 +64,11 @@ export class CodepenLink {
    */
   @Prop() js_external?: string = '';
 
+  private submit() {
+    const form = this.el.querySelector('form');
+    form.submit();
+  }
+
   render() {
     const {
       penTitle: title,
@@ -108,8 +115,7 @@ export class CodepenLink {
         <form action="https://codepen.io/pen/define" method="POST" target="_blank">
           <input type="hidden" name="data" value={data} />
 
-          <div class="submit-wrapper">
-            <button type="submit"></button>
+          <div class="submit-wrapper" onClick={() => this.submit()}>
             <slot></slot>
           </div>
         </form>
