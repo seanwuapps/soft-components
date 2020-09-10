@@ -102,10 +102,6 @@ export namespace Components {
     interface DocUsage {
         "usage": string;
     }
-    interface LinkableTitle {
-        "anchor": string;
-        "tag": string;
-    }
     interface PageComponents {
         /**
           * url params matcher
@@ -175,12 +171,6 @@ declare global {
         prototype: HTMLDocUsageElement;
         new (): HTMLDocUsageElement;
     };
-    interface HTMLLinkableTitleElement extends Components.LinkableTitle, HTMLStencilElement {
-    }
-    var HTMLLinkableTitleElement: {
-        prototype: HTMLLinkableTitleElement;
-        new (): HTMLLinkableTitleElement;
-    };
     interface HTMLPageComponentsElement extends Components.PageComponents, HTMLStencilElement {
     }
     var HTMLPageComponentsElement: {
@@ -220,7 +210,6 @@ declare global {
         "codepen-link": HTMLCodepenLinkElement;
         "component-sidebar": HTMLComponentSidebarElement;
         "doc-usage": HTMLDocUsageElement;
-        "linkable-title": HTMLLinkableTitleElement;
         "page-components": HTMLPageComponentsElement;
         "page-helper-classes": HTMLPageHelperClassesElement;
         "page-home": HTMLPageHomeElement;
@@ -324,10 +313,6 @@ declare namespace LocalJSX {
     interface DocUsage {
         "usage"?: string;
     }
-    interface LinkableTitle {
-        "anchor"?: string;
-        "tag"?: string;
-    }
     interface PageComponents {
         /**
           * url params matcher
@@ -356,7 +341,6 @@ declare namespace LocalJSX {
         "codepen-link": CodepenLink;
         "component-sidebar": ComponentSidebar;
         "doc-usage": DocUsage;
-        "linkable-title": LinkableTitle;
         "page-components": PageComponents;
         "page-helper-classes": PageHelperClasses;
         "page-home": PageHome;
@@ -376,7 +360,6 @@ declare module "@stencil/core" {
             "codepen-link": LocalJSX.CodepenLink & JSXBase.HTMLAttributes<HTMLCodepenLinkElement>;
             "component-sidebar": LocalJSX.ComponentSidebar & JSXBase.HTMLAttributes<HTMLComponentSidebarElement>;
             "doc-usage": LocalJSX.DocUsage & JSXBase.HTMLAttributes<HTMLDocUsageElement>;
-            "linkable-title": LocalJSX.LinkableTitle & JSXBase.HTMLAttributes<HTMLLinkableTitleElement>;
             "page-components": LocalJSX.PageComponents & JSXBase.HTMLAttributes<HTMLPageComponentsElement>;
             "page-helper-classes": LocalJSX.PageHelperClasses & JSXBase.HTMLAttributes<HTMLPageHelperClassesElement>;
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;

@@ -59,4 +59,9 @@ page-components {
       pointer-events: initial;
     }
   }
+
+  .prop__title {
+    --icon-width: #{$spacing};
+    --icon-gap: #{$spacing/2};
+  }
 }

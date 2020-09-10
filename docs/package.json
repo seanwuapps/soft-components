@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^9.0.0",
-    "@stencil/core": "^2.0.3",
+    "@stencil/core": "^1.17.3",
     "@stencil/postcss": "^1.0.1",
     "@stencil/router": "^1.0.1",
     "@stencil/sass": "^1.3.2",
@@ -24,6 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "highlight.js": "^10.1.2",
+    "linkable-title": "^1.0.0",
     "markdown-it": "^11.0.0",
     "simplebar": "^6.0.0-beta.3",
     "soft-components": "file:.."

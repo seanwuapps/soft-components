@@ -2,7 +2,7 @@ app-root {
   display: grid;
   margin: 0 $spacing * 2;
   min-height: 100vh;
-  grid-template-columns: 220px auto;
+  grid-template-columns: 220px 1fr;
   grid-template-rows: auto 1fr auto;
   gap: 0px 0px;
   grid-template-areas:
@@ -16,8 +16,6 @@ app-root {
 
   .main {
     grid-area: main;
-    overflow-x: hidden;
-    border-radius: var(--radius);
   }
 
   .footer {

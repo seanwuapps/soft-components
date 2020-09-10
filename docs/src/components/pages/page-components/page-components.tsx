@@ -91,15 +91,15 @@ export class PageComponents {
             {/* Usage */}
             {this.component.usage[tag] && (
               <section>
-                <linkable-title anchor="usage">Usage</linkable-title>
-                <code-block tag={tag} code={this.component.usage[tag]}></code-block>
+                <linkable-title id="usage">Usage</linkable-title>
+                <code-block tag={tag} code={md.render(this.component.usage[tag])}></code-block>
               </section>
             )}
 
             {/* Props */}
             {this.component.props && (
               <section>
-                <linkable-title anchor="props">Props</linkable-title>
+                <linkable-title id="props">Props</linkable-title>
 
                 <div class="props-container table">
                   <div class="table-head py-1 align-center raised-2 sticky">
@@ -123,8 +123,8 @@ export class PageComponents {
                   <div class="table-body engraved-1">
                     {this.filteredProps.map(prop => (
                       <div class="flex">
-                        <div class="w-2 py-2 pl-2">
-                          <linkable-title anchor={`props-${prop.name}`} tag="code" class="prop__title">
+                        <div class="w-2 py-2 pl-1">
+                          <linkable-title id={`props-${prop.name}`} tag="code" class="prop__title">
                             {prop.name}
                           </linkable-title>
                         </div>

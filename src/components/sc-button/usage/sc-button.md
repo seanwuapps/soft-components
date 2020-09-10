@@ -1,8 +1,8 @@
 <sc-button onclick="alert('yo')">Button</sc-button>
 
 <!-- Anchor -->
-<sc-button href="/" target="_blank" rel="noreferrer" title="button"
-  >Anchor
+<sc-button href="/" target="_blank" rel="noreferrer" title="button">
+Anchor
 </sc-button>
 
 <!-- Block level -->

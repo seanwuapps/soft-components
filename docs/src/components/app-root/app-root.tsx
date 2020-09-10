@@ -1,6 +1,6 @@
 import { Component, Host, h } from '@stencil/core';
 import 'soft-components';
-
+import 'linkable-title';
 @Component({
   tag: 'app-root',
   styleUrl: 'app-root.scss',
@@ -19,7 +19,7 @@ export class AppRoot {
 
         <app-header class="header"></app-header>
 
-        <main class="main pl-1 py-4">
+        <main class="main pl-2 py-4">
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="page-home" exact={true} />

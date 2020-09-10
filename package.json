@@ -8,8 +8,8 @@
     "WebComponents",
     "skeuomorphism"
   ],
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
   "es2017": "dist/esm/index.mjs",
   "types": "dist/types/index.d.ts",

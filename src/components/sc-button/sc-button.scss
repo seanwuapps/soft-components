@@ -39,7 +39,12 @@ sc-button {
     text-decoration: none;
     display: inline-block;
   }
-
+  &:not(.flat) {
+    a,
+    button {
+      @include raised();
+    }
+  }
   a,
   button {
     cursor: pointer;
@@ -52,9 +57,7 @@ sc-button {
     font-size: 1em;
     font-family: inherit;
     width: var(--sc-button-width);
-    &:not(.flat) {
-      @include raised();
-    }
+
     &:focus {
       outline: none;
     }
