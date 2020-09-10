@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-09-10T01:00:29",
+  "timestamp": "2020-09-10T02:13:12",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.0.3",
@@ -20,7 +20,7 @@
       ],
       "usage": {
         "sandbox": "<sc-button>Button</sc-button>",
-        "sc-button": "<sc-button onclick=\"alert('yo')\">Button</sc-button>\n\n<!-- Anchor -->\n<sc-button href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\"\n  >Anchor\n</sc-button>\n\n<!-- Block level -->\n<sc-button block>Block Button</sc-button>\n\n\n<!-- Icon -->\n<sc-button icon>\n  <i class=\"la la-home\"></i>\n</sc-button>\n\n<!-- Icon and Text -->\n\n<sc-button iconText>\n  <i class=\"la la-home\"></i>\n  Text\n</sc-button>\n\n\n<!-- Bordered -->\n<sc-button bordered>\n  <i class=\"la la-back\"></i> Bordered button\n</sc-button>"
+        "sc-button": "<sc-button onclick=\"alert('yo')\">Button</sc-button>\n\n<!-- Anchor -->\n<sc-button href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\"\n  >Anchor\n</sc-button>\n\n<!-- Block level -->\n<sc-button block>Block Button</sc-button>\n\n\n<!-- Icon -->\n<sc-button icon>\n  <i class=\"la la-home\"></i>\n</sc-button>\n\n<!-- Icon and Text -->\n\n<sc-button iconText>\n  <i class=\"la la-home\"></i>\n  Text\n</sc-button>\n\n\n<!-- Bordered -->\n<sc-button bordered>\n  <i class=\"la la-back\"></i> Bordered button\n</sc-button>\n\n\n<!-- Flat -->\n<sc-button flat>\n  <i class=\"la la-back\"></i> Flat button\n</sc-button>"
       },
       "props": [
         {

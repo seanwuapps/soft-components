@@ -26,3 +26,9 @@
 <sc-button bordered>
   <i class="la la-back"></i> Bordered button
 </sc-button>
+
+
+<!-- Flat -->
+<sc-button flat>
+  <i class="la la-back"></i> Flat button
+</sc-button>

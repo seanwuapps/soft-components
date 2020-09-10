@@ -87,13 +87,12 @@ export class PageComponents {
             {/* Title */}
             <section class="component-title">
               <h1>{name}</h1>
-              <code>&lt;{tag}&gt;</code>
             </section>
             {/* Usage */}
             {this.component.usage[tag] && (
               <section>
                 <linkable-title anchor="usage">Usage</linkable-title>
-                <code-block code={this.component.usage[tag]}></code-block>
+                <code-block tag={tag} code={this.component.usage[tag]}></code-block>
               </section>
             )}
 

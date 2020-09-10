@@ -9,6 +9,7 @@ import SimpleBar from 'simplebar';
 export class CodeBlock {
   @Element() el: HTMLElement;
   @Prop() code: string;
+  @Prop() tag: string;
 
   @State() sourceCodeOpen: boolean = false;
 
@@ -27,27 +28,31 @@ export class CodeBlock {
   render() {
     return (
       <div class="raised-2 round pa-2">
-        <div class="control-bar text-right">
-          <sc-button icon class={` ${this.sourceCodeOpen && 'active'}`} onClick={() => this.toggleSourceCode()}>
-            <box-icon name="code" color="currentColor"></box-icon>
-          </sc-button>
-          <sc-button icon class="ml-2" href="">
-            <box-icon name="github" type="logo" color="currentColor"></box-icon>
-          </sc-button>
-          <codepen-link
-            html={this.code}
-            title="Try it in CodePen"
-            pen-title={`Demo - Soft Components`}
-            editors="110"
-            css-preprocessor="scss"
-            css="body{ font-family: 'Open Sans', sans-serif; }"
-            css-external="//maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css;//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700;//unpkg.com/soft-components@latest/dist/soft-components/soft-components.css"
-            js-external="//unpkg.com/soft-components@latest/dist/soft-components/soft-components.js"
-          >
-            <sc-button icon class="ml-2">
-              <box-icon type="logo" name="codepen" color="currentColor"></box-icon>
+        <div class="control-bar flex align-center justify-between">
+          <code>&lt;{this.tag}&gt;</code>
+
+          <div class="buttons">
+            <sc-button icon class={` ${this.sourceCodeOpen && 'active'}`} onClick={() => this.toggleSourceCode()}>
+              <box-icon name="code" color="currentColor"></box-icon>
             </sc-button>
-          </codepen-link>
+            <sc-button icon class="ml-2" target="_blank" href={`https://github.com/seanwuapps/soft-components/blob/master/src/components/${this.tag}/usage/${this.tag}.md`}>
+              <box-icon name="github" type="logo" color="currentColor"></box-icon>
+            </sc-button>
+            <codepen-link
+              html={this.code}
+              title="Try it in CodePen"
+              pen-title={`${this.tag} demo - Soft Components`}
+              editors="110"
+              css-preprocessor="scss"
+              css="body{ font-family: 'Open Sans', sans-serif; }"
+              css-external="//maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css;//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700;//unpkg.com/soft-components@latest/dist/soft-components/soft-components.css"
+              js-external="//unpkg.com/soft-components@latest/dist/soft-components/soft-components.js"
+            >
+              <sc-button icon class="ml-2">
+                <box-icon type="logo" name="codepen" color="currentColor"></box-icon>
+              </sc-button>
+            </codepen-link>
+          </div>
         </div>
 
         <div class="preview" innerHTML={this.code}></div>

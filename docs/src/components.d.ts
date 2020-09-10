@@ -17,6 +17,7 @@ export namespace Components {
     }
     interface CodeBlock {
         "code": string;
+        "tag": string;
     }
     interface CodepenLink {
         /**
@@ -238,6 +239,7 @@ declare namespace LocalJSX {
     }
     interface CodeBlock {
         "code"?: string;
+        "tag"?: string;
     }
     interface CodepenLink {
         /**
