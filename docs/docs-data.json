@@ -1,13 +1,13 @@
 {
-  "timestamp": "2020-09-14T06:19:29",
+  "timestamp": "2020-09-15T07:44:34",
   "compiler": {
     "name": "@stencil/core",
-    "version": "1.8.5",
-    "typescriptVersion": "3.7.2"
+    "version": "1.17.3",
+    "typescriptVersion": "3.9.7"
   },
   "components": [
     {
-      "filePath": "src\\components\\sc-button\\sc-button.tsx",
+      "filePath": "./src/components/sc-button/sc-button.tsx",
       "encapsulation": "none",
       "tag": "sc-button",
       "readme": "# sc-button\nhello world\n\n",
@@ -20,7 +20,7 @@
       ],
       "usage": {
         "sandbox": "<sc-button>Button</sc-button>",
-        "sc-button": "<sc-button onclick=\"alert('yo')\">Button</sc-button>\n\n<!-- Anchor -->\n<sc-button href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\">\nAnchor\n</sc-button>\n\n<!-- Block level -->\n<sc-button block>Block Button</sc-button>\n\n\n<!-- Icon -->\n<sc-button icon>\n  <i class=\"la la-home\"></i>\n</sc-button>\n\n<!-- Icon and Text -->\n\n<sc-button iconText>\n  <i class=\"la la-home\"></i>\n  Text\n</sc-button>\n\n\n<!-- Bordered -->\n<sc-button bordered>\n  <i class=\"la la-back\"></i> Bordered button\n</sc-button>\n\n\n<!-- Flat -->\n<sc-button flat>\n  <i class=\"la la-back\"></i> Flat button\n</sc-button>"
+        "sc-button": "```html\n<sc-button onclick=\"alert('yo')\">Button</sc-button>\n\n<!-- Anchor -->\n<sc-button href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\">\nAnchor\n</sc-button>\n\n<!-- Block level -->\n<sc-button block>Block Button</sc-button>\n\n\n<!-- Icon -->\n<sc-button icon>\n  <i class=\"la la-home\"></i>\n</sc-button>\n\n<!-- Icon and Text -->\n\n<sc-button iconText>\n  <i class=\"la la-home\"></i>\n  Text\n</sc-button>\n\n\n<!-- Bordered -->\n<sc-button bordered>\n  <i class=\"la la-back\"></i> Bordered button\n</sc-button>\n\n\n<!-- Flat -->\n<sc-button flat>\n  <i class=\"la la-back\"></i> Flat button\n</sc-button>\n```"
       },
       "props": [
         {
@@ -263,6 +263,7 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [
         {
           "name": "--sc-button-bg-color",
@@ -326,6 +327,7 @@
           "docs": "Content is placed between the named slots if provided without a slot."
         }
       ],
+      "parts": [],
       "dependents": [
         "sc-tab-button"
       ],
@@ -337,14 +339,14 @@
       }
     },
     {
-      "filePath": "src\\components\\sc-card\\sc-card.tsx",
+      "filePath": "./src/components/sc-card/sc-card.tsx",
       "encapsulation": "shadow",
       "tag": "sc-card",
       "readme": "# sc-card\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
-        "sc-card": "<sc-card card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n<sc-card engraved card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n<sc-card bordered card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n"
+        "sc-card": "```html\n<sc-card card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n<sc-card engraved card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n<sc-card bordered card-title=\"Card Title\" card-subtitle=\"Subtitle, or description\"></sc-card>\n```"
       },
       "props": [
         {
@@ -416,21 +418,23 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\sc-input\\sc-input.tsx",
+      "filePath": "./src/components/sc-input/sc-input.tsx",
       "encapsulation": "none",
       "tag": "sc-input",
       "readme": "# sc-input\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
-        "sc-input": "<label for=\"email\">Email</label>\n<sc-input type=\"email\" required name=\"email\" id=\"email\"></sc-input>\n\n<label for=\"password\">Password</label>\n<sc-input type=\"password\" required name=\"password\" maxlength=\"6\" id=\"password\">\n</sc-input>\n"
+        "sc-input": "```html\n<label for=\"email\">Email</label>\n<sc-input type=\"email\" required name=\"email\" id=\"email\"></sc-input>\n\n<label for=\"password\">Password</label>\n<sc-input type=\"password\" required name=\"password\" maxlength=\"6\" id=\"password\">\n</sc-input>\n```"
       },
       "props": [
         {
@@ -924,14 +928,16 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\sc-tabs\\sc-tab-button\\sc-tab-button.tsx",
+      "filePath": "./src/components/sc-tabs/sc-tab-button/sc-tab-button.tsx",
       "encapsulation": "shadow",
       "tag": "sc-tab-button",
       "readme": "# sc-tab-button\n\n\n",
@@ -1067,8 +1073,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [
         "sc-button"
@@ -1080,7 +1088,7 @@
       }
     },
     {
-      "filePath": "src\\components\\sc-tabs\\sc-tab-content\\sc-tab-content.tsx",
+      "filePath": "./src/components/sc-tabs/sc-tab-content/sc-tab-content.tsx",
       "encapsulation": "shadow",
       "tag": "sc-tab-content",
       "readme": "# sc-tab-content\n\n\n",
@@ -1132,21 +1140,34 @@
           "docsTags": []
         }
       ],
+      "listeners": [
+        {
+          "event": "transitionstart",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "transitionend",
+          "capture": false,
+          "passive": false
+        }
+      ],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\sc-tabs\\sc-tabs.tsx",
+      "filePath": "./src/components/sc-tabs/sc-tabs.tsx",
       "encapsulation": "none",
       "tag": "sc-tabs",
       "readme": "# sc-tabs\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
-        "sc-tabs": ""
+        "sc-tabs": "```html\n<sc-tabs>\n  <sc-tab-button target=\"tab1\" active>\n    <i class=\"la la-home\"></i>\n  </sc-tab-button>\n  <sc-tab-button target=\"tab2\">\n    <i class=\"la la-podcast\"></i>\n  </sc-tab-button>\n  <sc-tab-content id=\"tab1\">\n    <h1>im first tab</h1>\n  </sc-tab-content>\n  <sc-tab-content id=\"tab2\">\n    <h2>im second tab</h2>\n  </sc-tab-content>\n</sc-tabs>\n```"
       },
       "props": [
         {
@@ -1169,14 +1190,16 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\sc-toggle\\sc-toggle.tsx",
+      "filePath": "./src/components/sc-toggle/sc-toggle.tsx",
       "encapsulation": "none",
       "tag": "sc-toggle",
       "readme": "# sc-toggle\n\n\n",
@@ -1353,8 +1376,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
