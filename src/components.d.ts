@@ -218,6 +218,7 @@ export namespace Components {
   interface ScTabs {
     'transition': string | undefined;
   }
+  interface ScThemeSetter {}
   interface ScToggle {
     /**
     * aria labelby
@@ -289,6 +290,12 @@ declare global {
     new (): HTMLScTabsElement;
   };
 
+  interface HTMLScThemeSetterElement extends Components.ScThemeSetter, HTMLStencilElement {}
+  var HTMLScThemeSetterElement: {
+    prototype: HTMLScThemeSetterElement;
+    new (): HTMLScThemeSetterElement;
+  };
+
   interface HTMLScToggleElement extends Components.ScToggle, HTMLStencilElement {}
   var HTMLScToggleElement: {
     prototype: HTMLScToggleElement;
@@ -301,6 +308,7 @@ declare global {
     'sc-tab-button': HTMLScTabButtonElement;
     'sc-tab-content': HTMLScTabContentElement;
     'sc-tabs': HTMLScTabsElement;
+    'sc-theme-setter': HTMLScThemeSetterElement;
     'sc-toggle': HTMLScToggleElement;
   }
 }
@@ -538,6 +546,7 @@ declare namespace LocalJSX {
   interface ScTabs {
     'transition'?: string | undefined;
   }
+  interface ScThemeSetter {}
   interface ScToggle {
     /**
     * aria labelby
@@ -596,6 +605,7 @@ declare namespace LocalJSX {
     'sc-tab-button': ScTabButton;
     'sc-tab-content': ScTabContent;
     'sc-tabs': ScTabs;
+    'sc-theme-setter': ScThemeSetter;
     'sc-toggle': ScToggle;
   }
 }
@@ -612,6 +622,7 @@ declare module "@stencil/core" {
       'sc-tab-button': LocalJSX.ScTabButton & JSXBase.HTMLAttributes<HTMLScTabButtonElement>;
       'sc-tab-content': LocalJSX.ScTabContent & JSXBase.HTMLAttributes<HTMLScTabContentElement>;
       'sc-tabs': LocalJSX.ScTabs & JSXBase.HTMLAttributes<HTMLScTabsElement>;
+      'sc-theme-setter': LocalJSX.ScThemeSetter & JSXBase.HTMLAttributes<HTMLScThemeSetterElement>;
       'sc-toggle': LocalJSX.ScToggle & JSXBase.HTMLAttributes<HTMLScToggleElement>;
     }
   }

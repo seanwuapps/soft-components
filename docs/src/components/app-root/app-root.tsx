@@ -9,6 +9,7 @@ export class AppRoot {
   render() {
     return (
       <Host>
+        <theme-setter></theme-setter>
         <div class="left-side">
           <stencil-route-link url="/" exact={true}>
             <app-logo class="mb-3"></app-logo>

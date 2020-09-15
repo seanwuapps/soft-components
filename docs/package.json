@@ -23,6 +23,8 @@
   },
   "license": "MIT",
   "dependencies": {
+    "codepen-link": "^1.0.1",
+    "color": "^3.1.2",
     "highlight.js": "^10.1.2",
     "linkable-title": "^1.0.0",
     "markdown-it": "^11.0.0",

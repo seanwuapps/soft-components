@@ -1,7 +1,7 @@
 import { Component, Prop, h, Element, State, Build } from '@stencil/core';
 import hljs from 'highlight.js';
 import SimpleBar from 'simplebar';
-
+import 'codepen-link';
 @Component({
   tag: 'code-block',
   styleUrls: ['code-block.scss'],
@@ -32,10 +32,10 @@ export class CodeBlock {
           <code>&lt;{this.tag}&gt;</code>
 
           <div class="buttons">
-            <sc-button icon class={` ${this.sourceCodeOpen && 'active'}`} onClick={() => this.toggleSourceCode()}>
+            <sc-button icon class={` ${this.sourceCodeOpen && 'active'}`} title="Toggle source code" onClick={() => this.toggleSourceCode()}>
               <box-icon name="code" color="currentColor"></box-icon>
             </sc-button>
-            <sc-button icon class="ml-2" target="_blank" href={`https://github.com/seanwuapps/soft-components/blob/master/src/components/${this.tag}/usage/${this.tag}.md`}>
+            <sc-button icon class="ml-2" title="View in GitHub" target="_blank" href={`https://github.com/seanwuapps/soft-components/blob/master/src/components/${this.tag}/`}>
               <box-icon name="github" type="logo" color="currentColor"></box-icon>
             </sc-button>
             <codepen-link
