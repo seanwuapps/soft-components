@@ -14,6 +14,7 @@ export class CodeBlock {
   @State() sourceCodeOpen: boolean = false;
 
   componentDidRender() {
+    console.log(this.code);
     if (Build.isBrowser) {
       this.el.querySelectorAll('.hljs').forEach(el => {
         new SimpleBar(el as HTMLElement, { autoHide: false });
@@ -29,7 +30,9 @@ export class CodeBlock {
     return (
       <div class="raised-2 round pa-2">
         <div class="control-bar flex align-center justify-between">
-          <code>&lt;{this.tag}&gt;</code>
+          <h5>
+            <code>&lt;{this.tag}&gt;</code>
+          </h5>
 
           <div class="buttons">
             <sc-button icon class={` ${this.sourceCodeOpen && 'active'}`} title="Toggle source code" onClick={() => this.toggleSourceCode()}>
@@ -42,7 +45,7 @@ export class CodeBlock {
               html={this.code}
               title="Try it in CodePen"
               pen-title={`${this.tag} demo - Soft Components`}
-              editors="110"
+              editors="111"
               css-preprocessor="scss"
               css="body{ font-family: 'Open Sans', sans-serif; }"
               css-external="//maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css;//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700;//unpkg.com/soft-components@latest/dist/soft-components/soft-components.css"
