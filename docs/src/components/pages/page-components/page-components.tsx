@@ -92,7 +92,7 @@ export class PageComponents {
             {this.component.usage[tag] && (
               <section>
                 <linkable-title id="usage">Usage</linkable-title>
-                <code-block tag={tag} code={md.render(this.component.usage[tag])}></code-block>
+                <code-block tag={tag} code={this.component.usage[tag]}></code-block>
               </section>
             )}
 
