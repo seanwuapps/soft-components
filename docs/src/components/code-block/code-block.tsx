@@ -2,6 +2,7 @@ import { Component, Prop, h, Element, State, Build } from '@stencil/core';
 import hljs from 'highlight.js';
 import SimpleBar from 'simplebar';
 import 'codepen-link';
+import { JsonDocsComponent } from '../../../docs-data';
 @Component({
   tag: 'code-block',
   styleUrls: ['code-block.scss'],
@@ -9,12 +10,12 @@ import 'codepen-link';
 export class CodeBlock {
   @Element() el: HTMLElement;
   @Prop() code: string;
-  @Prop() tag: string;
+  @Prop() component: JsonDocsComponent;
 
   @State() sourceCodeOpen: boolean = false;
+  @State() themerOpen: boolean = false;
 
   componentDidRender() {
-    console.log(this.code);
     if (Build.isBrowser) {
       this.el.querySelectorAll('.hljs').forEach(el => {
         new SimpleBar(el as HTMLElement, { autoHide: false });
@@ -26,25 +27,33 @@ export class CodeBlock {
     this.sourceCodeOpen = !this.sourceCodeOpen;
   }
 
+  toggleThemer() {
+    this.themerOpen = !this.themerOpen;
+  }
+
   render() {
+    const { tag, styles } = this.component;
     return (
       <div class="raised-2 round pa-2">
         <div class="control-bar flex align-center justify-between">
           <h5>
-            <code>&lt;{this.tag}&gt;</code>
+            <code>&lt;{tag}&gt;</code>
           </h5>
 
           <div class="buttons">
-            <sc-button icon class={` ${this.sourceCodeOpen && 'active'}`} title="Toggle source code" onClick={() => this.toggleSourceCode()}>
+            <sc-button icon class={` ${this.themerOpen && 'active'}`} title="Toggle style sandbox" onClick={() => this.toggleThemer()}>
+              <box-icon type="solid" name="brush" color="currentColor"></box-icon>
+            </sc-button>
+            <sc-button icon class={`ml-2 ${this.sourceCodeOpen && 'active'}`} title="Toggle source code" onClick={() => this.toggleSourceCode()}>
               <box-icon name="code" color="currentColor"></box-icon>
             </sc-button>
-            <sc-button icon class="ml-2" title="View in GitHub" target="_blank" href={`https://github.com/seanwuapps/soft-components/blob/master/src/components/${this.tag}/`}>
+            <sc-button icon class="ml-2" title="View in GitHub" target="_blank" href={`https://github.com/seanwuapps/soft-components/blob/master/src/components/${tag}/`}>
               <box-icon name="github" type="logo" color="currentColor"></box-icon>
             </sc-button>
             <codepen-link
               html={this.code}
               title="Try it in CodePen"
-              pen-title={`${this.tag} demo - Soft Components`}
+              pen-title={`${tag} demo - Soft Components`}
               editors="111"
               css-preprocessor="scss"
               css="body{ font-family: 'Open Sans', sans-serif; }"
@@ -59,6 +68,19 @@ export class CodeBlock {
         </div>
 
         <div class="preview" innerHTML={this.code}></div>
+        <div class={`code-block ${this.themerOpen && 'open'}`}>
+          <h4>CSS Variables</h4>
+          {styles.map((style, i) => {
+            return (
+              <div class="flex" key={i}>
+                <div class="w-5">{style.name}</div>
+                <div class="w-5">
+                  <sc-input type={style.name.includes('-color') ? 'color' : 'text'}></sc-input>
+                </div>
+              </div>
+            );
+          })}
+        </div>
         <div class={`code-block ${this.sourceCodeOpen && 'open'}`}>
           <pre class="hljs">
             <code innerHTML={hljs.highlight('html', this.code, true).value}></code>

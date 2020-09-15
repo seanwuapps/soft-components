@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { JsonDocsComponent } from "../docs-data";
 import { MatchResults, RouterHistory } from "@stencil/router";
 export namespace Components {
     interface AppHeader {
@@ -17,7 +18,7 @@ export namespace Components {
     }
     interface CodeBlock {
         "code": string;
-        "tag": string;
+        "component": JsonDocsComponent;
     }
     interface ComponentSidebar {
     }
@@ -152,7 +153,7 @@ declare namespace LocalJSX {
     }
     interface CodeBlock {
         "code"?: string;
-        "tag"?: string;
+        "component"?: JsonDocsComponent;
     }
     interface ComponentSidebar {
     }
