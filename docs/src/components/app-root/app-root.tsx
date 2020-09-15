@@ -30,7 +30,7 @@ export class AppRoot {
             </stencil-route-switch>
           </stencil-router>
         </main>
-        <div class="footer pa-4 round">seanwuapps | github | twitter</div>
+        <footer class="footer pa-4 round">seanwuapps | github | twitter</footer>
       </Host>
     );
   }

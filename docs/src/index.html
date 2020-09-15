@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Soft components</title>
-  <meta name="Description" content="Neuomorphism inspired web components">
+  <title>Soft Components</title>
+  <meta name="Description" content="Neumorphism inspired web components">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
   <meta name="theme-color" content="#16161d">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -22,6 +22,26 @@
 
 <body>
   <app-root></app-root>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-analytics.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyDzoAkcNXuE7I32Pj0c35YSzx_epkfStSc",
+      authDomain: "soft-components-docs.firebaseapp.com",
+      databaseURL: "https://soft-components-docs.firebaseio.com",
+      projectId: "soft-components-docs",
+      storageBucket: "soft-components-docs.appspot.com",
+      messagingSenderId: "69896915211",
+      appId: "1:69896915211:web:360694ec38a718851f3a0e",
+      measurementId: "G-DG5SKX7ZBQ"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+  </script>
 
 </body>
 

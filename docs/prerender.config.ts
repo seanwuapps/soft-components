@@ -1,9 +1,12 @@
 import { PrerenderConfig } from '@stencil/core/internal';
+import docsData from './docs-data';
+
+const softComponents = docsData.components.map(component => component.tag);
 
 export const config: PrerenderConfig = {
   hydrateOptions(url) {
     return {
-      excludeComponents: ['sc-button', 'sc-card', 'sc-input', 'sc-tab-button', 'sc-tab-content', 'sc-tabs', 'sc-toggle', 'box-icon'],
+      excludeComponents: [...softComponents, 'linkable-title', 'codpen-link'],
     };
   },
 };
