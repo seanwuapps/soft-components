@@ -16,16 +16,8 @@ export class AppNav {
           url: '/theory',
         },
         {
-          text: 'Why soft components?',
-          url: '/why-soft-components',
-        },
-        {
-          text: 'Install',
-          url: '/install',
-        },
-        {
-          text: 'Framework integration',
-          url: '/framework-integration',
+          text: 'Web component',
+          url: '/web-component',
         },
         {
           text: 'Theme store',

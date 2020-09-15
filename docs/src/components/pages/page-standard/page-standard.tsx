@@ -25,6 +25,7 @@ export class PageStandard {
   @Watch('match')
   async loadPage() {
     const { page } = this.match.params;
+    console.log({ page });
     this.loading = true;
     try {
       let response = await fetch('/site-content/pages/' + page + '.md');
@@ -42,8 +43,8 @@ export class PageStandard {
     }
   }
 
-  componentDidLoad() {
-    this.loadPage();
+  async componentDidLoad() {
+    await this.loadPage();
   }
 
   componentDidRender() {
@@ -57,7 +58,12 @@ export class PageStandard {
 
   render() {
     if (this.notfound) {
-      return <page-notfound></page-notfound>;
+      return (
+        <div>
+          <h1>standard</h1>
+          <page-notfound></page-notfound>
+        </div>
+      );
     }
 
     if (this.loading) {
