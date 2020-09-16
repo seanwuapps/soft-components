@@ -15,6 +15,10 @@ export class CodeBlock {
   @State() sourceCodeOpen: boolean = false;
   @State() themerOpen: boolean = false;
 
+  @State() styleEl: HTMLElement;
+
+  @State() tempStyles: any = {};
+
   componentDidRender() {
     if (Build.isBrowser) {
       this.el.querySelectorAll('.hljs').forEach(el => {
@@ -29,6 +33,22 @@ export class CodeBlock {
 
   toggleThemer() {
     this.themerOpen = !this.themerOpen;
+  }
+
+  objToCSSRule(obj) {
+    let style = '';
+    for (const [key, value] of Object.entries(obj)) {
+      style += `${key}: ${value};\n`;
+    }
+    return style;
+  }
+
+  changeStyleValue(name, value) {
+    let newStyle = {};
+    newStyle[name] = value;
+
+    this.tempStyles = { ...this.tempStyles, ...newStyle };
+    this.styleEl.innerHTML = `code-block .preview ${this.component.tag} {${this.objToCSSRule(this.tempStyles)}}`;
   }
 
   render() {
@@ -66,20 +86,39 @@ export class CodeBlock {
             </codepen-link>
           </div>
         </div>
-
+        <style ref={el => (this.styleEl = el as HTMLElement)}></style>
         <div class="preview" innerHTML={this.code}></div>
         <div class={`code-block ${this.themerOpen && 'open'}`}>
           <h4>CSS Variables</h4>
-          {styles.map((style, i) => {
-            return (
-              <div class="flex" key={i}>
-                <div class="w-5">{style.name}</div>
-                <div class="w-5">
-                  <sc-input type={style.name.includes('-color') ? 'color' : 'text'}></sc-input>
-                </div>
-              </div>
-            );
-          })}
+          <div class="flex">
+            <div class="w-6">
+              {styles.map((style, i) => {
+                return (
+                  <div class="flex align-center" key={i}>
+                    <div class="w-5 pr-2 text-right">{style.name}</div>
+                    <div class="w-5">
+                      <sc-input type="text" onChange={e => this.changeStyleValue(style.name, e.target.value)}></sc-input>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div class="w-4">
+              <pre class="hljs">
+                <code
+                  innerHTML={
+                    hljs.highlight(
+                      'css',
+                      `sc-button {
+${this.objToCSSRule(this.tempStyles)}
+}`,
+                      true,
+                    ).value
+                  }
+                ></code>
+              </pre>
+            </div>
+          </div>
         </div>
         <div class={`code-block ${this.sourceCodeOpen && 'open'}`}>
           <pre class="hljs">
