@@ -39,7 +39,7 @@ export class PageHome {
                 icon-text
                 href="&#77;&#97;&#105;&#108;&#84;&#111;&#58;&#115;&#101;&#97;&#110;&#119;&#117;&#97;&#112;&#112;&#115;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;"
               >
-                <box-icon name="send" color="var(--color-white)"></box-icon>
+                <box-icon name="send" color="currentColor"></box-icon>
                 <span>Drop an email</span>
               </sc-button>
             </sc-card>

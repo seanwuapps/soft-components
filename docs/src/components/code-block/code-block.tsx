@@ -91,11 +91,11 @@ export class CodeBlock {
         <div class={`code-block ${this.themerOpen && 'open'}`}>
           <h4>CSS Variables</h4>
           <div class="flex">
-            <div class="w-6">
+            <div class="w-6 pr-2">
               {styles.map((style, i) => {
                 return (
                   <div class="flex align-center" key={i}>
-                    <div class="w-5 pr-2 text-right">{style.name}</div>
+                    <div class="w-5 pr-2">{style.name}</div>
                     <div class="w-5">
                       <sc-input type="text" onChange={e => this.changeStyleValue(style.name, e.target.value)}></sc-input>
                     </div>
