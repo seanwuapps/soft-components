@@ -1,0 +1,30 @@
+// utility classes
+.raised {
+  @include raised();
+}
+
+.engraved {
+  @include engraved();
+}
+
+@for $i from 0 to 10 {
+  .raised-#{$i} {
+    @include raised($i/10);
+  }
+  .raised-highlight-#{$i} {
+    box-shadow: highlight($i/10);
+  }
+  .raised-shadow-#{$i} {
+    box-shadow: shadow($i/10);
+  }
+
+  .engraved-#{$i} {
+    @include engraved($i/10);
+  }
+  .engraved-highlight-#{$i} {
+    box-shadow: inset highlight($i/10);
+  }
+  .engraved-shadow-#{$i} {
+    box-shadow: inset shadow($i/10);
+  }
+}

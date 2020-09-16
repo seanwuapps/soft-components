@@ -27,7 +27,7 @@ export class AppNav {
     },
     {
       text: 'Components',
-      url: '/components/',
+      url: '/components',
       children: buildComponentNavArray(),
     },
     {

@@ -20,7 +20,7 @@ export const config: Config = {
   globalStyle: "src/global/app.scss",
   plugins: [
     sass({
-      injectGlobalPaths: ["src/global/mixins.scss"],
+      injectGlobalPaths: ["src/global/scss/mixins.scss"],
     }),
     postcss({
       plugins: [

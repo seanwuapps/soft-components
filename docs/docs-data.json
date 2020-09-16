@@ -1,13 +1,13 @@
 {
-  "timestamp": "2020-09-15T09:05:41",
+  "timestamp": "2020-09-16T08:48:23",
   "compiler": {
     "name": "@stencil/core",
-    "version": "1.17.3",
-    "typescriptVersion": "3.9.7"
+    "version": "1.8.5",
+    "typescriptVersion": "3.7.2"
   },
   "components": [
     {
-      "filePath": "./src/components/sc-button/sc-button.tsx",
+      "filePath": "src\\components\\sc-button\\sc-button.tsx",
       "encapsulation": "none",
       "tag": "sc-button",
       "readme": "# sc-button\nhello world\n\n",
@@ -262,7 +262,6 @@
           "docsTags": []
         }
       ],
-      "listeners": [],
       "styles": [
         {
           "name": "--sc-button-bg-color",
@@ -326,7 +325,6 @@
           "docs": "Content is placed between the named slots if provided without a slot."
         }
       ],
-      "parts": [],
       "dependents": [
         "sc-tab-button"
       ],
@@ -338,7 +336,7 @@
       }
     },
     {
-      "filePath": "./src/components/sc-card/sc-card.tsx",
+      "filePath": "src\\components\\sc-card\\sc-card.tsx",
       "encapsulation": "shadow",
       "tag": "sc-card",
       "readme": "# sc-card\n\n\n",
@@ -417,16 +415,14 @@
       ],
       "methods": [],
       "events": [],
-      "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/sc-input/sc-input.tsx",
+      "filePath": "src\\components\\sc-input\\sc-input.tsx",
       "encapsulation": "none",
       "tag": "sc-input",
       "readme": "# sc-input\n\n\n",
@@ -927,16 +923,14 @@
           "docsTags": []
         }
       ],
-      "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/sc-tabs/sc-tab-button/sc-tab-button.tsx",
+      "filePath": "src\\components\\sc-tabs\\sc-tab-button\\sc-tab-button.tsx",
       "encapsulation": "shadow",
       "tag": "sc-tab-button",
       "readme": "# sc-tab-button\n\n\n",
@@ -1072,10 +1066,8 @@
           "docsTags": []
         }
       ],
-      "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
       "dependents": [],
       "dependencies": [
         "sc-button"
@@ -1087,7 +1079,7 @@
       }
     },
     {
-      "filePath": "./src/components/sc-tabs/sc-tab-content/sc-tab-content.tsx",
+      "filePath": "src\\components\\sc-tabs\\sc-tab-content\\sc-tab-content.tsx",
       "encapsulation": "shadow",
       "tag": "sc-tab-content",
       "readme": "# sc-tab-content\n\n\n",
@@ -1139,27 +1131,14 @@
           "docsTags": []
         }
       ],
-      "listeners": [
-        {
-          "event": "transitionstart",
-          "capture": false,
-          "passive": false
-        },
-        {
-          "event": "transitionend",
-          "capture": false,
-          "passive": false
-        }
-      ],
       "styles": [],
       "slots": [],
-      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/sc-tabs/sc-tabs.tsx",
+      "filePath": "src\\components\\sc-tabs\\sc-tabs.tsx",
       "encapsulation": "none",
       "tag": "sc-tabs",
       "readme": "# sc-tabs\n\n\n",
@@ -1189,16 +1168,14 @@
       ],
       "methods": [],
       "events": [],
-      "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "./src/components/sc-toggle/sc-toggle.tsx",
+      "filePath": "src\\components\\sc-toggle\\sc-toggle.tsx",
       "encapsulation": "none",
       "tag": "sc-toggle",
       "readme": "# sc-toggle\n\n\n",
@@ -1375,10 +1352,8 @@
           "docsTags": []
         }
       ],
-      "listeners": [],
       "styles": [],
       "slots": [],
-      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}

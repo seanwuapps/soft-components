@@ -26,6 +26,7 @@ export class PageStandard {
   async loadPage() {
     const { page } = this.match.params;
     console.log({ page });
+
     this.loading = true;
     try {
       let response = await fetch('/site-content/pages/' + page + '.md');

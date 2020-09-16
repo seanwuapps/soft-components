@@ -1,3 +1,5 @@
+$spacing: 8px;
+
 @for $i from 0 to 11 {
   .pa-#{$i} {
     padding: $spacing * $i;
