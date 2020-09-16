@@ -25,6 +25,10 @@ export namespace Components {
     interface DocUsage {
         "usage": string;
     }
+    interface HlCode {
+        "code"?: string;
+        "language"?: string;
+    }
     interface PageComponents {
         /**
           * url params matcher
@@ -90,6 +94,12 @@ declare global {
         prototype: HTMLDocUsageElement;
         new (): HTMLDocUsageElement;
     };
+    interface HTMLHlCodeElement extends Components.HlCode, HTMLStencilElement {
+    }
+    var HTMLHlCodeElement: {
+        prototype: HTMLHlCodeElement;
+        new (): HTMLHlCodeElement;
+    };
     interface HTMLPageComponentsElement extends Components.PageComponents, HTMLStencilElement {
     }
     var HTMLPageComponentsElement: {
@@ -134,6 +144,7 @@ declare global {
         "code-block": HTMLCodeBlockElement;
         "component-sidebar": HTMLComponentSidebarElement;
         "doc-usage": HTMLDocUsageElement;
+        "hl-code": HTMLHlCodeElement;
         "page-components": HTMLPageComponentsElement;
         "page-helper-classes": HTMLPageHelperClassesElement;
         "page-home": HTMLPageHomeElement;
@@ -159,6 +170,10 @@ declare namespace LocalJSX {
     }
     interface DocUsage {
         "usage"?: string;
+    }
+    interface HlCode {
+        "code"?: string;
+        "language"?: string;
     }
     interface PageComponents {
         /**
@@ -189,6 +204,7 @@ declare namespace LocalJSX {
         "code-block": CodeBlock;
         "component-sidebar": ComponentSidebar;
         "doc-usage": DocUsage;
+        "hl-code": HlCode;
         "page-components": PageComponents;
         "page-helper-classes": PageHelperClasses;
         "page-home": PageHome;
@@ -208,6 +224,7 @@ declare module "@stencil/core" {
             "code-block": LocalJSX.CodeBlock & JSXBase.HTMLAttributes<HTMLCodeBlockElement>;
             "component-sidebar": LocalJSX.ComponentSidebar & JSXBase.HTMLAttributes<HTMLComponentSidebarElement>;
             "doc-usage": LocalJSX.DocUsage & JSXBase.HTMLAttributes<HTMLDocUsageElement>;
+            "hl-code": LocalJSX.HlCode & JSXBase.HTMLAttributes<HTMLHlCodeElement>;
             "page-components": LocalJSX.PageComponents & JSXBase.HTMLAttributes<HTMLPageComponentsElement>;
             "page-helper-classes": LocalJSX.PageHelperClasses & JSXBase.HTMLAttributes<HTMLPageHelperClassesElement>;
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;

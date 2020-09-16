@@ -1,5 +1,4 @@
 import { Component, Prop, h, Element, State, Build } from '@stencil/core';
-import hljs from 'highlight.js';
 import SimpleBar from 'simplebar';
 import 'codepen-link';
 import { JsonDocsComponent } from '../../../docs-data';
@@ -104,26 +103,17 @@ export class CodeBlock {
               })}
             </div>
             <div class="w-4">
-              <pre class="hljs">
-                <code
-                  innerHTML={
-                    hljs.highlight(
-                      'css',
-                      `sc-button {
-${this.objToCSSRule(this.tempStyles)}
-}`,
-                      true,
-                    ).value
-                  }
-                ></code>
-              </pre>
+              <hl-code
+                language="css"
+                code={`sc-button {
+  ${this.objToCSSRule(this.tempStyles)}
+}`}
+              ></hl-code>
             </div>
           </div>
         </div>
         <div class={`code-block ${this.sourceCodeOpen && 'open'}`}>
-          <pre class="hljs">
-            <code innerHTML={hljs.highlight('html', this.code, true).value}></code>
-          </pre>
+          <hl-code language="html" code={this.code}></hl-code>
         </div>
       </div>
     );

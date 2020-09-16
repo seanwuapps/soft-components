@@ -1,33 +1,45 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, State } from '@stencil/core';
 import Color from 'color';
 
 @Component({
   tag: 'theme-setter',
+  styleUrl: 'theme-setter.scss',
 })
 export class ThemeSetter {
+  private variables: string = '';
+
+  @State() panelOpen: boolean = false;
+
   componentDidLoad() {
     const mainColor = Color(this.randomColor());
     const textColor = mainColor.isDark() ? Color('#ffffff') : Color('#333333');
     let lightAlpha = Math.random() * (0.5 - 0.1) + 0.1;
     let darkAlpha = Math.random() * (0.5 - 0.1) + 0.1;
 
-    document.querySelector('body').style.cssText = `
-  --sc-bg-color: ${mainColor.rgb().string()};
-  --sc-text-color: ${textColor.rgb().string()};
-  --sc-highlight-color: rgba(255, 255, 255, ${lightAlpha});
-  --sc-shadow-color: rgba(0, 0, 0, ${darkAlpha});
-  --sc-secondary-color: ${this.randomColor()};
-  --sc-active-color: ${this.randomColor()};
-`;
+    this.variables = `
+    --sc-bg-color: ${mainColor.rgb().string()};
+    --sc-text-color: ${textColor.rgb().string()};
+    --sc-highlight-color: rgba(255, 255, 255, ${lightAlpha.toFixed(2)});
+    --sc-shadow-color: rgba(0, 0, 0, ${darkAlpha.toFixed(2)});
+    --sc-secondary-color: ${this.randomColor()};
+    --sc-active-color: ${this.randomColor()};
+  `;
+    document.querySelector('body').style.cssText = this.variables;
   }
 
   private randomColor() {
     return '#' + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6);
   }
+
   render() {
     return (
-      <Host>
-        <slot></slot>
+      <Host class={`panel ${this.panelOpen ? 'in' : ''}`}>
+        <sc-button class="ma-2 raised-0" icon active={this.panelOpen} title="View current colour theme" onClick={() => (this.panelOpen = !this.panelOpen)}>
+          {this.panelOpen ? <box-icon name="x" color="currentColor"></box-icon> : <box-icon name="palette" color="currentColor"></box-icon>}
+        </sc-button>
+        <div class="panel-content">
+          <hl-code language="css" code={this.variables}></hl-code>
+        </div>
       </Host>
     );
   }

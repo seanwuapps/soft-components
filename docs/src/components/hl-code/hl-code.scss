@@ -1,0 +1,15 @@
+hl-code {
+  display: block;
+  position: relative;
+  .copy-icon {
+    position: absolute;
+    top: $spacing * 2;
+    right: $spacing * 2;
+    z-index: 2;
+    color: #ccc;
+    cursor: pointer;
+  }
+  pre.hljs {
+    margin-top: 0;
+  }
+}

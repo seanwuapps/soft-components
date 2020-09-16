@@ -1,0 +1,21 @@
+theme-setter {
+  position: fixed;
+  left: 50%;
+  bottom: $spacing * 2;
+  right: $spacing * 2;
+  z-index: 9999;
+  transform: translateY(320px);
+  transition: transform 0.3s ease;
+  text-align: right;
+  sc-button {
+    --sc-button-padding-x: 5px;
+  }
+  .panel-content {
+    width: 100%;
+    height: 300px;
+    text-align: left;
+  }
+  &.in {
+    transform: translateY(0);
+  }
+}
