@@ -94,8 +94,9 @@ export class CodeBlock {
               {styles.map((style, i) => {
                 return (
                   <div class="flex align-center" key={i}>
-                    <div class="w-5 pr-2">{style.name}</div>
-                    <div class="w-5">
+                    <div class="style-text">
+                      <div class="title">{style.name}</div>
+                      <div class="description">{style.docs}</div>
                       <sc-input type="text" onChange={e => this.changeStyleValue(style.name, e.target.value)}></sc-input>
                     </div>
                   </div>

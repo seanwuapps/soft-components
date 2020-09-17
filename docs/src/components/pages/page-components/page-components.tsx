@@ -25,8 +25,8 @@ export class PageComponents {
   async loadComponent() {
     const { tag } = this.match.params;
     if (tag.startsWith('sc-')) {
-      this.component = this.getComponentData(tag);
-      this.filteredProps = this.component.props;
+      this.component = await this.getComponentData(tag);
+      this.filteredProps = this.component?.props;
     }
   }
 
@@ -35,7 +35,7 @@ export class PageComponents {
   }
 
   async componentWillLoad() {
-    this.loadComponent();
+    await this.loadComponent();
   }
 
   componentDidRender() {
@@ -68,13 +68,8 @@ export class PageComponents {
 
   render() {
     const { tag } = this.match.params;
-    if (!tag) {
-      return (
-        <div>
-          <h1>Components</h1>
-          <p>Use the site navigation to find a component you desire.</p>
-        </div>
-      );
+    if (!tag || !this.component) {
+      return <page-notfound></page-notfound>;
     }
     const name = getName(this.component);
 

@@ -23,4 +23,12 @@ code-block {
       max-height: 100vh;
     }
   }
+
+  .style-text {
+    .description {
+      margin-top: $spacing;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+  }
 }

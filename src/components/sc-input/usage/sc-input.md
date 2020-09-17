@@ -4,3 +4,5 @@
 <label for="password">Password</label>
 <sc-input type="password" required name="password" maxlength="6" id="password">
 </sc-input>
+
+<sc-input type="text"></sc-input>

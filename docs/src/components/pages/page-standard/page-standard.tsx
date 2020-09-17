@@ -59,12 +59,7 @@ export class PageStandard {
 
   render() {
     if (this.notfound) {
-      return (
-        <div>
-          <h1>standard</h1>
-          <page-notfound></page-notfound>
-        </div>
-      );
+      return <page-notfound></page-notfound>;
     }
 
     if (this.loading) {

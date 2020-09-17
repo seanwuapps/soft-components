@@ -22,7 +22,7 @@ export class HlCode {
   render() {
     return (
       <Host>
-        <box-icon class="copy-icon" name={this.copySuccessful ? 'check' : 'copy'} color="currentColor" onClick={() => this.copyCode()}></box-icon>
+        <box-icon class="copy-icon" name={this.copySuccessful ? 'check' : 'copy'} color="currentColor" title="Copy code" onClick={() => this.copyCode()}></box-icon>
         <pre class="hljs">
           <code innerHTML={hljs.highlight(this.language, this.code, true).value}></code>
         </pre>

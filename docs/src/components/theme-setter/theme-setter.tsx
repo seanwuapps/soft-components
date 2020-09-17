@@ -16,14 +16,12 @@ export class ThemeSetter {
     let lightAlpha = Math.random() * (0.5 - 0.1) + 0.1;
     let darkAlpha = Math.random() * (0.5 - 0.1) + 0.1;
 
-    this.variables = `
-    --sc-bg-color: ${mainColor.rgb().string()};
-    --sc-text-color: ${textColor.rgb().string()};
-    --sc-highlight-color: rgba(255, 255, 255, ${lightAlpha.toFixed(2)});
-    --sc-shadow-color: rgba(0, 0, 0, ${darkAlpha.toFixed(2)});
-    --sc-secondary-color: ${this.randomColor()};
-    --sc-active-color: ${this.randomColor()};
-  `;
+    this.variables = `--sc-bg-color: ${mainColor.rgb().string()};
+--sc-text-color: ${textColor.rgb().string()};
+--sc-highlight-color: rgba(255, 255, 255, ${lightAlpha.toFixed(2)});
+--sc-shadow-color: rgba(0, 0, 0, ${darkAlpha.toFixed(2)});
+--sc-secondary-color: ${this.randomColor()};
+--sc-active-color: ${this.randomColor()};`;
     document.querySelector('body').style.cssText = this.variables;
   }
 
