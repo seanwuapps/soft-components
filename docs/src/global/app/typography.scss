@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu&display=swap');
 // @font-face {
 //   font-family: Quicksand;
 //   src: url('/assets/fonts/Quicksand-VF.ttf') format('truetype-variations');
 // }
 
-$title-font: 'Ubuntu', sans-serif;
+$title-font: 'Ubuntu Condensed', sans-serif;
 $body-font: 'Montserrat', sans-serif;
 $font-scale-ratio: 1.2;
 
@@ -26,7 +25,6 @@ $font-scale-ratio: 1.2;
 body {
   font-family: $body-font;
   font-size: 16px;
-  font-variation-settings: 'wght' 500;
   p {
     font-size: 1em;
   }
@@ -35,6 +33,7 @@ body {
       font-size: #{pow($font-scale-ratio, $i)}em;
       // font-size: #{$i * $font-scale-ratio}em;
       line-height: 1.1em;
+      font-family: $title-font;
     }
   }
 }

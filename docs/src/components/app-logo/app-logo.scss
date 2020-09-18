@@ -1,6 +1,9 @@
 app-logo {
   display: block;
+  color: var(--sc-text-color);
   svg {
-    width: 100px;
+    path {
+      fill: currentColor;
+    }
   }
 }

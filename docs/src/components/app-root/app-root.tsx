@@ -9,17 +9,18 @@ export class AppRoot {
   render() {
     return (
       <Host>
-        <div class="left-side">
+        <div class="logo">
           <stencil-route-link url="/" exact={true}>
             <app-logo class="mb-3"></app-logo>
           </stencil-route-link>
-
+        </div>
+        <div class="left-side">
           <app-nav></app-nav>
         </div>
 
-        <app-header class="header"></app-header>
-
         <main class="main pl-2 py-4">
+          {/* <app-header class="header"></app-header> */}
+
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="page-home" exact={true} />

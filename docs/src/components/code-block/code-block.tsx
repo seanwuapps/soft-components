@@ -106,7 +106,7 @@ export class CodeBlock {
             <div class="w-4">
               <hl-code
                 language="css"
-                code={`sc-button {
+                code={`${tag} {
   ${this.objToCSSRule(this.tempStyles)}
 }`}
               ></hl-code>

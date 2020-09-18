@@ -7,6 +7,8 @@
 
   Any global CSS variables should also be applied here.
 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu+Condensed&display=swap');
+
 @import '../../node_modules/soft-components/dist/soft-components/soft-components.css';
 @import '../../node_modules/boxicons/css/boxicons.min.css';
 @import '../../node_modules/simplebar/dist/simplebar.css';
@@ -39,7 +41,7 @@ html {
   --code-block-scrollbar-color: var(--color-green);
 
   linkable-title {
-    --icon-width: 1em;
-    --icon-gap: #{$spacing/2};
+    --icon-width: 1.2em;
+    --icon-gap: 0;
   }
 }
