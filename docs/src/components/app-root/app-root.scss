@@ -1,16 +1,18 @@
 app-root {
   display: grid;
   padding: $spacing * 2;
+  overflow: hidden;
   min-height: 100vh;
   gap: 0px 0px;
 
-  grid-template-columns: 220px 1fr;
-  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80px 80px 1fr auto;
   grid-template-areas:
     'logo'
+    'header'
     'main'
-    'footer  footer';
-  @include media(md) {
+    'footer';
+  @include media(lg) {
     grid-template-columns: 220px 1fr;
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
