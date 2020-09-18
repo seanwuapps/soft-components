@@ -9,7 +9,7 @@
     ],
     "rewrites": [
       {
-        "source": "**",
+        "source": "**/!(*.md)",
         "destination": "/index.html"
       }
     ]
