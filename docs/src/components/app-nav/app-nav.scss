@@ -1,9 +1,10 @@
 app-nav {
+  display: block;
   ul {
     padding: 0;
     list-style: none;
   }
-  .nav {
+  .nav-list {
     display: block;
     .nav-item {
       margin-bottom: 2 * $spacing;

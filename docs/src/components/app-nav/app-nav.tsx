@@ -49,7 +49,7 @@ export class AppNav {
   render() {
     return (
       <Host>
-        <ul class="nav">{this.links.map(item => this.buildNavItemDOM(item))}</ul>
+        <ul class="nav-list">{this.links.map(item => this.buildNavItemDOM(item))}</ul>
       </Host>
     );
   }

@@ -2,10 +2,13 @@ app-logo {
   display: block;
   color: var(--sc-text-color);
   height: 100%;
+  .mobile {
+    max-height: var(--mobile-header-height);
+  }
   .full-logo {
     display: none;
   }
-  @include media(lg) {
+  @include media(md) {
     .full-logo {
       display: block;
     }
@@ -14,7 +17,6 @@ app-logo {
     }
   }
   svg {
-    max-height: 100%;
     path {
       fill: currentColor;
     }

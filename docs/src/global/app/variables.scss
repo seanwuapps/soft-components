@@ -38,4 +38,6 @@ $radius-small: 10px;
 html {
   --radius: #{$radius};
   --radius-small: #{$radius-small};
+  --mobile-header-height: 80px;
+  --root-padding: #{$spacing * 2};
 }
