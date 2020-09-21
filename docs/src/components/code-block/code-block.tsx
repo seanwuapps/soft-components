@@ -93,8 +93,7 @@ export class CodeBlock {
             </codepen-link>
           </div>
         </div>
-        <style ref={el => (this.styleEl = el as HTMLElement)}></style>
-        <div class="preview" innerHTML={this.code}></div>
+
         {styles.length > 0 && (
           <div class={`code-block ${this.themerOpen && 'open'}`}>
             <h4>CSS Variables</h4>
@@ -127,6 +126,8 @@ export class CodeBlock {
         <div class={`code-block ${this.sourceCodeOpen && 'open'}`}>
           <hl-code language="html" code={this.code}></hl-code>
         </div>
+        <style ref={el => (this.styleEl = el as HTMLElement)}></style>
+        <div class="preview" innerHTML={this.code}></div>
       </div>
     );
   }

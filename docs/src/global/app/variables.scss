@@ -18,7 +18,7 @@ html {
   @each $name, $hex in $colors {
     --color-#{$name}: #{$hex};
   }
-  --base-font-size: vw(16px);
+  --base-font-size: 16px;
 }
 
 // spacing

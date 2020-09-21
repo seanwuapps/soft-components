@@ -41,7 +41,7 @@ html {
   --code-block-scrollbar-color: var(--color-green);
 
   linkable-title {
-    --icon-width: 1.2em;
-    --icon-gap: 0;
+    --icon-width: 2em;
+    --icon-gap: $spacing;
   }
 }

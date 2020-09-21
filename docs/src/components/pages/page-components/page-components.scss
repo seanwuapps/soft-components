@@ -32,33 +32,55 @@ page-components {
   }
 
   .props-container {
+    position: relative;
+
     @include unspacing;
-  }
+    .table-head {
+      min-height: 60px;
+      padding: $spacing 0;
+      align-items: center;
 
-  .search-btn {
-    --sc-button-icon-size: #{$spacing * 6};
-  }
-
-  .props-search-bar {
-    position: absolute;
-    top: calc(100% + #{$spacing});
-    right: $spacing;
-    // transform: translateY(-50%);
-    background: var(--sc-bg-color);
-    width: 50%;
-    height: 100%;
-    padding: $spacing;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-    &.active {
-      opacity: 1;
-      pointer-events: initial;
+      .th {
+        display: none;
+        @include media(md) {
+          display: block;
+        }
+      }
     }
-    sc-input {
-      display: block;
+  }
+
+  .search-container {
+    position: absolute;
+    left: $spacing * 2;
+    top: $spacing * 2;
+    right: $spacing * 2;
+    z-index: 9;
+    .search-btn {
+      --sc-button-icon-size: #{$spacing * 6};
+      float: right;
+    }
+
+    .props-search-bar {
+      position: absolute;
+      top: calc(100% + #{$spacing});
+      right: $spacing;
+      left: $spacing;
+      background: var(--sc-bg-color);
+      height: auto;
+      padding: $spacing;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      &.active {
+        opacity: 1;
+        pointer-events: initial;
+      }
+      @include media(lg) {
+        width: 50%;
+        left: auto;
+      }
     }
   }
 
