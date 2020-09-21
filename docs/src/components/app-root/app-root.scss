@@ -4,13 +4,13 @@ app-root {
   overflow: hidden;
   min-height: 100vh;
   gap: 0px 0px;
-  grid-template-columns: 1fr;
+  grid-template-columns: 100%;
   grid-template-rows: var(--mobile-header-height) 1fr auto;
   grid-template-areas:
     'header'
     'main'
     'footer';
-  @include media(md) {
+  @include media(lg) {
     grid-template-columns: 220px 1fr;
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
@@ -18,9 +18,14 @@ app-root {
       'nav  main'
       'footer  footer';
   }
+
+  &.mobile-menu-open {
+    overflow: hidden;
+  }
+
   .header {
     grid-area: header;
-    @include media(md) {
+    @include media(lg) {
       .mobile-nav-trigger,
       .spacer {
         display: none;
@@ -69,7 +74,7 @@ app-root {
 
   .nav {
     display: none;
-    @include media(md) {
+    @include media(lg) {
       display: block;
     }
   }
@@ -87,6 +92,7 @@ app-root {
     transform: translateX(-100%);
     app-nav {
       overflow: auto;
+      padding: 0 var(--root-padding);
     }
     &.open {
       transform: translateX(0);
@@ -95,7 +101,7 @@ app-root {
     .mobile-nav-header {
       height: calc(var(--mobile-header-height) + var(--root-padding) * 2);
     }
-    @include media(md) {
+    @include media(lg) {
       display: none;
     }
   }

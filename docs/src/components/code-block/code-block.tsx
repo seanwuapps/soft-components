@@ -60,13 +60,21 @@ export class CodeBlock {
           </h5>
 
           <div class="buttons">
-            <sc-button icon class={` ${this.themerOpen && 'active'}`} title="Toggle style sandbox" onClick={() => this.toggleThemer()}>
-              <box-icon type="solid" name="brush" color="currentColor"></box-icon>
-            </sc-button>
+            {styles.length > 0 && (
+              <sc-button icon class={` ${this.themerOpen && 'active'}`} title="Toggle style sandbox" onClick={() => this.toggleThemer()}>
+                <box-icon type="solid" name="brush" color="currentColor"></box-icon>
+              </sc-button>
+            )}
             <sc-button icon class={`ml-2 ${this.sourceCodeOpen && 'active'}`} title="Toggle source code" onClick={() => this.toggleSourceCode()}>
               <box-icon name="code" color="currentColor"></box-icon>
             </sc-button>
-            <sc-button icon class="ml-2" title="View in GitHub" target="_blank" href={`https://github.com/seanwuapps/soft-components/blob/master/src/components/${tag}/`}>
+            <sc-button
+              icon
+              class="ml-2"
+              title="View in GitHub"
+              target="_blank"
+              href={`https://github.com/seanwuapps/soft-components/edit/master/src/components/${tag}/usage/${tag}.md`}
+            >
               <box-icon name="github" type="logo" color="currentColor"></box-icon>
             </sc-button>
             <codepen-link
@@ -87,32 +95,35 @@ export class CodeBlock {
         </div>
         <style ref={el => (this.styleEl = el as HTMLElement)}></style>
         <div class="preview" innerHTML={this.code}></div>
-        <div class={`code-block ${this.themerOpen && 'open'}`}>
-          <h4>CSS Variables</h4>
-          <div class="flex">
-            <div class="w-6 pr-2">
-              {styles.map((style, i) => {
-                return (
-                  <div class="flex align-center" key={i}>
-                    <div class="style-text">
-                      <div class="title">{style.name}</div>
-                      <div class="description">{style.docs}</div>
-                      <sc-input type="text" onChange={e => this.changeStyleValue(style.name, e.target.value)}></sc-input>
+        {styles.length > 0 && (
+          <div class={`code-block ${this.themerOpen && 'open'}`}>
+            <h4>CSS Variables</h4>
+            <div class="flex">
+              <div class="w-6 pr-2">
+                {styles.map((style, i) => {
+                  return (
+                    <div class="flex align-center" key={i}>
+                      <div class="style-text">
+                        <div class="title">{style.name}</div>
+                        <div class="description">{style.docs}</div>
+                        <sc-input type="text" onChange={e => this.changeStyleValue(style.name, e.target.value)}></sc-input>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
-            </div>
-            <div class="w-4">
-              <hl-code
-                language="css"
-                code={`${tag} {
+                  );
+                })}
+              </div>
+              <div class="w-4">
+                <hl-code
+                  language="css"
+                  code={`${tag} {
   ${this.objToCSSRule(this.tempStyles)}
 }`}
-              ></hl-code>
+                ></hl-code>
+              </div>
             </div>
           </div>
-        </div>
+        )}
+
         <div class={`code-block ${this.sourceCodeOpen && 'open'}`}>
           <hl-code language="html" code={this.code}></hl-code>
         </div>

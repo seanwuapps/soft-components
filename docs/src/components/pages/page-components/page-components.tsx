@@ -76,75 +76,69 @@ export class PageComponents {
     console.log(name, this.component);
     return (
       <Host>
-        <article class="flex align-stretch">
-          {/* Main */}
-          <main class="w-8">
-            {/* Title */}
-            <section class="component-title">
-              <h1>{name}</h1>
+        <article>
+          {/* Title */}
+          <section class="component-title">
+            <h1>{name}</h1>
+          </section>
+
+          {/* Usage */}
+          {this.component.usage[tag] && (
+            <section>
+              <linkable-title id="usage">Usage</linkable-title>
+              <code-block code={this.component.usage[tag]} component={this.component}></code-block>
             </section>
-            {/* Usage */}
-            {this.component.usage[tag] && (
-              <section>
-                <linkable-title id="usage">Usage</linkable-title>
-                <code-block code={this.component.usage[tag]} component={this.component}></code-block>
-              </section>
-            )}
+          )}
 
-            {/* Props */}
-            {this.component.props && (
-              <section>
-                <linkable-title id="props">Props</linkable-title>
+          {/* Props */}
+          {this.component.props && (
+            <section>
+              <linkable-title id="props">Props</linkable-title>
 
-                <div class="props-container table">
-                  <div class="table-head py-1 align-center raised-2 sticky">
-                    <div class="w-2 pl-2">Name</div>
-                    <div class="w-5">Description</div>
-                    <div class="w-2">Type</div>
-                    <div class="w-1">Default</div>
-                    <div class="w-1 text-center">
-                      <sc-button class="w-1 search-btn" icon onClick={() => this.togglePropSearchBar()}>
-                        <box-icon class="search-btn" name="search" color="currentColor"></box-icon>
-                      </sc-button>
-                    </div>
-                    <div class={`props-search-bar ${this.searchBarOpen && 'active'}`}>
-                      <sc-input engraved="2" class="w-9" id="prop-search-input" type="search" placeholder="Search" onInput={e => this.search(e)}></sc-input>
-
-                      <sc-button flat class="w-1 px-1 search-btn" icon onClick={() => this.togglePropSearchBar()}>
-                        <box-icon name="x" color="currentColor"></box-icon>
-                      </sc-button>
-                    </div>
+              <div class="props-container table">
+                <div class="table-head py-1 align-center raised-2 sticky">
+                  <div class="w-2 pl-2">Name</div>
+                  <div class="w-4">Description</div>
+                  <div class="w-2">Type</div>
+                  <div class="w-1">Default</div>
+                  <div class="w-1 pr-2 text-right">
+                    <sc-button class="w-1 search-btn" icon onClick={() => this.togglePropSearchBar()}>
+                      <box-icon class="search-btn" name={this.searchBarOpen ? 'x' : 'search'} color="currentColor"></box-icon>
+                    </sc-button>
                   </div>
-                  <div class="table-body engraved-1">
-                    {this.filteredProps.map(prop => (
-                      <div class="flex">
-                        <div class="w-2 py-2 pl-1">
-                          <linkable-title id={`props-${prop.name}`} tag="code" class="prop__title">
-                            {prop.name}
-                          </linkable-title>
-                        </div>
-                        <div class="w-5 py-2" innerHTML={md.render(prop.docs)}></div>
-                        <div class="w-2 py-2">
-                          <code>{prop.type}</code>
-                        </div>
-                        <div class="w-1 py-2">
-                          <code>{prop.default}</code>
-                        </div>
-                        <div class="w-1 pr-1">&nbsp;</div>
-                      </div>
-                    ))}
+                  <div class={`props-search-bar raised round ${this.searchBarOpen && 'active'}`}>
+                    <sc-input engraved="2" block class="" type="search" placeholder="Search" onInput={e => this.search(e)}></sc-input>
                   </div>
                 </div>
-              </section>
-            )}
-
-            {/* Customisation */}
-            <section>
-              <linkable-title anchor="customisation">Customisation</linkable-title>
-              <h6>How should you customise this component?</h6>
-              <div class="mt-1">{this.component.encapsulation === 'shadow' ? 'CSS variables only' : 'All styles can be overridden with CSS'}</div>
+                <div class="table-body engraved-1">
+                  {this.filteredProps.map(prop => (
+                    <div class="flex">
+                      <div class="w-2 py-2 pl-1">
+                        <linkable-title id={`props-${prop.name}`} tag="code" class="prop__title">
+                          {prop.name}
+                        </linkable-title>
+                      </div>
+                      <div class="w-4 py-2" innerHTML={md.render(prop.docs)}></div>
+                      <div class="w-2 py-2">
+                        <code>{prop.type}</code>
+                      </div>
+                      <div class="w-1 py-2">
+                        <code>{prop.default}</code>
+                      </div>
+                      <div class="w-1 pr-1">&nbsp;</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </section>
-          </main>
+          )}
+
+          {/* Customisation */}
+          <section>
+            <linkable-title anchor="customisation">Customisation</linkable-title>
+            <h6>How should you customise this component?</h6>
+            <div class="mt-1">{this.component.encapsulation === 'shadow' ? 'CSS variables only' : 'All styles can be overridden with CSS'}</div>
+          </section>
         </article>
       </Host>
     );

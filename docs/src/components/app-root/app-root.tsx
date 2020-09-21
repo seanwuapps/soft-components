@@ -12,9 +12,11 @@ export class AppRoot {
   }
   render() {
     return (
-      <Host>
+      <Host class={`${this.mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
         <div class="header">
-          <box-icon name="menu" size="lg" color="currentColor" class="mobile-nav-trigger" onClick={() => this.toggleMobileMenu()}></box-icon>
+          <sc-button flat icon bordered onClick={() => this.toggleMobileMenu()} class="mobile-nav-trigger">
+            <box-icon name="menu" size="lg" color="currentColor"></box-icon>
+          </sc-button>
           <div class="logo-container">
             <stencil-route-link url="/" exact={true}>
               <app-logo></app-logo>
@@ -24,9 +26,11 @@ export class AppRoot {
         </div>
         <div class={`mobile-nav ${this.mobileMenuOpen ? 'open' : ''}`}>
           <div class="mobile-nav-header">
-            <box-icon name="x" size="lg" color="currentColor" class="mobile-nav-trigger" onClick={() => this.toggleMobileMenu()}></box-icon>
+            <sc-button flat icon bordered class="mobile-nav-trigger" onClick={() => this.toggleMobileMenu()}>
+              <box-icon name="x" size="lg" color="currentColor"></box-icon>
+            </sc-button>
             <div class="logo-container">
-              <stencil-route-link url="/" exact={true}>
+              <stencil-route-link url="/" exact={true} onClick={() => (this.mobileMenuOpen = false)}>
                 <app-logo></app-logo>
               </stencil-route-link>
             </div>
@@ -39,7 +43,7 @@ export class AppRoot {
           <app-nav></app-nav>
         </div>
 
-        <main class="main py-4">
+        <main class="main pa-2 py-4">
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="page-home" exact={true} />

@@ -6,10 +6,10 @@ const md = markdown({
   highlight: function (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
-        return '<pre class="hljs"><code>' + hljs.highlight(lang, str, true).value + '</code></pre>';
+        return `</code></pre><hl-code code='${str}' language="${lang}"></hl-code>`;
       } catch (__) {}
     }
-    return '<pre class="hljs"><code>' + markdown.utils.escapeHtml(str) + '</code></pre>';
+    return '<hl-code code="' + markdown.utils.escapeHtml(str) + '"></hl-code>';
   },
 });
 export default md;

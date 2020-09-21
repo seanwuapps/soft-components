@@ -41,10 +41,10 @@ page-components {
 
   .props-search-bar {
     position: absolute;
+    top: calc(100% + #{$spacing});
+    right: $spacing;
+    // transform: translateY(-50%);
     background: var(--sc-bg-color);
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
     width: 50%;
     height: 100%;
     padding: $spacing;
@@ -53,10 +53,12 @@ page-components {
     pointer-events: none;
     display: flex;
     align-items: center;
-    border-top-right-radius: var(--radius-small);
     &.active {
       opacity: 1;
       pointer-events: initial;
+    }
+    sc-input {
+      display: block;
     }
   }
 

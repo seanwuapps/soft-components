@@ -2,6 +2,7 @@ body {
   .flex {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     @include media(md) {
       flex-direction: row;
       > * {
@@ -69,7 +70,14 @@ $justify-positions: (
 
 @for $i from 1 to 11 {
   .w-#{$i} {
-    flex-basis: $i * 10%;
+    flex: 0 0 ($i * 10%);
+  }
+  @each $media, $width in $breakpoints {
+    .w-#{$i}-#{$media} {
+      @media (min-width: $width) {
+        flex: 0 0 ($i * 10%);
+      }
+    }
   }
 }
 
@@ -97,6 +105,30 @@ $justify-positions: (
   .text-right-#{$media} {
     @media (min-width: $width) {
       text-align: right;
+    }
+  }
+}
+
+// hide
+.hide {
+  display: none;
+}
+@each $media, $width in $breakpoints {
+  .hide-#{$media} {
+    @media (min-width: $width) {
+      display: none;
+    }
+  }
+}
+
+// show
+.show {
+  display: block;
+}
+@each $media, $width in $breakpoints {
+  .show-#{$media} {
+    @media (min-width: $width) {
+      display: block;
     }
   }
 }
