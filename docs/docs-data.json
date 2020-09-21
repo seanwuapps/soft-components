@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-09-16T08:48:23",
+  "timestamp": "2020-09-21T02:32:26",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.8.5",
@@ -429,7 +429,7 @@
       "docs": "",
       "docsTags": [],
       "usage": {
-        "sc-input": "<label for=\"email\">Email</label>\n<sc-input type=\"email\" required name=\"email\" id=\"email\"></sc-input>\n\n<label for=\"password\">Password</label>\n<sc-input type=\"password\" required name=\"password\" maxlength=\"6\" id=\"password\">\n</sc-input>\n"
+        "sc-input": "<label for=\"email\">Email</label>\n<sc-input type=\"email\" required name=\"email\" id=\"email\"></sc-input>\n\n<label for=\"password\">Password</label>\n<sc-input type=\"password\" required name=\"password\" maxlength=\"6\" id=\"password\">\n</sc-input>\n\n<sc-input type=\"text\"></sc-input>"
       },
       "props": [
         {
@@ -541,6 +541,23 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "block",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "block",
+          "reflectToAttr": false,
+          "docs": "Takes the entire width of the row",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {
@@ -946,12 +963,13 @@
           "reflectToAttr": true,
           "docs": "When prop is set, this tab is shown, only one `<sc-tab>` element can be active inside `<sc-tabs>`",
           "docsTags": [],
+          "default": "false",
           "values": [
             {
               "type": "boolean"
             }
           ],
-          "optional": false,
+          "optional": true,
           "required": false
         },
         {
@@ -1019,7 +1037,7 @@
             }
           ],
           "optional": false,
-          "required": true
+          "required": false
         }
       ],
       "methods": [

@@ -24,6 +24,9 @@ sc-input {
     transition: all 0.3s ease;
     font-size: var(--sc-input-font-size);
     width: 100%;
+    ::placeholder {
+      color: currentColor;
+    }
 
     &:invalid {
       color: var(--sc-input-error-text-color);
@@ -49,5 +52,10 @@ sc-input {
       padding: 4px var(--sc-input-padding-x);
       color: var(--sc-input-error-text-color);
     }
+  }
+
+  &.block {
+    display: block;
+    width: 100%;
   }
 }

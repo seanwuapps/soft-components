@@ -19,12 +19,12 @@ export class TabButton {
   /**
    * When prop is set, this tab is shown, only one `<sc-tab>` element can be active inside `<sc-tabs>`
    */
-  @Prop({ reflect: true, mutable: true }) active: boolean | undefined;
+  @Prop({ reflect: true, mutable: true }) active?: boolean = false;
 
   /**
    * id of the target `sc-tab-content` tag
    */
-  @Prop() target!: string;
+  @Prop() target: string;
 
   /**
    * The button shape.

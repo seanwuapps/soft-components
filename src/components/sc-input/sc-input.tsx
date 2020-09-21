@@ -147,6 +147,11 @@ export class Input implements ComponentInterface {
   @Prop() engraved?: number = 1;
 
   /**
+   * Takes the entire width of the row
+   */
+  @Prop() block?: boolean = false;
+
+  /**
    * Emitted when a keyboard input occurred.
    */
   @Event() inputEvent!: EventEmitter<KeyboardEvent>;
@@ -244,6 +249,7 @@ export class Input implements ComponentInterface {
         class={{
           "has-value": this.hasValue(),
           "has-error": this.error.length > 0,
+          block: this.block,
         }}
       >
         <input

@@ -104,6 +104,10 @@ export namespace Components {
     */
     'autofocus': boolean;
     /**
+    * Takes the entire width of the row
+    */
+    'block'?: boolean;
+    /**
     * If `true`, the user cannot interact with the input.
     */
     'disabled': boolean;
@@ -191,7 +195,7 @@ export namespace Components {
     /**
     * When prop is set, this tab is shown, only one `<sc-tab>` element can be active inside `<sc-tabs>`
     */
-    'active': boolean | undefined;
+    'active'?: boolean;
     /**
     * The button shape.
     */
@@ -412,6 +416,10 @@ declare namespace LocalJSX {
     */
     'autofocus'?: boolean;
     /**
+    * Takes the entire width of the row
+    */
+    'block'?: boolean;
+    /**
     * If `true`, the user cannot interact with the input.
     */
     'disabled'?: boolean;
@@ -511,7 +519,7 @@ declare namespace LocalJSX {
     /**
     * When prop is set, this tab is shown, only one `<sc-tab>` element can be active inside `<sc-tabs>`
     */
-    'active'?: boolean | undefined;
+    'active'?: boolean;
     /**
     * The button shape.
     */
@@ -529,7 +537,7 @@ declare namespace LocalJSX {
     /**
     * id of the target `sc-tab-content` tag
     */
-    'target': string;
+    'target'?: string;
   }
   interface ScTabContent {
     'onActiveCompleted'?: (event: CustomEvent<void>) => void;
