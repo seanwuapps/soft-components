@@ -1,0 +1,9 @@
+.root,
+html {
+  --sc-bg-color: rgb(141, 252, 176);
+  --sc-text-color: rgb(51, 51, 51);
+  --sc-highlight-color: rgba(255, 255, 255, 0.19);
+  --sc-shadow-color: rgba(0, 0, 0, 0.23);
+  --sc-secondary-color: #91bc1f;
+  --sc-active-color: #0bd6af;
+}
