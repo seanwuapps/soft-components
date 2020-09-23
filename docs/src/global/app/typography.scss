@@ -42,6 +42,11 @@ body {
   * + * {
     margin-top: 2rem;
   }
+
+  pre {
+    margin-top: 0;
+  }
+
   ul {
     list-style: circle;
     li + li {
@@ -74,5 +79,9 @@ body {
       content: none;
     }
     @include unspacing;
+  }
+
+  code {
+    padding: 0 $spacing/2;
   }
 }

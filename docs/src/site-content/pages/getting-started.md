@@ -8,9 +8,9 @@ There are a few ways you can get started with Soft Components:
 
 ### CDN
 ```html
-<link rel="stylesheet" href="//unpkg.com/soft-components@latest/dist/soft-components/soft-components.css" />
-<script type="module" src="//unpkg.com/soft-components@latest/dist/soft-components/soft-components.esm.js"></script>
-<script nomodule src="//unpkg.com/soft-components@latest/dist/soft-components/soft-components.js"></script>
+<link rel="stylesheet" href="//unpkg.com/soft-components/dist/soft-components/soft-components.css" />
+<script type="module" src="//unpkg.com/soft-components/dist/soft-components/soft-components.esm.js"></script>
+<script nomodule src="//unpkg.com/soft-components/dist/soft-components/soft-components.js"></script>
 ```
 ### Install via npm
 ```bash

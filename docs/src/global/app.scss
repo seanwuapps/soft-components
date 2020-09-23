@@ -42,6 +42,6 @@ html {
 
   linkable-title {
     --icon-width: 2em;
-    --icon-gap: $spacing;
+    --icon-gap: #{$spacing};
   }
 }
