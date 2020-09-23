@@ -1,50 +1,54 @@
 $spacing: 8px;
+:root,
+html {
+  --sc-root-spacing: #{$spacing};
+}
 
 @for $i from 0 to 11 {
   .pa-#{$i} {
-    padding: $spacing * $i;
+    padding: calc(var(--sc-root-spacing) * #{$i});
   }
   .pt-#{$i} {
-    padding-top: $spacing * $i;
+    padding-top: calc(var(--sc-root-spacing) * #{$i});
   }
   .pb-#{$i} {
-    padding-bottom: $spacing * $i;
+    padding-bottom: calc(var(--sc-root-spacing) * #{$i});
   }
   .pl-#{$i} {
-    padding-left: $spacing * $i;
+    padding-left: calc(var(--sc-root-spacing) * #{$i});
   }
   .pr-#{$i} {
-    padding-right: $spacing * $i;
+    padding-right: calc(var(--sc-root-spacing) * #{$i});
   }
   .px-#{$i} {
-    padding-left: $spacing * $i;
-    padding-right: $spacing * $i;
+    padding-left: calc(var(--sc-root-spacing) * #{$i});
+    padding-right: calc(var(--sc-root-spacing) * #{$i});
   }
   .py-#{$i} {
-    padding-top: $spacing * $i;
-    padding-bottom: $spacing * $i;
+    padding-top: calc(var(--sc-root-spacing) * #{$i});
+    padding-bottom: calc(var(--sc-root-spacing) * #{$i});
   }
   .ma-#{$i} {
-    margin: $spacing * $i;
+    margin: calc(var(--sc-root-spacing) * #{$i});
   }
   .mt-#{$i} {
-    margin-top: $spacing * $i;
+    margin-top: calc(var(--sc-root-spacing) * #{$i});
   }
   .mb-#{$i} {
-    margin-bottom: $spacing * $i;
+    margin-bottom: calc(var(--sc-root-spacing) * #{$i});
   }
   .ml-#{$i} {
-    margin-left: $spacing * $i;
+    margin-left: calc(var(--sc-root-spacing) * #{$i});
   }
   .mr-#{$i} {
-    margin-right: $spacing * $i;
+    margin-right: calc(var(--sc-root-spacing) * #{$i});
   }
   .mx-#{$i} {
-    margin-left: $spacing * $i;
-    margin-right: $spacing * $i;
+    margin-left: calc(var(--sc-root-spacing) * #{$i});
+    margin-right: calc(var(--sc-root-spacing) * #{$i});
   }
   .my-#{$i} {
-    margin-top: $spacing * $i;
-    margin-bottom: $spacing * $i;
+    margin-top: calc(var(--sc-root-spacing) * #{$i});
+    margin-bottom: calc(var(--sc-root-spacing) * #{$i});
   }
 }
