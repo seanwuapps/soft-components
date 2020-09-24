@@ -68,6 +68,20 @@ $justify-positions: (
   }
 }
 
+.w {
+  flex: 1;
+  max-width: 100%;
+  flex-basis: 0;
+}
+@each $media, $width in $breakpoints {
+  .w-#{$media} {
+    @media (min-width: $width) {
+      flex: 1;
+      max-width: 100%;
+      flex-basis: 0;
+    }
+  }
+}
 @for $i from 1 to 11 {
   .w-#{$i} {
     flex: 0 0 ($i * 10%);

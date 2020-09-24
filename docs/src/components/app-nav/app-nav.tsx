@@ -10,20 +10,14 @@ export class AppNav {
     {
       text: 'Getting started',
       url: '/getting-started',
-      children: [
-        {
-          text: 'The theory',
-          url: '/theory',
-        },
-        {
-          text: 'Web component',
-          url: '/web-component',
-        },
-        {
-          text: 'Theme store',
-          url: '/theme-store',
-        },
-      ],
+    },
+    {
+      text: 'The theory',
+      url: '/theory',
+    },
+    {
+      text: 'Web component',
+      url: '/web-component',
     },
     {
       text: 'Components',
@@ -31,8 +25,12 @@ export class AppNav {
       children: buildComponentNavArray(),
     },
     {
-      text: 'Helper classes',
-      url: '/helper-classes',
+      text: 'Theme store',
+      url: '/theme-store',
+    },
+    {
+      text: 'Utilities',
+      url: '/utilities',
     },
   ];
 

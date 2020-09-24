@@ -6,18 +6,22 @@ import Color from 'color';
   styleUrl: 'theme-setter.scss',
 })
 export class ThemeSetter {
-  private variables: string = '';
+  @State() variables: string = '';
 
   @State() panelOpen: boolean = false;
 
   componentDidLoad() {
+    this.setColor();
+  }
+
+  setColor() {
     const mainColor = Color(this.randomColor());
     const textColor = mainColor.isDark() ? Color('#ffffff') : Color('#333333');
     let lightAlpha = Math.random() * (0.5 - 0.1) + 0.1;
     let darkAlpha = Math.random() * (0.5 - 0.1) + 0.1;
 
-    this.variables = `--sc-bg-color: ${mainColor.rgb().string()};
---sc-text-color: ${textColor.rgb().string()};
+    this.variables = `--sc-bg-color: ${mainColor.hex()};
+--sc-text-color: ${textColor.hex()};
 --sc-highlight-color: rgba(255, 255, 255, ${lightAlpha.toFixed(2)});
 --sc-shadow-color: rgba(0, 0, 0, ${darkAlpha.toFixed(2)});
 --sc-secondary-color: ${this.randomColor()};
@@ -32,7 +36,12 @@ export class ThemeSetter {
   render() {
     return (
       <Host class={`panel ${this.panelOpen ? 'in' : ''}`}>
-        <sc-button class="ma-2 raised-0" icon active={this.panelOpen} title="View current colour theme" onClick={() => (this.panelOpen = !this.panelOpen)}>
+        {this.panelOpen && (
+          <sc-button icon onClick={() => this.setColor()}>
+            <box-icon name="refresh" color="currentColor"></box-icon>
+          </sc-button>
+        )}
+        <sc-button class="ma-2" icon active={this.panelOpen} title="View current colour theme" onClick={() => (this.panelOpen = !this.panelOpen)}>
           {this.panelOpen ? <box-icon name="x" color="currentColor"></box-icon> : <box-icon name="palette" color="currentColor"></box-icon>}
         </sc-button>
         <div class="panel-content">

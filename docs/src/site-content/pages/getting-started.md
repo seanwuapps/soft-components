@@ -1,4 +1,4 @@
-# Getting Started
+# Getting started
 
 To start using these skeuomorphic components, you will need to include 2 files, spoiler alert, it's the `css` and `js` files
 

@@ -142,6 +142,9 @@ export class PageComponents {
             <div class="mt-1">{this.component.encapsulation === 'shadow' ? 'CSS variables only' : 'All styles can be overridden with CSS'}</div>
           </section>
         </article>
+        <div class="comments">
+          <utterances-div repo="seanwuapps/soft-components" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></utterances-div>
+        </div>
       </Host>
     );
   }

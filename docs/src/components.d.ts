@@ -50,6 +50,14 @@ export namespace Components {
     }
     interface ThemeSetter {
     }
+    interface UtterancesDiv {
+        "async"?: boolean;
+        "crossorigin"?: string;
+        "issueTerm"?: string;
+        "label"?: string;
+        "repo": string;
+        "theme"?: string;
+    }
 }
 declare global {
     interface HTMLAppHeaderElement extends Components.AppHeader, HTMLStencilElement {
@@ -136,6 +144,12 @@ declare global {
         prototype: HTMLThemeSetterElement;
         new (): HTMLThemeSetterElement;
     };
+    interface HTMLUtterancesDivElement extends Components.UtterancesDiv, HTMLStencilElement {
+    }
+    var HTMLUtterancesDivElement: {
+        prototype: HTMLUtterancesDivElement;
+        new (): HTMLUtterancesDivElement;
+    };
     interface HTMLElementTagNameMap {
         "app-header": HTMLAppHeaderElement;
         "app-logo": HTMLAppLogoElement;
@@ -151,6 +165,7 @@ declare global {
         "page-notfound": HTMLPageNotfoundElement;
         "page-standard": HTMLPageStandardElement;
         "theme-setter": HTMLThemeSetterElement;
+        "utterances-div": HTMLUtterancesDivElement;
     }
 }
 declare namespace LocalJSX {
@@ -196,6 +211,14 @@ declare namespace LocalJSX {
     }
     interface ThemeSetter {
     }
+    interface UtterancesDiv {
+        "async"?: boolean;
+        "crossorigin"?: string;
+        "issueTerm"?: string;
+        "label"?: string;
+        "repo"?: string;
+        "theme"?: string;
+    }
     interface IntrinsicElements {
         "app-header": AppHeader;
         "app-logo": AppLogo;
@@ -211,6 +234,7 @@ declare namespace LocalJSX {
         "page-notfound": PageNotfound;
         "page-standard": PageStandard;
         "theme-setter": ThemeSetter;
+        "utterances-div": UtterancesDiv;
     }
 }
 export { LocalJSX as JSX };
@@ -231,6 +255,7 @@ declare module "@stencil/core" {
             "page-notfound": LocalJSX.PageNotfound & JSXBase.HTMLAttributes<HTMLPageNotfoundElement>;
             "page-standard": LocalJSX.PageStandard & JSXBase.HTMLAttributes<HTMLPageStandardElement>;
             "theme-setter": LocalJSX.ThemeSetter & JSXBase.HTMLAttributes<HTMLThemeSetterElement>;
+            "utterances-div": LocalJSX.UtterancesDiv & JSXBase.HTMLAttributes<HTMLUtterancesDivElement>;
         }
     }
 }

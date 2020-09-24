@@ -89,6 +89,7 @@ You can control the level of the effects by adding `-0` to `-9` at the end of `.
 ### `.round`
 
 A lot of times having rounded corners helps the neumorphism design, making it feel softer and more friendly. The `.round` class can help with this effect, by default it applies `1em` border radius to all corners, you can adjust the radius by changing the `--sc-border-radius` css variable.
+
 ```css
 :root {
   --sc-border-radius: 30px; /* applies 30px border-radius */
