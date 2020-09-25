@@ -10,6 +10,7 @@ export class AppRoot {
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }
+
   render() {
     return (
       <Host class={`${this.mobileMenuOpen ? 'mobile-menu-open' : ''}`}>

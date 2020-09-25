@@ -5,6 +5,8 @@ import { JsonDocsComponent, JsonDocsProp } from '../../../../docs-data';
 import { getName } from '../../../helpers/components';
 import md from '../../../helpers/md';
 import SimpleBar from 'simplebar';
+import store from '../../../store';
+
 @Component({
   tag: 'page-components',
   styleUrl: 'page-components.scss',
@@ -142,9 +144,18 @@ export class PageComponents {
             <div class="mt-1">{this.component.encapsulation === 'shadow' ? 'CSS variables only' : 'All styles can be overridden with CSS'}</div>
           </section>
         </article>
-        <div class="comments">
-          <utterances-div repo="seanwuapps/soft-components" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></utterances-div>
-        </div>
+
+        {/* comments */}
+        <section class="comments mt-4">
+          <h4>Comments</h4>
+          <utterances-div
+            repo="seanwuapps/soft-components"
+            issue-term="pathname"
+            theme={store.state.themeIsDark ? 'photon-dark' : 'github-light'}
+            crossorigin="anonymous"
+            async
+          ></utterances-div>
+        </section>
       </Host>
     );
   }

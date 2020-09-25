@@ -210,6 +210,7 @@ declare namespace LocalJSX {
         "match"?: MatchResults;
     }
     interface ThemeSetter {
+        "onThemeChanged"?: (event: CustomEvent<boolean>) => void;
     }
     interface UtterancesDiv {
         "async"?: boolean;

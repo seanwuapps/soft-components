@@ -1,26 +1,38 @@
 theme-setter {
   position: fixed;
-  left: 50%;
+  left: $spacing * 2;
   bottom: $spacing * 2;
   right: $spacing * 2;
-  z-index: 9999;
-  transform: translateY(0);
-  transition: transform 0.3s ease;
-  text-align: right;
+  width: auto;
+  max-width: 100%;
   height: auto;
-  sc-button {
-    --sc-button-icon-size: 56px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  .panel-control {
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    text-align: right;
+    sc-button {
+      --sc-button-icon-size: 56px;
+    }
   }
   .panel-content {
+    max-height: 0;
+    opacity: 0;
+    transform-origin: top;
+    transition: all 0.5s ease-in-out;
     width: 100%;
-    text-align: left;
-    height: 0;
-    overflow: hidden;
+    @include media(lg) {
+      width: 50%;
+    }
   }
   &.in {
-    transform: translateY(0);
     .panel-content {
-      height: auto;
+      max-height: 50vh;
+      opacity: 1;
     }
   }
 }

@@ -1,4 +1,4 @@
-import { Component, Host, h, Element, Prop } from '@stencil/core';
+import { Component, Host, h, Element, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'utterances-div',
@@ -15,6 +15,10 @@ export class UtterancesDiv {
   @Prop() async?: boolean = true;
 
   componentDidLoad() {
+    this.loadUtterances();
+  }
+  @Watch('theme')
+  loadUtterances() {
     const utterances = document.createElement('script');
     const { repo, issueTerm, label, theme, crossorigin, async } = this;
     Object.entries({
@@ -28,10 +32,16 @@ export class UtterancesDiv {
     }).forEach(([key, value]) => {
       utterances.setAttribute(key, String(value));
     });
-
+    if (this.el.lastChild) {
+      this.el.removeChild(this.el.lastChild);
+    }
     this.el.appendChild(utterances);
   }
   render() {
-    return <Host></Host>;
+    return (
+      <Host>
+        <span>Loading</span>
+      </Host>
+    );
   }
 }

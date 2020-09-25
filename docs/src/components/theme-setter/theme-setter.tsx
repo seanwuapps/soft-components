@@ -1,6 +1,7 @@
-import { Component, Host, h, State } from '@stencil/core';
+import { Component, Host, h, State, Event } from '@stencil/core';
+import { EventEmitter } from 'codepen-link/dist/types/stencil-public-runtime';
 import Color from 'color';
-
+import store from '../../store';
 @Component({
   tag: 'theme-setter',
   styleUrl: 'theme-setter.scss',
@@ -9,6 +10,8 @@ export class ThemeSetter {
   @State() variables: string = '';
 
   @State() panelOpen: boolean = false;
+
+  @Event() themeChanged: EventEmitter<boolean>;
 
   componentDidLoad() {
     this.setColor();
@@ -27,6 +30,8 @@ export class ThemeSetter {
 --sc-secondary-color: ${this.randomColor()};
 --sc-active-color: ${this.randomColor()};`;
     document.querySelector('body').style.cssText = this.variables;
+
+    store.set('themeIsDark', mainColor.isDark());
   }
 
   private randomColor() {
@@ -36,14 +41,16 @@ export class ThemeSetter {
   render() {
     return (
       <Host class={`panel ${this.panelOpen ? 'in' : ''}`}>
-        {this.panelOpen && (
-          <sc-button icon onClick={() => this.setColor()}>
-            <box-icon name="refresh" color="currentColor"></box-icon>
+        <div class="panel-control">
+          {this.panelOpen && (
+            <sc-button icon onClick={() => this.setColor()}>
+              <box-icon name="refresh" color="currentColor"></box-icon>
+            </sc-button>
+          )}
+          <sc-button class="ma-2" icon active={this.panelOpen} title="View current colour theme" onClick={() => (this.panelOpen = !this.panelOpen)}>
+            {this.panelOpen ? <box-icon name="x" color="currentColor"></box-icon> : <box-icon name="palette" color="currentColor"></box-icon>}
           </sc-button>
-        )}
-        <sc-button class="ma-2" icon active={this.panelOpen} title="View current colour theme" onClick={() => (this.panelOpen = !this.panelOpen)}>
-          {this.panelOpen ? <box-icon name="x" color="currentColor"></box-icon> : <box-icon name="palette" color="currentColor"></box-icon>}
-        </sc-button>
+        </div>
         <div class="panel-content">
           <hl-code language="css" code={this.variables}></hl-code>
         </div>
