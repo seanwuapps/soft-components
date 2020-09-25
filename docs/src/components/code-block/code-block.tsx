@@ -55,11 +55,11 @@ export class CodeBlock {
     return (
       <div class="raised-2 round pa-2">
         <div class="control-bar flex align-center justify-between">
-          <h5>
+          <h5 class="mb-2">
             <code>&lt;{tag}&gt;</code>
           </h5>
 
-          <div class="buttons">
+          <div class="buttons mb-2">
             {styles.length > 0 && (
               <sc-button icon class={` ${this.themerOpen && 'active'}`} title="Toggle style sandbox" onClick={() => this.toggleThemer()}>
                 <box-icon type="solid" name="brush" color="currentColor"></box-icon>

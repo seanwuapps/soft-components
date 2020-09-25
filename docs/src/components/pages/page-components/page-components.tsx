@@ -100,27 +100,32 @@ export class PageComponents {
               <div class="props-container">
                 <div class="table">
                   <div class="table-head raised-2 sticky">
-                    <div class="w-2 pl-2 th">Name</div>
+                    <div class="w-2 th">Name</div>
                     <div class="w-4 th">Description</div>
                     <div class="w-2 th">Type</div>
                     <div class="w-1 th">Default</div>
                   </div>
                   <div class="table-body engraved-1">
                     {this.filteredProps.map(prop => (
-                      <div class="flex">
-                        <div class="w-2 py-2 pl-1">
+                      <div class="flex tr">
+                        <div class="w-2 py-2">
+                          <span class="th-mobile">Name</span>
                           <linkable-title id={`props-${prop.name}`} tag="code" class="prop__title">
                             {prop.name}
                           </linkable-title>
                         </div>
-                        <div class="w-4 py-2" innerHTML={md.render(prop.docs)}></div>
+                        <div class="w-4 py-2">
+                          <span class="th-mobile">Description</span>
+                          <span innerHTML={md.render(prop.docs)}></span>
+                        </div>
                         <div class="w-2 py-2">
+                          <span class="th-mobile">Type</span>
                           <code>{prop.type}</code>
                         </div>
                         <div class="w-1 py-2">
+                          <span class="th-mobile">Default</span>
                           <code>{prop.default}</code>
                         </div>
-                        <div class="w-1 pr-1">&nbsp;</div>
                       </div>
                     ))}
                   </div>
@@ -148,7 +153,14 @@ export class PageComponents {
         {/* comments */}
         <section class="comments mt-4">
           <h4>Comments</h4>
+          <p>
+            Leave your thoughts here and it becomes a GitHub issue! Thanks to the magic of{' '}
+            <a href="https://utteranc.es" target="_blank">
+              Utterances
+            </a>
+          </p>
           <utterances-div
+            class="mt-2"
             repo="seanwuapps/soft-components"
             issue-term="pathname"
             theme={store.state.themeIsDark ? 'photon-dark' : 'github-light'}

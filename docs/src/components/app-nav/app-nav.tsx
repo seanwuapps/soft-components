@@ -31,6 +31,16 @@ export class AppNav {
     {
       text: 'Utilities',
       url: '/utilities',
+      children: [
+        {
+          text: 'Styling',
+          url: '/styling',
+        },
+        {
+          text: 'Spacing',
+          url: '/spacing',
+        },
+      ],
     },
   ];
 

@@ -2,7 +2,7 @@ import { Component, Host, h, Element, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'utterances-div',
-  styleUrl: 'utterances-div.css',
+  styleUrl: 'utterances-div.scss',
 })
 export class UtterancesDiv {
   @Element() el: HTMLElement;

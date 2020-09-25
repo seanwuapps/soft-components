@@ -36,8 +36,7 @@ page-components {
 
     @include unspacing;
     .table-head {
-      min-height: 60px;
-      padding: $spacing 0;
+      min-height: 70px;
       align-items: center;
 
       .th {

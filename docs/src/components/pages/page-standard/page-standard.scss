@@ -1,3 +1,9 @@
 page-standard {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: space-between;
+  .content {
+    flex-grow: 1;
+  }
 }

@@ -2,14 +2,13 @@
 
 code-block {
   display: block;
+  @include unspacing;
   .preview {
     margin-top: $spacing * 2;
-    @include unspacing;
   }
   .control-bar {
     --sc-card-outer-padding-x: #{$spacing};
     --sc-card-outer-padding-y: #{$spacing};
-    @include unspacing;
     sc-button {
       --sc-button-icon-size: #{$spacing * 6};
     }

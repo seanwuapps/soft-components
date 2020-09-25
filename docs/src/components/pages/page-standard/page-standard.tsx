@@ -65,9 +65,16 @@ export class PageStandard {
     if (this.loading) {
       return <p>Loading...</p>;
     }
+    const { page } = this.match.params;
     return (
       <Host>
-        <div innerHTML={this.content}></div>
+        <div class="content" innerHTML={this.content}></div>
+        <div class="content-bottom text-center text-left-lg">
+          <sc-button block bordered flat icon-text href={`https://github.com/seanwuapps/soft-components/edit/master/docs/src/site-content/pages/${page}.md`} target="_blank">
+            <box-icon name="edit-alt" color="currentColor"></box-icon>
+            Edit this page
+          </sc-button>
+        </div>
       </Host>
     );
   }

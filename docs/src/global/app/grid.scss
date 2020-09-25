@@ -10,6 +10,11 @@ body {
       }
     }
   }
+  .flex-col {
+    display: flex;
+    flex-direction: column !important;
+  }
+
   .container {
     display: block;
     width: 100%;

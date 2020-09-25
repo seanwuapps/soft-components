@@ -26,6 +26,7 @@ table {
     border-bottom-right-radius: calc(var(--radius-small) / 2);
     display: flex;
     align-items: center;
+    padding: $spacing * 2;
     &.sticky {
       position: sticky;
       top: $spacing;
@@ -36,5 +37,22 @@ table {
     padding: $spacing;
     max-height: 40vh;
     overflow: auto;
+    .tr {
+      padding: $spacing;
+      @include media(md) {
+        padding: 0;
+      }
+      &:nth-child(even) {
+        background: rgba(black, 0.2);
+      }
+    }
+    .th-mobile {
+      padding: $spacing 0;
+      display: block;
+      font-size: 1.2em;
+      @include media(md) {
+        display: none;
+      }
+    }
   }
 }
