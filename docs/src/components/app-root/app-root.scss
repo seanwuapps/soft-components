@@ -85,10 +85,12 @@ app-root {
     padding: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     z-index: 99;
     transition: transform 0.5s ease;
     transform: translateX(-100%);
+    display: flex;
+    flex-direction: column;
     app-nav {
       overflow: auto;
       padding: 0 var(--root-padding);

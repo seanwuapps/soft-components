@@ -1,11 +1,13 @@
 app-nav {
   display: block;
+  height: 100%;
   ul {
     padding: 0;
     list-style: none;
   }
   .nav-list {
     display: block;
+    height: 100%;
     .nav-item {
       margin-bottom: 2 * $spacing;
 

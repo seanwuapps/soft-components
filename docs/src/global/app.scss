@@ -39,9 +39,9 @@ html {
 
   // scrollbar color in code-block
   --code-block-scrollbar-color: var(--color-green);
+}
 
-  linkable-title {
-    --icon-width: 2em;
-    --icon-gap: #{$spacing};
-  }
+linkable-title {
+  --icon-width: 2em;
+  --icon-gap: #{$spacing};
 }
