@@ -19,7 +19,9 @@ code-block {
     max-height: 0;
     transition: max-height 0.3s ease;
     &.open {
-      max-height: 100vh;
+      max-height: 50vh;
+      overflow: auto;
+      margin-bottom: $spacing * 4;
     }
   }
 

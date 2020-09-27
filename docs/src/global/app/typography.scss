@@ -85,3 +85,8 @@ body {
     padding: 0 $spacing/2;
   }
 }
+app-footer {
+  a {
+    color: var(--sc-text-color);
+  }
+}

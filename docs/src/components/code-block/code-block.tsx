@@ -97,16 +97,16 @@ export class CodeBlock {
         {styles.length > 0 && (
           <div class={`code-block ${this.themerOpen && 'open'}`}>
             <h4>CSS Variables</h4>
-            <div class="flex">
-              <div class="w-6 pr-2">
+            <div class="flex justify-between pt-2">
+              <div class="w-5 pr-2">
                 {styles.map((style, i) => {
                   return (
-                    <div class="flex align-center" key={i}>
-                      <div class="style-text">
-                        <div class="title">{style.name}</div>
+                    <div class="flex mb-2" key={i}>
+                      <label htmlFor={`style-input-${i}`} class="style-text w-5 pr-2 text-right">
+                        <code class="title">{style.name}</code>
                         <div class="description">{style.docs}</div>
-                        <sc-input type="text" onChange={e => this.changeStyleValue(style.name, e.target.value)}></sc-input>
-                      </div>
+                      </label>
+                      <sc-input class="w-5" type="text" id={`style-input-${i}`} onChange={e => this.changeStyleValue(style.name, e.target.value)}></sc-input>
                     </div>
                   );
                 })}

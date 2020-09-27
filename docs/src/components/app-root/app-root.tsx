@@ -56,22 +56,7 @@ export class AppRoot {
           </stencil-router>
         </main>
         <footer class="footer pa-4">
-          <div class="flex text-center">
-            <div class="w mt-2">
-              <sc-button href="https://github.com/seanwuapps/soft-components" target="_blank" rel="noreferrer">
-                <box-icon type="logo" size="sm" name="github" color="currentColor"></box-icon>
-                <br />
-                GitHub
-              </sc-button>
-            </div>
-            <div class="w mt-2">
-              <sc-button href="https://github.com/seanwuapps/soft-components" target="_blank" rel="noreferrer">
-                <box-icon type="logo" size="sm" name="twitter" color="currentColor"></box-icon>
-                <br />
-                Twitter
-              </sc-button>
-            </div>
-          </div>
+          <app-footer></app-footer>
         </footer>
         <theme-setter></theme-setter>
       </Host>

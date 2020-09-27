@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { JsonDocsComponent } from "../docs-data";
 import { MatchResults, RouterHistory } from "@stencil/router";
 export namespace Components {
+    interface AppFooter {
+    }
     interface AppHeader {
     }
     interface AppLogo {
@@ -60,6 +62,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAppFooterElement extends Components.AppFooter, HTMLStencilElement {
+    }
+    var HTMLAppFooterElement: {
+        prototype: HTMLAppFooterElement;
+        new (): HTMLAppFooterElement;
+    };
     interface HTMLAppHeaderElement extends Components.AppHeader, HTMLStencilElement {
     }
     var HTMLAppHeaderElement: {
@@ -151,6 +159,7 @@ declare global {
         new (): HTMLUtterancesDivElement;
     };
     interface HTMLElementTagNameMap {
+        "app-footer": HTMLAppFooterElement;
         "app-header": HTMLAppHeaderElement;
         "app-logo": HTMLAppLogoElement;
         "app-nav": HTMLAppNavElement;
@@ -169,6 +178,8 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AppFooter {
+    }
     interface AppHeader {
     }
     interface AppLogo {
@@ -221,6 +232,7 @@ declare namespace LocalJSX {
         "theme"?: string;
     }
     interface IntrinsicElements {
+        "app-footer": AppFooter;
         "app-header": AppHeader;
         "app-logo": AppLogo;
         "app-nav": AppNav;
@@ -242,6 +254,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-footer": LocalJSX.AppFooter & JSXBase.HTMLAttributes<HTMLAppFooterElement>;
             "app-header": LocalJSX.AppHeader & JSXBase.HTMLAttributes<HTMLAppHeaderElement>;
             "app-logo": LocalJSX.AppLogo & JSXBase.HTMLAttributes<HTMLAppLogoElement>;
             "app-nav": LocalJSX.AppNav & JSXBase.HTMLAttributes<HTMLAppNavElement>;
