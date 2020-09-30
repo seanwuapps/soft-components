@@ -375,7 +375,9 @@ declare namespace LocalJSX {
     */
     'headingTag'?: string;
     'onClosed'?: (event: CustomEvent<any>) => void;
+    'onClosing'?: (event: CustomEvent<any>) => void;
     'onOpened'?: (event: CustomEvent<any>) => void;
+    'onOpening'?: (event: CustomEvent<any>) => void;
   }
   interface ScButton {
     /**

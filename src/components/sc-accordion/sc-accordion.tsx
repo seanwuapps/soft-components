@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Element } from "@stencil/core";
+import { Component, Host, h, Prop, Element, Listen } from "@stencil/core";
 @Component({
   tag: "sc-accordion",
   styleUrl: "sc-accordion.scss",
@@ -16,19 +16,23 @@ export class ScAccordion {
   componentWillLoad() {
     if (!this.multiple) {
       this.activeItem = this.el.querySelector(
-        "sc-accordion-item[active]"
+        ":scope > sc-accordion-item[active]"
       ) as HTMLScAccordionItemElement;
-      this.activeItem.open();
+      if (this.activeItem) {
+        this.activeItem.open();
+      }
       this.closeNonActive();
+    }
+  }
 
-      // only 1 item can be active at any time
-      const items = this.el.querySelectorAll("sc-accordion-item");
-      items.forEach((item) => {
-        item.addEventListener("opened", (e) => {
-          this.activeItem = e.target as HTMLScAccordionItemElement;
-          this.closeNonActive();
-        });
-      });
+  @Listen("opened", {
+    capture: true,
+    passive: false,
+  })
+  openHandler(e) {
+    if (!this.multiple) {
+      this.activeItem = e.target as HTMLScAccordionItemElement;
+      this.closeNonActive();
     }
   }
 

@@ -13,7 +13,7 @@
 
   display: block;
   .heading {
-    @include raised(0.3);
+    @include raised(0.2);
     @include round();
     padding: var(--sc-accordion-item-heading-padding-y)
       var(--sc-accordion-item-heading-padding-x);
@@ -45,7 +45,7 @@
 
     .body {
       @include round();
-      @include engraved(0.3);
+      @include engraved(0.2);
       border-top-left-radius: 0;
       border-top-right-radius: 0;
 
@@ -57,7 +57,7 @@
 }
 :host(.autoHeight) {
   .body-container {
-    overflow: hidden !important;
+    overflow: hidden;
   }
 }
 :host(.active) {
@@ -72,6 +72,5 @@
   }
   .body-container {
     max-height: var(--sc-accordion-item-body-max-height);
-    overflow: auto;
   }
 }

@@ -48,6 +48,12 @@ export class ScAccordionItem {
 
   animationHeightInterval: number; // number of px per frame of animation change.
 
+  @Event() opened: EventEmitter;
+  @Event() opening: EventEmitter;
+
+  @Event() closed: EventEmitter;
+  @Event() closing: EventEmitter;
+
   componentWillLoad() {
     this.headingSlotEmpty = isSlotEmpty(this.el, "heading");
     this.arrowSlotEmpty = isSlotEmpty(this.el, "arrow");
@@ -58,6 +64,35 @@ export class ScAccordionItem {
         "--sc-accordion-item-body-max-height",
         this.bodyEl.scrollHeight + "px"
       );
+    }
+
+    this.bodyEl.addEventListener("transitionstart", () => {
+      if (this.autoHeight) {
+        this.bodyEl.style.overflow = "hidden";
+      }
+      this.onTransitionStart();
+    });
+
+    this.bodyEl.addEventListener("transitionend", () => {
+      if (this.autoHeight) {
+        this.bodyEl.style.overflow = "auto";
+      }
+      this.onTransitionEnd();
+    });
+  }
+
+  onTransitionEnd() {
+    if (this.active) {
+      this.opened.emit();
+    } else {
+      this.closed.emit();
+    }
+  }
+  onTransitionStart() {
+    if (this.active) {
+      this.opening.emit();
+    } else {
+      this.closing.emit();
     }
   }
 
@@ -73,18 +108,14 @@ export class ScAccordionItem {
   @Method()
   async close() {
     this.active = false;
-    this.closed.emit();
+    // this.closed.emit();
   }
 
   @Method()
   async open() {
     this.active = true;
-    this.opened.emit();
+    // this.opened.emit();
   }
-
-  @Event() opened: EventEmitter;
-
-  @Event() closed: EventEmitter;
 
   render() {
     const { active, autoHeight, headingTag: HeadingTag } = this;
