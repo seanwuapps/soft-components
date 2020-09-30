@@ -35,154 +35,182 @@
   </style>
 </head>
 
-<body class="py-5">
-  <div class="mb-5">
-    button
-    <sc-input type="button">
-    </sc-input>
-  </div>
-  <div class="mb-5">
-    checkbox
-    <sc-input type="checkbox">
-    </sc-input>
-    <input type="checkbox">
-    </input>
-  </div>
-  <div class="mb-5">
-    color
-    <sc-input type="color">
-    </sc-input>
-  </div>
-  <div class="mb-5">
-    date
-    <sc-input type="date">
-    </sc-input>
-  </div>
-  <div class="mb-5">
-    datetime
-    <sc-input type="datetime-local">
-    </sc-input>
-  </div>
-  <div class="mb-5">
-    email
-    <sc-input type="email">
-    </sc-input>
-  </div>
-  <div class="mb-5">
-    file
-    <sc-input type="file">
-    </sc-input>
-  </div>
-  <div class="mb-5">
-    month
-    <sc-input type="month">
-    </sc-input>
-  </div>
-  <div class="mb-5">
-    number
-    <sc-input type="number">
-    </sc-input>
-  </div>
-  <div class="mb-5">
-    password
-    <sc-input type="password">
-    </sc-input>
-  </div>
-  <div class="mb-5">
-    radio
-    <sc-input type="radio">
-    </sc-input>
-  </div>
-  <div class="mb-5">
-    range
-    <sc-input type="range">
-    </sc-input>
-  </div>
-  <div class="mb-5">
-    reset
-    <sc-input type="reset">
-    </sc-input>
-  </div>
-  <div class="mb-5">
-    search
-    <sc-input type="search">
-    </sc-input>
-  </div>
-  <div class="mb-5">
-    submit
-    <sc-input type="submit">
-    </sc-input>
-  </div>
-  <div class="mb-5">
-    tel
-    <sc-input type="tel">
-    </sc-input>
-  </div>
-  <div class="mb-5">
-    text
-    <sc-input type="text">
-    </sc-input>
-  </div>
-  <sc-input type="time">
-  </sc-input>
-  <sc-input type="url">
-  </sc-input>
-  <sc-input type="week">
-  </sc-input>
-  <sc-button onclick="alert('yo')">Button</sc-button>
+<body class="pa-5">
+  <sc-accordion multiple>
+    <sc-accordion-item class="mt-2" heading="Accordion">
+      <h2>Single</h2>
+      <sc-accordion>
+        <sc-accordion-item heading="A">
+          Lorem ipsum dolor sit
+        </sc-accordion-item>
+        <sc-accordion-item heading="B">
+          Lorem ipsum dolor sit
+        </sc-accordion-item>
+        <sc-accordion-item heading="C">
+          Lorem ipsum dolor sit
+        </sc-accordion-item>
+      </sc-accordion>
 
-  <!-- Anchor -->
-  <sc-button href="/" target="_blank" rel="noreferrer" title="button">Anchor
-  </sc-button>
+    </sc-accordion-item>
+    <sc-accordion-item class="mt-2" heading="Inputs">
+      <div class="mb-5">
+        button
+        <sc-input type="button">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        checkbox
+        <sc-input type="checkbox">
+        </sc-input>
+        <input type="checkbox">
+        </input>
+      </div>
+      <div class="mb-5">
+        color
+        <sc-input type="color">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        date
+        <sc-input type="date">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        datetime
+        <sc-input type="datetime-local">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        email
+        <sc-input type="email">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        file
+        <sc-input type="file">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        month
+        <sc-input type="month">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        number
+        <sc-input type="number">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        password
+        <sc-input type="password">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        radio
+        <sc-input type="radio">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        range
+        <sc-input type="range">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        reset
+        <sc-input type="reset">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        search
+        <sc-input type="search">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        submit
+        <sc-input type="submit">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        tel
+        <sc-input type="tel">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        text
+        <sc-input type="text">
+        </sc-input>
+      </div>
+      <sc-input type="time">
+      </sc-input>
+      <sc-input type="url">
+      </sc-input>
+      <sc-input type="week">
+      </sc-input>
+    </sc-accordion-item>
+    <sc-accordion-item class="mt-2" heading="Buttons" active>
 
-  <!-- Block level -->
-  <sc-button block>Block Button</sc-button>
+      <sc-button onclick="alert('yo')">Button</sc-button>
 
+      <!-- Anchor -->
+      <sc-button href="/" target="_blank" rel="noreferrer" title="button">Anchor
+      </sc-button>
 
-  <!-- Icon -->
-  <sc-button icon>
-    <i class="la la-home"></i>
-  </sc-button>
-
-  <!-- Icon and Text -->
-
-  <sc-button iconText>
-    <i class="la la-home"></i>
-    Text
-  </sc-button>
-
-
-  <!-- Bordered -->
-  <br><br>
-  <sc-button bordered>
-    <i class="la la-back"></i> Bordered button
-  </sc-button>
-  <br><br>
-  <sc-button flat>
-    Flat button
-  </sc-button>
+      <!-- Block level -->
+      <sc-button block>Block Button</sc-button>
 
 
-  <div class="container pt-4">
-    <form action="/" method="get">
-      <sc-card card-title="Login" card-subtitle="Welcome back, please fill all fields and click login button.">
-        <div class="row">
-          <label class="col-12" for="email">Email</label>
-          <sc-input class="col-12 mb-3" required name="email" id="email" type="email"></sc-input>
+      <!-- Icon -->
+      <sc-button icon>
+        <i class="la la-home"></i>
+      </sc-button>
 
-          <label class="col-12" for="password">Password</label>
-          <sc-input class="col-12 mb-3" required name="password" maxlength="6" value="asdfasdf" id="password"
-            type="password">
-          </sc-input>
+      <!-- Icon and Text -->
+
+      <sc-button iconText>
+        <i class="la la-home"></i>
+        Text
+      </sc-button>
+
+
+      <!-- Bordered -->
+      <br><br>
+      <sc-button bordered>
+        <i class="la la-back"></i> Bordered button
+      </sc-button>
+      <br><br>
+      <sc-button flat>
+        Flat button
+      </sc-button>
+
+
+    </sc-accordion-item>
+    <sc-accordion-item class="mt-2" heading="Cards" active>
+      <div class="row">
+        <div class="col">
+          <sc-card card-title="Card" card-subtitle="I'm normal card">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis
+            adipisci ut dolores ipsam perspiciatis maxime, eaque eos ipsa possimus officia quia voluptate numquam?
+            Tempora, id?
+          </sc-card>
         </div>
-
-        <div class="row">
-          <div class="col-12 mb-3">
-            <sc-toggle name="remember" value="1" checked="checked" label="Remember me"></sc-toggle>
-          </div>
+        <div class="col">
+          <sc-card engraved card-title="Card" card-subtitle="I'm engraved card">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis dolores
+            commodi, cupiditate mollitia aspernatur sit aperiam quibusdam eligendi, rem eveniet, quod aliquam eos fuga
+            corporis a.
+          </sc-card>
         </div>
-        <sc-button block type="submit">Login</sc-button>
-      </sc-card>
+        <div class="col">
+          <sc-card bordered card-title="Card" card-subtitle="I'm bordered card">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum
+            exercitationem commodi porro eveniet atque. Atque dolorum quasi sit! Quasi magnam aliquam neque sit natus
+            officiis odit.
+          </sc-card>
+        </div>
+      </div>
+    </sc-accordion-item>
+    <sc-accordion-item class="mt-2" heading="Utils">
+
       <div class="row">
 
         <div class="col-md-6">
@@ -257,80 +285,36 @@
         </div>
 
       </div>
+    </sc-accordion-item>
+  </sc-accordion>
+  <div class="container pt-4">
+    <form action="/" method="get">
+      <sc-card card-title="Login" card-subtitle="Welcome back, please fill all fields and click login button.">
+        <div class="row">
+          <label class="col-12" for="email">Email</label>
+          <sc-input class="col-12 mb-3" required name="email" id="email" type="email"></sc-input>
+
+          <label class="col-12" for="password">Password</label>
+          <sc-input class="col-12 mb-3" required name="password" maxlength="6" value="asdfasdf" id="password"
+            type="password">
+          </sc-input>
+        </div>
+
+        <div class="row">
+          <div class="col-12 mb-3">
+            <sc-toggle name="remember" value="1" checked="checked" label="Remember me"></sc-toggle>
+          </div>
+        </div>
+        <sc-button block type="submit">Login</sc-button>
+      </sc-card>
     </form>
   </div>
 
-  <!-- cards -->
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-4">
-        <sc-button block href="#">
-          <div class="row align-items-center">
-            <div class="col-4">
-              <i class="la la-bell" style="font-size: 48px;"></i>
-            </div>
-            <div class="col-8">
-              My notification
-            </div>
-          </div>
-        </sc-button>
-      </div>
-      <div class="col-md-4">
-        <sc-card engraved card-title="Card" card-subtitle="I'm engraved">
-        </sc-card>
-      </div>
-      <div class="col-md-4">
-        <sc-card bordered card-title="Card" card-subtitle="I'm bordered">
-        </sc-card>
-      </div>
-    </div>
-  </div>
-
   <!-- tabs -->
-  <div class="container mt-5">
-    <sc-tabs transition="fade">
-      <div class="row">
-        <div class="col">
-          <sc-tab-button target="tab1" class="tab-button-custom-class">
-            <i class="la la-home" style="font-size: 1.5em;"></i>
-            <!-- <div>One</div> -->
-          </sc-tab-button>
-          <sc-tab-button target="tab2" class="tab-button-custom-class">
-            <i class="la la-podcast" style="font-size: 1.5em;"></i>
-            <!-- <div>Two</div> -->
-          </sc-tab-button>
-        </div>
-      </div>
-      <sc-tab-content id="tab1">
-        <h1>im first tab</h1>
-      </sc-tab-content>
-      <sc-tab-content id="tab2">
-        <h2>im second tab</h2>
-      </sc-tab-content>
-    </sc-tabs transition="fade">
+  <div class="container mt-2">
   </div>
-  <!-- <div class="container mt-2">
-    <sc-tabs transition="fade">
-      <sc-tab-button icon target="dogtab">
-        <i class="la la-dog"></i>
-      </sc-tab-button>
-      <sc-tab-button icon active target="cattab">
-        <i class="la la-cat"></i>
-      </sc-tab-button>
-      <sc-tab-content id="dogtab">
-        <sc-card card-title="dog tab">
-          <p>im dog tab</p>
-        </sc-card>
-      </sc-tab-content>
-      <sc-tab-content id="cattab">
-        <sc-card card-title="cat tab">
-          <p>im cat tab</p>
-        </sc-card>
-      </sc-tab-content>
-    </sc-tabs>
-  </div> -->
   <!-- vertical tabs -->
-  <!-- <div class="container mt-2">
+  <div class="container mt-2">
     <sc-tabs class="row">
       <div class="col-md-4">
         <sc-tab-button block active target="dogtab">
@@ -353,7 +337,7 @@
         </sc-tab-content>
       </div>
     </sc-tabs>
-  </div> -->
+  </div>
 </body>
 
 </html>

@@ -10,4 +10,7 @@ html {
   --sc-error-color: #f70d1a;
   --sc-secondary-color: #646695;
   --sc-active-color: #3ab877;
+  /* animation */
+  --sc-animation-duration: 0.3s;
+  --sc-animation-timing-function: ease;
 }

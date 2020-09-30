@@ -1,0 +1,77 @@
+:host {
+  --sc-accordion-animation-duration: var(--sc-animation-duration, 0.3s);
+  --sc-accordion-animation-timing-function: var(
+    --sc-animation-timing-function,
+    ease-in-out
+  );
+
+  --sc-accordion-item-heading-padding-x: calc(var(--sc-root-spacing, 8px) * 2);
+  --sc-accordion-item-heading-padding-y: calc(var(--sc-root-spacing, 8px) * 2);
+  --sc-accordion-item-body-padding-x: calc(var(--sc-root-spacing, 8px) * 2);
+  --sc-accordion-item-body-padding-y: calc(var(--sc-root-spacing, 8px) * 2);
+  --sc-accordion-item-body-max-height: 100vh;
+
+  display: block;
+  .heading {
+    @include raised(0.3);
+    @include round();
+    padding: var(--sc-accordion-item-heading-padding-y)
+      var(--sc-accordion-item-heading-padding-x);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: border-radius var(--sc-accordion-animation-duration) ease
+      var(--sc-accordion-animation-duration);
+
+    &:focus {
+      outline: none;
+    }
+    .heading-text {
+      margin: 0;
+      flex: 1;
+    }
+    .arrow {
+      width: calc(var(--sc-root-spacing, 8px) * 4);
+      height: calc(var(--sc-root-spacing, 8px) * 4);
+      transition: transform var(--sc-accordion-animation-duration)
+        var(--sc-accordion-animation-timing-function);
+    }
+  }
+  .body-container {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height var(--sc-accordion-animation-duration)
+      var(--sc-accordion-animation-timing-function);
+
+    .body {
+      @include round();
+      @include engraved(0.3);
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+
+      overflow: hidden;
+      padding: var(--sc-accordion-item-body-padding-y)
+        var(--sc-accordion-item-body-padding-x);
+    }
+  }
+}
+:host(.autoHeight) {
+  .body-container {
+    overflow: hidden !important;
+  }
+}
+:host(.active) {
+  .heading {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: border-radius 0s ease;
+
+    .arrow {
+      transform: rotate(180deg);
+    }
+  }
+  .body-container {
+    max-height: var(--sc-accordion-item-body-max-height);
+    overflow: auto;
+  }
+}

@@ -1,3 +1,3 @@
-<sc-card card-title="Card Title" card-subtitle="Subtitle, or description"></sc-card>
-<sc-card engraved card-title="Card Title" card-subtitle="Subtitle, or description"></sc-card>
-<sc-card bordered card-title="Card Title" card-subtitle="Subtitle, or description"></sc-card>
+<sc-card card-title="Card" card-subtitle="Subtitle"></sc-card>
+<sc-card engraved card-title="Engraved card" card-subtitle="Subtitle"></sc-card>
+<sc-card bordered card-title="Bordered card" card-subtitle="Subtitle"></sc-card>

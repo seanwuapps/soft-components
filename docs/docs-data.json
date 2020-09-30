@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-09-24T05:14:35",
+  "timestamp": "2020-09-27T10:00:42",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.8.5",
@@ -415,7 +415,58 @@
       ],
       "methods": [],
       "events": [],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--sc-card-bg-color - Background color of card.",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--sc-card-bordered-width - Card border width (only applicable for bordered cards)",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--sc-card-inner-padding-y - Vertical inner padding of card",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--sc-card-outer-padding-y - Vertical outer padding of card.",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--sc-card-subtitle-font-size - Subtitle font size",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--sc-card-subtitle-font-weight - Subtitle font weight",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--sc-card-subtitle-text-color - Subtitle text color",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--sc-card-title-font-size - Title text font size.",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--sc-card-title-font-weight - Title font weight",
+          "annotation": "prop",
+          "docs": ""
+        },
+        {
+          "name": "--sc-card-title-text-color - Title text color",
+          "annotation": "prop",
+          "docs": ""
+        }
+      ],
       "slots": [],
       "dependents": [],
       "dependencies": [],

@@ -36,3 +36,7 @@
     opacity: 1;
   }
 }
+
+@mixin round() {
+  border-radius: var(--sc-border-radius, 1em);
+}

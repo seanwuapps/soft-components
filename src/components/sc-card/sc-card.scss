@@ -1,5 +1,17 @@
 :host {
-  /* card vars */
+  /**
+    * @prop --sc-card-outer-padding-x: Horizontal outer padding of card.
+    * @prop --sc-card-outer-padding-y: Vertical outer padding of card.
+    * @prop --sc-card-inner-padding-y: Vertical inner padding of card
+    * @prop --sc-card-bg-color : Background color of card.
+    * @prop --sc-card-title-font-size: Title text font size.
+    * @prop --sc-card-title-font-weight: Title font weight
+    * @prop --sc-card-title-text-color : Title text color
+    * @prop --sc-card-subtitle-font-size : Subtitle font size
+    * @prop --sc-card-subtitle-font-weight : Subtitle font weight
+    * @prop --sc-card-subtitle-text-color: Subtitle text color
+    * @prop --sc-card-bordered-width : Card border width (only applicable for bordered cards)
+    */
   --sc-card-outer-padding-x: 40px;
   --sc-card-outer-padding-y: 40px;
   --sc-card-inner-padding-y: 22px;
@@ -11,7 +23,7 @@
   --sc-card-subtitle-font-weight: normal;
   --sc-card-subtitle-text-color: var(--sc-text-color, #696969);
   --sc-card-bordered-width: 2px;
-  //--- card ---//
+  //-------------- card --------------//
   display: block;
   @include raised();
   background: var(--sc-card-bg-color);

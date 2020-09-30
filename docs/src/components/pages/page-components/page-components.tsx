@@ -159,14 +159,15 @@ export class PageComponents {
               Utterances
             </a>
           </p>
-          <utterances-div
-            class="mt-2"
-            repo="seanwuapps/soft-components"
-            issue-term="pathname"
-            theme={store.state.themeIsDark ? 'photon-dark' : 'github-light'}
-            crossorigin="anonymous"
-            async
-          ></utterances-div>
+          <div class="mt-4 pa-2 engraved-2 round">
+            <utterances-div
+              repo="seanwuapps/soft-components"
+              issue-term="pathname"
+              theme={store.state.themeIsDark ? 'photon-dark' : 'github-light'}
+              crossorigin="anonymous"
+              async
+            ></utterances-div>
+          </div>
         </section>
       </Host>
     );

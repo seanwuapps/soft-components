@@ -10,6 +10,33 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface ScAccordion {
+    /**
+    * If multiple `<sc-accordion-item>`s can open at the same time
+    */
+    'multiple'?: boolean;
+  }
+  interface ScAccordionItem {
+    /**
+    * If the accordion item should be opened by default
+    */
+    'active'?: boolean;
+    /**
+    * If expanded height should be automatically calculated. If set, the `--sc-accordion-item-body-max-height` CSS variable will be set automatically to the content height
+    */
+    'autoHeight'?: boolean;
+    'close': () => Promise<void>;
+    /**
+    * Heading text. This will be overwritten by `heading` slot
+    */
+    'heading'?: string;
+    /**
+    * The HTML tag to be applied to the heading text. This will be overwritten by `heading` slot
+    */
+    'headingTag'?: string;
+    'open': () => Promise<void>;
+    'toggle': () => Promise<void>;
+  }
   interface ScButton {
     /**
     * Set active state for the button
@@ -257,6 +284,18 @@ export namespace Components {
 declare global {
 
 
+  interface HTMLScAccordionElement extends Components.ScAccordion, HTMLStencilElement {}
+  var HTMLScAccordionElement: {
+    prototype: HTMLScAccordionElement;
+    new (): HTMLScAccordionElement;
+  };
+
+  interface HTMLScAccordionItemElement extends Components.ScAccordionItem, HTMLStencilElement {}
+  var HTMLScAccordionItemElement: {
+    prototype: HTMLScAccordionItemElement;
+    new (): HTMLScAccordionItemElement;
+  };
+
   interface HTMLScButtonElement extends Components.ScButton, HTMLStencilElement {}
   var HTMLScButtonElement: {
     prototype: HTMLScButtonElement;
@@ -299,6 +338,8 @@ declare global {
     new (): HTMLScToggleElement;
   };
   interface HTMLElementTagNameMap {
+    'sc-accordion': HTMLScAccordionElement;
+    'sc-accordion-item': HTMLScAccordionItemElement;
     'sc-button': HTMLScButtonElement;
     'sc-card': HTMLScCardElement;
     'sc-input': HTMLScInputElement;
@@ -310,6 +351,32 @@ declare global {
 }
 
 declare namespace LocalJSX {
+  interface ScAccordion {
+    /**
+    * If multiple `<sc-accordion-item>`s can open at the same time
+    */
+    'multiple'?: boolean;
+  }
+  interface ScAccordionItem {
+    /**
+    * If the accordion item should be opened by default
+    */
+    'active'?: boolean;
+    /**
+    * If expanded height should be automatically calculated. If set, the `--sc-accordion-item-body-max-height` CSS variable will be set automatically to the content height
+    */
+    'autoHeight'?: boolean;
+    /**
+    * Heading text. This will be overwritten by `heading` slot
+    */
+    'heading'?: string;
+    /**
+    * The HTML tag to be applied to the heading text. This will be overwritten by `heading` slot
+    */
+    'headingTag'?: string;
+    'onClosed'?: (event: CustomEvent<any>) => void;
+    'onOpened'?: (event: CustomEvent<any>) => void;
+  }
   interface ScButton {
     /**
     * Set active state for the button
@@ -598,6 +665,8 @@ declare namespace LocalJSX {
   }
 
   interface IntrinsicElements {
+    'sc-accordion': ScAccordion;
+    'sc-accordion-item': ScAccordionItem;
     'sc-button': ScButton;
     'sc-card': ScCard;
     'sc-input': ScInput;
@@ -614,6 +683,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
   export namespace JSX {
     interface IntrinsicElements {
+      'sc-accordion': LocalJSX.ScAccordion & JSXBase.HTMLAttributes<HTMLScAccordionElement>;
+      'sc-accordion-item': LocalJSX.ScAccordionItem & JSXBase.HTMLAttributes<HTMLScAccordionItemElement>;
       'sc-button': LocalJSX.ScButton & JSXBase.HTMLAttributes<HTMLScButtonElement>;
       'sc-card': LocalJSX.ScCard & JSXBase.HTMLAttributes<HTMLScCardElement>;
       'sc-input': LocalJSX.ScInput & JSXBase.HTMLAttributes<HTMLScInputElement>;

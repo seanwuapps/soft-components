@@ -1,10 +1,10 @@
 // utility classes
 .raised {
-  @include raised();
+  @include raised(0.5);
 }
 
 .engraved {
-  @include engraved();
+  @include engraved(0.5);
 }
 
 @for $i from 0 to 10 {
