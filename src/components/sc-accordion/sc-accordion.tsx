@@ -13,7 +13,11 @@ export class ScAccordion {
 
   activeItem: HTMLScAccordionItemElement;
 
+  items: NodeListOf<HTMLScAccordionItemElement>;
+
   componentWillLoad() {
+    this.items = this.el.querySelectorAll(":scope > sc-accordion-item");
+
     if (!this.multiple) {
       this.activeItem = this.el.querySelector(
         ":scope > sc-accordion-item[active]"
@@ -37,8 +41,7 @@ export class ScAccordion {
   }
 
   closeNonActive() {
-    const items = this.el.querySelectorAll("sc-accordion-item");
-    items.forEach((item) => {
+    this.items.forEach((item) => {
       if (!item.isEqualNode(this.activeItem)) {
         item.close();
       }

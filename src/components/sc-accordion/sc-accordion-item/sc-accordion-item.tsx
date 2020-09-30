@@ -85,11 +85,13 @@ export class ScAccordionItem {
     if (this.active) {
       this.opened.emit();
     } else {
+      this.bodyEl.style.visibility = "hidden";
       this.closed.emit();
     }
   }
   onTransitionStart() {
     if (this.active) {
+      this.bodyEl.style.visibility = "visible";
       this.opening.emit();
     } else {
       this.closing.emit();
@@ -121,7 +123,7 @@ export class ScAccordionItem {
     const { active, autoHeight, headingTag: HeadingTag } = this;
     return (
       <Host class={{ active, autoHeight }}>
-        <div
+        <button
           class="heading"
           tabindex="0"
           role="button"
@@ -141,7 +143,7 @@ export class ScAccordionItem {
               </svg>
             )}
           </span>
-        </div>
+        </button>
         <div
           class="body-container"
           ref={(el) => (this.bodyEl = el as HTMLElement)}

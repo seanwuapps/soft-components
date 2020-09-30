@@ -10,11 +10,16 @@
   --sc-accordion-item-body-padding-x: calc(var(--sc-root-spacing, 8px) * 2);
   --sc-accordion-item-body-padding-y: calc(var(--sc-root-spacing, 8px) * 2);
   --sc-accordion-item-body-max-height: 100vh;
+  --sc-accordion-item-heading-bg-color: var(--sc-bg-color, #f1f1f1);
+  --sc-accordion-item-body-bg-color: var(--sc-bg-color, #f1f1f1);
 
   display: block;
   .heading {
     @include raised(0.2);
     @include round();
+    border: none;
+    width: 100%;
+    text-align: left;
     padding: var(--sc-accordion-item-heading-padding-y)
       var(--sc-accordion-item-heading-padding-x);
     display: flex;
@@ -22,10 +27,8 @@
     cursor: pointer;
     transition: border-radius var(--sc-accordion-animation-duration) ease
       var(--sc-accordion-animation-duration);
+    background: var(--sc-accordion-item-heading-bg-color);
 
-    &:focus {
-      outline: none;
-    }
     .heading-text {
       margin: 0;
       flex: 1;
@@ -38,11 +41,12 @@
     }
   }
   .body-container {
+    margin-top: 2px;
     overflow: hidden;
     max-height: 0;
     transition: max-height var(--sc-accordion-animation-duration)
       var(--sc-accordion-animation-timing-function);
-
+    background: var(--sc-accordion-item-body-bg-color);
     .body {
       @include round();
       @include engraved(0.2);
