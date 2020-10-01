@@ -1,51 +1,51 @@
-import { Component, Host, h, Prop, Element, Listen } from "@stencil/core";
+import { Component, Host, h, Prop, Element, Listen } from '@stencil/core'
 @Component({
-  tag: "sc-accordion",
-  styleUrl: "sc-accordion.scss",
+  tag: 'sc-accordion',
+  styleUrl: 'sc-accordion.scss',
   shadow: true,
 })
 export class ScAccordion {
-  @Element() el: HTMLElement;
+  @Element() el: HTMLElement
   /**
    * If multiple `<sc-accordion-item>`s can open at the same time
    */
-  @Prop() multiple?: boolean = false;
+  @Prop() multiple?: boolean = false
 
-  activeItem: HTMLScAccordionItemElement;
+  activeItem: HTMLScAccordionItemElement
 
-  items: NodeListOf<HTMLScAccordionItemElement>;
+  items: NodeListOf<HTMLScAccordionItemElement>
 
   componentWillLoad() {
-    this.items = this.el.querySelectorAll(":scope > sc-accordion-item");
+    this.items = this.el.querySelectorAll(':scope > sc-accordion-item')
 
     if (!this.multiple) {
       this.activeItem = this.el.querySelector(
-        ":scope > sc-accordion-item[active]"
-      ) as HTMLScAccordionItemElement;
+        ':scope > sc-accordion-item[active]'
+      ) as HTMLScAccordionItemElement
       if (this.activeItem) {
-        this.activeItem.open();
+        this.activeItem.open()
       }
-      this.closeNonActive();
+      this.closeNonActive()
     }
   }
 
-  @Listen("opened", {
+  @Listen('opened', {
     capture: true,
     passive: false,
   })
   openHandler(e) {
     if (!this.multiple) {
-      this.activeItem = e.target as HTMLScAccordionItemElement;
-      this.closeNonActive();
+      this.activeItem = e.target as HTMLScAccordionItemElement
+      this.closeNonActive()
     }
   }
 
   closeNonActive() {
-    this.items.forEach((item) => {
+    this.items.forEach(item => {
       if (!item.isEqualNode(this.activeItem)) {
-        item.close();
+        item.close()
       }
-    });
+    })
   }
 
   render() {
@@ -53,6 +53,6 @@ export class ScAccordion {
       <Host>
         <slot></slot>
       </Host>
-    );
+    )
   }
 }

@@ -130,7 +130,7 @@ sc-button {
       position: relative;
       padding: calc(4px + var(--sc-button-bordered-border-width));
       &::before {
-        content: "";
+        content: '';
         position: absolute;
         top: 3px;
         left: 3px;

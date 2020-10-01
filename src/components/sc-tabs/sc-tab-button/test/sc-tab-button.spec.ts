@@ -1,7 +1,7 @@
-import { TabButton } from './tab-button';
+import { TabButton } from './tab-button'
 
 describe('sc-tab-button', () => {
   it('builds', () => {
-    expect(new TabButton()).toBeTruthy();
-  });
-});
+    expect(new TabButton()).toBeTruthy()
+  })
+})

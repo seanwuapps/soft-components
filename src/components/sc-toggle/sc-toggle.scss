@@ -75,7 +75,7 @@ sc-toggle {
       transition: left 0.3s ease;
     }
   }
-  input[type="checkbox"] {
+  input[type='checkbox'] {
     position: absolute;
     width: var(--sc-toggle-button-size);
     opacity: 0;

@@ -8,20 +8,20 @@ import {
   State,
   Event,
   EventEmitter,
-} from "@stencil/core";
+} from '@stencil/core'
 
 @Component({
-  tag: "sc-tab-content",
-  styleUrl: "sc-tab-content.scss",
+  tag: 'sc-tab-content',
+  styleUrl: 'sc-tab-content.scss',
   shadow: true,
 })
 export class TabContent {
-  @Element() el: HTMLElement;
+  @Element() el: HTMLElement
 
-  @State() animationDirection: "in" | "out" | "" = "";
+  @State() animationDirection: 'in' | 'out' | '' = ''
 
-  @Event() activeCompleted: EventEmitter<void>;
-  @Event() inactiveCompleted: EventEmitter<void>;
+  @Event() activeCompleted: EventEmitter<void>
+  @Event() inactiveCompleted: EventEmitter<void>
 
   connectedCallback() {
     // this.el.addEventListener("transitionstart", () => {
@@ -29,38 +29,38 @@ export class TabContent {
     // });
   }
 
-  @Listen("transitionstart")
+  @Listen('transitionstart')
   handleAnimationStart() {
-    console.log("transition start " + this.el.id);
+    console.log('transition start ' + this.el.id)
 
-    if (this.animationDirection === "in") {
+    if (this.animationDirection === 'in') {
       // this.el.style.display = "block";
     }
-    this.el.classList.add("animating");
-    this.el.classList.remove("animated");
+    this.el.classList.add('animating')
+    this.el.classList.remove('animated')
   }
 
-  @Listen("transitionend")
+  @Listen('transitionend')
   handleAnimationEnd() {
-    if (this.animationDirection === "in") {
-      this.activeCompleted.emit();
+    if (this.animationDirection === 'in') {
+      this.activeCompleted.emit()
     } else {
-      this.inactiveCompleted.emit();
+      this.inactiveCompleted.emit()
       // this.el.style.display = "none";
     }
-    this.animationDirection = "";
+    this.animationDirection = ''
   }
 
   @Method()
   async setActive() {
-    this.animationDirection = "in";
-    this.el.classList.add("active");
+    this.animationDirection = 'in'
+    this.el.classList.add('active')
   }
 
   @Method()
   async setInactive() {
-    this.animationDirection = "out";
-    this.el.classList.remove("active");
+    this.animationDirection = 'out'
+    this.el.classList.remove('active')
   }
 
   // mostly for css transition purpose
@@ -69,6 +69,6 @@ export class TabContent {
       <Host class={this.animationDirection}>
         <slot></slot>
       </Host>
-    );
+    )
   }
 }

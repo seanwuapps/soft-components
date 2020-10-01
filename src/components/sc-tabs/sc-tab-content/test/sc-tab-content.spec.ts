@@ -1,7 +1,7 @@
-import { TabContent } from './tab-content';
+import { TabContent } from './tab-content'
 
 describe('sc-tab-content', () => {
   it('builds', () => {
-    expect(new TabContent()).toBeTruthy();
-  });
-});
+    expect(new TabContent()).toBeTruthy()
+  })
+})

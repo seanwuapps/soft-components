@@ -1,7 +1,7 @@
-import { Input } from "../input";
+import { Input } from '../input'
 
-describe("sc-input", () => {
-  it("builds", () => {
-    expect(new Input()).toBeTruthy();
-  });
-});
+describe('sc-input', () => {
+  it('builds', () => {
+    expect(new Input()).toBeTruthy()
+  })
+})

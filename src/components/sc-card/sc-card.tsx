@@ -1,49 +1,49 @@
-import { Component, Host, h, Prop, State, Element } from "@stencil/core";
-import { isSlotEmpty } from "../../utils/component";
+import { Component, Host, h, Prop, State, Element } from '@stencil/core'
+import { isSlotEmpty } from '../../utils/component'
 
 @Component({
-  tag: "sc-card",
-  styleUrl: "sc-card.scss",
+  tag: 'sc-card',
+  styleUrl: 'sc-card.scss',
   shadow: true,
 })
 export class Card {
-  @Element() el: HTMLElement;
+  @Element() el: HTMLElement
   /**
    * if true, card will appear engraved instead of raised by default.
    */
-  @Prop() engraved?: boolean | undefined = false;
+  @Prop() engraved?: boolean | undefined = false
 
   /**
    * Title of the card
    */
   @Prop()
-  cardTitle?: string;
+  cardTitle?: string
 
   /**
    * Subtitle of the card
    */
   @Prop()
-  cardSubtitle?: string;
+  cardSubtitle?: string
 
   /**
    * If this card has bordered style
    */
-  @Prop({ reflect: true }) bordered?: boolean | undefined = false;
+  @Prop({ reflect: true }) bordered?: boolean | undefined = false
 
   @State()
-  hasCustomTitle: boolean;
+  hasCustomTitle: boolean
 
   @State()
-  hasOverflowMenu: boolean;
+  hasOverflowMenu: boolean
 
   componentWillLoad() {
     // this.hasFooter = isSlotEmpty(this.el, 'footer')
-    this.hasCustomTitle = isSlotEmpty(this.el, "custom-title");
-    this.hasOverflowMenu = isSlotEmpty(this.el, "overflow-menu");
+    this.hasCustomTitle = isSlotEmpty(this.el, 'custom-title')
+    this.hasOverflowMenu = isSlotEmpty(this.el, 'overflow-menu')
   }
 
   render() {
-    const { engraved, bordered } = this;
+    const { engraved, bordered } = this
     return (
       <Host class={{ engraved, bordered }}>
         <div class="card-inner">
@@ -72,6 +72,6 @@ export class Card {
           </div>
         </div>
       </Host>
-    );
+    )
   }
 }
