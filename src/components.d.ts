@@ -104,6 +104,13 @@ export namespace Components {
     * if true, card will appear engraved instead of raised by default.
     */
     'engraved'?: boolean | undefined;
+    'mediaPosition'?: | 'top'
+    | 'left'
+    | 'right'
+    | 'bottom'
+    | 'start' // responsive top left
+    | 'end' // responsive bottom right
+    | undefined;
   }
   interface ScInput {
     /**
@@ -458,6 +465,13 @@ declare namespace LocalJSX {
     * if true, card will appear engraved instead of raised by default.
     */
     'engraved'?: boolean | undefined;
+    'mediaPosition'?: | 'top'
+    | 'left'
+    | 'right'
+    | 'bottom'
+    | 'start' // responsive top left
+    | 'end' // responsive bottom right
+    | undefined;
   }
   interface ScInput {
     /**

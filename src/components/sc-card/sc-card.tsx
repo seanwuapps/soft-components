@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, State, Element } from '@stencil/core'
+import { Component, Host, h, Prop, Element } from '@stencil/core'
 import { hasSlot } from '../../utils/component'
 
 @Component({
@@ -30,21 +30,36 @@ export class Card {
    */
   @Prop({ reflect: true }) bordered?: boolean | undefined = false
 
-  @State()
+  @Prop({ reflect: true }) mediaPosition?:
+    | 'top'
+    | 'left'
+    | 'right'
+    | 'bottom'
+    | 'start' // responsive top left
+    | 'end' // responsive bottom right
+    | undefined = null
+
   hasCustomTitle: boolean
 
-  @State()
   hasOverflowMenu: boolean
+
+  hasMedia: boolean
 
   componentWillLoad() {
     this.hasCustomTitle = hasSlot(this.el, 'custom-title')
     this.hasOverflowMenu = hasSlot(this.el, 'overflow-menu')
+    this.hasMedia = hasSlot(this.el, 'media-content')
   }
 
   render() {
     const { engraved, bordered } = this
     return (
       <Host class={{ engraved, bordered }}>
+        {this.hasMedia && (
+          <div class="card-media">
+            <slot name="media-content"></slot>
+          </div>
+        )}
         <div class="card-inner">
           <div class="overflow-menu">
             <slot name="overflow-menu"></slot>
