@@ -9,7 +9,7 @@ import {
   Event,
   EventEmitter,
 } from '@stencil/core'
-import { isSlotEmpty } from '../../../utils/component'
+import { hasSlot } from '../../../utils/component'
 
 @Component({
   tag: 'sc-accordion-item',
@@ -41,8 +41,8 @@ export class ScAccordionItem {
    */
   @Prop({ reflect: true, mutable: true }) active?: boolean = false
 
-  @State() headingSlotEmpty: boolean = true
-  @State() arrowSlotEmpty: boolean = true
+  @State() hasHeadingSlot: boolean = true
+  @State() hasArrowSlot: boolean = true
 
   bodyEl: HTMLElement
 
@@ -55,8 +55,8 @@ export class ScAccordionItem {
   @Event() closing: EventEmitter
 
   componentWillLoad() {
-    this.headingSlotEmpty = isSlotEmpty(this.el, 'heading')
-    this.arrowSlotEmpty = isSlotEmpty(this.el, 'arrow')
+    this.hasHeadingSlot = hasSlot(this.el, 'heading')
+    this.hasArrowSlot = hasSlot(this.el, 'arrow')
   }
   componentDidLoad() {
     if (this.autoHeight) {
@@ -110,13 +110,11 @@ export class ScAccordionItem {
   @Method()
   async close() {
     this.active = false
-    // this.closed.emit();
   }
 
   @Method()
   async open() {
     this.active = true
-    // this.opened.emit();
   }
 
   render() {
@@ -129,13 +127,13 @@ export class ScAccordionItem {
           role="button"
           onClick={() => this.toggle()}
         >
-          {this.headingSlotEmpty ? (
+          {this.hasHeadingSlot ? (
             <slot name="heading"></slot>
           ) : (
             <HeadingTag class="heading-text">{this.heading}</HeadingTag>
           )}
           <span class="arrow">
-            {this.arrowSlotEmpty ? (
+            {this.hasArrowSlot ? (
               <slot name="arrow"></slot>
             ) : (
               <svg focusable="false" viewBox="0 0 24 24" aria-hidden="true">

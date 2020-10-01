@@ -12,6 +12,6 @@ export const buildComponentNavArray: () => NavItem[] = function () {
 export const getKey = (component: JsonDocsComponent) => component.tag.replace('sc-', '');
 export const getName = (component: JsonDocsComponent) => getKey(component).replace(new RegExp('-', 'g'), ' ');
 
-export const isSlotEmpty: (HTMLElement, string?) => boolean = (parentEl: HTMLElement, slotName?: string) => {
+export const hasSlot: (HTMLElement, string?) => boolean = (parentEl: HTMLElement, slotName?: string) => {
   return !!parentEl.querySelector('[slot="' + slotName + '"'); // cast boolean
 };

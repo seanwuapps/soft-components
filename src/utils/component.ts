@@ -1,4 +1,4 @@
-export const isSlotEmpty: (HTMLElement, string?) => boolean = (
+export const hasSlot: (HTMLElement, string?) => boolean = (
   parentEl: HTMLElement,
   slotName?: string
 ) => {

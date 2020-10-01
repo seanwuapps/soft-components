@@ -1,5 +1,4 @@
 import { Component, Host, h, Element, Prop } from '@stencil/core'
-import { isSlotEmpty } from '../../utils/component'
 
 @Component({
   tag: 'sc-tabs',
@@ -14,13 +13,11 @@ export class Tabs {
   @Prop() transition: string | undefined = ''
 
   async connectedCallback() {
-    if (!isSlotEmpty(this.el)) {
-      this.tabButtons = Array.from(this.el.querySelectorAll('sc-tab-button'))
+    this.tabButtons = Array.from(this.el.querySelectorAll('sc-tab-button'))
 
-      // by default, set first tab to be active
-      if (!this.el.querySelector('sc-tab-button[active]')) {
-        this.tabButtons[0].setActive(false)
-      }
+    // by default, set first tab to be active
+    if (!this.el.querySelector('sc-tab-button[active]')) {
+      this.tabButtons[0].setActive(false)
     }
   }
 

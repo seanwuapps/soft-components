@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, State, Element } from '@stencil/core'
-import { isSlotEmpty } from '../../utils/component'
+import { hasSlot } from '../../utils/component'
 
 @Component({
   tag: 'sc-card',
@@ -37,9 +37,8 @@ export class Card {
   hasOverflowMenu: boolean
 
   componentWillLoad() {
-    // this.hasFooter = isSlotEmpty(this.el, 'footer')
-    this.hasCustomTitle = isSlotEmpty(this.el, 'custom-title')
-    this.hasOverflowMenu = isSlotEmpty(this.el, 'overflow-menu')
+    this.hasCustomTitle = hasSlot(this.el, 'custom-title')
+    this.hasOverflowMenu = hasSlot(this.el, 'overflow-menu')
   }
 
   render() {
