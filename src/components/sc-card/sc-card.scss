@@ -12,8 +12,8 @@
     * @prop --sc-card-subtitle-text-color: Subtitle text color
     * @prop --sc-card-bordered-width : Card border width (only applicable for bordered cards)
     */
-  --sc-card-outer-padding-x: 40px;
-  --sc-card-outer-padding-y: 40px;
+  --sc-card-outer-padding-x: calc(var(--sc-root-spacing) * 4);
+  --sc-card-outer-padding-y: calc(var(--sc-root-spacing) * 4);
   --sc-card-inner-padding-y: 22px;
   --sc-card-bg-color: var(--sc-bg-color, #f6f6f8);
   --sc-card-title-font-size: 26px;

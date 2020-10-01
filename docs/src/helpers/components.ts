@@ -13,5 +13,5 @@ export const getKey = (component: JsonDocsComponent) => component.tag.replace('s
 export const getName = (component: JsonDocsComponent) => getKey(component).replace(new RegExp('-', 'g'), ' ');
 
 export const hasSlot: (HTMLElement, string?) => boolean = (parentEl: HTMLElement, slotName?: string) => {
-  return !!parentEl.querySelector('[slot="' + slotName + '"'); // cast boolean
+  return !!parentEl.querySelector(':scope > [slot="' + slotName + '"'); // cast boolean
 };

@@ -47,12 +47,12 @@ export class Card {
       <Host class={{ engraved, bordered }}>
         <div class="card-inner">
           <div class="overflow-menu">
-            <slot name="overflow-menu" />
+            <slot name="overflow-menu"></slot>
           </div>
           {this.hasCustomTitle || this.cardTitle || this.cardSubtitle ? (
             <div class="card-title-container">
               {this.hasCustomTitle ? (
-                <slot name="custom-title" />
+                <slot name="custom-title"></slot>
               ) : (
                 <div>
                   {this.cardTitle && (
