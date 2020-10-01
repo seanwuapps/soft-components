@@ -29,13 +29,12 @@ export class ScAccordion {
     }
   }
 
-  @Listen('opened', {
-    capture: true,
-    passive: false,
-  })
-  openHandler(e) {
+  @Listen('opened')
+  openHandler(e: Event) {
+    e.stopPropagation()
+    const eventTarget = e.target as HTMLScAccordionItemElement
     if (!this.multiple) {
-      this.activeItem = e.target as HTMLScAccordionItemElement
+      this.activeItem = eventTarget
       this.closeNonActive()
     }
   }

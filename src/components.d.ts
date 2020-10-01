@@ -85,7 +85,7 @@ export namespace Components {
     /**
     * The type of the button.
     */
-    'type': "submit" | "reset" | "button";
+    'type': 'submit' | 'reset' | 'button';
   }
   interface ScCard {
     /**
@@ -121,11 +121,11 @@ export namespace Components {
     /**
     * Indicates whether the value of the control can be automatically completed by the browser.
     */
-    'autocomplete': "on" | "off";
+    'autocomplete': 'on' | 'off';
     /**
     * Whether auto correction should be enabled when the user is entering/editing the text value.
     */
-    'autocorrect': "on" | "off";
+    'autocorrect': 'on' | 'off';
     /**
     * This Boolean attribute lets you specify that a form control should have input focus when the page loads.
     */
@@ -149,14 +149,14 @@ export namespace Components {
     /**
     * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
     */
-    'inputmode'?: | "none"
-    | "text"
-    | "tel"
-    | "url"
-    | "email"
-    | "numeric"
-    | "decimal"
-    | "search";
+    'inputmode'?: | 'none'
+    | 'text'
+    | 'tel'
+    | 'url'
+    | 'email'
+    | 'numeric'
+    | 'decimal'
+    | 'search';
     /**
     * The maximum value, which must not be less than its minimum (min attribute) value.
     */
@@ -439,7 +439,7 @@ declare namespace LocalJSX {
     /**
     * The type of the button.
     */
-    'type'?: "submit" | "reset" | "button";
+    'type'?: 'submit' | 'reset' | 'button';
   }
   interface ScCard {
     /**
@@ -475,11 +475,11 @@ declare namespace LocalJSX {
     /**
     * Indicates whether the value of the control can be automatically completed by the browser.
     */
-    'autocomplete'?: "on" | "off";
+    'autocomplete'?: 'on' | 'off';
     /**
     * Whether auto correction should be enabled when the user is entering/editing the text value.
     */
-    'autocorrect'?: "on" | "off";
+    'autocorrect'?: 'on' | 'off';
     /**
     * This Boolean attribute lets you specify that a form control should have input focus when the page loads.
     */
@@ -499,14 +499,14 @@ declare namespace LocalJSX {
     /**
     * A hint to the browser for which keyboard to display. Possible values: `"none"`, `"text"`, `"tel"`, `"url"`, `"email"`, `"numeric"`, `"decimal"`, and `"search"`.
     */
-    'inputmode'?: | "none"
-    | "text"
-    | "tel"
-    | "url"
-    | "email"
-    | "numeric"
-    | "decimal"
-    | "search";
+    'inputmode'?: | 'none'
+    | 'text'
+    | 'tel'
+    | 'url'
+    | 'email'
+    | 'numeric'
+    | 'decimal'
+    | 'search';
     /**
     * The maximum value, which must not be less than its minimum (min attribute) value.
     */
