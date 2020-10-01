@@ -1,5 +1,17 @@
 :host {
-  --sc-accordion-animation-duration: var(--sc-animation-duration, 0.3s);
+  /**
+  * @prop --sc-accordion-animation-duration: var(--sc-animation-duration, 0.2s);
+  * @prop --sc-accordion-animation-timing-function: var(--sc-animation-timing-function,ease-in-out);
+  * @prop --sc-accordion-item-heading-padding-x: calc(var(--sc-root-spacing, 8px) * 2);
+  * @prop --sc-accordion-item-heading-padding-y: calc(var(--sc-root-spacing, 8px) * 2);
+  * @prop --sc-accordion-item-body-padding-x: calc(var(--sc-root-spacing, 8px) * 2);
+  * @prop --sc-accordion-item-body-padding-y: calc(var(--sc-root-spacing, 8px) * 2);
+  * @prop --sc-accordion-item-body-max-height: 100vh;
+  * @prop --sc-accordion-item-heading-bg-color: var(--sc-bg-color, #f1f1f1);
+  * @prop --sc-accordion-item-body-bg-color: var(--sc-bg-color, #f1f1f1);
+  * @prop --sc-accordion-item-heading-border-color: var(--sc-shadow-color,rgba(0, 0, 0, 0.2));
+  */
+  --sc-accordion-animation-duration: var(--sc-animation-duration, 0.2s);
   --sc-accordion-animation-timing-function: var(
     --sc-animation-timing-function,
     ease-in-out
@@ -12,6 +24,10 @@
   --sc-accordion-item-body-max-height: 100vh;
   --sc-accordion-item-heading-bg-color: var(--sc-bg-color, #f1f1f1);
   --sc-accordion-item-body-bg-color: var(--sc-bg-color, #f1f1f1);
+  --sc-accordion-item-heading-border-color: var(
+    --sc-shadow-color,
+    rgba(0, 0, 0, 0.2)
+  );
 
   display: block;
   .heading {
@@ -24,6 +40,7 @@
       var(--sc-accordion-item-heading-padding-x);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     cursor: pointer;
     transition: border-radius var(--sc-accordion-animation-duration) ease
       var(--sc-accordion-animation-duration);
@@ -34,14 +51,15 @@
       flex: 1;
     }
     .arrow {
-      width: calc(var(--sc-root-spacing, 8px) * 4);
-      height: calc(var(--sc-root-spacing, 8px) * 4);
+      svg {
+        width: calc(var(--sc-root-spacing, 8px) * 4);
+        height: calc(var(--sc-root-spacing, 8px) * 4);
+      }
       transition: transform var(--sc-accordion-animation-duration)
         var(--sc-accordion-animation-timing-function);
     }
   }
   .body-container {
-    margin-top: 2px;
     overflow: hidden;
     max-height: 0;
     transition: max-height var(--sc-accordion-animation-duration)
@@ -69,6 +87,7 @@
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     transition: border-radius 0s ease;
+    border-bottom: 1px solid var(--sc-accordion-item-heading-border-color);
 
     .arrow {
       transform: rotate(180deg);

@@ -1,131 +1,386 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
-    />
-    <title>Soft Components</title>
-    <link
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Soft Components</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 
-    <link
-      rel="stylesheet"
-      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
-    />
-    <link rel="stylesheet" href="/build/soft-components.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet" />
 
-    <script type="module" src="/build/soft-components.esm.js"></script>
-    <script nomodule src="/build/soft-components.js"></script>
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+  <link rel="stylesheet" href="/build/soft-components.css" />
 
-    <style>
-      html,
-      body {
-        font-family: 'Montserrat', sans-serif;
-      }
+  <script type="module" src="/build/soft-components.esm.js"></script>
+  <script nomodule src="/build/soft-components.js"></script>
 
-      .tab-button-custom-class {
-        text-align: center;
-      }
+  <style>
+    html,
+    body {
+      font-family: "Montserrat", sans-serif;
+    }
 
-      .test-block {
-        margin: 40px 0;
-        padding: 20px;
-      }
-    </style>
-  </head>
+    .tab-button-custom-class {
+      text-align: center;
+    }
 
-  <body class="pa-5">
-    <sc-accordion multiple>
-      <sc-accordion-item>
-        <div slot="heading">
-          <center>
-            Use <code>slot="heading"</code> to do your own heading
-          </center>
-        </div>
-        Lorem ipsum dolor sit
-      </sc-accordion-item>
-    </sc-accordion>
-    <div class="container pt-4">
-      <form action="/" method="get">
-        <sc-card
-          card-title="Login"
-          card-subtitle="Welcome back, please fill all fields and click login button."
-        >
-          <div class="row">
-            <label class="col-12" for="email">Email</label>
-            <sc-input
-              class="col-12 mb-3"
-              required
-              name="email"
-              id="email"
-              type="email"
-            ></sc-input>
+    .test-block {
+      margin: 40px 0;
+      padding: 20px;
+    }
 
-            <label class="col-12" for="password">Password</label>
-            <sc-input
-              class="col-12 mb-3"
-              required
-              name="password"
-              maxlength="6"
-              value="asdfasdf"
-              id="password"
-              type="password"
-            >
-            </sc-input>
+  </style>
+</head>
+
+<body class="pa-5">
+  <sc-accordion multiple>
+
+    <sc-accordion-item heading="Inputs">
+      <div class="mb-5">
+        button
+        <sc-input type="button">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        checkbox
+        <sc-input type="checkbox">
+        </sc-input>
+        <input type="checkbox">
+        </input>
+      </div>
+      <div class="mb-5">
+        color
+        <sc-input type="color">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        date
+        <sc-input type="date">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        datetime
+        <sc-input type="datetime-local">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        email
+        <sc-input type="email">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        file
+        <sc-input type="file">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        month
+        <sc-input type="month">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        number
+        <sc-input type="number">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        password
+        <sc-input type="password">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        radio
+        <sc-input type="radio">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        range
+        <sc-input type="range">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        reset
+        <sc-input type="reset">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        search
+        <sc-input type="search">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        submit
+        <sc-input type="submit">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        tel
+        <sc-input type="tel">
+        </sc-input>
+      </div>
+      <div class="mb-5">
+        text
+        <sc-input type="text">
+        </sc-input>
+      </div>
+      <sc-input type="time">
+      </sc-input>
+      <sc-input type="url">
+      </sc-input>
+      <sc-input type="week">
+      </sc-input>
+    </sc-accordion-item>
+    <sc-accordion-item heading="Accordion">
+      <h2>Single (default)</h2>
+      <sc-accordion id="inner-accordion">
+        <sc-accordion-item heading="I" active>
+          Add <code>active</code> attribute to open an item by default.
+        </sc-accordion-item>
+        <sc-accordion-item heading=" Am">
+          Lorem ipsum dolor sit
+        </sc-accordion-item>
+        <sc-accordion-item heading="Groot">
+          Lorem ipsum dolor sit
+        </sc-accordion-item>
+      </sc-accordion>
+
+      <h2>Multiple</h2>
+      <sc-accordion multiple>
+        <sc-accordion-item heading="We">
+          Lorem ipsum dolor sit
+        </sc-accordion-item>
+        <sc-accordion-item heading="Are">
+          Lorem ipsum dolor sit
+        </sc-accordion-item>
+        <sc-accordion-item heading="Groot">
+          Lorem ipsum dolor sit
+        </sc-accordion-item>
+      </sc-accordion>
+
+      <h2>Nested</h2>
+      <sc-accordion>
+        <sc-accordion-item heading="Accordions can be nested too">
+          Lorem ipsum dolor sit
+
+          <sc-accordion id="inner-accordion">
+            <sc-accordion-item heading="Nested">
+              Lorem ipsum dolor sit
+            </sc-accordion-item>
+
+            <sc-accordion-item heading="Accordions">
+              Lorem ipsum dolor sit
+            </sc-accordion-item>
+            <sc-accordion-item heading="Are pretty cool">
+              Lorem ipsum dolor sit
+            </sc-accordion-item>
+          </sc-accordion>
+
+        </sc-accordion-item>
+        <sc-accordion-item heading="Yayyy"">
+          Lorem ipsum dolor sit
+        </sc-accordion-item>
+      </sc-accordion>
+
+      <h2>Customise it</h2>
+      <sc-accordion>
+        <sc-accordion-item>
+          <div slot=" heading">
+          <mark>
+            Use <code>slot="heading"</code> to customise heading
+          </mark>
           </div>
+          Lorem ipsum dolor sit
+        </sc-accordion-item>
+        <sc-accordion-item heading='Use slot="arrow" to customise arrow'>
+          <div slot="arrow"
+            style="text-align: center; color: red; width: 60px; height: 60px; font-size: 60px; line-height: 60px">
+            &#10084;
+          </div>
+          Lorem ipsum dolor sit
+        </sc-accordion-item>
+      </sc-accordion>
+    </sc-accordion-item>
+    <sc-accordion-item heading="Buttons">
 
-          <div class="row">
-            <div class="col-12 mb-3">
-              <sc-toggle
-                name="remember"
-                value="1"
-                checked="checked"
-                label="Remember me"
-              ></sc-toggle>
+      <sc-button onclick="alert('yo')">Button</sc-button>
+
+      <!-- Anchor -->
+      <sc-button href="/" target="_blank" rel="noreferrer" title="button">Anchor
+      </sc-button>
+
+      <!-- Block level -->
+      <sc-button block>Block Button</sc-button>
+
+
+      <!-- Icon -->
+      <sc-button icon>
+        <i class="la la-home"></i>
+      </sc-button>
+
+      <!-- Icon and Text -->
+
+      <sc-button iconText>
+        <i class="la la-home"></i>
+        Text
+      </sc-button>
+
+
+      <!-- Bordered -->
+      <br><br>
+      <sc-button bordered>
+        <i class="la la-back"></i> Bordered button
+      </sc-button>
+      <br><br>
+      <sc-button flat>
+        Flat button
+      </sc-button>
+
+
+    </sc-accordion-item>
+    <sc-accordion-item heading="Cards" active>
+      <h2>Text based cards</h2>
+      <div class="row">
+        <div class="col">
+          <sc-card card-title="Card" card-subtitle="I'm normal card">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis
+            adipisci ut dolores ipsam perspiciatis maxime, eaque eos ipsa possimus officia quia voluptate numquam?
+            Tempora, id?
+          </sc-card>
+        </div>
+        <div class="col">
+          <sc-card engraved card-title="Card" card-subtitle="I'm engraved card">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis
+            dolores
+            commodi, cupiditate mollitia aspernatur sit aperiam quibusdam eligendi, rem eveniet, quod aliquam eos
+            fuga
+            corporis a.
+          </sc-card>
+        </div>
+        <div class="col">
+          <sc-card bordered card-title="Card" card-subtitle="I'm bordered card">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum
+            exercitationem commodi porro eveniet atque. Atque dolorum quasi sit! Quasi magnam aliquam neque sit
+            natus
+            officiis odit.
+          </sc-card>
+        </div>
+      </div>
+      <h2>Customising cards</h2>
+      <div class="row">
+        <div class="col">
+          <sc-card>
+            <div slot="custom-title">
+              <mark>Customise title with <code>slot="custom-title"</code></mark>
             </div>
-          </div>
-          <sc-button block type="submit">Login</sc-button>
-        </sc-card>
-      </form>
-    </div>
+          </sc-card>
+        </div>
+      </div>
 
-    <!-- tabs -->
-    <div class="container mt-2"> </div>
-    <!-- vertical tabs -->
-    <div class="container mt-2">
-      <sc-tabs class="row">
-        <div class="col-md-4">
-          <sc-tab-button block active target="dogtab">
-            <i class="la la-dog"></i> Dogs
-          </sc-tab-button>
-          <sc-tab-button block target="cattab">
-            <i class="la la-cat"></i> Cats
-          </sc-tab-button>
+    </sc-accordion-item>
+    <sc-accordion-item heading="Utils">
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="test-block round raised">
+            <h2>raised</h2>
+          </div>
+          <div class="test-block round raised-0">
+            <h2>raised 0</h2>
+          </div>
+          <div class="test-block round raised-1">
+            <h2>raised 1</h2>
+          </div>
+          <div class="test-block round raised-2">
+            <h2>raised 2</h2>
+          </div>
+          <div class="test-block round raised-3">
+            <h2>raised 3</h2>
+          </div>
+          <div class="test-block round raised-4">
+            <h2>raised 4</h2>
+          </div>
+          <div class="test-block round raised-5">
+            <h2>raised 5</h2>
+          </div>
+          <div class="test-block round raised-6">
+            <h2>raised 6</h2>
+          </div>
+          <div class="test-block round raised-7">
+            <h2>raised 7</h2>
+          </div>
+          <div class="test-block round raised-8">
+            <h2>raised 8</h2>
+          </div>
+          <div class="test-block round raised-9">
+            <h2>raised 9</h2>
+          </div>
         </div>
-        <div class="col-md-8">
-          <sc-tab-content id="dogtab">
-            <sc-card card-title="dog tab">
-              <p>im dog tab</p>
-            </sc-card>
-          </sc-tab-content>
-          <sc-tab-content id="cattab">
-            <sc-card card-title="cat tab">
-              <p>im cat tab</p>
-            </sc-card>
-          </sc-tab-content>
+        <div class="col-md-6">
+          <div class="test-block round engraved">
+            <h2>engraved</h2>
+          </div>
+          <div class="test-block round engraved-0">
+            <h2>engraved 0</h2>
+          </div>
+          <div class="test-block round engraved-1">
+            <h2>engraved 1</h2>
+          </div>
+          <div class="test-block round engraved-2">
+            <h2>engraved 2</h2>
+          </div>
+          <div class="test-block round engraved-3">
+            <h2>engraved 3</h2>
+          </div>
+          <div class="test-block round engraved-4">
+            <h2>engraved 4</h2>
+          </div>
+          <div class="test-block round engraved-5">
+            <h2>engraved 5</h2>
+          </div>
+          <div class="test-block round engraved-6">
+            <h2>engraved 6</h2>
+          </div>
+          <div class="test-block round engraved-7">
+            <h2>engraved 7</h2>
+          </div>
+          <div class="test-block round engraved-8">
+            <h2>engraved 8</h2>
+          </div>
+          <div class="test-block round engraved-9">
+            <h2>engraved 9</h2>
+          </div>
         </div>
-      </sc-tabs>
-    </div>
-  </body>
+
+      </div>
+    </sc-accordion-item>
+  </sc-accordion>
+  <div class="container pt-4">
+    <form action="/" method="get">
+      <sc-card card-title="Login" card-subtitle="Welcome back, please fill all fields and click login button.">
+        <div class="row">
+          <label class="col-12" for="email">Email</label>
+          <sc-input class="col-12 mb-3" required name="email" id="email" type="email"></sc-input>
+
+          <label class="col-12" for="password">Password</label>
+          <sc-input class="col-12 mb-3" required name="password" maxlength="6" value="asdfasdf" id="password"
+            type="password">
+          </sc-input>
+        </div>
+
+        <div class="row">
+          <div class="col-12 mb-3">
+            <sc-toggle name="remember" value="1" checked="checked" label="Remember me"></sc-toggle>
+          </div>
+        </div>
+        <sc-button block type="submit">Login</sc-button>
+      </sc-card>
+    </form>
+  </div>
+
+</body>
+
 </html>
