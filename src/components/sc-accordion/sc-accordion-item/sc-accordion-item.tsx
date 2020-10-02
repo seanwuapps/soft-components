@@ -79,7 +79,7 @@ export class ScAccordionItem {
 
   onTransitionEnd() {
     if (this.autoHeight) {
-      this.bodyEl.style.overflow = 'auto'
+      this.bodyEl.style.overflow = 'initial'
     }
     if (this.active) {
       this.opened.emit()
