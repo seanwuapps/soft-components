@@ -66,22 +66,21 @@ export class ScAccordionItem {
       )
     }
 
+    this.onTransitionEnd()
+
     this.bodyEl.addEventListener('transitionstart', () => {
-      if (this.autoHeight) {
-        this.bodyEl.style.overflow = 'hidden'
-      }
       this.onTransitionStart()
     })
 
     this.bodyEl.addEventListener('transitionend', () => {
-      if (this.autoHeight) {
-        this.bodyEl.style.overflow = 'auto'
-      }
       this.onTransitionEnd()
     })
   }
 
   onTransitionEnd() {
+    if (this.autoHeight) {
+      this.bodyEl.style.overflow = 'auto'
+    }
     if (this.active) {
       this.opened.emit()
     } else {
@@ -90,6 +89,9 @@ export class ScAccordionItem {
     }
   }
   onTransitionStart() {
+    if (this.autoHeight) {
+      this.bodyEl.style.overflow = 'hidden'
+    }
     if (this.active) {
       this.bodyEl.style.visibility = 'visible'
       this.opening.emit()
@@ -121,12 +123,7 @@ export class ScAccordionItem {
     const { active, autoHeight, headingTag: HeadingTag } = this
     return (
       <Host class={{ active, autoHeight }}>
-        <button
-          class="heading"
-          tabindex="0"
-          role="button"
-          onClick={() => this.toggle()}
-        >
+        <button class="heading" role="button" onClick={() => this.toggle()}>
           {this.hasHeadingSlot ? (
             <slot name="heading"></slot>
           ) : (

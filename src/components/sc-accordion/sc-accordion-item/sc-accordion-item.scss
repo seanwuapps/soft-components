@@ -22,6 +22,7 @@
   --sc-accordion-item-body-padding-x: calc(var(--sc-root-spacing, 8px) * 2);
   --sc-accordion-item-body-padding-y: calc(var(--sc-root-spacing, 8px) * 2);
   --sc-accordion-item-body-max-height: 100vh;
+  --sc-accordion-item-heading-text-color: var(--sc-text-color, #333333);
   --sc-accordion-item-heading-bg-color: var(--sc-bg-color, #f1f1f1);
   --sc-accordion-item-body-bg-color: var(--sc-bg-color, #f1f1f1);
   --sc-accordion-item-heading-border-color: var(
@@ -31,22 +32,23 @@
 
   display: block;
   .heading {
-    @include raised(0.2);
-    @include round();
-    border: none;
-    width: 100%;
-    text-align: left;
-    padding: var(--sc-accordion-item-heading-padding-y)
-      var(--sc-accordion-item-heading-padding-x);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    @include raised(0.2);
+    @include round();
+    border: none;
+    text-align: left;
+    padding: var(--sc-accordion-item-heading-padding-y)
+      var(--sc-accordion-item-heading-padding-x);
     cursor: pointer;
     transition: border-radius var(--sc-accordion-animation-duration) ease
       var(--sc-accordion-animation-duration);
     background: var(--sc-accordion-item-heading-bg-color);
 
     .heading-text {
+      color: var(--sc-accordion-item-heading-text-color);
       margin: 0;
       flex: 1;
     }
