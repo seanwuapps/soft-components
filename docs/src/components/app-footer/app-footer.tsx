@@ -2,6 +2,7 @@ import { Component, Host, h } from '@stencil/core';
 
 @Component({
   tag: 'app-footer',
+  styleUrl: 'app-footer.scss',
 })
 export class AppFooter {
   render() {
@@ -16,11 +17,11 @@ export class AppFooter {
             </sc-button>
           </div>
         </div>
-        <p>
-          <a href="https://seanwuapps.com" target="_blank">
-            seanwuapps.com
+        <div>
+          <a href="https://seanwuapps.com" target="_blank" rel="noreferrer" class="sw-link">
+            <seanwu-logo></seanwu-logo>
           </a>
-        </p>
+        </div>
       </Host>
     );
   }

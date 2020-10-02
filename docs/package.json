@@ -30,6 +30,7 @@
     "highlight.js": "^10.1.2",
     "linkable-title": "^1.2.1",
     "markdown-it": "^11.0.0",
+    "seanwu-logo": "^1.0.0",
     "simplebar": "^6.0.0-beta.3",
     "soft-components": "file:.."
   }

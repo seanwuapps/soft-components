@@ -53,9 +53,13 @@
       flex: 1;
     }
     .arrow {
+      color: var(--sc-text-color);
       svg {
         width: calc(var(--sc-root-spacing, 8px) * 4);
         height: calc(var(--sc-root-spacing, 8px) * 4);
+        path {
+          fill: currentColor;
+        }
       }
       transition: transform var(--sc-accordion-animation-duration)
         var(--sc-accordion-animation-timing-function);

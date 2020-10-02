@@ -1,6 +1,7 @@
 import { Component, Host, h, State } from '@stencil/core';
 import 'soft-components';
 import 'linkable-title';
+import 'seanwu-logo';
 @Component({
   tag: 'app-root',
   styleUrl: 'app-root.scss',
