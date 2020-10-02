@@ -1,32 +1,36 @@
 :host {
   /**
-    * @prop --sc-card-outer-padding-x     : Horizontal outer padding of card.
-    * @prop --sc-card-outer-padding-y     : Vertical outer padding of card.
-    * @prop --sc-card-inner-padding-y     : Vertical inner padding of card
-    * @prop --sc-card-bg-color            : Background color of card.
-    * @prop --sc-card-title-font-size     : Title text font size.
-    * @prop --sc-card-title-font-weight   : Title font weight
-    * @prop --sc-card-title-text-color    : Title text color
-    * @prop --sc-card-subtitle-font-size  : Subtitle font size
-    * @prop --sc-card-subtitle-font-weight: Subtitle font weight
-    * @prop --sc-card-subtitle-text-color : Subtitle text color
-    * @prop --sc-card-bordered-width      : Card border width (only applicable for bordered cards)
-    * @prop --sc-card-media-width     : width of media part of the card
-    * @prop --sc-card-media-height    : height of media part of the card
+    * @prop --sc-card-outer-padding-x      : Horizontal outer padding of card. Default: calc(var(--sc-root-spacing) * 4);
+    * @prop --sc-card-outer-padding-y      : Vertical outer padding of card. Default: calc(var(--sc-root-spacing) * 4);
+    * @prop --sc-card-inner-padding-y      : Padding between title section and content section
+    * @prop --sc-card-bg-color             : Background color of card.
+    * @prop --sc-card-title-font-size      : Title text font size.
+    * @prop --sc-card-title-font-weight    : Title font weight
+    * @prop --sc-card-title-text-color     : Title text color
+    * @prop --sc-card-subtitle-font-size   : Subtitle font size
+    * @prop --sc-card-subtitle-font-weight : Subtitle font weight
+    * @prop --sc-card-subtitle-text-color  : Subtitle text color
+    * @prop --sc-card-bordered-width       : Card border width (only applicable for bordered cards)
+    * @prop --sc-card-media-width          : width of media part of the card
+    * @prop --sc-card-media-height         : height of media part of the card
+    * @prop --sc-card-media-object-position: [object-position rule](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position) for the media. default: center
     */
   --sc-card-outer-padding-x: calc(var(--sc-root-spacing) * 4);
   --sc-card-outer-padding-y: calc(var(--sc-root-spacing) * 4);
-  --sc-card-inner-padding-y: 22px;
-  --sc-card-bg-color: var(--sc-bg-color, #f6f6f8);
-  --sc-card-title-font-size: 26px;
+  --sc-card-inner-padding-y: calc(var(--sc-root-spacing) * 2);
+  --sc-card-bg-color: var(--sc-bg-color, #f1f1f1);
+  --sc-card-title-font-size: calc(var(--sc-root-spacing) * 3);
   --sc-card-title-font-weight: 700;
   --sc-card-title-text-color: var(--sc-text-color, #333333);
-  --sc-card-subtitle-font-size: 18px;
-  --sc-card-subtitle-font-weight: normal;
+  --sc-card-subtitle-font-size: calc(var(--sc-root-spacing) * 2);
+  --sc-card-subtitle-font-weight: 400;
   --sc-card-subtitle-text-color: var(--sc-text-color, #696969);
-  --sc-card-bordered-width: 2px;
+  --sc-card-border-width: 2px;
+  --sc-card-border-color: var(--sc-border-color, #696969);
   --sc-card-media-width: 100%;
   --sc-card-media-height: calc(var(--sc-root-spacing, 8px) * 20);
+  --sc-card-media-height: calc(var(--sc-root-spacing, 8px) * 20);
+  --sc-card-media-object-position: center;
   //-------------- card --------------//
   display: block;
   @include raised();
@@ -74,6 +78,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: var(--sc-card-media-object-position);
     }
   }
 }
@@ -84,6 +89,10 @@
 }
 :host([media-position='top']) {
   flex-direction: column;
+  .card-inner {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
   .card-media {
     width: 100%;
     height: var(--sc-card-media-height);
@@ -91,6 +100,10 @@
 }
 :host([media-position='bottom']) {
   flex-direction: column-reverse;
+  .card-inner {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
   .card-media {
     width: 100%;
     height: var(--sc-card-media-height);
@@ -122,7 +135,7 @@
 
 :host(.bordered) {
   @include engraved-border-gradient();
-  padding: var(--sc-card-bordered-width);
+  padding: var(--sc-card-border-width);
   .card-inner {
     background-color: var(--sc-card-bg-color);
   }

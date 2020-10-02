@@ -198,234 +198,237 @@
                 <mark>
                   Use <code>slot="heading"</code> to customise heading
                 </mark>
-                </div>
-                Lorem ipsum dolor sit
-              </sc-accordion-item>
-              <sc-accordion-item heading='Use slot="arrow" to customise arrow'>
-                <div slot="arrow"
-                  style="text-align: center; color: red; width: 60px; height: 60px; font-size: 60px; line-height: 60px">
-                  &#10084;
-                </div>
-                Lorem ipsum dolor sit
-              </sc-accordion-item>
-            </sc-accordion>
-          </sc-accordion-item>
-          <sc-accordion-item heading="Buttons">
-
-            <sc-button onclick="alert('yo')">Button</sc-button>
-
-            <!-- Anchor -->
-            <sc-button href="/" target="_blank" rel="noreferrer" title="button">Anchor
-            </sc-button>
-
-            <!-- Block level -->
-            <sc-button block>Block Button</sc-button>
-
-
-            <!-- Icon -->
-            <sc-button icon>
-              <i class="la la-home"></i>
-            </sc-button>
-
-            <!-- Icon and Text -->
-
-            <sc-button iconText>
-              <i class="la la-home"></i>
-              Text
-            </sc-button>
-
-
-            <!-- Bordered -->
-            <br><br>
-            <sc-button bordered>
-              <i class="la la-back"></i> Bordered button
-            </sc-button>
-            <br><br>
-            <sc-button flat>
-              Flat button
-            </sc-button>
-
-
-          </sc-accordion-item>
-          <sc-accordion-item heading="Cards" active>
-            <h2>Text based cards</h2>
-            <div class="row">
-              <div class="col">
-                <sc-card card-title="Card" card-subtitle="I'm normal card">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis
-                  adipisci ut dolores ipsam perspiciatis maxime, eaque eos ipsa possimus officia quia voluptate numquam?
-                  Tempora, id?
-                </sc-card>
-              </div>
-              <div class="col">
-                <sc-card engraved card-title="Card" card-subtitle="I'm engraved card">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis
-                  dolores
-                  commodi, cupiditate mollitia aspernatur sit aperiam quibusdam eligendi, rem eveniet, quod aliquam eos
-                  fuga
-                  corporis a.
-                </sc-card>
-              </div>
-              <div class="col">
-                <sc-card bordered card-title="Card" card-subtitle="I'm bordered card">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum
-                  exercitationem commodi porro eveniet atque. Atque dolorum quasi sit! Quasi magnam aliquam neque sit
-                  natus
-                  officiis odit.
-                </sc-card>
-              </div>
-            </div>
-
-            <h2>Media cards</h2>
-            <div class="row">
-              <div class="col">
-                <sc-card card-title="Top media" card-subtitle="5 Feb 2020" media-position="top">
-                  <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
-                  <div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
-                    vero nihil quo eveniet veritatis libero voluptates ullam accusantium provident doloremque necessitatibus,
-                    aspernatur laudantium, quisquam reiciendis!
-                  </div>
-                </sc-card>
-              </div>
-              <div class="col">
-                <sc-card card-title="Bottom media" media-position="bottom">
-                  <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
-                  <div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
-                    vero nihil quo eveniet veritatis libero voluptates ullam accusantium provident doloremque necessitatibus,
-                    aspernatur laudantium, quisquam reiciendis!
-                  </div>
-                </sc-card>
-              </div>
-            </div>
-            <div class="row">
-
-              <div class="col">
-                <sc-card card-title="Left media" media-position="left">
-                  <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
-                  <div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
-                    vero nihil quo eveniet veritatis libero voluptates ullam accusantium provident doloremque necessitatibus,
-                    aspernatur laudantium, quisquam reiciendis!
-                  </div>
-                </sc-card>
-              </div>
-              <div class="col">
-                <sc-card card-title="Right media" media-position="right">
-                  <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
-                  <div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
-                    vero nihil quo eveniet veritatis libero voluptates ullam accusantium provident doloremque necessitatibus,
-                    aspernatur laudantium, quisquam reiciendis!
-                  </div>
-                </sc-card>
-              </div>
-            </div>
-
-
-            <h2>Customising cards</h2>
-            <div class="row">
-              <div class="col">
-                <sc-card>
-                  <div slot="custom-title">
-                    <div>
-                      <mark>Customise title with <code>slot="custom-title"</code></mark>
-                    </div>
-                    <div>
-                      <marquee>Go bananas inside the slot <img
-                          src="https://ph-files.imgix.net/caf5608a-67ec-4f9f-acb5-db0052c33bed?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=80&h=80"
-                          alt="party parrot" width="20"></marquee>
-                    </div>
-                  </div>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, modi animi possimus fugiat accusamus
-                  vitae tempore suscipit asperiores eum cum nihil amet natus impedit iure molestias ipsum illo ducimus
-                  aperiam!
-                </sc-card>
-              </div>
-            </div>
-
-          </sc-accordion-item>
-          <sc-accordion-item heading="Utils">
-
-            <div class="row">
-
-              <div class="col-md-6">
-                <div class="test-block round raised">
-                  <h2>raised</h2>
-                </div>
-                <div class="test-block round raised-0">
-                  <h2>raised 0</h2>
-                </div>
-                <div class="test-block round raised-1">
-                  <h2>raised 1</h2>
-                </div>
-                <div class="test-block round raised-2">
-                  <h2>raised 2</h2>
-                </div>
-                <div class="test-block round raised-3">
-                  <h2>raised 3</h2>
-                </div>
-                <div class="test-block round raised-4">
-                  <h2>raised 4</h2>
-                </div>
-                <div class="test-block round raised-5">
-                  <h2>raised 5</h2>
-                </div>
-                <div class="test-block round raised-6">
-                  <h2>raised 6</h2>
-                </div>
-                <div class="test-block round raised-7">
-                  <h2>raised 7</h2>
-                </div>
-                <div class="test-block round raised-8">
-                  <h2>raised 8</h2>
-                </div>
-                <div class="test-block round raised-9">
-                  <h2>raised 9</h2>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="test-block round engraved">
-                  <h2>engraved</h2>
-                </div>
-                <div class="test-block round engraved-0">
-                  <h2>engraved 0</h2>
-                </div>
-                <div class="test-block round engraved-1">
-                  <h2>engraved 1</h2>
-                </div>
-                <div class="test-block round engraved-2">
-                  <h2>engraved 2</h2>
-                </div>
-                <div class="test-block round engraved-3">
-                  <h2>engraved 3</h2>
-                </div>
-                <div class="test-block round engraved-4">
-                  <h2>engraved 4</h2>
-                </div>
-                <div class="test-block round engraved-5">
-                  <h2>engraved 5</h2>
-                </div>
-                <div class="test-block round engraved-6">
-                  <h2>engraved 6</h2>
-                </div>
-                <div class="test-block round engraved-7">
-                  <h2>engraved 7</h2>
-                </div>
-                <div class="test-block round engraved-8">
-                  <h2>engraved 8</h2>
-                </div>
-                <div class="test-block round engraved-9">
-                  <h2>engraved 9</h2>
-                </div>
-              </div>
-
-            </div>
-          </sc-accordion-item>
-        </sc-accordion>
       </div>
+      Lorem ipsum dolor sit
+      </sc-accordion-item>
+      <sc-accordion-item heading='Use slot="arrow" to customise arrow'>
+        <div slot="arrow"
+          style="text-align: center; color: red; width: 60px; height: 60px; font-size: 60px; line-height: 60px">
+          &#10084;
+        </div>
+        Lorem ipsum dolor sit
+      </sc-accordion-item>
+      </sc-accordion>
+      </sc-accordion-item>
+      <sc-accordion-item heading="Buttons">
+
+        <sc-button onclick="alert('yo')">Button</sc-button>
+
+        <!-- Anchor -->
+        <sc-button href="/" target="_blank" rel="noreferrer" title="button">Anchor
+        </sc-button>
+
+        <!-- Block level -->
+        <sc-button block>Block Button</sc-button>
+
+
+        <!-- Icon -->
+        <sc-button icon>
+          <i class="la la-home"></i>
+        </sc-button>
+
+        <!-- Icon and Text -->
+
+        <sc-button iconText>
+          <i class="la la-home"></i>
+          Text
+        </sc-button>
+
+
+        <!-- Bordered -->
+        <br><br>
+        <sc-button bordered>
+          <i class="la la-back"></i> Bordered button
+        </sc-button>
+        <br><br>
+        <sc-button flat>
+          Flat button
+        </sc-button>
+
+
+      </sc-accordion-item>
+      <sc-accordion-item heading="Cards" active>
+        <h2>Text based cards</h2>
+        <div class="row">
+          <div class="col">
+            <sc-card card-title="Card" card-subtitle="I'm normal card">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis
+              adipisci ut dolores ipsam perspiciatis maxime, eaque eos ipsa possimus officia quia voluptate numquam?
+              Tempora, id?
+            </sc-card>
+          </div>
+          <div class="col">
+            <sc-card engraved card-title="Card" card-subtitle="I'm engraved card">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis
+              dolores
+              commodi, cupiditate mollitia aspernatur sit aperiam quibusdam eligendi, rem eveniet, quod aliquam eos
+              fuga
+              corporis a.
+            </sc-card>
+          </div>
+          <div class="col">
+            <sc-card bordered card-title="Card" card-subtitle="I'm bordered card">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum
+              exercitationem commodi porro eveniet atque. Atque dolorum quasi sit! Quasi magnam aliquam neque sit
+              natus
+              officiis odit.
+            </sc-card>
+          </div>
+        </div>
+
+        <h2>Media cards</h2>
+        <div class="row">
+          <div class="col">
+            <sc-card card-title="Top media" card-subtitle="5 Feb 2020" media-position="top">
+              <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
+                vero nihil quo eveniet veritatis libero voluptates ullam accusantium provident doloremque
+                necessitatibus,
+                aspernatur laudantium, quisquam reiciendis!
+              </div>
+            </sc-card>
+          </div>
+          <div class="col">
+            <sc-card bordered card-title="Bottom media" media-position="bottom">
+              <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
+                vero nihil quo eveniet veritatis libero voluptates ullam accusantium provident doloremque
+                necessitatibus,
+                aspernatur laudantium, quisquam reiciendis!
+              </div>
+            </sc-card>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <sc-card card-title="Left media" media-position="left">
+              <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
+                vero nihil quo eveniet veritatis libero voluptates ullam accusantium provident doloremque
+                necessitatibus,
+                aspernatur laudantium, quisquam reiciendis!
+              </div>
+            </sc-card>
+          </div>
+          <div class="col">
+            <sc-card card-title="Right media" media-position="right">
+              <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
+                vero nihil quo eveniet veritatis libero voluptates ullam accusantium provident doloremque
+                necessitatibus,
+                aspernatur laudantium, quisquam reiciendis!
+              </div>
+            </sc-card>
+          </div>
+        </div>
+
+
+        <h2>Customising cards</h2>
+        <div class="row">
+          <div class="col">
+            <sc-card>
+              <div slot="custom-title">
+                <div>
+                  <mark>Customise title with <code>slot="custom-title"</code></mark>
+                </div>
+                <div>
+                  <marquee>Go bananas inside the slot <img
+                      src="https://ph-files.imgix.net/caf5608a-67ec-4f9f-acb5-db0052c33bed?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=80&h=80"
+                      alt="party parrot" width="20"></marquee>
+                </div>
+              </div>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, modi animi possimus fugiat accusamus
+              vitae tempore suscipit asperiores eum cum nihil amet natus impedit iure molestias ipsum illo ducimus
+              aperiam!
+            </sc-card>
+          </div>
+        </div>
+
+      </sc-accordion-item>
+      <sc-accordion-item heading="Utils">
+
+        <div class="row">
+
+          <div class="col-md-6">
+            <div class="test-block round raised">
+              <h2>raised</h2>
+            </div>
+            <div class="test-block round raised-0">
+              <h2>raised 0</h2>
+            </div>
+            <div class="test-block round raised-1">
+              <h2>raised 1</h2>
+            </div>
+            <div class="test-block round raised-2">
+              <h2>raised 2</h2>
+            </div>
+            <div class="test-block round raised-3">
+              <h2>raised 3</h2>
+            </div>
+            <div class="test-block round raised-4">
+              <h2>raised 4</h2>
+            </div>
+            <div class="test-block round raised-5">
+              <h2>raised 5</h2>
+            </div>
+            <div class="test-block round raised-6">
+              <h2>raised 6</h2>
+            </div>
+            <div class="test-block round raised-7">
+              <h2>raised 7</h2>
+            </div>
+            <div class="test-block round raised-8">
+              <h2>raised 8</h2>
+            </div>
+            <div class="test-block round raised-9">
+              <h2>raised 9</h2>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="test-block round engraved">
+              <h2>engraved</h2>
+            </div>
+            <div class="test-block round engraved-0">
+              <h2>engraved 0</h2>
+            </div>
+            <div class="test-block round engraved-1">
+              <h2>engraved 1</h2>
+            </div>
+            <div class="test-block round engraved-2">
+              <h2>engraved 2</h2>
+            </div>
+            <div class="test-block round engraved-3">
+              <h2>engraved 3</h2>
+            </div>
+            <div class="test-block round engraved-4">
+              <h2>engraved 4</h2>
+            </div>
+            <div class="test-block round engraved-5">
+              <h2>engraved 5</h2>
+            </div>
+            <div class="test-block round engraved-6">
+              <h2>engraved 6</h2>
+            </div>
+            <div class="test-block round engraved-7">
+              <h2>engraved 7</h2>
+            </div>
+            <div class="test-block round engraved-8">
+              <h2>engraved 8</h2>
+            </div>
+            <div class="test-block round engraved-9">
+              <h2>engraved 9</h2>
+            </div>
+          </div>
+
+        </div>
+      </sc-accordion-item>
+      </sc-accordion>
     </div>
+  </div>
   </div>
   <div class="container pt-4">
     <form action="/" method="get">

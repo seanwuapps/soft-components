@@ -23,10 +23,14 @@
 @mixin engraved-border-gradient() {
   background-image: linear-gradient(
       to bottom right,
-      shadowColor() -10%,
-      transparent 45%
+      var(--sc-border-color, #{shadowColor()}) -10%,
+      highlightColor() 55%
     ),
-    linear-gradient(to bottom right, transparent 60%, highlightColor() 120%);
+    linear-gradient(
+      to bottom right,
+      highlightColor() 55%,
+      var(--sc-border-color, #{shadowColor()}) 70%
+    );
 }
 
 @mixin ease-in-component() {
@@ -39,4 +43,36 @@
 
 @mixin round() {
   border-radius: var(--sc-border-radius, 1em);
+}
+
+@mixin raiseable() {
+  &.raised {
+    @include raised(0.5);
+  }
+
+  &.engraved {
+    @include engraved(0.5);
+  }
+
+  @for $i from 0 to 10 {
+    &.raised-#{$i} {
+      @include raised($i/10);
+    }
+
+    &.engraved-#{$i} {
+      @include engraved($i/10);
+    }
+  }
+}
+
+@mixin raiseableHost() {
+  @for $i from 0 to 10 {
+    :host(.raised-#{$i}) {
+      @include raised($i/10);
+    }
+
+    :host(.engraved-#{$i}) {
+      @include engraved($i/10);
+    }
+  }
 }
