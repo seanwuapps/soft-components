@@ -11,7 +11,7 @@ app-root {
     'main'
     'footer';
   @include media(lg) {
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: 220px minmax(0, 1fr);
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
       'header  main'
