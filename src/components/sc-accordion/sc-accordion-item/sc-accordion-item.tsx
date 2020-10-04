@@ -78,20 +78,16 @@ export class ScAccordionItem {
   }
 
   onTransitionEnd() {
-    if (this.autoHeight) {
-      this.bodyEl.style.overflow = 'initial'
-    }
     if (this.active) {
+      this.bodyEl.style.overflow = 'auto'
       this.opened.emit()
     } else {
+      this.bodyEl.style.overflow = 'hidden'
       this.bodyEl.style.visibility = 'hidden'
       this.closed.emit()
     }
   }
   onTransitionStart() {
-    if (this.autoHeight) {
-      this.bodyEl.style.overflow = 'hidden'
-    }
     if (this.active) {
       this.bodyEl.style.visibility = 'visible'
       this.opening.emit()
