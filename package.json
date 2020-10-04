@@ -22,13 +22,15 @@
   ],
   "scripts": {
     "build": "stencil build --docs-json",
+    "patch": "npm run commit & npm version patch & npm publish",
+    "minor": "npm run commit & npm version minor & npm publish",
+    "major": "npm run commit & npm version major & npm publish",
     "build-readme": "stencil build --docs-readme",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "git": "git add . & git commit -m \"Committed via npm\"",
-    "postgit": "git push --all"
+    "commit": "git add . & git commit -m \"Committed via npm\""
   },
   "devDependencies": {
     "@stencil/core": "^1.17.3",
