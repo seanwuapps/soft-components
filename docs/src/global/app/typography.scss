@@ -32,7 +32,7 @@ body {
     h#{7-$i} {
       font-size: #{pow($font-scale-ratio, $i)}em;
       // font-size: #{$i * $font-scale-ratio}em;
-      line-height: 1.1em;
+      line-height: 2em;
       font-family: $title-font;
     }
   }

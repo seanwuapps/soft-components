@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-10-02T12:32:39",
+  "timestamp": "2020-10-04T07:56:35",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.17.3",
@@ -238,9 +238,9 @@
           "docs": "var(--sc-bg-color, #f1f1f1);"
         },
         {
-          "name": "--sc-accordion-item-heading-border-color",
+          "name": "--sc-accordion-item-heading-border-bottom",
           "annotation": "prop",
-          "docs": "var(--sc-shadow-color,rgba(0, 0, 0, 0.2));"
+          "docs": "1px solid var(--sc-shadow-color,rgba(0, 0, 0, 0.2));"
         },
         {
           "name": "--sc-accordion-item-heading-padding-x",

@@ -5,7 +5,7 @@ dependencies:
   highlight.js: 10.2.1
   linkable-title: 1.2.1
   markdown-it: 11.0.1
-  seanwu-logo: 1.0.0
+  seanwu-logo: 1.1.0
   simplebar: 6.0.0-beta.6
 devDependencies:
   '@rollup/plugin-node-resolve': 9.0.0
@@ -921,12 +921,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
-  /seanwu-logo/1.0.0:
+  /seanwu-logo/1.1.0:
     dependencies:
       '@stencil/core': 1.17.3
     dev: false
     resolution:
-      integrity: sha512-+GGl9oWAaG0atrWwr//LX5EozfGrsaleHXpVRr9sUc040mXAEietXjPNzJ2nCI9/LHbvxoMF7jhBhMnNPlJUAg==
+      integrity: sha512-L6ZB+pgVAEmXJLklHLYHvFyLygQ0Q1WIOf+eUMyF0+IVgNd9Vyts6i02M46AdsBwnzU91D/PQrSxJ5eOG8hwSw==
   /semver/2.3.2:
     dev: true
     hasBin: true
@@ -1087,5 +1087,5 @@ specifiers:
   markdown-it: ^11.0.0
   rollup-plugin-node-builtins: ^2.1.2
   rollup-plugin-node-polyfills: ^0.2.1
-  seanwu-logo: ^1.0.0
+  seanwu-logo: ^1.1.0
   simplebar: ^6.0.0-beta.3
