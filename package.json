@@ -26,7 +26,9 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "generate": "stencil generate"
+    "generate": "stencil generate",
+    "git": "git add . & git commit -m \"Committed via npm\"",
+    "postgit": "git push --all"
   },
   "devDependencies": {
     "@stencil/core": "^1.17.3",
@@ -42,7 +44,5 @@
     "puppeteer": "1.19.0"
   },
   "license": "MIT",
-  "dependencies": {
-    "boxicons": "^2.0.5"
-  }
+  "dependencies": {}
 }
