@@ -9,7 +9,7 @@ import { JsonDocsComponent } from '../../../docs-data';
 export class CodeBlock {
   @Element() el: HTMLElement;
   @Prop() code: string;
-  @Prop() component: JsonDocsComponent;
+  @Prop() component?: JsonDocsComponent = null;
 
   @State() sourceCodeOpen: boolean = false;
   @State() themerOpen: boolean = false;
@@ -51,7 +51,11 @@ export class CodeBlock {
   }
 
   render() {
+    if (!this.component) {
+      return <div>Loading...</div>;
+    }
     const { tag, styles } = this.component;
+
     return (
       <div class="raised-2 round pa-2">
         <div class="control-bar flex align-center justify-between">

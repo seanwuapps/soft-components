@@ -3,7 +3,7 @@ import { MatchResults } from '@stencil/router';
 import docsData from '../../../../docs-data';
 import { JsonDocsComponent, JsonDocsProp } from '../../../../docs-data';
 import { getName } from '../../../helpers/components';
-import md from '../../../helpers/md';
+import { md, mdUsage } from '../../../helpers/md';
 import SimpleBar from 'simplebar';
 import store from '../../../store';
 
@@ -45,6 +45,10 @@ export class PageComponents {
       this.el.querySelectorAll('.table-body').forEach(el => {
         new SimpleBar(el as HTMLElement, { autoHide: false });
       });
+
+      this.el.querySelectorAll('code-block').forEach(el => {
+        el.component = this.component;
+      });
     }
   }
 
@@ -75,7 +79,8 @@ export class PageComponents {
     }
     const name = getName(this.component);
 
-    console.log(name, this.component);
+    const { usage } = this.component;
+
     return (
       <Host>
         <article>
@@ -83,21 +88,23 @@ export class PageComponents {
           <section class="component-title">
             <h1>{name}</h1>
           </section>
-
           {/* Usage */}
-          {this.component.usage[tag] && (
+          {usage && (
             <section>
-              <linkable-title id="usage">Usage</linkable-title>
-              <code-block code={this.component.usage[tag]} component={this.component}></code-block>
+              <linkable-title id="usage" tag="h2">
+                Usage
+              </linkable-title>
+              <div innerHTML={mdUsage.render(usage[tag])}></div>
             </section>
           )}
-
           {/* Props */}
           {this.component.props && (
             <section>
-              <linkable-title id="props">Props</linkable-title>
+              <linkable-title id="Props" tag="h2">
+                Props
+              </linkable-title>
 
-              <div class="props-container">
+              <div class="table-container">
                 <div class="table">
                   <div class="table-head raised-2 sticky">
                     <div class="w-2 th">Name</div>
@@ -141,10 +148,48 @@ export class PageComponents {
               </div>
             </section>
           )}
-
-          {/* Customisation */}
+          {/* Events */}
+          {this.component.events.length > 0 && (
+            <section>
+              <linkable-title id="Events" tag="h2">
+                Events
+              </linkable-title>
+              <div class="table-container">
+                <div class="table">
+                  <div class="table-head raised-2 sticky">
+                    <div class="w-2 th">Event</div>
+                    <div class="w-4 th">Description</div>
+                    <div class="w-3 th">Event detail</div>
+                  </div>
+                  <div class="table-body engraved-1">
+                    {this.component.events.map(event => (
+                      <div class="flex tr">
+                        <div class="w-2 py-2">
+                          <span class="th-mobile">Event</span>
+                          <linkable-title id={`events-${event.event}`} tag="code" class="event__title">
+                            {event.event}
+                          </linkable-title>
+                        </div>
+                        <div class="w-4 py-2">
+                          <span class="th-mobile">Description</span>
+                          <span innerHTML={md.render(event.docs)}></span>
+                        </div>
+                        <div class="w-2 py-2">
+                          <span class="th-mobile">Event detail</span>
+                          <code>{event.detail}</code>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+          {/* Methods */}h{/* Customisation */}
           <section>
-            <linkable-title id="customisation">Customisation</linkable-title>
+            <linkable-title id="customisation" tag="h2">
+              Customisation
+            </linkable-title>
             <h6>How should you customise this component?</h6>
             <div class="mt-1">{this.component.encapsulation === 'shadow' ? 'CSS variables only' : 'All styles can be overridden with CSS'}</div>
           </section>

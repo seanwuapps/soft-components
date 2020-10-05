@@ -20,7 +20,7 @@ export namespace Components {
     }
     interface CodeBlock {
         "code": string;
-        "component": JsonDocsComponent;
+        "component"?: JsonDocsComponent;
     }
     interface ComponentSidebar {
     }

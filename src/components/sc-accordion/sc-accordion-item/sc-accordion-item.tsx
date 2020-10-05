@@ -62,7 +62,7 @@ export class ScAccordionItem {
     if (this.autoHeight) {
       this.bodyEl.style.setProperty(
         '--sc-accordion-item-body-max-height',
-        this.bodyEl.scrollHeight + 'px'
+        this.bodyEl.scrollHeight + 2 + 'px'
       )
     }
 

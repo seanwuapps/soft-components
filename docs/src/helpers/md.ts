@@ -1,6 +1,6 @@
 import markdown from 'markdown-it';
 import hljs from 'highlight.js';
-const md = markdown({
+export const md = markdown({
   html: true,
   linkify: true,
   highlight: function (str, lang) {
@@ -12,4 +12,16 @@ const md = markdown({
     return '<hl-code style="margin-top: calc(-1 * var(--sc-root-spacing))" code="' + markdown.utils.escapeHtml(str) + '"></hl-code>';
   },
 });
-export default md;
+
+export const mdUsage = markdown({
+  html: true,
+  linkify: true,
+  highlight: function (str, lang) {
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return `</code></pre><code-block code='${str}'></code-block>`;
+      } catch (__) {}
+    }
+    return '<code-block code="' + markdown.utils.escapeHtml(str) + '"></code-block>';
+  },
+});

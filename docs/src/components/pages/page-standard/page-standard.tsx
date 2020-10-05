@@ -1,6 +1,6 @@
 import { Component, Host, h, Prop, Watch, State, Element, Build } from '@stencil/core';
 import { MatchResults, RouterHistory } from '@stencil/router';
-import md from '../../../helpers/md';
+import { md } from '../../../helpers/md';
 import SimpleBar from 'simplebar';
 @Component({
   tag: 'page-standard',
