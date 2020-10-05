@@ -32,8 +32,12 @@ body {
     h#{7-$i} {
       font-size: #{pow($font-scale-ratio, $i)}em;
       // font-size: #{$i * $font-scale-ratio}em;
-      line-height: 2em;
       font-family: $title-font;
+      @if $i < 4 {
+        line-height: 2em;
+      } @else {
+        line-height: 1.2em;
+      }
     }
   }
 }
