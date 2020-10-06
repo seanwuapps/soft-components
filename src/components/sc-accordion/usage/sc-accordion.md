@@ -18,7 +18,6 @@ By default only one `<sc-accordion-item>` element inside a `<sc-accordion>` can 
 
 ### Multiple
 ```html
-<h2>Multiple</h2>
 <sc-accordion multiple>
   <sc-accordion-item heading="We">
     Lorem ipsum dolor sit
