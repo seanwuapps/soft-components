@@ -25,6 +25,9 @@ export namespace Components {
     * If expanded height should be automatically calculated. If set, the `--sc-accordion-item-body-max-height` CSS variable will be set automatically to the content height
     */
     'autoHeight'?: boolean;
+    /**
+    * Closes the accordion item
+    */
     'close': () => Promise<void>;
     /**
     * Heading text. This will be overwritten by `heading` slot
@@ -34,7 +37,13 @@ export namespace Components {
     * The HTML tag to be applied to the heading text. This will be overwritten by `heading` slot
     */
     'headingTag'?: string;
+    /**
+    * Opens the accordion item. Example ```html <accordion-item id="item">...</accordion-item> ``` ```javascript   let el = document.getElementById("item")   el.open() ```
+    */
     'open': () => Promise<void>;
+    /**
+    * Toggle open state of accordion item
+    */
     'toggle': () => Promise<void>;
   }
   interface ScButton {
@@ -50,6 +59,10 @@ export namespace Components {
     * If prop exists, button will have an engraved-styled border
     */
     'bordered'?: boolean | undefined;
+    /**
+    * Make button circle shaped
+    */
+    'circle'?: boolean;
     /**
     * If `true`, the user cannot interact with the button.
     */
@@ -381,9 +394,21 @@ declare namespace LocalJSX {
     * The HTML tag to be applied to the heading text. This will be overwritten by `heading` slot
     */
     'headingTag'?: string;
+    /**
+    * Emitted when accordion item has closed
+    */
     'onClosed'?: (event: CustomEvent<any>) => void;
+    /**
+    * Emitted when accordion item started closing
+    */
     'onClosing'?: (event: CustomEvent<any>) => void;
+    /**
+    * Emitted when accordion item has opened
+    */
     'onOpened'?: (event: CustomEvent<any>) => void;
+    /**
+    * Emitted when accordion item started opening
+    */
     'onOpening'?: (event: CustomEvent<any>) => void;
   }
   interface ScButton {
@@ -399,6 +424,10 @@ declare namespace LocalJSX {
     * If prop exists, button will have an engraved-styled border
     */
     'bordered'?: boolean | undefined;
+    /**
+    * Make button circle shaped
+    */
+    'circle'?: boolean;
     /**
     * If `true`, the user cannot interact with the button.
     */

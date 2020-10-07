@@ -48,10 +48,24 @@ export class ScAccordionItem {
 
   animationHeightInterval: number // number of px per frame of animation change.
 
+  /**
+   * Emitted when accordion item has opened
+   */
   @Event() opened: EventEmitter
+
+  /**
+   * Emitted when accordion item started opening
+   */
   @Event() opening: EventEmitter
 
+  /**
+   * Emitted when accordion item has closed
+   */
   @Event() closed: EventEmitter
+
+  /**
+   * Emitted when accordion item started closing
+   */
   @Event() closing: EventEmitter
 
   componentWillLoad() {
@@ -96,6 +110,9 @@ export class ScAccordionItem {
     }
   }
 
+  /**
+   * Toggle open state of accordion item
+   */
   @Method()
   async toggle() {
     if (this.active) {
@@ -105,11 +122,25 @@ export class ScAccordionItem {
     }
   }
 
+  /**
+   * Closes the accordion item
+   */
   @Method()
   async close() {
     this.active = false
   }
 
+  /**
+   * Opens the accordion item.
+   * Example
+   * ```html
+   * <accordion-item id="item">...</accordion-item>
+   * ```
+   * ```javascript
+   *  let el = document.getElementById("item")
+   *  el.open()
+   * ```
+   */
   @Method()
   async open() {
     this.active = true

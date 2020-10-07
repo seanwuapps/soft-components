@@ -21,6 +21,7 @@ export namespace Components {
     interface CodeBlock {
         "code": string;
         "component"?: JsonDocsComponent;
+        "hideTag"?: boolean;
     }
     interface ComponentSidebar {
     }
@@ -191,6 +192,7 @@ declare namespace LocalJSX {
     interface CodeBlock {
         "code"?: string;
         "component"?: JsonDocsComponent;
+        "hideTag"?: boolean;
     }
     interface ComponentSidebar {
     }

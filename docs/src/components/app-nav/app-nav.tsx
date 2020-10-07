@@ -16,8 +16,8 @@ export class AppNav {
       url: '/theory',
     },
     {
-      text: 'Web component',
-      url: '/web-component',
+      text: 'Web components',
+      url: '/web-components',
     },
     {
       text: 'Components',

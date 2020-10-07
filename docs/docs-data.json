@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-10-05T10:47:36",
+  "timestamp": "2020-10-06T08:08:12",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.8.5",
@@ -13,7 +13,7 @@
       "docs": "",
       "docsTags": [],
       "usage": {
-        "sc-accordion": "### Single (default)\n\nBy default only one `<sc-accordion-item>` element inside a `<sc-accordion>` can be expanded at any given time. When clicked on a different `<sc-accordion-item>`, the active one will be collapsed and the clicked one will be expanded.\n\n```html\n<sc-accordion id=\"inner-accordion\">\n  <sc-accordion-item heading=\"I\" active>\n    Add <code>active</code> attribute to open an item by default.\n  </sc-accordion-item>\n  <sc-accordion-item heading=\" Am\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Groot\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n</sc-accordion>\n```\n\n### Multiple\n```html\n<h2>Multiple</h2>\n<sc-accordion multiple>\n  <sc-accordion-item heading=\"We\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Are\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Groot\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n</sc-accordion>\n```\n\n### Nested\n```html\n<sc-accordion>\n  <sc-accordion-item heading=\"Accordions can be nested too\">\n    Lorem ipsum dolor sit\n\n    <sc-accordion id=\"inner-accordion\">\n      <sc-accordion-item heading=\"Nested\">\n        Lorem ipsum dolor sit\n      </sc-accordion-item>\n\n      <sc-accordion-item heading=\"Accordions\">\n        Lorem ipsum dolor sit\n      </sc-accordion-item>\n      <sc-accordion-item heading=\"Are pretty cool\">\n        Lorem ipsum dolor sit\n      </sc-accordion-item>\n    </sc-accordion>\n\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Yayyy\"\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n</sc-accordion>\n```\n\n\n### Customise it\n```html\n<sc-accordion>\n  <sc-accordion-item>\n    <div slot=\"heading\">\n      <mark>\n        Use <code>slot=\"heading\"</code> to customise heading\n      </mark>\n    </div>\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading='Use slot=\"arrow\" to customise arrow'>\n    <div slot=\"arrow\" style=\"text-align: center; color: red; width: 60px; height: 60px; font-size: 60px; line-height: 60px\">\n      &#10084;\n    </div>\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n</sc-accordion>\n```"
+        "sc-accordion": "### Single (default)\n\nBy default only one `<sc-accordion-item>` element inside a `<sc-accordion>` can be expanded at any given time. When clicked on a different `<sc-accordion-item>`, the active one will be collapsed and the clicked one will be expanded.\n\n```html\n<sc-accordion id=\"inner-accordion\">\n  <sc-accordion-item heading=\"I\" active>\n    Add <code>active</code> attribute to open an item by default.\n  </sc-accordion-item>\n  <sc-accordion-item heading=\" Am\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Groot\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n</sc-accordion>\n```\n\n### Multiple\n\nThere are times when you need multiple items to be open at the same time. Just add `multiple` attribute to the `<sc-accordion>` element.\n\n```html\n<sc-accordion multiple>\n  <sc-accordion-item heading=\"We\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Are\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Groot\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n</sc-accordion>\n```\n\n### Nested\n\nNested accordions are also possible, the components will figure out which `<sc-accordion>` component is the user interacting with. \n\n```html\n<sc-accordion>\n  <sc-accordion-item heading=\"Accordions can be nested too\">\n    Lorem ipsum dolor sit\n\n    <sc-accordion id=\"inner-accordion\">\n      <sc-accordion-item heading=\"Nested\">\n        Lorem ipsum dolor sit\n      </sc-accordion-item>\n\n      <sc-accordion-item heading=\"Accordions\">\n        Lorem ipsum dolor sit\n      </sc-accordion-item>\n      <sc-accordion-item heading=\"Are pretty cool\">\n        Lorem ipsum dolor sit\n      </sc-accordion-item>\n    </sc-accordion>\n\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Yayyy\"\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n</sc-accordion>\n```\n\n\n### Customise it\n\nThere are 2 slots you can use to customise each item. `slot=\"heading\"` and `slot=\"arrow\"`\n\n```html\n<sc-accordion>\n  <sc-accordion-item>\n    <div slot=\"heading\">\n      <mark>\n        Use <code>slot=\"heading\"</code> to customise heading\n      </mark>\n    </div>\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Customise arrow\">\n    <div slot=\"arrow\" style=\"text-align: center; color: red; width: 60px; height: 60px; font-size: 60px; line-height: 60px\">\n      &#10084;\n    </div>\n    Use <code>slot=\"arrow\"</code> to customise arrow\n  </sc-accordion-item>\n</sc-accordion>\n```\n"
       },
       "props": [
         {
@@ -128,7 +128,7 @@
           },
           "signature": "close() => Promise<void>",
           "parameters": [],
-          "docs": "",
+          "docs": "Closes the accordion item",
           "docsTags": []
         },
         {
@@ -139,7 +139,7 @@
           },
           "signature": "open() => Promise<void>",
           "parameters": [],
-          "docs": "",
+          "docs": "Opens the accordion item.\nExample\n```html\n<accordion-item id=\"item\">...</accordion-item>\n```\n```javascript\n  let el = document.getElementById(\"item\")\n  el.open()\n```",
           "docsTags": []
         },
         {
@@ -150,7 +150,7 @@
           },
           "signature": "toggle() => Promise<void>",
           "parameters": [],
-          "docs": "",
+          "docs": "Toggle open state of accordion item",
           "docsTags": []
         }
       ],
@@ -161,7 +161,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "",
+          "docs": "Emitted when accordion item has closed",
           "docsTags": []
         },
         {
@@ -170,7 +170,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "",
+          "docs": "Emitted when accordion item started closing",
           "docsTags": []
         },
         {
@@ -179,7 +179,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "",
+          "docs": "Emitted when accordion item has opened",
           "docsTags": []
         },
         {
@@ -188,7 +188,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "",
+          "docs": "Emitted when accordion item started opening",
           "docsTags": []
         }
       ],

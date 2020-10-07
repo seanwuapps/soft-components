@@ -10,10 +10,11 @@
     integrity="sha512-pkOzvsY+X67Lfs6Yr/dbx+utt/C90MITnkwx8X5fyKkBorWHJLlR3TmgNJs83URAR0GdejZZnjZdgYjzL/mtcQ=="
     crossorigin="anonymous" />
 
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet"
-    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+
+
   <link rel="stylesheet" href="/build/soft-components.css" />
 
   <script type="module" src="/build/soft-components.esm.js"></script>
@@ -212,44 +213,67 @@
       </sc-accordion-item>
       </sc-accordion>
       </sc-accordion-item>
-      <sc-accordion-item heading="Buttons">
+      <sc-accordion-item heading="Buttons" active>
 
         <sc-button onclick="alert('yo')">Button</sc-button>
 
-        <!-- Anchor -->
+        Anchor
         <sc-button href="/" target="_blank" rel="noreferrer" title="button">Anchor
         </sc-button>
 
-        <!-- Block level -->
+        Block
         <sc-button block>Block Button</sc-button>
 
-
-        <!-- Icon -->
-        <sc-button icon>
-          <i class="la la-home"></i>
+        Bordered
+        <sc-button bordered>
+          Bordered button
         </sc-button>
 
-        <!-- Icon and Text -->
+        Icon
+        <sc-button icon>
+          <i class='bx bx-drink'></i>
 
-        <sc-button iconText>
-          <i class="la la-home"></i>
+        </sc-button>
+
+        Bordered icon
+        <sc-button bordered icon>
+          <i class='bx bx-drink'></i>
+        </sc-button>
+
+        Circle icon
+        <sc-button icon circle>
+          <i class='bx bx-drink'></i>
+        </sc-button>
+
+        Circle
+        <sc-button circle>
+          <img src="https://github.com/seanwuapps.png" alt="avatar" width="100%">
+        </sc-button>
+
+        Circle bordered
+        <sc-button circle bordered style="--sc-button-circle-size: 100px; --sc-button-border-width: 4px;">
+          <img src="https://github.com/seanwuapps.png" alt="avatar" width="100%">
+        </sc-button>
+
+        Icon and text
+        <sc-button icon-text>
+          <i class='bx bx-drink'></i>
           Text
         </sc-button>
 
-
-        <!-- Bordered -->
-        <br><br>
-        <sc-button bordered>
-          <i class="la la-back"></i> Bordered button
+        <sc-button icon-text>
+          Text
+          <i class='bx bx-drink'></i>
         </sc-button>
-        <br><br>
+
+
         <sc-button flat>
           Flat button
         </sc-button>
 
 
       </sc-accordion-item>
-      <sc-accordion-item heading="Cards" active>
+      <sc-accordion-item heading="Cards" >
         <h2>Text based cards</h2>
         <div class="row">
           <div class="col">

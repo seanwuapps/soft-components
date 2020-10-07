@@ -1,9 +1,9 @@
 sc-button {
   /**
-    * @prop --sc-button-bg-color: Background of the button
-    * @prop --sc-button-text-color:  Button text color
-    * @prop --sc-button-border-radius:  Button border radius
-    * @prop --sc-button-padding-y:  Vertical paddings
+    * @prop --sc-button-bg-color: Background of the button. Default: `var(--sc-bg-color, #f6f6f8);`
+    * @prop --sc-button-text-color:  Button text color. Default: `var(--sc-text-color, #333333)`
+    * @prop --sc-button-border-radius:  Button border radius. Default: `var(--sc-border-radius, 1em)`
+    * @prop --sc-button-padding-y:  Vertical paddings.
     * @prop --sc-button-padding-x:  Horizontal paddings
     * @prop --sc-button-icon-size:  Icon button size
     * @prop --sc-button-bordered-border-radius:  Bordered-style border radius
@@ -12,33 +12,31 @@ sc-button {
     * @prop --sc-button-text-active-color:  Text color with active prop
     * @prop --sc-button-width:  Set fixed width for button (default to auto)
     */
+
   --sc-button-bg-color: var(--sc-bg-color, #f6f6f8);
   --sc-button-text-color: var(--sc-text-color, #333333);
   --sc-button-border-radius: var(--sc-border-radius, 1em);
-  --sc-button-padding-y: 1em;
-  --sc-button-padding-x: 2em;
-  --sc-button-icon-size: 2.5em;
+  --sc-button-padding-y: calc(var(--sc-root-spacing, 8px) * 2);
+  --sc-button-padding-x: calc(var(--sc-root-spacing, 8px) * 4);
+  --sc-button-icon-size: calc(var(--sc-root-spacing, 8px) * 6);
+  --sc-button-circle-size: calc(var(--sc-root-spacing, 8px) * 6);
   --sc-button-bordered-border-radius: var(--sc-button-border-radius);
   --sc-button-bordered-border-width: 2px;
   --sc-button-text-hover-color: var(--sc-secondary-color, #646695);
   --sc-button-text-active-color: var(--sc-active-color, #c586c0);
   --sc-button-width: auto;
-  //----------------------------//
+  --sc-button-edge-width: 4px;
+  --sc-button-vertical-align: top;
+  //-------------sc-button---------------//
   display: inline-block;
+  vertical-align: var(--sc-button-vertical-align);
   &[type] {
     -webkit-appearance: none;
-    &:focus {
-      outline: none;
-    }
   }
   * {
     box-sizing: border-box;
   }
 
-  a {
-    text-decoration: none;
-    display: inline-block;
-  }
   &:not(.flat) {
     a,
     button {
@@ -49,21 +47,21 @@ sc-button {
   button {
     cursor: pointer;
     border: none;
+    text-decoration: none;
+    display: block;
     background-color: var(--sc-button-bg-color);
     color: var(--sc-button-text-color);
     border-radius: var(--sc-button-border-radius);
     position: relative;
-    padding: 4px;
+    padding: var(--sc-button-edge-width);
     font-size: 1em;
     font-family: inherit;
     width: var(--sc-button-width);
 
-    &:focus {
-      outline: none;
-    }
     .button-inner {
+      overflow: hidden;
       transition: all 0.4s ease;
-      display: inline-block;
+      display: block;
       padding: var(--sc-button-padding-y) var(--sc-button-padding-x);
       border-radius: calc(var(--sc-button-border-radius) - 4px);
       width: var(--sc-button-width);
@@ -73,7 +71,7 @@ sc-button {
     &:focus {
       color: var(--sc-button-text-hover-color);
       .button-inner {
-        @include engraved(0.7);
+        @include engraved(0.5);
       }
     }
 
@@ -104,12 +102,11 @@ sc-button {
     button {
       width: var(--sc-button-icon-size);
       height: var(--sc-button-icon-size);
-      border-radius: 50%;
-      padding: 4px;
-      font-size: 1.6em;
+      padding: var(--sc-button-edge-width);
+      font-size: calc(var(--sc-button-icon-size) * 0.4);
+
       .button-inner {
         padding: 0;
-        border-radius: 50%;
         width: 100%;
         height: 100%;
         display: flex;
@@ -128,14 +125,16 @@ sc-button {
     a,
     button {
       position: relative;
-      padding: calc(4px + var(--sc-button-bordered-border-width));
+      padding: calc(
+        var(--sc-button-edge-width) + var(--sc-button-bordered-border-width)
+      );
       &::before {
         content: '';
         position: absolute;
-        top: 3px;
-        left: 3px;
-        bottom: 3px;
-        right: 3px;
+        top: calc(var(--sc-button-edge-width) - 1px);
+        left: calc(var(--sc-button-edge-width) - 1px);
+        bottom: calc(var(--sc-button-edge-width) - 1px);
+        right: calc(var(--sc-button-edge-width) - 1px);
         border-radius: var(--sc-button-bordered-border-radius);
         @include engraved-border-gradient();
       }
@@ -150,13 +149,38 @@ sc-button {
       button {
         --sc-button-bordered-border-radius: 50%;
         line-height: calc(
-          var(--sc-button-icon-size) - 8px -
+          var(--sc-button-icon-size) - (var(--sc-button-edge-width) * 2) -
             var(--sc-button-bordered-border-width) -
             var(--sc-button-bordered-border-width)
         );
-        .button-inner {
-          border-radius: 50%;
-        }
+      }
+    }
+  }
+  &.circle {
+    a,
+    button {
+      width: var(--sc-button-circle-size);
+      height: var(--sc-button-circle-size);
+      border-radius: 50%;
+      padding: var(--sc-button-edge-width);
+      &::before {
+        border-radius: 50%;
+      }
+      .button-inner {
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        border-radius: 50%;
+      }
+    }
+
+    &.bordered {
+      a,
+      button {
+        padding: calc(
+          var(--sc-button-edge-width) + var(--sc-button-bordered-border-width)
+        );
       }
     }
   }

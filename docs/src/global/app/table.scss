@@ -39,6 +39,7 @@ table {
     overflow: auto;
     .tr {
       padding: $spacing;
+      flex-wrap: nowrap;
       @include media(md) {
         padding: 0;
       }

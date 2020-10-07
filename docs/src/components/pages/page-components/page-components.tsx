@@ -79,8 +79,9 @@ export class PageComponents {
     }
     const name = getName(this.component);
 
-    const { usage } = this.component;
+    const { usage, methods } = this.component;
 
+    console.log({ methods });
     return (
       <Host>
         <article>
@@ -89,7 +90,7 @@ export class PageComponents {
             <h1>{name}</h1>
           </section>
           {/* Usage */}
-          {usage && (
+          {usage[tag] && (
             <section>
               <linkable-title id="usage" tag="h2">
                 Usage
@@ -158,7 +159,7 @@ export class PageComponents {
                 <div class="table">
                   <div class="table-head raised-2 sticky">
                     <div class="w-2 th">Event</div>
-                    <div class="w-4 th">Description</div>
+                    <div class="w-5 th">Description</div>
                     <div class="w-3 th">Event detail</div>
                   </div>
                   <div class="table-body engraved-1">
@@ -170,7 +171,7 @@ export class PageComponents {
                             {event.event}
                           </linkable-title>
                         </div>
-                        <div class="w-4 py-2">
+                        <div class="w-5 py-2">
                           <span class="th-mobile">Description</span>
                           <span innerHTML={md.render(event.docs)}></span>
                         </div>
@@ -185,7 +186,44 @@ export class PageComponents {
               </div>
             </section>
           )}
-          {/* Methods */}h{/* Customisation */}
+          {/* Methods */}
+          {this.component.methods.length > 0 && (
+            <section>
+              <linkable-title id="Methods" tag="h2">
+                Methods
+              </linkable-title>
+              <div class="table-container">
+                <div class="table">
+                  <div class="table-head raised-2 sticky">
+                    <div class="w-2 th">Method</div>
+                    <div class="w-5 th">Description</div>
+                    <div class="w-3 th">Signature</div>
+                  </div>
+                  <div class="table-body engraved-1">
+                    {this.component.methods.map(method => (
+                      <div class="flex tr">
+                        <div class="w-2 py-2">
+                          <span class="th-mobile">Method</span>
+                          <linkable-title id={`methods-${method.name}`} tag="code" class="method__title">
+                            {method.name}
+                          </linkable-title>
+                        </div>
+                        <div class="w-5 py-2">
+                          <span class="th-mobile">Description</span>
+                          <span innerHTML={md.render(method.docs)}></span>
+                        </div>
+                        <div class="w-3 py-2">
+                          <span class="th-mobile">Signature</span>
+                          <span innerHTML={md.render(method.signature)}></span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </section>
+          )}
+          {/* Customisation */}
           <section>
             <linkable-title id="customisation" tag="h2">
               Customisation

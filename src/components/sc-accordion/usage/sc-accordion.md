@@ -1,3 +1,5 @@
+Head over to [`sc-accordion-item`](/components/sc-accordion-item) for more details about properties, events and methods on that component.
+
 ### Single (default)
 
 By default only one `<sc-accordion-item>` element inside a `<sc-accordion>` can be expanded at any given time. When clicked on a different `<sc-accordion-item>`, the active one will be collapsed and the clicked one will be expanded.
@@ -17,6 +19,9 @@ By default only one `<sc-accordion-item>` element inside a `<sc-accordion>` can 
 ```
 
 ### Multiple
+
+There are times when you need multiple items to be open at the same time. Just add `multiple` attribute to the `<sc-accordion>` element.
+
 ```html
 <sc-accordion multiple>
   <sc-accordion-item heading="We">
@@ -32,6 +37,9 @@ By default only one `<sc-accordion-item>` element inside a `<sc-accordion>` can 
 ```
 
 ### Nested
+
+Nested accordions are also possible, the components will figure out which `<sc-accordion>` component is the user interacting with. 
+
 ```html
 <sc-accordion>
   <sc-accordion-item heading="Accordions can be nested too">
@@ -59,6 +67,9 @@ By default only one `<sc-accordion-item>` element inside a `<sc-accordion>` can 
 
 
 ### Customise it
+
+There are 2 slots you can use to customise each item. `slot="heading"` and `slot="arrow"`
+
 ```html
 <sc-accordion>
   <sc-accordion-item>
@@ -69,11 +80,11 @@ By default only one `<sc-accordion-item>` element inside a `<sc-accordion>` can 
     </div>
     Lorem ipsum dolor sit
   </sc-accordion-item>
-  <sc-accordion-item heading='Use slot="arrow" to customise arrow'>
+  <sc-accordion-item heading="Customise arrow">
     <div slot="arrow" style="text-align: center; color: red; width: 60px; height: 60px; font-size: 60px; line-height: 60px">
       &#10084;
     </div>
-    Lorem ipsum dolor sit
+    Use <code>slot="arrow"</code> to customise arrow
   </sc-accordion-item>
 </sc-accordion>
 ```

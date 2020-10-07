@@ -10,6 +10,7 @@ export class CodeBlock {
   @Element() el: HTMLElement;
   @Prop() code: string;
   @Prop() component?: JsonDocsComponent = null;
+  @Prop() hideTag?: boolean = false;
 
   @State() sourceCodeOpen: boolean = false;
   @State() themerOpen: boolean = false;
@@ -59,9 +60,13 @@ export class CodeBlock {
     return (
       <div class="raised-2 round pa-2">
         <div class="control-bar flex align-center justify-between">
-          <h5 class="mb-2">
-            <code>&lt;{tag}&gt;</code>
-          </h5>
+          {this.hideTag ? (
+            <div>&nbsp;</div>
+          ) : (
+            <h5 class="mb-2">
+              <code>&lt;{tag}&gt;</code>
+            </h5>
+          )}
 
           <div class="buttons mb-2">
             {styles.length > 0 && (

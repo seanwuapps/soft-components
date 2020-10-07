@@ -1,4 +1,5 @@
 import markdown from 'markdown-it';
+import mdAnchor from 'markdown-it-anchor';
 import hljs from 'highlight.js';
 export const md = markdown({
   html: true,
@@ -19,9 +20,9 @@ export const mdUsage = markdown({
   highlight: function (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
-        return `</code></pre><code-block code='${str}'></code-block>`;
+        return `</code></pre><code-block hide-tag code='${str}'></code-block>`;
       } catch (__) {}
     }
-    return '<code-block code="' + markdown.utils.escapeHtml(str) + '"></code-block>';
+    return '<code-block hide-tag code="' + markdown.utils.escapeHtml(str) + '"></code-block>';
   },
-});
+}).use(mdAnchor);

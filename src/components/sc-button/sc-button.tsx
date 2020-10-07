@@ -86,6 +86,11 @@ export class Button {
   @Prop() flat?: boolean = false
 
   /**
+   * Make button circle shaped
+   */
+  @Prop() circle?: boolean = false
+
+  /**
    * Emitted when the button has focus.
    */
   @Event() focusEvent!: EventEmitter<void>
@@ -124,6 +129,7 @@ export class Button {
       bordered,
       iconText,
       flat,
+      circle,
     } = this
     const TagType = href === undefined ? 'button' : 'a'
     const attrs =
@@ -144,6 +150,7 @@ export class Button {
           bordered,
           'icon-text': iconText,
           flat,
+          circle,
         }}
       >
         <TagType
