@@ -1,16 +1,47 @@
 sc-button {
   /**
-    * @prop --sc-button-bg-color: Background of the button. Default: `var(--sc-bg-color, #f6f6f8);`
-    * @prop --sc-button-text-color:  Button text color. Default: `var(--sc-text-color, #333333)`
-    * @prop --sc-button-border-radius:  Button border radius. Default: `var(--sc-border-radius, 1em)`
-    * @prop --sc-button-padding-y:  Vertical paddings.
-    * @prop --sc-button-padding-x:  Horizontal paddings
-    * @prop --sc-button-icon-size:  Icon button size
-    * @prop --sc-button-bordered-border-radius:  Bordered-style border radius
-    * @prop --sc-button-bordered-border-width:  Bordered-style border width
-    * @prop --sc-button-text-hover-color:  Text color on hover
-    * @prop --sc-button-text-active-color:  Text color with active prop
-    * @prop --sc-button-width:  Set fixed width for button (default to auto)
+    @prop --sc-button-bg-color:
+      Background of the button.
+      - default: var(--sc-bg-color, #f6f6f8)
+    @prop --sc-button-text-color:
+      Button text color.
+      - default: var(--sc-text-color, #333333)
+    @prop --sc-button-border-radius:
+      Button border radius.
+      - default: var(--sc-border-radius, 1em)
+    @prop --sc-button-padding-y:
+      Vertical paddings.
+      - default: calc(var(--sc-root-spacing, 8px) * 2)
+    @prop --sc-button-padding-x:
+      Horizontal paddings.
+      - default: calc(var(--sc-root-spacing, 8px) * 4)
+    @prop --sc-button-icon-size:
+      Icon button size.
+      - default: calc(var(--sc-root-spacing, 8px) * 6)
+    @prop --sc-button-circle-size:
+      Circle button size.
+      - default: calc(var(--sc-root-spacing, 8px) * 6)
+    @prop --sc-button-bordered-border-radius:
+      Bordered-style border radius
+      - default: var(--sc-button-border-radius)
+    @prop --sc-button-bordered-border-width:
+      Bordered-style border width
+      - default: 2px
+    @prop --sc-button-text-hover-color:
+      Text color on hover
+      - default: var(--sc-secondary-color, #646695)
+    @prop --sc-button-text-active-color:
+      Text color with active prop
+      - default: var(--sc-active-color, #c586c0)
+    @prop --sc-button-width:
+      Set fixed width for button
+      - default: auto
+    @prop --sc-button-edge-width:
+      Width of the edge
+      - default: 4px
+    @prop --sc-button-vertical-align:
+      vertical align of the button
+      - default: top
     */
 
   --sc-button-bg-color: var(--sc-bg-color, #f6f6f8);

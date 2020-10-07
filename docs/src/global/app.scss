@@ -8,9 +8,9 @@
   Any global CSS variables should also be applied here.
 */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu+Condensed&display=swap');
+@import url('//unpkg.com/boxicons@2.0.5/css/boxicons.min.css');
 
 @import '../../node_modules/soft-components/dist/soft-components/soft-components.css';
-@import '../../node_modules/boxicons/css/boxicons.min.css';
 @import '../../node_modules/simplebar/dist/simplebar.css';
 
 @import 'app/variables.scss';

@@ -11,13 +11,14 @@ export class CodeBlock {
   @Prop() code: string;
   @Prop() component?: JsonDocsComponent = null;
   @Prop() hideTag?: boolean = false;
+  @Prop() escaped?: boolean = false;
 
   @State() sourceCodeOpen: boolean = false;
   @State() themerOpen: boolean = false;
 
-  @State() styleEl: HTMLElement;
-
   @State() tempStyles: any = {};
+
+  styleEl: HTMLElement;
 
   componentDidRender() {
     if (Build.isBrowser) {
@@ -56,7 +57,10 @@ export class CodeBlock {
       return <div>Loading...</div>;
     }
     const { tag, styles } = this.component;
-
+    let { code } = this;
+    if (this.escaped) {
+      code = unescape(code);
+    }
     return (
       <div class="raised-2 round pa-2">
         <div class="control-bar flex align-center justify-between">
@@ -87,13 +91,13 @@ export class CodeBlock {
               <box-icon name="github" type="logo" color="currentColor"></box-icon>
             </sc-button>
             <codepen-link
-              html={this.code}
+              html={code}
               title="Try it in CodePen"
               pen-title={`${tag} demo - Soft Components`}
               editors="111"
               css-preprocessor="scss"
               css="body{ font-family: 'Open Sans', sans-serif; }"
-              css-external="//maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css;//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700;//unpkg.com/soft-components@latest/dist/soft-components/soft-components.css"
+              css-external="//unpkg.com/boxicons@2.0.5/css/boxicons.min.css;//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700;//unpkg.com/soft-components@latest/dist/soft-components/soft-components.css"
               js-external="//unpkg.com/soft-components@latest/dist/soft-components/soft-components.js"
             >
               <sc-button icon class="ml-2">
@@ -133,10 +137,10 @@ export class CodeBlock {
         )}
 
         <div class={`code-block ${this.sourceCodeOpen && 'open'}`}>
-          <hl-code language="html" code={this.code}></hl-code>
+          <hl-code language="html" code={code}></hl-code>
         </div>
         <style ref={el => (this.styleEl = el as HTMLElement)}></style>
-        <div class="preview" innerHTML={this.code}></div>
+        <div class="preview" innerHTML={code}></div>
       </div>
     );
   }

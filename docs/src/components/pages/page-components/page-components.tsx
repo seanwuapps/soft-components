@@ -81,7 +81,7 @@ export class PageComponents {
 
     const { usage, methods } = this.component;
 
-    console.log({ methods });
+    console.log({ usage: usage[tag] });
     return (
       <Host>
         <article>
@@ -187,7 +187,7 @@ export class PageComponents {
             </section>
           )}
           {/* Methods */}
-          {this.component.methods.length > 0 && (
+          {methods.length > 0 && (
             <section>
               <linkable-title id="Methods" tag="h2">
                 Methods
@@ -200,7 +200,7 @@ export class PageComponents {
                     <div class="w-3 th">Signature</div>
                   </div>
                   <div class="table-body engraved-1">
-                    {this.component.methods.map(method => (
+                    {methods.map(method => (
                       <div class="flex tr">
                         <div class="w-2 py-2">
                           <span class="th-mobile">Method</span>

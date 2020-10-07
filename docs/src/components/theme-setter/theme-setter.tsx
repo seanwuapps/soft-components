@@ -43,11 +43,11 @@ export class ThemeSetter {
       <Host class={`panel ${this.panelOpen ? 'in' : ''}`}>
         <div class="panel-control">
           {this.panelOpen && (
-            <sc-button icon onClick={() => this.setColor()}>
+            <sc-button class="mb-2 mr-2" icon onClick={() => this.setColor()}>
               <box-icon name="refresh" color="currentColor"></box-icon>
             </sc-button>
           )}
-          <sc-button class="ma-2" icon active={this.panelOpen} title="View current colour theme" onClick={() => (this.panelOpen = !this.panelOpen)}>
+          <sc-button class="mb-2" icon active={this.panelOpen} title="View current colour theme" onClick={() => (this.panelOpen = !this.panelOpen)}>
             {this.panelOpen ? <box-icon name="x" color="currentColor"></box-icon> : <box-icon name="palette" color="currentColor"></box-icon>}
           </sc-button>
         </div>

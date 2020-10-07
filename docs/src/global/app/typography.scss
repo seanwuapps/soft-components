@@ -88,6 +88,9 @@ body {
   code {
     padding: 0 $spacing/2;
   }
+  code-block {
+    margin-top: 0;
+  }
 }
 app-footer {
   a {
