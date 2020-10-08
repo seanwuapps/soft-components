@@ -7,10 +7,10 @@ export const md = markdown({
   highlight: function (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
-        return `</code></pre><hl-code style="margin-top: calc(-1 * var(--sc-root-spacing))" code='${str}' language="${lang}"></hl-code>`;
+        return `</code></pre><hl-code code='${str}' language="${lang}"></hl-code>`;
       } catch (__) {}
     }
-    return '<hl-code style="margin-top: calc(-1 * var(--sc-root-spacing))" code="' + markdown.utils.escapeHtml(str) + '"></hl-code>';
+    return '<hl-code code="' + markdown.utils.escapeHtml(str) + '"></hl-code>';
   },
 });
 

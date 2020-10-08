@@ -81,7 +81,7 @@ export class PageComponents {
 
     const { usage, methods } = this.component;
 
-    console.log({ usage: usage[tag] });
+    // console.log({ usage: usage[tag] });
     return (
       <Host>
         <article>
@@ -91,7 +91,7 @@ export class PageComponents {
           </section>
           {/* Usage */}
           {usage[tag] && (
-            <section>
+            <section class="usage">
               <linkable-title id="usage" tag="h2">
                 Usage
               </linkable-title>

@@ -2,7 +2,6 @@ import { Component, Prop, h, Element, State, Build } from '@stencil/core';
 import SimpleBar from 'simplebar';
 import 'codepen-link';
 import { JsonDocsComponent } from '../../../docs-data';
-import { md } from '../../helpers/md';
 @Component({
   tag: 'code-block',
   styleUrls: ['code-block.scss'],
@@ -83,14 +82,14 @@ export class CodeBlock {
           )}
 
           <div class="buttons mb-2">
+            <sc-button icon class={`${this.sourceCodeOpen && 'active'}`} title="Toggle source code" onClick={() => this.toggleSourceCode()}>
+              <box-icon name="code" color="currentColor"></box-icon>
+            </sc-button>
             {styles.length > 0 && (
-              <sc-button icon class={` ${this.themerOpen && 'active'}`} title="Toggle style sandbox" onClick={() => this.toggleThemer()}>
+              <sc-button icon class={`ml-2  ${this.themerOpen && 'active'}`} title="Toggle style sandbox" onClick={() => this.toggleThemer()}>
                 <box-icon type="solid" name="brush" color="currentColor"></box-icon>
               </sc-button>
             )}
-            <sc-button icon class={`ml-2 ${this.sourceCodeOpen && 'active'}`} title="Toggle source code" onClick={() => this.toggleSourceCode()}>
-              <box-icon name="code" color="currentColor"></box-icon>
-            </sc-button>
             <sc-button
               icon
               class="ml-2"
@@ -117,11 +116,15 @@ export class CodeBlock {
           </div>
         </div>
 
+        <div class={`code-block ${this.sourceCodeOpen && 'open'}`}>
+          <hl-code language="html" code={code}></hl-code>
+        </div>
         <div class="preview mb-2" ref={el => (this.previewEl = el as HTMLElement)} innerHTML={code}></div>
+
         {styles.length > 0 && (
           <div class={`code-block ${this.themerOpen && 'open'}`}>
-            <h4>CSS Variables</h4>
-            <p>Play with the values here and see the changes applied live.</p>
+            <h4>Styling sandbox</h4>
+            <p>Play with the CSS variables here and see the changes applied live.</p>
             <div class="style-container pa-2">
               <div class="style-list">
                 {styles.map((style, i) => {
@@ -156,10 +159,6 @@ export class CodeBlock {
             </div>
           </div>
         )}
-
-        <div class={`code-block ${this.sourceCodeOpen && 'open'}`}>
-          <hl-code language="html" code={code}></hl-code>
-        </div>
       </div>
     );
   }

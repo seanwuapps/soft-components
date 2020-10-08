@@ -40,7 +40,7 @@ h1:first-of-type {
 }
 
 p {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 ul {
@@ -52,19 +52,31 @@ ul {
     margin-left: $spacing;
   }
 }
-sc-button {
-  &[icon-text] {
-    box-icon {
-      margin-right: $spacing;
-    }
-  }
 
-  .button-inner {
-    * {
-      margin-top: 0;
-    }
+code-block {
+  margin-bottom: 1rem;
+}
+
+pre {
+  max-height: 0;
+  overflow: hidden;
+  &.hljs {
+    max-height: none;
   }
 }
+// sc-button {
+//   &[icon-text] {
+//     box-icon {
+//       margin-right: $spacing;
+//     }
+//   }
+
+//   .button-inner {
+//     * {
+//       margin-top: 0;
+//     }
+//   }
+// }
 a {
   color: var(--sc-text-color);
 }
