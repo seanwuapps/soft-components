@@ -45,7 +45,7 @@ export class AppRoot {
           <app-nav></app-nav>
         </div>
 
-        <main class="main pa-2 py-4">
+        <main class="main pa-2">
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="page-home" exact={true} />

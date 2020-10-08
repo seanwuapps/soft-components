@@ -2,6 +2,7 @@ import { Component, Prop, h, Element, State, Build } from '@stencil/core';
 import SimpleBar from 'simplebar';
 import 'codepen-link';
 import { JsonDocsComponent } from '../../../docs-data';
+import { md } from '../../helpers/md';
 @Component({
   tag: 'code-block',
   styleUrls: ['code-block.scss'],
@@ -18,13 +19,14 @@ export class CodeBlock {
 
   @State() tempStyles: any = {};
 
-  styleEl: HTMLElement;
+  previewEl: HTMLElement;
 
   componentDidRender() {
     if (Build.isBrowser) {
       this.el.querySelectorAll('.hljs').forEach(el => {
         new SimpleBar(el as HTMLElement, { autoHide: false });
       });
+      new SimpleBar(this.el.querySelector('.style-list'));
     }
   }
 
@@ -45,11 +47,18 @@ export class CodeBlock {
   }
 
   changeStyleValue(name, value) {
-    let newStyle = {};
-    newStyle[name] = value;
+    let newStyle = { ...this.tempStyles };
+    if (value.length > 0) {
+      newStyle[name] = value;
+    } else {
+      delete newStyle[name];
+    }
 
-    this.tempStyles = { ...this.tempStyles, ...newStyle };
-    this.styleEl.innerHTML = `code-block .preview ${this.component.tag} {${this.objToCSSRule(this.tempStyles)}}`;
+    this.tempStyles = { ...newStyle };
+
+    this.previewEl.querySelectorAll(this.component.tag).forEach(target => {
+      (target as HTMLElement).style.cssText = this.objToCSSRule(this.tempStyles);
+    });
   }
 
   render() {
@@ -61,6 +70,7 @@ export class CodeBlock {
     if (this.escaped) {
       code = unescape(code);
     }
+
     return (
       <div class="raised-2 round pa-2">
         <div class="control-bar flex align-center justify-between">
@@ -107,24 +117,35 @@ export class CodeBlock {
           </div>
         </div>
 
+        <div class="preview mb-2" ref={el => (this.previewEl = el as HTMLElement)} innerHTML={code}></div>
         {styles.length > 0 && (
           <div class={`code-block ${this.themerOpen && 'open'}`}>
             <h4>CSS Variables</h4>
-            <div class="flex justify-between pt-2">
-              <div class="w-5 pr-2">
+            <p>Play with the values here and see the changes applied live.</p>
+            <div class="style-container pa-2">
+              <div class="style-list">
                 {styles.map((style, i) => {
+                  const parts = style.docs.split('- default: ');
+
                   return (
-                    <div class="flex mb-2" key={i}>
-                      <label htmlFor={`style-input-${i}`} class="style-text w-5 pr-2 text-right">
-                        <code class="title">{style.name}</code>
-                        <div class="description">{style.docs}</div>
+                    <div class="mb-2" key={i}>
+                      <label htmlFor={`style-input-${i}`} class="style-text">
+                        <linkable-title id={style.name} tag="h5">
+                          <code class="title">{style.name}</code>
+                        </linkable-title>
+
+                        <div class="description">{parts[0]}</div>
+                        <div class="description">
+                          <h6>Default</h6>
+                          <code>{parts[1]}</code>
+                        </div>
                       </label>
-                      <sc-input class="w-5" type="text" id={`style-input-${i}`} onChange={e => this.changeStyleValue(style.name, e.target.value)}></sc-input>
+                      <sc-input class="style-input" type="text" id={`style-input-${i}`} onChange={e => this.changeStyleValue(style.name, e.target.value)}></sc-input>
                     </div>
                   );
                 })}
               </div>
-              <div class="w-4">
+              <div class="style-code">
                 <hl-code
                   language="css"
                   code={`${tag} {
@@ -139,8 +160,6 @@ export class CodeBlock {
         <div class={`code-block ${this.sourceCodeOpen && 'open'}`}>
           <hl-code language="html" code={code}></hl-code>
         </div>
-        <style ref={el => (this.styleEl = el as HTMLElement)}></style>
-        <div class="preview" innerHTML={code}></div>
       </div>
     );
   }

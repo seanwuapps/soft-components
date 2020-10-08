@@ -41,7 +41,6 @@ app-root {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    @include unspacing;
     .mobile-nav-trigger {
       flex-basis: 10%;
       width: 10%;

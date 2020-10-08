@@ -1,6 +1,5 @@
 code-block {
   display: block;
-  @include unspacing;
   .preview {
     margin-top: $spacing * 2;
   }
@@ -13,21 +12,40 @@ code-block {
   }
 
   .code-block {
+    position: relative;
     overflow: hidden;
     max-height: 0;
     transition: max-height 0.3s ease;
     &.open {
-      max-height: 50vh;
+      max-height: 100vh;
       overflow: auto;
-      margin-bottom: $spacing * 4;
+      margin-bottom: calc(var(--spacing) * 4);
     }
   }
-
-  .style-text {
-    .description {
-      margin-top: $spacing;
-      font-size: 14px;
-      opacity: 0.8;
+  .style-container {
+    display: flex;
+    height: 40vh;
+    overflow: hidden;
+    .style-list {
+      flex: 1;
+      flex-basis: 55%;
+      padding-right: calc(var(--spacing) * 2);
+      margin-right: calc(var(--spacing) * 2);
+    }
+    .style-code {
+      flex: 1;
+      flex-basis: 45%;
+    }
+    .style-text {
+      .title {
+        font-weight: bold;
+        font-size: 20px;
+      }
+      .description {
+        font-size: 14px;
+        opacity: 0.8;
+        margin: var(--spacing);
+      }
     }
   }
 }

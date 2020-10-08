@@ -39,5 +39,6 @@ html {
   --radius: #{$radius};
   --radius-small: #{$radius-small};
   --mobile-header-height: 80px;
+  --spacing: #{$spacing};
   --root-padding: #{$spacing * 2};
 }

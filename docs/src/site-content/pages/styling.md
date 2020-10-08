@@ -6,7 +6,7 @@ The CSS file contains helper classes that provide you with the signature neumorp
 You can control the level of the effects by adding `-0` to `-9` at the end of `.raised` class where `.raised-0` is flat nad `.raised-9` is maximum effect.
 
 
-
+```html
 <div class="flex ma-4">
   <div class="w-4">
     <div class="px-2 py-4 round raised">
@@ -80,7 +80,7 @@ You can control the level of the effects by adding `-0` to `-9` at the end of `.
     </div>
   </div>
 </div>
-
+```
 
 ## `.round`
 

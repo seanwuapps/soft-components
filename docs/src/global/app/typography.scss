@@ -1,8 +1,3 @@
-// @font-face {
-//   font-family: Quicksand;
-//   src: url('/assets/fonts/Quicksand-VF.ttf') format('truetype-variations');
-// }
-
 $title-font: 'Ubuntu Condensed', sans-serif;
 $body-font: 'Montserrat', sans-serif;
 $font-scale-ratio: 1.2;
@@ -19,79 +14,75 @@ $font-scale-ratio: 1.2;
       $value: $value * $number;
     }
   }
-
   @return $value;
 }
+
 body {
   font-family: $body-font;
   font-size: 16px;
-  p {
-    font-size: 1em;
-  }
-  @for $i from 1 through 6 {
-    h#{7-$i} {
-      font-size: #{pow($font-scale-ratio, $i)}em;
-      // font-size: #{$i * $font-scale-ratio}em;
-      font-family: $title-font;
-      @if $i < 4 {
-        line-height: 2em;
-      } @else {
-        line-height: 1.2em;
-      }
+}
+
+@for $i from 1 through 6 {
+  h#{7-$i} {
+    font-size: #{pow($font-scale-ratio, $i)}em;
+    font-family: $title-font;
+    line-height: 1.2em;
+    margin-bottom: 0.4em;
+    @if $i < 4 {
+      margin-top: 1em;
+    } @else {
+      margin-top: 0.8em;
     }
   }
 }
+h1:first-of-type {
+  margin-top: 0;
+}
 
-.main {
-  * + * {
-    margin-top: 2rem;
-  }
+p {
+  margin-bottom: 1em;
+}
 
-  pre {
-    margin-top: 0;
+ul {
+  list-style: circle;
+  li + li {
+    margin-top: $spacing;
   }
-
-  ul {
-    list-style: circle;
-    li + li {
-      margin-top: $spacing;
-    }
-    li {
-      margin-left: $spacing;
-    }
-  }
-  sc-button {
-    &[icon-text] {
-      box-icon {
-        margin-right: $spacing;
-      }
-    }
-
-    .button-inner {
-      * {
-        margin-top: 0;
-      }
-    }
-  }
-  a {
-    color: var(--sc-text-color);
-  }
-
-  [data-simplebar] {
-    .simplebar-content:before,
-    .simplebar-content:after {
-      content: none;
-    }
-    @include unspacing;
-  }
-
-  code {
-    padding: 0 $spacing/2;
-  }
-  code-block {
-    margin-top: 0;
+  li {
+    margin-left: $spacing;
   }
 }
+sc-button {
+  &[icon-text] {
+    box-icon {
+      margin-right: $spacing;
+    }
+  }
+
+  .button-inner {
+    * {
+      margin-top: 0;
+    }
+  }
+}
+a {
+  color: var(--sc-text-color);
+}
+
+[data-simplebar] {
+  .simplebar-content:before,
+  .simplebar-content:after {
+    content: none;
+  }
+}
+
+code {
+  padding: 0 $spacing/2;
+}
+code-block {
+  margin-top: 0;
+}
+
 app-footer {
   a {
     color: var(--sc-text-color);

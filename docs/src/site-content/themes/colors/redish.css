@@ -1,0 +1,8 @@
+html {
+  --sc-bg-color: #fa3467;
+  --sc-text-color: #ffffff;
+  --sc-highlight-color: rgba(255, 255, 255, 0.34);
+  --sc-shadow-color: rgba(0, 0, 0, 0.28);
+  --sc-secondary-color: #bcde0f;
+  --sc-active-color: #93a348;
+}
