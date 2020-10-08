@@ -10,4 +10,4 @@ Soft Components is a set of Web Components inspired by [Alex Plyuto](https://dri
 
 Use these components with any framework you wish or no framework at all!
 
-[Documentation](https://soft-components-docs.web.app/)
+[Documentation](https://soft.components.rocks/)
