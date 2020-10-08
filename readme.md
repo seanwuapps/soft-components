@@ -4,10 +4,44 @@
 
 # Soft components
 
-What if I told you that skeuomorphism is making a comeback?
+Like the recently popular neumorphism design?
 
-Soft Components is a set of Web Components inspired by [Alex Plyuto](https://dribbble.com/alexplyuto)'s popular [skeuomorph design](https://dribbble.com/shots/8297803-Skeuomorph-Mobile-Banking-Continuation)
+You can read more about neumorphism design in these articles:
+
+- [Neumorphism in user interfaces](https://uxdesign.cc/neumorphism-in-user-interfaces-b47cef3bf3a6)
+- [Neumorphism: why it’s all the hype in UI design](https://www.justinmind.com/blog/neumorphism-ui/)
+- [Neumorphism the right way — A 2020 Design Trend](https://medium.com/@artofofiare/neumorphism-the-right-way-a-2020-design-trend-386e6a09040a)
 
 Use these components with any framework you wish or no framework at all!
 
 [Documentation](https://soft.components.rocks/)
+
+## Getting started
+
+There are a couple of ways you can get started with Soft Components:
+
+### CDN
+
+```html
+<link rel="stylesheet" href="//unpkg.com/soft-components/dist/soft-components/soft-components.css" />
+<script type="module" src="//unpkg.com/soft-components/dist/soft-components/soft-components.esm.js"></script>
+
+<!-- For IE only -->
+<script nomodule src="//unpkg.com/soft-components/dist/soft-components/soft-components.js"></script>
+```
+
+### Install via npm
+
+```bash
+npm i soft-components
+```
+
+### JS framework integration
+
+Soft components are built with the help of [Stencil](https://stenciljs.com/).
+
+[Stencil](https://stenciljs.com/) provides a comprehensive [documentation](https://stenciljs.com/docs/overview) on how the web components can be integrated with popular JavaScript frameworks, they can be found here:
+- [Angular](https://stenciljs.com/docs/angular)
+- [React](https://stenciljs.com/docs/react)
+- [Vue](https://stenciljs.com/docs/vue)
+- [Ember](https://stenciljs.com/docs/ember) 

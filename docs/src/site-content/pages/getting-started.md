@@ -1,6 +1,6 @@
 # Getting started
 
-To start using these skeuomorphic components, you will need to include 2 files, spoiler alert, it's the `css` and `js` files
+To start using these neumorphism components, you will need to include 2 files, spoiler alert, it's the `css` and `js` files
 
 ## Installation
 
