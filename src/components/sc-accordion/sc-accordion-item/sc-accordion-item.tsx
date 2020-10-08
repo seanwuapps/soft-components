@@ -132,14 +132,6 @@ export class ScAccordionItem {
 
   /**
    * Opens the accordion item.
-   * Example
-   * ```html
-   * <accordion-item id="item">...</accordion-item>
-   * ```
-   * ```javascript
-   *  let el = document.getElementById("item")
-   *  el.open()
-   * ```
    */
   @Method()
   async open() {

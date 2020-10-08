@@ -214,7 +214,7 @@ export class PageComponents {
                         </div>
                         <div class="w-3 py-2">
                           <span class="th-mobile">Signature</span>
-                          <span innerHTML={md.render(method.signature)}></span>
+                          <code>{method.signature}</code>
                         </div>
                       </div>
                     ))}

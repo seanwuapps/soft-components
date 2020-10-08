@@ -10,7 +10,7 @@ export const md = markdown({
         return `</code></pre><hl-code code='${str}' language="${lang}"></hl-code>`;
       } catch (__) {}
     }
-    return '<hl-code code="' + markdown.utils.escapeHtml(str) + '"></hl-code>';
+    return '<hl-code code="' + escape(str) + '" language="text"></hl-code>';
   },
 });
 
@@ -23,6 +23,6 @@ export const mdUsage = markdown({
         return `</code></pre><code-block hide-tag code='${escape(str)}' escaped></code-block>`;
       } catch (__) {}
     }
-    return '<code-block hide-tag code="' + markdown.utils.escapeHtml(str) + '"></code-block>';
+    return '<code-block hide-tag code="' + escape(str) + '"></code-block>';
   },
 });

@@ -34,7 +34,7 @@ export namespace Components {
          */
         "headingTag"?: string;
         /**
-          * Opens the accordion item. Example ```html <accordion-item id="item">...</accordion-item> ``` ```javascript   let el = document.getElementById("item")   el.open() ```
+          * Opens the accordion item.
          */
         "open": () => Promise<void>;
         /**

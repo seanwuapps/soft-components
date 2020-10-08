@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-10-07T06:33:17",
+  "timestamp": "2020-10-08T06:16:02",
   "compiler": {
     "name": "@stencil/core",
     "version": "1.17.3",
@@ -147,7 +147,7 @@
           },
           "signature": "open() => Promise<void>",
           "parameters": [],
-          "docs": "Opens the accordion item.\nExample\n```html\n<accordion-item id=\"item\">...</accordion-item>\n```\n```javascript\n  let el = document.getElementById(\"item\")\n  el.open()\n```",
+          "docs": "Opens the accordion item.",
           "docsTags": []
         },
         {

@@ -6,81 +6,79 @@ The CSS file contains helper classes that provide you with the signature neumorp
 You can control the level of the effects by adding `-0` to `-9` at the end of `.raised` class where `.raised-0` is flat nad `.raised-9` is maximum effect.
 
 
-```html
 <div class="flex ma-4">
   <div class="w-4">
-    <div class="px-2 py-4 round raised">
+    <div class="px-2 py-4 mb-3 round raised">
       <span>.raised</span>
     </div>
-    <div class="px-2 py-4 round raised-0">
+    <div class="px-2 py-4 mb-3 round raised-0">
       <span>.raised-0</span>
     </div>
-    <div class="px-2 py-4 round raised-1">
+    <div class="px-2 py-4 mb-3 round raised-1">
       <span>.raised-1</span>
     </div>
-    <div class="px-2 py-4 round raised-2">
+    <div class="px-2 py-4 mb-3 round raised-2">
       <span>.raised-2</span>
     </div>
-    <div class="px-2 py-4 round raised-3">
+    <div class="px-2 py-4 mb-3 round raised-3">
       <span>.raised-3</span>
     </div>
-    <div class="px-2 py-4 round raised-4">
+    <div class="px-2 py-4 mb-3 round raised-4">
       <span>.raised-4</span>
     </div>
-    <div class="px-2 py-4 round raised-5">
+    <div class="px-2 py-4 mb-3 round raised-5">
       <span>.raised-5</span>
     </div>
-    <div class="px-2 py-4 round raised-6">
+    <div class="px-2 py-4 mb-3 round raised-6">
       <span>.raised-6</span>
     </div>
-    <div class="px-2 py-4 round raised-7">
+    <div class="px-2 py-4 mb-3 round raised-7">
       <span>.raised-7</span>
     </div>
-    <div class="px-2 py-4 round raised-8">
+    <div class="px-2 py-4 mb-3 round raised-8">
       <span>.raised-8</span>
     </div>
-    <div class="px-2 py-4 round raised-9">
+    <div class="px-2 py-4 mb-3 round raised-9">
       <span>.raised-9</span>
     </div>
   </div>
   <div class="w-1"></div>
   <div class="w-4">
-    <div class="px-2 py-4 round engraved">
+    <div class="px-2 py-4 mb-3 round engraved">
       <span>.engraved</span>
     </div>
-    <div class="px-2 py-4 round engraved-0">
+    <div class="px-2 py-4 mb-3 round engraved-0">
       <span>.engraved-0</span>
     </div>
-    <div class="px-2 py-4 round engraved-1">
+    <div class="px-2 py-4 mb-3 round engraved-1">
       <span>.engraved-1</span>
     </div>
-    <div class="px-2 py-4 round engraved-2">
+    <div class="px-2 py-4 mb-3 round engraved-2">
       <span>.engraved-2</span>
     </div>
-    <div class="px-2 py-4 round engraved-3">
+    <div class="px-2 py-4 mb-3 round engraved-3">
       <span>.engraved-3</span>
     </div>
-    <div class="px-2 py-4 round engraved-4">
+    <div class="px-2 py-4 mb-3 round engraved-4">
       <span>.engraved-4</span>
     </div>
-    <div class="px-2 py-4 round engraved-5">
+    <div class="px-2 py-4 mb-3 round engraved-5">
       <span>.engraved-5</span>
     </div>
-    <div class="px-2 py-4 round engraved-6">
+    <div class="px-2 py-4 mb-3 round engraved-6">
       <span>.engraved-6</span>
     </div>
-    <div class="px-2 py-4 round engraved-7">
+    <div class="px-2 py-4 mb-3 round engraved-7">
       <span>.engraved-7</span>
     </div>
-    <div class="px-2 py-4 round engraved-8">
+    <div class="px-2 py-4 mb-3 round engraved-8">
       <span>.engraved-8</span>
     </div>
-    <div class="px-2 py-4 round engraved-9">
+    <div class="px-2 py-4 mb-3 round engraved-9">
       <span>.engraved-9</span>
     </div>
   </div>
 </div>
-```
 
 ## `.round`
 

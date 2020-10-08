@@ -44,7 +44,7 @@ p {
 }
 
 ul {
-  list-style: circle;
+  list-style-position: inside;
   li + li {
     margin-top: $spacing;
   }
@@ -53,8 +53,9 @@ ul {
   }
 }
 
-code-block {
-  margin-bottom: 1rem;
+code-block,
+hl-code {
+  margin-bottom: 2rem;
 }
 
 pre {

@@ -17,7 +17,6 @@ table {
 }
 
 .table {
-  border-radius: var(--radius-small);
   padding: $spacing;
   .table-head {
     background: var(--sc-bg-color);
@@ -37,6 +36,9 @@ table {
     padding: $spacing;
     max-height: 40vh;
     overflow: auto;
+    border-radius: var(--radius-small);
+    border-top-left-radius: calc(var(--radius-small) / 2);
+    border-top-right-radius: calc(var(--radius-small) / 2);
     .tr {
       padding: $spacing;
       flex-wrap: nowrap;

@@ -7,7 +7,7 @@ import copy from 'copy-to-clipboard';
   styleUrl: 'hl-code.scss',
 })
 export class HlCode {
-  @Prop() language?: string;
+  @Prop() language?: string = 'text';
   @Prop() code?: string;
 
   @State() copySuccessful: boolean = false;
