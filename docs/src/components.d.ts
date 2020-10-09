@@ -14,6 +14,11 @@ export namespace Components {
     }
     interface AppLogo {
     }
+    interface AppMeta {
+        "description"?: string;
+        "image"?: string;
+        "pageTitle"?: string;
+    }
     interface AppNav {
     }
     interface AppRoot {
@@ -81,6 +86,12 @@ declare global {
     var HTMLAppLogoElement: {
         prototype: HTMLAppLogoElement;
         new (): HTMLAppLogoElement;
+    };
+    interface HTMLAppMetaElement extends Components.AppMeta, HTMLStencilElement {
+    }
+    var HTMLAppMetaElement: {
+        prototype: HTMLAppMetaElement;
+        new (): HTMLAppMetaElement;
     };
     interface HTMLAppNavElement extends Components.AppNav, HTMLStencilElement {
     }
@@ -164,6 +175,7 @@ declare global {
         "app-footer": HTMLAppFooterElement;
         "app-header": HTMLAppHeaderElement;
         "app-logo": HTMLAppLogoElement;
+        "app-meta": HTMLAppMetaElement;
         "app-nav": HTMLAppNavElement;
         "app-root": HTMLAppRootElement;
         "code-block": HTMLCodeBlockElement;
@@ -185,6 +197,11 @@ declare namespace LocalJSX {
     interface AppHeader {
     }
     interface AppLogo {
+    }
+    interface AppMeta {
+        "description"?: string;
+        "image"?: string;
+        "pageTitle"?: string;
     }
     interface AppNav {
     }
@@ -239,6 +256,7 @@ declare namespace LocalJSX {
         "app-footer": AppFooter;
         "app-header": AppHeader;
         "app-logo": AppLogo;
+        "app-meta": AppMeta;
         "app-nav": AppNav;
         "app-root": AppRoot;
         "code-block": CodeBlock;
@@ -261,6 +279,7 @@ declare module "@stencil/core" {
             "app-footer": LocalJSX.AppFooter & JSXBase.HTMLAttributes<HTMLAppFooterElement>;
             "app-header": LocalJSX.AppHeader & JSXBase.HTMLAttributes<HTMLAppHeaderElement>;
             "app-logo": LocalJSX.AppLogo & JSXBase.HTMLAttributes<HTMLAppLogoElement>;
+            "app-meta": LocalJSX.AppMeta & JSXBase.HTMLAttributes<HTMLAppMetaElement>;
             "app-nav": LocalJSX.AppNav & JSXBase.HTMLAttributes<HTMLAppNavElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "code-block": LocalJSX.CodeBlock & JSXBase.HTMLAttributes<HTMLCodeBlockElement>;

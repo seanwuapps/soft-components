@@ -9,8 +9,11 @@ export const buildComponentNavArray: () => NavItem[] = function () {
   }));
 };
 
+export const ucfirst = (str: string) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
 export const getKey = (component: JsonDocsComponent) => component.tag.replace('sc-', '');
-export const getName = (component: JsonDocsComponent) => getKey(component).replace(new RegExp('-', 'g'), ' ');
+export const getName = (component: JsonDocsComponent) => ucfirst(getKey(component).replace(new RegExp('-', 'g'), ' '));
 
 export const hasSlot: (HTMLElement, string?) => boolean = (parentEl: HTMLElement, slotName?: string) => {
   return !!parentEl.querySelector(':scope > [slot="' + slotName + '"'); // cast boolean
