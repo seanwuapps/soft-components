@@ -1,4 +1,6 @@
+<div class="intro">
 Head over to [`sc-accordion-item`](/components/sc-accordion-item) for more details about properties, events and methods on that component.
+</div>
 
 ### Single (default)
 
@@ -9,7 +11,7 @@ By default only one `<sc-accordion-item>` element inside a `<sc-accordion>` can 
   <sc-accordion-item heading="I" active>
     Add <code>active</code> attribute to open an item by default.
   </sc-accordion-item>
-  <sc-accordion-item heading=" Am">
+  <sc-accordion-item heading="Am">
     Lorem ipsum dolor sit
   </sc-accordion-item>
   <sc-accordion-item heading="Groot">

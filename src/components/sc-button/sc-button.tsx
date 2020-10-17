@@ -144,6 +144,7 @@ export class Button {
     return (
       <Host
         aria-disabled={disabled ? 'true' : null}
+        role="button"
         class={{
           icon,
           block,

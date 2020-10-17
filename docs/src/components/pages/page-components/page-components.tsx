@@ -225,14 +225,6 @@ export class PageComponents {
               </div>
             </section>
           )}
-          {/* Customisation */}
-          <section>
-            <linkable-title id="customisation" tag="h2">
-              Customisation
-            </linkable-title>
-            <h6>How should you customise this component?</h6>
-            <div class="mt-1">{this.component.encapsulation === 'shadow' ? 'CSS variables only' : 'All styles can be overridden with CSS'}</div>
-          </section>
         </article>
 
         {/* comments */}
