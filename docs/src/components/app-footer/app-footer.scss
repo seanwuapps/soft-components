@@ -1,13 +1,7 @@
 app-footer {
-  .sw-link {
-    margin: $spacing * 4 auto;
-    display: block;
-    width: auto;
-    text-align: center;
-    seanwu-logo {
-      --seanwu-logo-size: #{$spacing * 4};
-      --seanwu-logo-bg-color: var(--sc-shadow-color);
-      --seanwu-logo-fg-color: var(--sc-highlight-color);
-    }
+  seanwu-logo {
+    --seanwu-logo-size: #{$spacing * 4};
+    --seanwu-logo-bg-color: var(--sc-shadow-color);
+    --seanwu-logo-fg-color: var(--sc-highlight-color);
   }
 }

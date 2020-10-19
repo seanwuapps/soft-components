@@ -232,11 +232,11 @@ export class PageComponents {
           <h4>Comments</h4>
           <p>
             Leave your thoughts here and it becomes a GitHub issue! Thanks to the magic of{' '}
-            <a href="https://utteranc.es" target="_blank">
+            <a href="https://utteranc.es" target="_blank" rel="noopener noreferrer">
               Utterances
             </a>
           </p>
-          <div class="mt-4 pa-2 engraved-2 round">
+          <div class="mt-2">
             <utterances-div
               repo="seanwuapps/soft-components"
               issue-term="pathname"

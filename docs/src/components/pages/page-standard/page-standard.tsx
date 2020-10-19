@@ -25,7 +25,6 @@ export class PageStandard {
   @Watch('match')
   async loadPage() {
     const { page } = this.match.params;
-    console.log({ page });
 
     this.loading = true;
     try {

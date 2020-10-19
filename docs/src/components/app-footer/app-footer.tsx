@@ -17,7 +17,7 @@ export class AppFooter {
             </sc-button>
           </div>
         </div>
-        <div>
+        <div class="text-center mt-4">
           <a href="https://seanwuapps.com" target="_blank" rel="noreferrer" class="sw-link">
             <seanwu-logo></seanwu-logo>
           </a>
