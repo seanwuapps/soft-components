@@ -151,6 +151,13 @@ export class Input implements ComponentInterface {
    */
   @Prop() block?: boolean = false
 
+
+  /**
+   * Label for input
+   */
+  @Prop() label?: string
+
+
   /**
    * Emitted when a keyboard input occurred.
    */
@@ -239,20 +246,10 @@ export class Input implements ComponentInterface {
     return this.getValue().length > 0
   }
 
-  render() {
+  renderInput(){
     const value = this.getValue()
-
     const engravedLevel = this.focused ? this.engraved + 1 : this.engraved
-    return (
-      <Host
-        aria-disabled={this.disabled ? 'true' : null}
-        class={{
-          'has-value': this.hasValue(),
-          'has-error': this.error.length > 0,
-          block: this.block,
-        }}
-      >
-        <input
+    return <input
           class={`engraved-${engravedLevel}`}
           ref={input => (this.nativeInput = input)}
           aria-labelledby={this.ariaLabelledby}
@@ -283,7 +280,23 @@ export class Input implements ComponentInterface {
           onKeyDown={this.onKeydown}
           onChange={e => this.changeEvent.emit(e)}
         />
+  }
 
+
+  render() {
+    return (
+      <Host
+        aria-disabled={this.disabled ? 'true' : null}
+        class={{
+          'has-value': this.hasValue(),
+          'has-error': this.error.length > 0,
+          block: this.block,
+        }}
+      >
+        {this.label ? <label class="label">
+          {this.label}
+          {this.renderInput()}
+        </label> : this.renderInput() }
         {this.error && this.error.length > 0 && (
           <div class="error-message">{this.error}</div>
         )}

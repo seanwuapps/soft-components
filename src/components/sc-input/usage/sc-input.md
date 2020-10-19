@@ -13,30 +13,21 @@ This component passes the `type` attribute to the native `<input>` element used 
 
 There are input types that has dedicated components for them. Here's a list of input types and the component we recommend you use. 
 
-- Buttons: (`type="button"` | `type="submit"` | `type="reset"`) use `sc-button`
-- Checkbox: (`type="checkbox"`) use `sc-toggle` (or `sc-switch` in future)
+- Buttons: `sc-button`
+- Color: `sc-color`
 - File: coming soon 
-- Radio: coming soon 
-- Color: coming soon 
 - Range: coming soon
-- 
 
 
 ```html
-<form method="post" action="/">
-  <label for="email">Email</label>
-  <sc-input type="email" required name="email" id="email"></sc-input>
+<form method="get" action="/">
+  <sc-input class="mb-2" block label="Email" type="email" required name="email" id="email"></sc-input>
 
-  <hr />
-  
-  <label for="password">Password</label>
-  <sc-input type="password" required name="password" maxlength="6" id="password">
+  <sc-input class="mb-2" block label="Password" type="password" required name="password" maxlength="6" id="password">
   </sc-input>
-  
-  <hr />
 
-  <sc-button type="submit">
-   Submit
+  <sc-button block type="submit" style="--sc-button-bg-color: #333; --sc-button-text-color: #fff;">
+    Submit
   </sc-button>
 </form>
 ```

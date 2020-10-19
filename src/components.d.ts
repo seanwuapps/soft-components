@@ -125,6 +125,12 @@ export namespace Components {
     | 'end' // responsive bottom right
     | undefined;
   }
+  interface ScColor {
+    /**
+    * Label for input
+    */
+    'label'?: string;
+  }
   interface ScInput {
     /**
     * If the value of the type attribute is `"file"`, then this attribute will indicate the types of files that the server accepts, otherwise it will be ignored. The value must be a comma-separated list of unique content type specifiers.
@@ -177,6 +183,10 @@ export namespace Components {
     | 'numeric'
     | 'decimal'
     | 'search';
+    /**
+    * Label for input
+    */
+    'label'?: string;
     /**
     * The maximum value, which must not be less than its minimum (min attribute) value.
     */
@@ -328,6 +338,12 @@ declare global {
     new (): HTMLScCardElement;
   };
 
+  interface HTMLScColorElement extends Components.ScColor, HTMLStencilElement {}
+  var HTMLScColorElement: {
+    prototype: HTMLScColorElement;
+    new (): HTMLScColorElement;
+  };
+
   interface HTMLScInputElement extends Components.ScInput, HTMLStencilElement {}
   var HTMLScInputElement: {
     prototype: HTMLScInputElement;
@@ -362,6 +378,7 @@ declare global {
     'sc-accordion-item': HTMLScAccordionItemElement;
     'sc-button': HTMLScButtonElement;
     'sc-card': HTMLScCardElement;
+    'sc-color': HTMLScColorElement;
     'sc-input': HTMLScInputElement;
     'sc-tab-button': HTMLScTabButtonElement;
     'sc-tab-content': HTMLScTabContentElement;
@@ -502,6 +519,12 @@ declare namespace LocalJSX {
     | 'end' // responsive bottom right
     | undefined;
   }
+  interface ScColor {
+    /**
+    * Label for input
+    */
+    'label'?: string;
+  }
   interface ScInput {
     /**
     * If the value of the type attribute is `"file"`, then this attribute will indicate the types of files that the server accepts, otherwise it will be ignored. The value must be a comma-separated list of unique content type specifiers.
@@ -550,6 +573,10 @@ declare namespace LocalJSX {
     | 'numeric'
     | 'decimal'
     | 'search';
+    /**
+    * Label for input
+    */
+    'label'?: string;
     /**
     * The maximum value, which must not be less than its minimum (min attribute) value.
     */
@@ -714,6 +741,7 @@ declare namespace LocalJSX {
     'sc-accordion-item': ScAccordionItem;
     'sc-button': ScButton;
     'sc-card': ScCard;
+    'sc-color': ScColor;
     'sc-input': ScInput;
     'sc-tab-button': ScTabButton;
     'sc-tab-content': ScTabContent;
@@ -732,6 +760,7 @@ declare module "@stencil/core" {
       'sc-accordion-item': LocalJSX.ScAccordionItem & JSXBase.HTMLAttributes<HTMLScAccordionItemElement>;
       'sc-button': LocalJSX.ScButton & JSXBase.HTMLAttributes<HTMLScButtonElement>;
       'sc-card': LocalJSX.ScCard & JSXBase.HTMLAttributes<HTMLScCardElement>;
+      'sc-color': LocalJSX.ScColor & JSXBase.HTMLAttributes<HTMLScColorElement>;
       'sc-input': LocalJSX.ScInput & JSXBase.HTMLAttributes<HTMLScInputElement>;
       'sc-tab-button': LocalJSX.ScTabButton & JSXBase.HTMLAttributes<HTMLScTabButtonElement>;
       'sc-tab-content': LocalJSX.ScTabContent & JSXBase.HTMLAttributes<HTMLScTabContentElement>;
