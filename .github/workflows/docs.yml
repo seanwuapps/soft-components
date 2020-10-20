@@ -2,21 +2,19 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
 name: Docs CI
-
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
 
+defaults:
+  run:
+    working-directory: ./docs
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
-    
-    env: 
-      working-directory: ./docs
 
-   
     strategy:
       matrix:
         node-version: [10.x, 12.x, 14.x]
@@ -29,4 +27,3 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run deploy
-    - working-directory: ${{ env.working-directory }}
