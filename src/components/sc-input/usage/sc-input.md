@@ -32,6 +32,21 @@ There are input types that has dedicated components for them. Here's a list of i
 </form>
 ```
 
+You can set `engraved` level for individual inputs
+
+```html
+<sc-input engraved="1" label="Input" type="text" name="text"></sc-input>
+<sc-input engraved="2" label="Input" type="text" name="text"></sc-input>
+<sc-input engraved="3" label="Input" type="text" name="text"></sc-input>
+```
+
+
+Add the `block` attribute to make it take the full width
+```html
+<sc-input block label="Input" type="text" name="text"></sc-input>
+```
+
+
 <div class="mb-5">
   checkbox
   <sc-input type="checkbox">

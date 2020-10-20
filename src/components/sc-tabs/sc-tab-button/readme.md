@@ -7,13 +7,13 @@
 
 ## Properties
 
-| Property              | Attribute  | Description                                                                                       | Type      | Default     |
-| --------------------- | ---------- | ------------------------------------------------------------------------------------------------- | --------- | ----------- |
-| `active`              | `active`   | When prop is set, this tab is shown, only one `<sc-tab>` element can be active inside `<sc-tabs>` | `boolean` | `undefined` |
-| `block`               | `block`    | The button shape.                                                                                 | `boolean` | `false`     |
-| `bordered`            | `bordered` | If prop exists, button will have an engraved-styled border                                        | `boolean` | `false`     |
-| `icon`                | `icon`     | Icon only button                                                                                  | `boolean` | `false`     |
-| `target` _(required)_ | `target`   | id of the target `sc-tab-content` tag                                                             | `string`  | `undefined` |
+| Property   | Attribute  | Description                                                                                       | Type      | Default     |
+| ---------- | ---------- | ------------------------------------------------------------------------------------------------- | --------- | ----------- |
+| `active`   | `active`   | When prop is set, this tab is shown, only one `<sc-tab>` element can be active inside `<sc-tabs>` | `boolean` | `false`     |
+| `block`    | `block`    | The button shape.                                                                                 | `boolean` | `false`     |
+| `bordered` | `bordered` | If prop exists, button will have an engraved-styled border                                        | `boolean` | `false`     |
+| `icon`     | `icon`     | Icon only button                                                                                  | `boolean` | `false`     |
+| `target`   | `target`   | id of the target `sc-tab-content` tag                                                             | `string`  | `undefined` |
 
 
 ## Events
@@ -51,7 +51,7 @@ Type: `Promise<void>`
 
 ### Depends on
 
-- [sc-button](../button)
+- [sc-button](../../sc-button)
 
 ### Graph
 ```mermaid

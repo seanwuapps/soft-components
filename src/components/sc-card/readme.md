@@ -7,24 +7,115 @@
 
 ## Usage
 
-### Card
+### Sc-card
+
+<div class="intro">
+  A card contains a set of relevant content on a single topic.
+</div>
+
+## Text based cards
+
+Card's content can be added into the card via the default slot. `card-title` and `card-subtitle` properties are available to add styled card heading.
+
+Add `engraved` to make the card appear to be sunk into the surface.
+
+Add `bordered` to give the card a border that's reflective to the light source.
 
 ```html
-<sc-card card-title="Card Title" card-subtitle="Subtitle, or description"></sc-card>
-<sc-card engraved card-title="Card Title" card-subtitle="Subtitle, or description"></sc-card>
-<sc-card bordered card-title="Card Title" card-subtitle="Subtitle, or description"></sc-card>
+<sc-card class="ma-4" card-title="Card" card-subtitle="I'm normal card">
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis
+</sc-card>
+<sc-card class="ma-4" engraved card-title="Card" card-subtitle="I'm engraved card">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis
+</sc-card>
+<sc-card class="ma-4" bordered card-title="Card" card-subtitle="I'm bordered card">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum
+</sc-card>
+```
+
+<h2>Media cards</h2>
+
+`slot="media-content"` can be used inside the card element to show featured media.
+
+```html
+<sc-card class="ma-4" card-title="Top media" card-subtitle="5 Feb 2020" media-position="top">
+  <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
+  <div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
+  </div>
+</sc-card>
+<sc-card class="ma-4" card-title="Bottom media" card-subtitle="5 Feb 2020" media-position="bottom">
+  <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
+  <div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
+  </div>
+</sc-card>
+<sc-card class="ma-4" card-title="Left media" card-subtitle="5 Feb 2020" media-position="left">
+  <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
+  <div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
+  </div>
+</sc-card>
+<sc-card class="ma-4" card-title="Right media" card-subtitle="5 Feb 2020" media-position="right">
+  <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
+  <div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
+  </div>
+</sc-card>
+```
+
+
+## Customise card title
+
+Card heading section can be customised with the `custom-title` slot. 
+
+```html
+<sc-card class="ma-4">
+  <div slot="custom-title">
+    <div>
+      <mark>Customise title with <code>slot="custom-title"</code></mark>
+    </div>
+    <div>
+      <marquee>Go bananas inside the slot <img
+          src="https://ph-files.imgix.net/caf5608a-67ec-4f9f-acb5-db0052c33bed?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=80&h=80"
+          alt="party parrot" width="20"></marquee>
+    </div>
+  </div>
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, modi animi possimus fugiat accusamus vitae tempore suscipit asperiores eum cum nihil amet natus impedit iure
+</sc-card>
 ```
 
 
 
 ## Properties
 
-| Property       | Attribute       | Description                                                      | Type      | Default     |
-| -------------- | --------------- | ---------------------------------------------------------------- | --------- | ----------- |
-| `bordered`     | `bordered`      | If this card has bordered style                                  | `boolean` | `false`     |
-| `cardSubtitle` | `card-subtitle` | Subtitle of the card                                             | `string`  | `undefined` |
-| `cardTitle`    | `card-title`    | Title of the card                                                | `string`  | `undefined` |
-| `engraved`     | `engraved`      | if true, card will appear engraved instead of raised by default. | `boolean` | `false`     |
+| Property        | Attribute        | Description                                                      | Type                                                         | Default     |
+| --------------- | ---------------- | ---------------------------------------------------------------- | ------------------------------------------------------------ | ----------- |
+| `bordered`      | `bordered`       | If this card has bordered style                                  | `boolean`                                                    | `false`     |
+| `cardSubtitle`  | `card-subtitle`  | Subtitle of the card                                             | `string`                                                     | `undefined` |
+| `cardTitle`     | `card-title`     | Title of the card                                                | `string`                                                     | `undefined` |
+| `engraved`      | `engraved`       | if true, card will appear engraved instead of raised by default. | `boolean`                                                    | `false`     |
+| `mediaPosition` | `media-position` |                                                                  | `"bottom" \| "end" \| "left" \| "right" \| "start" \| "top"` | `null`      |
+
+
+## CSS Custom Properties
+
+| Name                              | Description                                                                                                             |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `--sc-card-bg-color`              | Background color of card.                                                                                               |
+| `--sc-card-bordered-width`        | Card border width (only applicable for bordered cards)                                                                  |
+| `--sc-card-inner-padding-y`       | Padding between title section and content section                                                                       |
+| `--sc-card-media-height`          | height of media part of the card                                                                                        |
+| `--sc-card-media-object-position` | [object-position rule](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position) for the media. default: center |
+| `--sc-card-media-width`           | width of media part of the card                                                                                         |
+| `--sc-card-outer-padding-x`       | Horizontal outer padding of card. Default: calc(var(--sc-root-spacing) * 4);                                            |
+| `--sc-card-outer-padding-y`       | Vertical outer padding of card. Default: calc(var(--sc-root-spacing) * 4);                                              |
+| `--sc-card-subtitle-font-size`    | Subtitle font size                                                                                                      |
+| `--sc-card-subtitle-font-weight`  | Subtitle font weight                                                                                                    |
+| `--sc-card-subtitle-text-color`   | Subtitle text color                                                                                                     |
+| `--sc-card-title-font-size`       | Title text font size.                                                                                                   |
+| `--sc-card-title-font-weight`     | Title font weight                                                                                                       |
+| `--sc-card-title-text-color`      | Title text color                                                                                                        |
 
 
 ----------------------------------------------

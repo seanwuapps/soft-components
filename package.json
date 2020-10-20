@@ -21,11 +21,12 @@
     "loader/"
   ],
   "scripts": {
-    "build": "stencil build --docs-json",
     "patch": "npm run commit & npm version patch & npm publish",
     "minor": "npm run commit & npm version minor & npm publish",
     "major": "npm run commit & npm version major & npm publish",
     "build-readme": "stencil build --docs-readme",
+    "build-json": "stencil build --docs-json",
+    "build": "stencil build --docs-readme & stencil build --docs-json",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",

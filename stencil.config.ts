@@ -16,6 +16,7 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
     { type: "docs-json", file: "docs/docs-data.json" },
+    { type: "docs-readme" },
   ],
   globalStyle: "src/global/app.scss",
   plugins: [
