@@ -32,7 +32,7 @@ jobs:
         run: npm i
 
       - name: Build
-        run: npm run build
+        run: npm run build-json
 
       # - run: npm run test
 
@@ -43,6 +43,7 @@ jobs:
           name: components-build
           path: |
             dist
+            docs/docs-data.json
   # publish-new-version:
   #   runs-on: ubuntu-latest
   #   steps:
