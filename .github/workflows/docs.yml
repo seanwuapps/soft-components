@@ -31,8 +31,11 @@ jobs:
       - name: Install dependencies
         run: npm i
 
+      - name: Build
+        run: npm run build
+
       # - run: npm run test
-      - run: npm run build
+
       # keep dist folder for further use
       - name: Archive production artifacts
         uses: actions/upload-artifact@v2
