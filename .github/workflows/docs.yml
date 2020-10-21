@@ -26,7 +26,7 @@ jobs:
       #     path: |
       #       **/node_modules
       #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - run: npm run test
+      # - run: npm run test
       - run: npm run build
       # keep dist folder for further use
       - name: Archive production artifacts
