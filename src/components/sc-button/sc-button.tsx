@@ -15,7 +15,7 @@ import {
   styleUrl: 'sc-button.scss',
   // shadow: true // disabled for form submission
 })
-export class Button {
+export class ScButton {
   @Element() el!: HTMLElement
 
   /**

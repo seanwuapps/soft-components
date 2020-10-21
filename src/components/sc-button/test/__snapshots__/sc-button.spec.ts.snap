@@ -76,3 +76,80 @@ exports[`button should render icon-only button when icon prop is applied 1`] = `
   </button>
 </sc-button>
 `;
+
+exports[`sc-button should render a combination of different styles when props are applied 1`] = `
+<sc-button bordered="" class="bordered icon" icon="" role="button">
+  <!---->
+  <button type="button">
+    <span class="button-inner">
+      Button
+    </span>
+  </button>
+</sc-button>
+`;
+
+exports[`sc-button should render a combination of different styles when props are applied 2`] = `
+<sc-button block="" bordered="" class="block bordered" role="button">
+  <!---->
+  <button type="button">
+    <span class="button-inner">
+      Button
+    </span>
+  </button>
+</sc-button>
+`;
+
+exports[`sc-button should render a tag when href is applied 1`] = `
+<sc-button download="" href="#" rel="noreferrer" role="button" target="_blank">
+  <!---->
+  <a download="" href="#" rel="noreferrer" target="_blank">
+    <span class="button-inner">
+      button
+    </span>
+  </a>
+</sc-button>
+`;
+
+exports[`sc-button should render block button when block prop is applied 1`] = `
+<sc-button block="" class="block" role="button">
+  <!---->
+  <button type="button">
+    <span class="button-inner">
+      button
+    </span>
+  </button>
+</sc-button>
+`;
+
+exports[`sc-button should render bordered button when bordered prop is applied 1`] = `
+<sc-button bordered="" class="bordered" role="button">
+  <!---->
+  <button type="button">
+    <span class="button-inner">
+      Button
+    </span>
+  </button>
+</sc-button>
+`;
+
+exports[`sc-button should render default button 1`] = `
+<sc-button role="button">
+  <!---->
+  <button type="button">
+    <span class="button-inner">
+      button
+    </span>
+  </button>
+</sc-button>
+`;
+
+exports[`sc-button should render icon-only button when icon prop is applied 1`] = `
+<sc-button class="icon" icon="" role="button">
+  <!---->
+  <button type="button">
+    <span class="button-inner">
+      I
+    </span>
+  </button>
+</sc-button>
+`;
