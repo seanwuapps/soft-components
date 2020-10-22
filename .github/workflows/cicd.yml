@@ -13,13 +13,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout codebase
+        uses: actions/checkout@v2
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
           node-version: '12'
 
-      - name: Cache node modules
+      - name: Cache node_modules
         uses: actions/cache@v2
         env:
           cache-name: cache-node-modules
@@ -31,7 +32,7 @@ jobs:
       - name: Install dependencies
         run: npm i
 
-      - name: Build
+      - name: Build components
         run: npm run build-json
 
       # - run: npm run test
@@ -45,9 +46,20 @@ jobs:
       #       dist
       #       docs/docs-data.json
 
-      # Publish if version number changes
-      - uses: JS-DevTools/npm-publish@v1
+      - name: Publish package (if version changes)
+        uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_PUBLISH_TOKEN }}
-      # Buidl docs site
+      # Build docs site
+      - name: Install docs site dependencies
+        run: npm i
+        working-directory: ./docs
+
+      - name: Build docs site
+        run: npm run deploy
+        working-directory: ./docs
+
+      - name: Deploy docs site
+        run: ./node_modules/.bin/firebase deploy --token "${{ secrets.FIREBASE_TOKEN }}"
+        working-directory: ./docs
 
