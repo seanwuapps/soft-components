@@ -56,7 +56,7 @@ jobs:
         working-directory: ./docs
 
       - name: Build docs site
-        run: npm run deploy
+        run: ./node_modules/.bin/stencil build --prerender
         working-directory: ./docs
 
       - name: Deploy docs site
