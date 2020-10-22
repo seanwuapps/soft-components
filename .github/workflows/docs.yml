@@ -2,9 +2,9 @@ name: Doc site build
 
 on:
   push:
-    branches: [ frontend-develop ]
+    branches: [ master ]
   pull_request:
-    branches: [ frontend-develop ]
+    branches: [ master ]
 
 defaults:
   run:
