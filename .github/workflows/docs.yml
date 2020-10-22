@@ -8,7 +8,7 @@ on:
 
 defaults:
   run:
-    working-directory: web
+    working-directory: docs
 
 jobs:
   build:
@@ -35,7 +35,7 @@ jobs:
         run: npm i
 
       - name: Build docs site
-        run: npm run build
+        run: npm run build --prerender
 
       - name: Deploy docs site
         run: ./node_modules/.bin/firebase deploy --token "${{ secrets.FIREBASE_TOKEN }}"
