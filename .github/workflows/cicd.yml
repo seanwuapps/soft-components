@@ -48,6 +48,8 @@ jobs:
 
       - name: Publish package (if version changes)
         uses: JS-DevTools/npm-publish@v1
+        env:
+          INPUT_TOKEN: ""
         with:
           token: ${{ secrets.NPM_PUBLISH_TOKEN }}
       # Build docs
