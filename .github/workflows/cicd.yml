@@ -50,3 +50,15 @@ jobs:
         uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_PUBLISH_TOKEN }}
+      # Build docs
+      - name: Install docs site dependencies
+        working-directory: docs
+        run: npm i
+
+      - name: Build docs site
+        working-directory: docs
+        run: npm run build --prerender
+
+      - name: Deploy docs site
+        working-directory: docs
+        run: ./node_modules/.bin/firebase deploy --token "${{ secrets.FIREBASE_TOKEN }}"
