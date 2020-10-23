@@ -63,8 +63,6 @@ jobs:
         env:
           INPUT_TOKEN: ""
 
-      - name: test
-        run: ls -al ./docs
-
       - name: Deploy docs site
-        run: ./docs/node_modules/.bin/firebase deploy --token "${{ secrets.FIREBASE_TOKEN }}"
+        working-directory: docs
+        run: ./node_modules/.bin/firebase deploy --token "${{ secrets.FIREBASE_TOKEN }}"
