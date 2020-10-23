@@ -52,12 +52,11 @@ jobs:
           token: ${{ secrets.NPM_PUBLISH_TOKEN }}
       # Build docs
       - name: Install docs site dependencies
-        working-directory: docs
-        run: npm i
+        run: cd docs & npm i
 
       - name: Build docs site
         working-directory: docs
-        run: npm run build --prerender
+        run: cd docs & npm run build --prerender
 
       - name: test
         run: ls -al ./docs
