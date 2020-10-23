@@ -48,17 +48,20 @@ jobs:
 
       - name: Publish package (if version changes)
         uses: JS-DevTools/npm-publish@v1
-        env:
-          INPUT_TOKEN: ""
         with:
           token: ${{ secrets.NPM_PUBLISH_TOKEN }}
       # Build docs
       - name: Install docs site dependencies
-        run: cd docs & npm i
+        run: npm i
+        working-directory: docs
+        env:
+          INPUT_TOKEN: ""
 
       - name: Build docs site
+        run: npm run build --prerender
         working-directory: docs
-        run: cd docs & npm run build --prerender
+        env:
+          INPUT_TOKEN: ""
 
       - name: test
         run: ls -al ./docs
