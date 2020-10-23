@@ -28,25 +28,25 @@ Add `bordered` to give the card a border that's reflective to the light source.
 
 ```html
 <sc-card class="ma-4" card-title="Top media" card-subtitle="5 Feb 2020" media-position="top">
-  <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
+  <img slot="media-content" src="https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg" alt="photo">
   <div>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
   </div>
 </sc-card>
 <sc-card class="ma-4" card-title="Bottom media" card-subtitle="5 Feb 2020" media-position="bottom">
-  <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
+  <img slot="media-content" src="https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg" alt="photo">
   <div>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
   </div>
 </sc-card>
 <sc-card class="ma-4" card-title="Left media" card-subtitle="5 Feb 2020" media-position="left">
-  <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
+  <img slot="media-content" src="https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg" alt="photo">
   <div>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
   </div>
 </sc-card>
 <sc-card class="ma-4" card-title="Right media" card-subtitle="5 Feb 2020" media-position="right">
-  <img slot="media-content" src="http://lorempixel.com/600/400/nature/5/" alt="photo">
+  <img slot="media-content" src="https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg" alt="photo">
   <div>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro
   </div>
