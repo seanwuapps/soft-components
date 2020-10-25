@@ -76,3 +76,8 @@
     }
   }
 }
+
+@mixin transition($prop) {
+  transition: $prop var(--sc-animation-duration, 0.3s)
+    var(--sc-animation-timing-function, ease);
+}

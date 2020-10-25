@@ -12,6 +12,6 @@ html {
   --sc-secondary-color: #646695;
   --sc-active-color: #3ab877;
   /* animation */
-  --sc-animation-duration: 0.2s;
+  --sc-animation-duration: 0.3s;
   --sc-animation-timing-function: ease;
 }

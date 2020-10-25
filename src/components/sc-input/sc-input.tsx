@@ -242,6 +242,10 @@ export class Input implements ComponentInterface {
     this.keyDownEvent.emit()
   }
 
+  private onChange = (e) => {
+    this.changeEvent.emit(e)
+  }
+
   private hasValue(): boolean {
     return this.getValue().length > 0
   }
@@ -249,7 +253,7 @@ export class Input implements ComponentInterface {
   renderInput(){
     const value = this.getValue()
     const engravedLevel = this.focused ? this.engraved + 1 : this.engraved
-    return <input
+    return <span><input
           class={`engraved-${engravedLevel}`}
           ref={input => (this.nativeInput = input)}
           aria-labelledby={this.ariaLabelledby}
@@ -278,8 +282,12 @@ export class Input implements ComponentInterface {
           onBlur={this.onBlur}
           onFocus={this.onFocus}
           onKeyDown={this.onKeydown}
-          onChange={e => this.changeEvent.emit(e)}
+          onChange={this.onChange}
         />
+        {
+          this.type === 'radio' ? <span class="after"></span> : null
+        }
+        </span>
   }
 
 

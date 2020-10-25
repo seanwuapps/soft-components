@@ -1,7 +1,4 @@
 sc-input {
-  display: inline-block;
-  vertical-align: middle;
-  /* input */
   --sc-input-border-radius: var(--sc-border-radius, 1em);
   --sc-input-padding-y: 1em;
   --sc-input-padding-x: 1em;
@@ -10,9 +7,12 @@ sc-input {
   --sc-input-font-size: 1em;
   --sc-input-error-text-color: var(--sc-error-color, #f70d1a);
 
-  * {
-    box-sizing: border-box;
-  }
+  --sc-input-radio-size: 32px;
+  --sc-input-active-color: var(--sc-active-color, #c586c0);
+
+  /* input */
+  display: inline-block;
+  vertical-align: middle;
 
   input {
     outline: none;
@@ -48,5 +48,51 @@ sc-input {
   &.block {
     display: block;
     width: 100%;
+  }
+
+  &[type='radio'] {
+    border-radius: 50%;
+    position: relative;
+    input,
+    label {
+      cursor: pointer;
+    }
+    &[disabled] {
+      input,
+      label {
+        cursor: not-allowed;
+      }
+    }
+    .after {
+      --sc-input-radio-active-dot-gap: calc(var(--sc-input-radio-size) * 0.25);
+      --sc-input-radio-active-dot-size: calc(
+        var(--sc-input-radio-size) - (var(--sc-input-radio-active-dot-gap) * 2)
+      );
+      position: absolute;
+      opacity: 0;
+      top: var(--sc-input-radio-active-dot-gap);
+      right: var(--sc-input-radio-active-dot-gap);
+      width: var(--sc-input-radio-active-dot-size);
+      height: var(--sc-input-radio-active-dot-size);
+      background: var(--sc-input-active-color);
+      border-radius: 50%;
+      @include engraved(0.1);
+      @include transition(opacity);
+      pointer-events: none;
+    }
+    input {
+      appearance: none;
+      @include raised(0.2);
+      margin: 0;
+      padding: 0;
+      width: var(--sc-input-radio-size, 1em);
+      height: var(--sc-input-radio-size, 1em);
+      vertical-align: middle;
+      &:checked {
+        & ~ .after {
+          opacity: 1;
+        }
+      }
+    }
   }
 }

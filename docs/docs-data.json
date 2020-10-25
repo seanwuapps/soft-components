@@ -1,15 +1,16 @@
 {
-  "timestamp": "2020-10-20T06:04:32",
+  "timestamp": "2020-10-23T22:37:03",
   "compiler": {
     "name": "@stencil/core",
-    "version": "1.8.5",
-    "typescriptVersion": "3.7.2"
+    "version": "2.1.1",
+    "typescriptVersion": "4.0.3"
   },
   "components": [
     {
-      "filePath": "src\\components\\sc-accordion\\sc-accordion.tsx",
+      "filePath": "./src/components/sc-accordion/sc-accordion.tsx",
       "encapsulation": "shadow",
       "tag": "sc-accordion",
+      "readme": "# sc-accordion\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -36,16 +37,25 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [
+        {
+          "event": "opened",
+          "capture": false,
+          "passive": false
+        }
+      ],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\sc-accordion\\sc-accordion-item\\sc-accordion-item.tsx",
+      "filePath": "./src/components/sc-accordion/sc-accordion-item/sc-accordion-item.tsx",
       "encapsulation": "shadow",
       "tag": "sc-accordion-item",
+      "readme": "# sc-accordion-item\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -192,6 +202,7 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [
         {
           "name": "--sc-accordion-animation-duration",
@@ -245,12 +256,13 @@
         }
       ],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\sc-button\\sc-button.tsx",
+      "filePath": "./src/components/sc-button/sc-button.tsx",
       "encapsulation": "none",
       "tag": "sc-button",
       "readme": "# sc-button\n\n",
@@ -522,6 +534,7 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [
         {
           "name": "--sc-button-bg-color",
@@ -600,6 +613,7 @@
           "docs": "Content is placed between the named slots if provided without a slot."
         }
       ],
+      "parts": [],
       "dependents": [
         "sc-tab-button"
       ],
@@ -611,14 +625,14 @@
       }
     },
     {
-      "filePath": "src\\components\\sc-card\\sc-card.tsx",
+      "filePath": "./src/components/sc-card/sc-card.tsx",
       "encapsulation": "shadow",
       "tag": "sc-card",
       "readme": "# sc-card\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
-        "sc-card": "<div class=\"intro\">\n  A card contains a set of relevant content on a single topic.\n</div>\n\n## Text based cards\n\nCard's content can be added into the card via the default slot. `card-title` and `card-subtitle` properties are available to add styled card heading.\n\nAdd `engraved` to make the card appear to be sunk into the surface.\n\nAdd `bordered` to give the card a border that's reflective to the light source.\n\n```html\n<sc-card class=\"ma-4\" card-title=\"Card\" card-subtitle=\"I'm normal card\">\n  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis\n</sc-card>\n<sc-card class=\"ma-4\" engraved card-title=\"Card\" card-subtitle=\"I'm engraved card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis\n</sc-card>\n<sc-card class=\"ma-4\" bordered card-title=\"Card\" card-subtitle=\"I'm bordered card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum\n</sc-card>\n```\n\n<h2>Media cards</h2>\n\n`slot=\"media-content\"` can be used inside the card element to show featured media.\n\n```html\n<sc-card class=\"ma-4\" card-title=\"Top media\" card-subtitle=\"5 Feb 2020\" media-position=\"top\">\n  <img slot=\"media-content\" src=\"http://lorempixel.com/600/400/nature/5/\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Bottom media\" card-subtitle=\"5 Feb 2020\" media-position=\"bottom\">\n  <img slot=\"media-content\" src=\"http://lorempixel.com/600/400/nature/5/\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Left media\" card-subtitle=\"5 Feb 2020\" media-position=\"left\">\n  <img slot=\"media-content\" src=\"http://lorempixel.com/600/400/nature/5/\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Right media\" card-subtitle=\"5 Feb 2020\" media-position=\"right\">\n  <img slot=\"media-content\" src=\"http://lorempixel.com/600/400/nature/5/\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n```\n\n\n## Customise card title\n\nCard heading section can be customised with the `custom-title` slot. \n\n```html\n<sc-card class=\"ma-4\">\n  <div slot=\"custom-title\">\n    <div>\n      <mark>Customise title with <code>slot=\"custom-title\"</code></mark>\n    </div>\n    <div>\n      <marquee>Go bananas inside the slot <img\n          src=\"https://ph-files.imgix.net/caf5608a-67ec-4f9f-acb5-db0052c33bed?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=80&h=80\"\n          alt=\"party parrot\" width=\"20\"></marquee>\n    </div>\n  </div>\n  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, modi animi possimus fugiat accusamus vitae tempore suscipit asperiores eum cum nihil amet natus impedit iure\n</sc-card>\n```"
+        "sc-card": "<div class=\"intro\">\n  A card contains a set of relevant content on a single topic.\n</div>\n\n## Text based cards\n\nCard's content can be added into the card via the default slot. `card-title` and `card-subtitle` properties are available to add styled card heading.\n\nAdd `engraved` to make the card appear to be sunk into the surface.\n\nAdd `bordered` to give the card a border that's reflective to the light source.\n\n```html\n<sc-card class=\"ma-4\" card-title=\"Card\" card-subtitle=\"I'm normal card\">\n  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis\n</sc-card>\n<sc-card class=\"ma-4\" engraved card-title=\"Card\" card-subtitle=\"I'm engraved card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis\n</sc-card>\n<sc-card class=\"ma-4\" bordered card-title=\"Card\" card-subtitle=\"I'm bordered card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum\n</sc-card>\n```\n\n<h2>Media cards</h2>\n\n`slot=\"media-content\"` can be used inside the card element to show featured media.\n\n```html\n<sc-card class=\"ma-4\" card-title=\"Top media\" card-subtitle=\"5 Feb 2020\" media-position=\"top\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Bottom media\" card-subtitle=\"5 Feb 2020\" media-position=\"bottom\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Left media\" card-subtitle=\"5 Feb 2020\" media-position=\"left\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Right media\" card-subtitle=\"5 Feb 2020\" media-position=\"right\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n```\n\n\n## Customise card title\n\nCard heading section can be customised with the `custom-title` slot. \n\n```html\n<sc-card class=\"ma-4\">\n  <div slot=\"custom-title\">\n    <div>\n      <mark>Customise title with <code>slot=\"custom-title\"</code></mark>\n    </div>\n    <div>\n      <marquee>Go bananas inside the slot <img\n          src=\"https://ph-files.imgix.net/caf5608a-67ec-4f9f-acb5-db0052c33bed?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=80&h=80\"\n          alt=\"party parrot\" width=\"20\"></marquee>\n    </div>\n  </div>\n  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, modi animi possimus fugiat accusamus vitae tempore suscipit asperiores eum cum nihil amet natus impedit iure\n</sc-card>\n```"
       },
       "props": [
         {
@@ -728,6 +742,7 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [
         {
           "name": "--sc-card-bg-color",
@@ -801,14 +816,16 @@
         }
       ],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\sc-color\\sc-color.tsx",
+      "filePath": "./src/components/sc-color/sc-color.tsx",
       "encapsulation": "none",
       "tag": "sc-color",
+      "readme": "# sc-color\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -833,16 +850,19 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\sc-input\\sc-input.tsx",
+      "filePath": "./src/components/sc-input/sc-input.tsx",
       "encapsulation": "none",
       "tag": "sc-input",
+      "readme": "# sc-input\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {
@@ -1373,14 +1393,16 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\sc-tabs\\sc-tab-button\\sc-tab-button.tsx",
+      "filePath": "./src/components/sc-tabs/sc-tab-button/sc-tab-button.tsx",
       "encapsulation": "shadow",
       "tag": "sc-tab-button",
       "readme": "# sc-tab-button\n\n\n",
@@ -1517,8 +1539,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [
         "sc-button"
@@ -1530,7 +1554,7 @@
       }
     },
     {
-      "filePath": "src\\components\\sc-tabs\\sc-tab-content\\sc-tab-content.tsx",
+      "filePath": "./src/components/sc-tabs/sc-tab-content/sc-tab-content.tsx",
       "encapsulation": "shadow",
       "tag": "sc-tab-content",
       "readme": "# sc-tab-content\n\n\n",
@@ -1582,14 +1606,27 @@
           "docsTags": []
         }
       ],
+      "listeners": [
+        {
+          "event": "transitionstart",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "transitionend",
+          "capture": false,
+          "passive": false
+        }
+      ],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\sc-tabs\\sc-tabs.tsx",
+      "filePath": "./src/components/sc-tabs/sc-tabs.tsx",
       "encapsulation": "none",
       "tag": "sc-tabs",
       "readme": "# sc-tabs\n\n\n",
@@ -1619,14 +1656,16 @@
       ],
       "methods": [],
       "events": [],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
     },
     {
-      "filePath": "src\\components\\sc-toggle\\sc-toggle.tsx",
+      "filePath": "./src/components/sc-toggle/sc-toggle.tsx",
       "encapsulation": "none",
       "tag": "sc-toggle",
       "readme": "# sc-toggle\n\n\n",
@@ -1803,8 +1842,10 @@
           "docsTags": []
         }
       ],
+      "listeners": [],
       "styles": [],
       "slots": [],
+      "parts": [],
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}

@@ -6,6 +6,7 @@ import pxtorem from "postcss-pxtorem";
 
 export const config: Config = {
   namespace: "soft-components",
+  buildEs5: 'prod',
   outputTargets: [
     {
       type: "dist",
