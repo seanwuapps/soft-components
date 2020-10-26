@@ -108,8 +108,8 @@ Card heading section can be customised with the `custom-title` slot.
 | `--sc-card-media-height`          | height of media part of the card                                                                                        |
 | `--sc-card-media-object-position` | [object-position rule](https://developer.mozilla.org/en-US/docs/Web/CSS/object-position) for the media. default: center |
 | `--sc-card-media-width`           | width of media part of the card                                                                                         |
-| `--sc-card-outer-padding-x`       | Horizontal outer padding of card. Default: calc(var(--sc-root-spacing) * 4);                                            |
-| `--sc-card-outer-padding-y`       | Vertical outer padding of card. Default: calc(var(--sc-root-spacing) * 4);                                              |
+| `--sc-card-outer-padding-x`       | Default: calc(var(--sc-root-spacing) * 4);                                                                              |
+| `--sc-card-outer-padding-y`       | Default: calc(var(--sc-root-spacing) * 4);                                                                              |
 | `--sc-card-subtitle-font-size`    | Subtitle font size                                                                                                      |
 | `--sc-card-subtitle-font-weight`  | Subtitle font weight                                                                                                    |
 | `--sc-card-subtitle-text-color`   | Subtitle text color                                                                                                     |

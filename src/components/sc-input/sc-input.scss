@@ -1,4 +1,9 @@
 sc-input {
+  /**
+    @prop --sc-input-border-radius:
+      Border radius for input box
+      - default: var(--sc-border-radius, 1em)
+  */
   --sc-input-border-radius: var(--sc-border-radius, 1em);
   --sc-input-padding-y: 1em;
   --sc-input-padding-x: 1em;
@@ -8,20 +13,20 @@ sc-input {
   --sc-input-error-text-color: var(--sc-error-color, #f70d1a);
 
   --sc-input-radio-size: 32px;
-  --sc-input-active-color: var(--sc-active-color, #c586c0);
+  --sc-input-active-color: var(--sc-highlight-color, #c586c0);
 
   /* input */
   display: inline-block;
   vertical-align: middle;
 
   input {
+    @include transition(all);
     outline: none;
     border: none;
     border-radius: var(--sc-input-border-radius);
     padding: var(--sc-input-padding-y) var(--sc-input-padding-x);
     background-color: var(--sc-input-bg-color);
     color: var(--sc-input-text-color);
-    transition: all 0.3s ease;
     font-size: var(--sc-input-font-size);
     width: 100%;
     ::placeholder {

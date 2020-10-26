@@ -15,6 +15,7 @@ Find out [how to integrate with your favourite framework]().
 Every component has a set of CSS variables allowing you to theme it to suit your needs.
 There are also a number of attributes that can be used to give your component a different look and feel, look out for the <sc-button icon style="--sc-button-vertical-align: middle" class="ma-1"><box-icon type="solid" name="brush" color="currentColor"></box-icon></sc-button> button in the component's page to play with the CSS variables.
 
-### Tiny size
+### Tiny size [![npm bundle size](https://img.shields.io/bundlephobia/min/soft-components)](https://bundlephobia.com/result?p=soft-components)
+
 
 The components are lazy-loaded only when they are used in the mark-up. This means if you only want to use 1 component of the entire set, you can still use the same set-up and the performance stays optimal.

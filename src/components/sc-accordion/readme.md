@@ -10,7 +10,7 @@
 ### Sc-accordion
 
 <div class="intro">
-Head over to [`sc-accordion-item`](/components/sc-accordion-item) for more details about properties, events and methods on that component.
+Head over to <a href="/components/sc-accordion-item"><code>sc-accordion-item</code></a> for more details about properties, events and methods on that component.
 </div>
 
 ### Single (default)
@@ -109,6 +109,23 @@ There are 2 slots you can use to customise each item. `slot="heading"` and `slot
 | Property   | Attribute  | Description                                                  | Type      | Default |
 | ---------- | ---------- | ------------------------------------------------------------ | --------- | ------- |
 | `multiple` | `multiple` | If multiple `<sc-accordion-item>`s can open at the same time | `boolean` | `false` |
+
+
+## CSS Custom Properties
+
+| Name                                        | Description                                                                                                                                                                                         |
+| ------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `--sc-accordion-animation-duration`         | CSS animation duration value. e.g. 1s, 500ms - default: var(--sc-animation-duration, 0.2s)                                                                                                          |
+| `--sc-accordion-animation-timing-function`  | CSS animation timing function. - default: var(--sc-animation-timing-function, ease-in-out)                                                                                                          |
+| `--sc-accordion-item-body-bg-color`         | Content background colour - default: var(--sc-bg-color, #f1f1f1)                                                                                                                                    |
+| `--sc-accordion-item-body-max-height`       | Inner content max height. This values is also used for CSS animation - default: 100vh                                                                                                               |
+| `--sc-accordion-item-body-padding-x`        | Horizontal padding for inner content - default: calc(var(--sc-root-spacing, 8px) * 2)                                                                                                               |
+| `--sc-accordion-item-body-padding-y`        | Vertical padding for inner content - default: calc(var(--sc-root-spacing, 8px) * 2)                                                                                                                 |
+| `--sc-accordion-item-heading-bg-color`      | Heading background colour - default: var(--sc-bg-color, #f1f1f1)                                                                                                                                    |
+| `--sc-accordion-item-heading-border-bottom` | Bottom border applied to the heading element to better separate the heading and body, especially useful when content is scrollable. - default: 1px solid var(--sc-shadow-color, rgba(0, 0, 0, 0.2)) |
+| `--sc-accordion-item-heading-padding-x`     | Horizontal padding for item heading - default: calc(var(--sc-root-spacing, 8px) * 2)                                                                                                                |
+| `--sc-accordion-item-heading-padding-y`     | Vertical padding for item heading - default: calc(var(--sc-root-spacing, 8px) * 2)                                                                                                                  |
+| `--sc-accordion-item-heading-text-color`    | Heading text colour - default: var(--sc-text-color, #333333)                                                                                                                                        |
 
 
 ----------------------------------------------

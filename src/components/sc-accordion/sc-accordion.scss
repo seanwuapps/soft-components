@@ -1,0 +1,79 @@
+:host {
+  /**
+    @prop --sc-accordion-animation-duration:
+      CSS animation duration value. e.g. 1s, 500ms
+      - default: var(--sc-animation-duration, 0.2s)
+  */
+  --sc-accordion-animation-duration: var(--sc-animation-duration, 0.2s);
+
+  /**
+    @prop --sc-accordion-animation-timing-function:
+      CSS animation timing function.
+      - default: var(--sc-animation-timing-function, ease-in-out)
+  */
+  --sc-accordion-animation-timing-function: var(
+    --sc-animation-timing-function,
+    ease-in-out
+  );
+
+  /**
+    @prop --sc-accordion-item-heading-padding-x:
+      Horizontal padding for item heading
+      - default: calc(var(--sc-root-spacing, 8px) * 2)
+  */
+  --sc-accordion-item-heading-padding-x: calc(var(--sc-root-spacing, 8px) * 2);
+
+  /**
+    @prop --sc-accordion-item-heading-padding-y:
+      Vertical padding for item heading
+      - default: calc(var(--sc-root-spacing, 8px) * 2)
+  */
+  --sc-accordion-item-heading-padding-y: calc(var(--sc-root-spacing, 8px) * 2);
+  /**
+    @prop --sc-accordion-item-body-padding-x:
+      Horizontal padding for inner content
+      - default: calc(var(--sc-root-spacing, 8px) * 2)
+  */
+  --sc-accordion-item-body-padding-x: calc(var(--sc-root-spacing, 8px) * 2);
+  /**
+    @prop --sc-accordion-item-body-padding-y:
+      Vertical padding for inner content
+      - default: calc(var(--sc-root-spacing, 8px) * 2)
+  */
+  --sc-accordion-item-body-padding-y: calc(var(--sc-root-spacing, 8px) * 2);
+
+  /**
+    @prop --sc-accordion-item-body-max-height:
+      Inner content max height. This values is also used for CSS animation
+      - default: 100vh
+  */
+  --sc-accordion-item-body-max-height: 100vh;
+
+  /**
+    @prop --sc-accordion-item-heading-text-color:
+      Heading text colour
+      - default: var(--sc-text-color, #333333)
+  */
+  --sc-accordion-item-heading-text-color: var(--sc-text-color, #333333);
+
+  /**
+    @prop --sc-accordion-item-heading-bg-color:
+      Heading background colour
+      - default: var(--sc-bg-color, #f1f1f1)
+  */
+  --sc-accordion-item-heading-bg-color: var(--sc-bg-color, #f1f1f1);
+
+  /**
+    @prop --sc-accordion-item-body-bg-color:
+      Content background colour
+      - default: var(--sc-bg-color, #f1f1f1)
+  */
+  --sc-accordion-item-body-bg-color: var(--sc-bg-color, #f1f1f1);
+  /**
+    @prop --sc-accordion-item-heading-border-bottom:
+      Bottom border applied to the heading element to better separate the heading and body, especially useful when content is scrollable.
+      - default: 1px solid var(--sc-shadow-color, rgba(0, 0, 0, 0.2))
+  */
+  --sc-accordion-item-heading-border-bottom: 1px solid
+    var(--sc-shadow-color, rgba(0, 0, 0, 0.2));
+}

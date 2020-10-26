@@ -58,22 +58,6 @@ Type: `Promise<void>`
 
 
 
-## CSS Custom Properties
-
-| Name                                        | Description                                          |
-| ------------------------------------------- | ---------------------------------------------------- |
-| `--sc-accordion-animation-duration`         | var(--sc-animation-duration, 0.2s);                  |
-| `--sc-accordion-animation-timing-function`  | var(--sc-animation-timing-function,ease-in-out);     |
-| `--sc-accordion-item-body-bg-color`         | var(--sc-bg-color, #f1f1f1);                         |
-| `--sc-accordion-item-body-max-height`       | 100vh;                                               |
-| `--sc-accordion-item-body-padding-x`        | calc(var(--sc-root-spacing, 8px) * 2);               |
-| `--sc-accordion-item-body-padding-y`        | calc(var(--sc-root-spacing, 8px) * 2);               |
-| `--sc-accordion-item-heading-bg-color`      | var(--sc-bg-color, #f1f1f1);                         |
-| `--sc-accordion-item-heading-border-bottom` | 1px solid var(--sc-shadow-color,rgba(0, 0, 0, 0.2)); |
-| `--sc-accordion-item-heading-padding-x`     | calc(var(--sc-root-spacing, 8px) * 2);               |
-| `--sc-accordion-item-heading-padding-y`     | calc(var(--sc-root-spacing, 8px) * 2);               |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

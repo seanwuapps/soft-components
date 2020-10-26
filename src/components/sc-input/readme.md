@@ -215,6 +215,13 @@ Type: `Promise<void>`
 
 
 
+## CSS Custom Properties
+
+| Name                       | Description                                                         |
+| -------------------------- | ------------------------------------------------------------------- |
+| `--sc-input-border-radius` | Border radius for input box - default: var(--sc-border-radius, 1em) |
+
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-10-23T22:37:03",
+  "timestamp": "2020-10-26T07:47:23",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.1.1",
@@ -14,7 +14,7 @@
       "docs": "",
       "docsTags": [],
       "usage": {
-        "sc-accordion": "<div class=\"intro\">\nHead over to [`sc-accordion-item`](/components/sc-accordion-item) for more details about properties, events and methods on that component.\n</div>\n\n### Single (default)\n\nBy default only one `<sc-accordion-item>` element inside a `<sc-accordion>` can be expanded at any given time. When clicked on a different `<sc-accordion-item>`, the active one will be collapsed and the clicked one will be expanded.\n\n```html\n<sc-accordion id=\"inner-accordion\">\n  <sc-accordion-item heading=\"I\" active>\n    Add <code>active</code> attribute to open an item by default.\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Am\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Groot\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n</sc-accordion>\n```\n\n### Multiple\n\nThere are times when you need multiple items to be open at the same time. Just add `multiple` attribute to the `<sc-accordion>` element.\n\n```html\n<sc-accordion multiple>\n  <sc-accordion-item heading=\"We\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Are\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Groot\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n</sc-accordion>\n```\n\n### Nested\n\nNested accordions are also possible, the components will figure out which `<sc-accordion>` component is the user interacting with. \n\n```html\n<sc-accordion>\n  <sc-accordion-item heading=\"Accordions can be nested too\">\n    Lorem ipsum dolor sit\n\n    <sc-accordion id=\"inner-accordion\">\n      <sc-accordion-item heading=\"Nested\">\n        Lorem ipsum dolor sit\n      </sc-accordion-item>\n\n      <sc-accordion-item heading=\"Accordions\">\n        Lorem ipsum dolor sit\n      </sc-accordion-item>\n      <sc-accordion-item heading=\"Are pretty cool\">\n        Lorem ipsum dolor sit\n      </sc-accordion-item>\n    </sc-accordion>\n\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Yayyy\"\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n</sc-accordion>\n```\n\n\n### Customise it\n\nThere are 2 slots you can use to customise each item. `slot=\"heading\"` and `slot=\"arrow\"`\n\n```html\n<sc-accordion>\n  <sc-accordion-item>\n    <div slot=\"heading\">\n      <mark>\n        Use <code>slot=\"heading\"</code> to customise heading\n      </mark>\n    </div>\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Customise arrow\">\n    <div slot=\"arrow\" style=\"text-align: center; color: red; width: 60px; height: 60px; font-size: 60px; line-height: 60px\">\n      &#10084;\n    </div>\n    Use <code>slot=\"arrow\"</code> to customise arrow\n  </sc-accordion-item>\n</sc-accordion>\n```\n"
+        "sc-accordion": "<div class=\"intro\">\nHead over to <a href=\"/components/sc-accordion-item\"><code>sc-accordion-item</code></a> for more details about properties, events and methods on that component.\n</div>\n\n### Single (default)\n\nBy default only one `<sc-accordion-item>` element inside a `<sc-accordion>` can be expanded at any given time. When clicked on a different `<sc-accordion-item>`, the active one will be collapsed and the clicked one will be expanded.\n\n```html\n<sc-accordion id=\"inner-accordion\">\n  <sc-accordion-item heading=\"I\" active>\n    Add <code>active</code> attribute to open an item by default.\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Am\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Groot\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n</sc-accordion>\n```\n\n### Multiple\n\nThere are times when you need multiple items to be open at the same time. Just add `multiple` attribute to the `<sc-accordion>` element.\n\n```html\n<sc-accordion multiple>\n  <sc-accordion-item heading=\"We\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Are\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Groot\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n</sc-accordion>\n```\n\n### Nested\n\nNested accordions are also possible, the components will figure out which `<sc-accordion>` component is the user interacting with. \n\n```html\n<sc-accordion>\n  <sc-accordion-item heading=\"Accordions can be nested too\">\n    Lorem ipsum dolor sit\n\n    <sc-accordion id=\"inner-accordion\">\n      <sc-accordion-item heading=\"Nested\">\n        Lorem ipsum dolor sit\n      </sc-accordion-item>\n\n      <sc-accordion-item heading=\"Accordions\">\n        Lorem ipsum dolor sit\n      </sc-accordion-item>\n      <sc-accordion-item heading=\"Are pretty cool\">\n        Lorem ipsum dolor sit\n      </sc-accordion-item>\n    </sc-accordion>\n\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Yayyy\"\">\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n</sc-accordion>\n```\n\n\n### Customise it\n\nThere are 2 slots you can use to customise each item. `slot=\"heading\"` and `slot=\"arrow\"`\n\n```html\n<sc-accordion>\n  <sc-accordion-item>\n    <div slot=\"heading\">\n      <mark>\n        Use <code>slot=\"heading\"</code> to customise heading\n      </mark>\n    </div>\n    Lorem ipsum dolor sit\n  </sc-accordion-item>\n  <sc-accordion-item heading=\"Customise arrow\">\n    <div slot=\"arrow\" style=\"text-align: center; color: red; width: 60px; height: 60px; font-size: 60px; line-height: 60px\">\n      &#10084;\n    </div>\n    Use <code>slot=\"arrow\"</code> to customise arrow\n  </sc-accordion-item>\n</sc-accordion>\n```\n"
       },
       "props": [
         {
@@ -44,7 +44,63 @@
           "passive": false
         }
       ],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--sc-accordion-animation-duration",
+          "annotation": "prop",
+          "docs": "CSS animation duration value. e.g. 1s, 500ms - default: var(--sc-animation-duration, 0.2s)"
+        },
+        {
+          "name": "--sc-accordion-animation-timing-function",
+          "annotation": "prop",
+          "docs": "CSS animation timing function. - default: var(--sc-animation-timing-function, ease-in-out)"
+        },
+        {
+          "name": "--sc-accordion-item-body-bg-color",
+          "annotation": "prop",
+          "docs": "Content background colour - default: var(--sc-bg-color, #f1f1f1)"
+        },
+        {
+          "name": "--sc-accordion-item-body-max-height",
+          "annotation": "prop",
+          "docs": "Inner content max height. This values is also used for CSS animation - default: 100vh"
+        },
+        {
+          "name": "--sc-accordion-item-body-padding-x",
+          "annotation": "prop",
+          "docs": "Horizontal padding for inner content - default: calc(var(--sc-root-spacing, 8px) * 2)"
+        },
+        {
+          "name": "--sc-accordion-item-body-padding-y",
+          "annotation": "prop",
+          "docs": "Vertical padding for inner content - default: calc(var(--sc-root-spacing, 8px) * 2)"
+        },
+        {
+          "name": "--sc-accordion-item-heading-bg-color",
+          "annotation": "prop",
+          "docs": "Heading background colour - default: var(--sc-bg-color, #f1f1f1)"
+        },
+        {
+          "name": "--sc-accordion-item-heading-border-bottom",
+          "annotation": "prop",
+          "docs": "Bottom border applied to the heading element to better separate the heading and body, especially useful when content is scrollable. - default: 1px solid var(--sc-shadow-color, rgba(0, 0, 0, 0.2))"
+        },
+        {
+          "name": "--sc-accordion-item-heading-padding-x",
+          "annotation": "prop",
+          "docs": "Horizontal padding for item heading - default: calc(var(--sc-root-spacing, 8px) * 2)"
+        },
+        {
+          "name": "--sc-accordion-item-heading-padding-y",
+          "annotation": "prop",
+          "docs": "Vertical padding for item heading - default: calc(var(--sc-root-spacing, 8px) * 2)"
+        },
+        {
+          "name": "--sc-accordion-item-heading-text-color",
+          "annotation": "prop",
+          "docs": "Heading text colour - default: var(--sc-text-color, #333333)"
+        }
+      ],
       "slots": [],
       "parts": [],
       "dependents": [],
@@ -203,58 +259,7 @@
         }
       ],
       "listeners": [],
-      "styles": [
-        {
-          "name": "--sc-accordion-animation-duration",
-          "annotation": "prop",
-          "docs": "var(--sc-animation-duration, 0.2s);"
-        },
-        {
-          "name": "--sc-accordion-animation-timing-function",
-          "annotation": "prop",
-          "docs": "var(--sc-animation-timing-function,ease-in-out);"
-        },
-        {
-          "name": "--sc-accordion-item-body-bg-color",
-          "annotation": "prop",
-          "docs": "var(--sc-bg-color, #f1f1f1);"
-        },
-        {
-          "name": "--sc-accordion-item-body-max-height",
-          "annotation": "prop",
-          "docs": "100vh;"
-        },
-        {
-          "name": "--sc-accordion-item-body-padding-x",
-          "annotation": "prop",
-          "docs": "calc(var(--sc-root-spacing, 8px) * 2);"
-        },
-        {
-          "name": "--sc-accordion-item-body-padding-y",
-          "annotation": "prop",
-          "docs": "calc(var(--sc-root-spacing, 8px) * 2);"
-        },
-        {
-          "name": "--sc-accordion-item-heading-bg-color",
-          "annotation": "prop",
-          "docs": "var(--sc-bg-color, #f1f1f1);"
-        },
-        {
-          "name": "--sc-accordion-item-heading-border-bottom",
-          "annotation": "prop",
-          "docs": "1px solid var(--sc-shadow-color,rgba(0, 0, 0, 0.2));"
-        },
-        {
-          "name": "--sc-accordion-item-heading-padding-x",
-          "annotation": "prop",
-          "docs": "calc(var(--sc-root-spacing, 8px) * 2);"
-        },
-        {
-          "name": "--sc-accordion-item-heading-padding-y",
-          "annotation": "prop",
-          "docs": "calc(var(--sc-root-spacing, 8px) * 2);"
-        }
-      ],
+      "styles": [],
       "slots": [],
       "parts": [],
       "dependents": [],
@@ -777,12 +782,12 @@
         {
           "name": "--sc-card-outer-padding-x",
           "annotation": "prop",
-          "docs": "Horizontal outer padding of card. Default: calc(var(--sc-root-spacing) * 4);"
+          "docs": "Default: calc(var(--sc-root-spacing) * 4);"
         },
         {
           "name": "--sc-card-outer-padding-y",
           "annotation": "prop",
-          "docs": "Vertical outer padding of card. Default: calc(var(--sc-root-spacing) * 4);"
+          "docs": "Default: calc(var(--sc-root-spacing) * 4);"
         },
         {
           "name": "--sc-card-subtitle-font-size",
@@ -1394,7 +1399,13 @@
         }
       ],
       "listeners": [],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--sc-input-border-radius",
+          "annotation": "prop",
+          "docs": "Border radius for input box - default: var(--sc-border-radius, 1em)"
+        }
+      ],
       "slots": [],
       "parts": [],
       "dependents": [],

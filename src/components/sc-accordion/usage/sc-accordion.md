@@ -1,5 +1,5 @@
 <div class="intro">
-Head over to [`sc-accordion-item`](/components/sc-accordion-item) for more details about properties, events and methods on that component.
+Head over to <a href="/components/sc-accordion-item"><code>sc-accordion-item</code></a> for more details about properties, events and methods on that component.
 </div>
 
 ### Single (default)

@@ -133,9 +133,9 @@ export class CodeBlock {
                   return (
                     <div class="mb-2" key={i}>
                       <label htmlFor={`style-input-${i}`} class="style-text">
-                        <linkable-title id={style.name} tag="h5">
+                        <h5>
                           <code class="title">{style.name}</code>
-                        </linkable-title>
+                        </h5>
 
                         <div class="description">{parts[0]}</div>
                         <div class="description">
