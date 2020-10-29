@@ -150,19 +150,6 @@ Combine attributes together to have a party
 | `--sc-button-width`                  | Set fixed width for button - default: auto                             |
 
 
-## Dependencies
-
-### Used by
-
- - [sc-tab-button](../sc-tabs/sc-tab-button)
-
-### Graph
-```mermaid
-graph TD;
-  sc-tab-button --> sc-button
-  style sc-button fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

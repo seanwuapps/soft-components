@@ -103,6 +103,7 @@ Card heading section can be customised with the `custom-title` slot.
 | Name                              | Description                                                                                                             |
 | --------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | `--sc-card-bg-color`              | Background color of card.                                                                                               |
+| `--sc-card-border-width`          | Border width for `bordered` card - default: 2px                                                                         |
 | `--sc-card-bordered-width`        | Card border width (only applicable for bordered cards)                                                                  |
 | `--sc-card-inner-padding-y`       | Padding between title section and content section                                                                       |
 | `--sc-card-media-height`          | height of media part of the card                                                                                        |
