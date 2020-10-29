@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-10-26T07:47:23",
+  "timestamp": "2020-10-29T23:25:58",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.1.1",
@@ -619,15 +619,9 @@
         }
       ],
       "parts": [],
-      "dependents": [
-        "sc-tab-button"
-      ],
+      "dependents": [],
       "dependencies": [],
-      "dependencyGraph": {
-        "sc-tab-button": [
-          "sc-button"
-        ]
-      }
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/sc-card/sc-card.tsx",
@@ -753,6 +747,11 @@
           "name": "--sc-card-bg-color",
           "annotation": "prop",
           "docs": "Background color of card."
+        },
+        {
+          "name": "--sc-card-border-width",
+          "annotation": "prop",
+          "docs": "Border width for `bordered` card - default: 2px"
         },
         {
           "name": "--sc-card-bordered-width",
@@ -1406,269 +1405,6 @@
           "docs": "Border radius for input box - default: var(--sc-border-radius, 1em)"
         }
       ],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/sc-tabs/sc-tab-button/sc-tab-button.tsx",
-      "encapsulation": "shadow",
-      "tag": "sc-tab-button",
-      "readme": "# sc-tab-button\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [
-        {
-          "name": "active",
-          "type": "boolean",
-          "mutable": true,
-          "attr": "active",
-          "reflectToAttr": true,
-          "docs": "When prop is set, this tab is shown, only one `<sc-tab>` element can be active inside `<sc-tabs>`",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "block",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "block",
-          "reflectToAttr": true,
-          "docs": "The button shape.",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "bordered",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "bordered",
-          "reflectToAttr": true,
-          "docs": "If prop exists, button will have an engraved-styled border",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "icon",
-          "type": "boolean",
-          "mutable": false,
-          "attr": "icon",
-          "reflectToAttr": true,
-          "docs": "Icon only button",
-          "docsTags": [],
-          "default": "false",
-          "values": [
-            {
-              "type": "boolean"
-            }
-          ],
-          "optional": true,
-          "required": false
-        },
-        {
-          "name": "target",
-          "type": "string",
-          "mutable": false,
-          "attr": "target",
-          "reflectToAttr": false,
-          "docs": "id of the target `sc-tab-content` tag",
-          "docsTags": [],
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [
-        {
-          "name": "setActive",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "setActive(emitEvent?: boolean) => Promise<void>",
-          "parameters": [],
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "name": "setInactive",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "setInactive(emitEvent?: boolean) => Promise<void>",
-          "parameters": [],
-          "docs": "",
-          "docsTags": []
-        }
-      ],
-      "events": [
-        {
-          "event": "activeEvent",
-          "detail": "HTMLElement",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "event": "inactiveEvent",
-          "detail": "HTMLElement",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        }
-      ],
-      "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [
-        "sc-button"
-      ],
-      "dependencyGraph": {
-        "sc-tab-button": [
-          "sc-button"
-        ]
-      }
-    },
-    {
-      "filePath": "./src/components/sc-tabs/sc-tab-content/sc-tab-content.tsx",
-      "encapsulation": "shadow",
-      "tag": "sc-tab-content",
-      "readme": "# sc-tab-content\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {},
-      "props": [],
-      "methods": [
-        {
-          "name": "setActive",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "setActive() => Promise<void>",
-          "parameters": [],
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "name": "setInactive",
-          "returns": {
-            "type": "Promise<void>",
-            "docs": ""
-          },
-          "signature": "setInactive() => Promise<void>",
-          "parameters": [],
-          "docs": "",
-          "docsTags": []
-        }
-      ],
-      "events": [
-        {
-          "event": "activeCompleted",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        },
-        {
-          "event": "inactiveCompleted",
-          "detail": "void",
-          "bubbles": true,
-          "cancelable": true,
-          "composed": true,
-          "docs": "",
-          "docsTags": []
-        }
-      ],
-      "listeners": [
-        {
-          "event": "transitionstart",
-          "capture": false,
-          "passive": false
-        },
-        {
-          "event": "transitionend",
-          "capture": false,
-          "passive": false
-        }
-      ],
-      "styles": [],
-      "slots": [],
-      "parts": [],
-      "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
-    },
-    {
-      "filePath": "./src/components/sc-tabs/sc-tabs.tsx",
-      "encapsulation": "none",
-      "tag": "sc-tabs",
-      "readme": "# sc-tabs\n\n\n",
-      "docs": "",
-      "docsTags": [],
-      "usage": {
-        "sc-tabs": "<sc-tabs transition=\"fade\">\n  <sc-tab-button icon target=\"dog-tab\">\n    <i class=\"la la-dog\"></i>\n  </sc-tab-button>\n  <sc-tab-button icon active target=\"cat-tab\">\n    <i class=\"la la-cat\"></i>\n  </sc-tab-button>\n  <sc-tab-content id=\"dog-tab\">\n    <sc-card card-title=\"dog tab\">\n      <p>I'm dog tab</p>\n    </sc-card>\n  </sc-tab-content>\n  <sc-tab-content id=\"cat-tab\">\n    <sc-card card-title=\"cat tab\">\n      <p>I'm cat tab</p>\n    </sc-card>\n  </sc-tab-content>\n</sc-tabs>"
-      },
-      "props": [
-        {
-          "name": "transition",
-          "type": "string",
-          "mutable": false,
-          "attr": "transition",
-          "reflectToAttr": false,
-          "docs": "",
-          "docsTags": [],
-          "default": "''",
-          "values": [
-            {
-              "type": "string"
-            }
-          ],
-          "optional": false,
-          "required": false
-        }
-      ],
-      "methods": [],
-      "events": [],
-      "listeners": [],
-      "styles": [],
       "slots": [],
       "parts": [],
       "dependents": [],
