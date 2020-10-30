@@ -270,6 +270,10 @@ export namespace Components {
          */
         "name": string;
         /**
+          * Size of toggle
+         */
+        "size"?: 'lg' | 'sm';
+        /**
           * The value of the input.
          */
         "value"?: string | null;
@@ -639,7 +643,11 @@ declare namespace LocalJSX {
         /**
           * Emitted when a key is pressed down
          */
-        "onKeyDownEvent"?: (event: CustomEvent<void>) => void;
+        "onKeyDownEvent"?: (event: CustomEvent<KeyboardEvent>) => void;
+        /**
+          * Size of toggle
+         */
+        "size"?: 'lg' | 'sm';
         /**
           * The value of the input.
          */

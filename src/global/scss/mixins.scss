@@ -81,3 +81,8 @@
   transition: $prop var(--sc-animation-duration, 0.3s)
     var(--sc-animation-timing-function, ease);
 }
+
+@mixin browserFocus() {
+  outline: 5px auto Highlight;
+  outline: 5px auto -webkit-focus-ring-color;
+}

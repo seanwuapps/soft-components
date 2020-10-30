@@ -58,10 +58,9 @@ Soft components are built with the help of [Stencil](https://stenciljs.com/).
 
 ## Components roadmap
 
-- `sc-progress` - progress bar
-- `sc-switch` - a smaller, compact version of `sc-toggle`
-- `sc-radio` - radio button
-- `sc-select` - `select` dropdown box
-- `sc-file` - `input type="file"` equivalent
-- `sc-textarea` - `textarea` equivalent
-- `sc-dial` - dial input
+- [ ] `sc-progress` - progress bar
+- [ ] `sc-dial` - dial input
+- [ ] `sc-radio` - radio button
+- [ ] `sc-select` - `select` dropdown box
+- [ ] `sc-file` - `input type="file"` equivalent
+- [ ] `sc-textarea` - `textarea` equivalent

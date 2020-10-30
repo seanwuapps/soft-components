@@ -1,16 +1,39 @@
 sc-toggle {
-  --sc-toggle-button-size: calc(var(--sc-border-radius, 1em) * 2 + 1em);
+  /**
+    @prop --sc-toggle-bg-color:
+      Default background color in the toggle slide area
+      - default: var(--sc-bg-color, #eee)
+  */
+  --sc-toggle-bg-color: var(--sc-bg-color, #eee);
+
+  /**
+    @prop --sc-toggle-button-size:
+      Size of the toggle button. Note, if elements has `size="sm"` attribute, the size will be half of this value.
+      - default: calc(var(--sc-border-radius, 1em) * 2 + 1em)
+  */
+  --sc-toggle-button-size: var(--sc-border-radius, 40px);
+
+  /**
+    @prop --sc-toggle-active-bg-color:
+      Background color of the toggle when active/checked
+      - default: var(--sc-active-color, #c586c0)
+  */
   --sc-toggle-active-bg-color: var(--sc-active-color, #c586c0);
-  --sc-toggle-active-btn-color: white;
-  --sc-toggle-button-dot-shadow-color: var(
-    --sc-shadow-color,
-    rgba(0, 0, 0, 0.2)
-  );
-  @media (prefers-color-scheme: dark) {
-    --sc-toggle-active-bg-color: var(--sc-secondary-color, #646695);
-    --sc-toggle-active-btn-color: var(--sc-active-color, #c586c0);
-    --sc-toggle-button-dot-shadow-color: #1a1a1a;
-  }
+
+  /**
+    @prop --sc-toggle-button-color:
+      Toggle button color
+      - default: #fff
+  */
+  --sc-toggle-button-color: #fff;
+
+  /**
+    @prop --sc-toggle-active-btn-color:
+      Toggle button color when active/checked
+      - default: #fff
+  */
+  --sc-toggle-active-btn-color: #fff;
+
   * {
     box-sizing: border-box;
   }
@@ -27,10 +50,14 @@ sc-toggle {
     display: block;
     width: calc(var(--sc-toggle-button-size) * 2);
     height: var(--sc-toggle-button-size);
+    background: var(--sc-toggle-bg-color);
     position: relative;
-    @include engraved(0.3);
     border-radius: calc(var(--sc-toggle-button-size) / 2 - 4px);
-    transition: all 0.3s ease;
+    @include transition(all);
+    @include engraved(0.2);
+    &:hover {
+      @include engraved(0.8);
+    }
     .toggle--dots {
       display: block;
       position: relative;
@@ -42,7 +69,6 @@ sc-toggle {
         width: calc(var(--sc-toggle-button-size) / 8);
         height: calc(var(--sc-toggle-button-size) / 8);
         border-radius: 50%;
-        --sc-shadow-color: var(--sc-toggle-button-dot-shadow-color);
         @include raised(0.2);
 
         &:nth-child(1) {
@@ -71,7 +97,7 @@ sc-toggle {
       left: 0;
       width: var(--sc-toggle-button-size);
       border-radius: calc(var(--sc-toggle-button-size) / 2 - 4px);
-      background-color: var(--sc-bg-color, #f6f6f8);
+      background-color: var(--sc-toggle-button-color);
       transition: left 0.3s ease;
     }
   }
@@ -81,7 +107,8 @@ sc-toggle {
     opacity: 0;
     &:focus {
       & + .toggle--slider {
-        @include engraved(0.7);
+        // @include browserFocus();
+        @include engraved(0.8);
       }
     }
     &:checked {
@@ -90,16 +117,46 @@ sc-toggle {
         .toggle--btn {
           left: var(--sc-toggle-button-size);
           background: var(--sc-toggle-active-btn-color);
-          .toggle--dots {
-            span {
-              --sc-shadow-color: var(--sc-toggle-button-dot-shadow-color);
-            }
-          }
+          // .toggle--dots {
+          //   span {
+          //   }
+          // }
         }
       }
     }
   }
   .toggle--label {
     margin-left: 10px;
+  }
+
+  // small toggles
+  &.sm {
+    .toggle {
+      @include raised(0);
+      padding: 0;
+      .toggle--slider {
+        width: calc(var(--sc-toggle-button-size));
+        height: calc(var(--sc-toggle-button-size) / 2);
+        .toggle--btn {
+          @include raised(0.2);
+          margin: 2px;
+          width: calc((var(--sc-toggle-button-size) / 2) - 4px);
+          height: calc((var(--sc-toggle-button-size) / 2) - 4px);
+          border-radius: 50%;
+          .toggle--dots {
+            display: none;
+          }
+        }
+      }
+      input[type='checkbox'] {
+        &:checked {
+          & + .toggle--slider {
+            .toggle--btn {
+              left: calc(var(--sc-toggle-button-size) / 2);
+            }
+          }
+        }
+      }
+    }
   }
 }

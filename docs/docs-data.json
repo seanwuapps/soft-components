@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-10-29T23:25:58",
+  "timestamp": "2020-10-30T05:48:13",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.1.1",
@@ -1459,7 +1459,7 @@
         {
           "name": "checked",
           "type": "boolean",
-          "mutable": false,
+          "mutable": true,
           "attr": "checked",
           "reflectToAttr": true,
           "docs": "If this toggle is on by default",
@@ -1524,6 +1524,28 @@
           "required": false
         },
         {
+          "name": "size",
+          "type": "\"lg\" | \"sm\"",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Size of toggle",
+          "docsTags": [],
+          "default": "'lg'",
+          "values": [
+            {
+              "value": "lg",
+              "type": "string"
+            },
+            {
+              "value": "sm",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "value",
           "type": "string",
           "mutable": true,
@@ -1581,7 +1603,7 @@
         },
         {
           "event": "keyDownEvent",
-          "detail": "void",
+          "detail": "KeyboardEvent",
           "bubbles": true,
           "cancelable": true,
           "composed": true,
@@ -1590,7 +1612,33 @@
         }
       ],
       "listeners": [],
-      "styles": [],
+      "styles": [
+        {
+          "name": "--sc-toggle-active-bg-color",
+          "annotation": "prop",
+          "docs": "Background color of the toggle when active/checked - default: var(--sc-active-color, #c586c0)"
+        },
+        {
+          "name": "--sc-toggle-active-btn-color",
+          "annotation": "prop",
+          "docs": "Toggle button color when active/checked - default: #fff"
+        },
+        {
+          "name": "--sc-toggle-bg-color",
+          "annotation": "prop",
+          "docs": "Default background color in the toggle slide area - default: var(--sc-bg-color, #eee)"
+        },
+        {
+          "name": "--sc-toggle-button-color",
+          "annotation": "prop",
+          "docs": "Toggle button color - default: #fff"
+        },
+        {
+          "name": "--sc-toggle-button-size",
+          "annotation": "prop",
+          "docs": "Size of the toggle button. Note, if elements has `size=\"sm\"` attribute, the size will be half of this value. - default: calc(var(--sc-border-radius, 1em) * 2 + 1em)"
+        }
+      ],
       "slots": [],
       "parts": [],
       "dependents": [],
