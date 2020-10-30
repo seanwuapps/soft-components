@@ -44,14 +44,18 @@
       <div class="col-md-10">
         <sc-accordion multiple>
 
-          <sc-accordion-item heading="Toggle" active>
+          <sc-accordion-item heading="Progress" active>
+            <sc-progress intermediate></sc-progress>
+            <sc-progress percentage="20"></sc-progress>
+          </sc-accordion-item>
+          <sc-accordion-item heading="Toggle">
             <sc-toggle label="Toggle" name="test1" value="1"
             ></sc-toggle>
             <sc-toggle label="Toggle" name="test2" value="2" checked="checked"
             ></sc-toggle>
             <sc-toggle label="Toggle small" name="test3" value="3" size="sm"></sc-toggle>
           </sc-accordion-item>
-          <sc-accordion-item heading="Inputs" active>
+          <sc-accordion-item heading="Inputs">
             <div class="mb-5">
               color
               <sc-color label="Color" name="color"></sc-color>
