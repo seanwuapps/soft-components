@@ -37,6 +37,6 @@
     "markdown-it-anchor": "^6.0.0",
     "seanwu-logo": "^1.1.0",
     "simplebar": "^6.0.0-beta.8",
-    "soft-components": "link:.."
+    "soft-components": "file:.."
   }
 }
