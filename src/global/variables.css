@@ -14,4 +14,6 @@ html {
   /* animation */
   --sc-animation-duration: 0.3s;
   --sc-animation-timing-function: ease;
+  /* spacing */
+  --sc-root-spacing: 8px;
 }
