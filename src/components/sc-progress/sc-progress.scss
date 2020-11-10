@@ -1,3 +1,95 @@
 :host {
+  /**
+    @prop --sc-progress-width:
+      Width of the progress bar
+      - default: 100%
+  */
+  --sc-progress-width: 100%;
+
+  /**
+    @prop --sc-progress-height:
+      Height of the progress bar
+      - default: var(--sc-root-spacing, 8px)
+  */
+  --sc-progress-height: var(--sc-root-spacing, 8px);
+
+  /**
+    @prop --sc-progress-bar-inner-color:
+      Color of the inner progress bar
+      - default: var(--sc-active-color, #3ab877)
+  */
+  --sc-progress-bar-inner-color: var(--sc-active-color, #3ab877);
+
+  /**
+    @prop --sc-progress-border-radius:
+      Radius of the progress bar
+      - default: var(--sc-border-radius, 4px)
+  */
+  --sc-progress-border-radius: var(--sc-border-radius, 4px);
+
+  /**
+    @prop --sc-progress-padding-x:
+      Horizontal inner padding
+      - default: 4px
+  */
+  --sc-progress-padding-x: 4px;
+
+  /**
+    @prop --sc-progress-padding-y:
+      Vertical inner padding
+      - default: 4px
+  */
+  --sc-progress-padding-y: 4px;
+
+  /**
+    @prop --sc-progress-animation-duration:
+      Animation duration of the indeterminate progress bar
+      - default: var(--sc-animation-duration, 0.4s)
+  */
+  --sc-progress-animation-duration: var(--sc-animation-duration, 2s);
+
+  /**
+    @prop --sc-progress-animation-timing-function:
+      Animation timing function of the indeterminate progress bar
+      - default: var(--sc-animation-timing-function, ease)
+  */
+  --sc-progress-animation-timing-function: var(
+    --sc-animation-timing-function,
+    ease-in-out
+  );
   display: block;
+  width: var(--sc-progress-width);
+  height: auto;
+  padding: var(--sc-progress-padding-y) var(--sc-progress-padding-x);
+  .inner {
+    height: var(--sc-progress-height);
+    background: var(--sc-progress-bar-inner-color);
+    border-radius: var(--sc-progress-border-radius);
+  }
+}
+:host(.indeterminate) {
+  @keyframes progress {
+    0% {
+      transform-origin: left;
+      // transform: scaleX(0) translateX(-10%);
+      transform: scaleX(0);
+    }
+    50% {
+      // transform: scaleX(0.7) translateX(15%);
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+    50.1% {
+      transform-origin: right;
+      transform: scaleX(1);
+    }
+    100% {
+      transform-origin: right;
+      transform: scaleX(0);
+    }
+  }
+  .inner {
+    animation: progress var(--sc-progress-animation-duration)
+      var(--sc-progress-animation-timing-function) infinite;
+  }
 }
