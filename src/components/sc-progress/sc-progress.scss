@@ -58,10 +58,14 @@
     ease-in-out
   );
   display: block;
+  @include engraved(0.1);
+  @include round;
   width: var(--sc-progress-width);
   height: auto;
+  overflow: hidden;
   padding: var(--sc-progress-padding-y) var(--sc-progress-padding-x);
   .inner {
+    @include raised(0.1);
     height: var(--sc-progress-height);
     background: var(--sc-progress-bar-inner-color);
     border-radius: var(--sc-progress-border-radius);
@@ -70,22 +74,23 @@
 :host(.indeterminate) {
   @keyframes progress {
     0% {
-      transform-origin: left;
-      // transform: scaleX(0) translateX(-10%);
-      transform: scaleX(0);
+      // transform-origin: left;
+      // transform: scaleX(0);
+      transform: translateX(-110%);
     }
-    50% {
-      // transform: scaleX(0.7) translateX(15%);
-      transform-origin: left;
-      transform: scaleX(1);
-    }
-    50.1% {
-      transform-origin: right;
-      transform: scaleX(1);
-    }
+    // 50% {
+    //   // transform-origin: left;
+    //   // transform: scaleX(1);
+    //   transform: translateX(0%);
+    // }
+    // 50.1% {
+    //   // transform-origin: right;
+    //   // transform: scaleX(1);
+    // }
     100% {
-      transform-origin: right;
-      transform: scaleX(0);
+      // transform-origin: right;
+      // transform: scaleX(0);
+      transform: translateX(110%);
     }
   }
   .inner {
