@@ -1,5 +1,5 @@
 {
-  "timestamp": "2020-10-30T06:54:40",
+  "timestamp": "2020-11-16T10:51:37",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.1.1",
@@ -1403,6 +1403,155 @@
           "name": "--sc-input-border-radius",
           "annotation": "prop",
           "docs": "Border radius for input box - default: var(--sc-border-radius, 1em)"
+        }
+      ],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/sc-progress/sc-progress.tsx",
+      "encapsulation": "shadow",
+      "tag": "sc-progress",
+      "readme": "# sc-progress\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "circular",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "circular",
+          "reflectToAttr": false,
+          "docs": "Set shape of the progress indicator to be circular",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "indeterminate",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "indeterminate",
+          "reflectToAttr": false,
+          "docs": "Use indeterminate mode for the progress bar when you do not know how long an operation will take.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "percentage",
+          "type": "number",
+          "mutable": false,
+          "attr": "percentage",
+          "reflectToAttr": false,
+          "docs": "Percentage of progress bar",
+          "docsTags": [],
+          "default": "null",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Size for circular progress in pixels",
+          "docsTags": [],
+          "default": "100",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [
+        {
+          "name": "--sc-progress-animation-duration",
+          "annotation": "prop",
+          "docs": "Animation duration of the indeterminate progress bar - default: var(--sc-animation-duration, 0.4s)"
+        },
+        {
+          "name": "--sc-progress-animation-timing-function",
+          "annotation": "prop",
+          "docs": "Animation timing function of the indeterminate progress bar - default: var(--sc-animation-timing-function, ease)"
+        },
+        {
+          "name": "--sc-progress-bar-inner-color",
+          "annotation": "prop",
+          "docs": "Color of the inner progress bar - default: var(--sc-active-color, #3ab877)"
+        },
+        {
+          "name": "--sc-progress-border-radius",
+          "annotation": "prop",
+          "docs": "Radius of the progress bar - default: var(--sc-border-radius, 4px)"
+        },
+        {
+          "name": "--sc-progress-circular-gap",
+          "annotation": "prop",
+          "docs": "Gap between the inner and outer parts of the circular ring - default: 8px"
+        },
+        {
+          "name": "--sc-progress-circular-size",
+          "annotation": "prop",
+          "docs": "Width and height of the circular progress bar - default: 100px"
+        },
+        {
+          "name": "--sc-progress-height",
+          "annotation": "prop",
+          "docs": "Height of the progress bar - default: var(--sc-root-spacing, 8px)"
+        },
+        {
+          "name": "--sc-progress-padding-x",
+          "annotation": "prop",
+          "docs": "Horizontal inner padding - default: 4px"
+        },
+        {
+          "name": "--sc-progress-padding-y",
+          "annotation": "prop",
+          "docs": "Vertical inner padding - default: 4px"
+        },
+        {
+          "name": "--sc-progress-ring-color",
+          "annotation": "prop",
+          "docs": "Color of the circular progress ring - default: var(--sc-active-color, orange)"
+        },
+        {
+          "name": "--sc-progress-ring-thickness",
+          "annotation": "prop",
+          "docs": "Thickness of the circular progress bar - default: var(--sc-root-spacing, 8px)"
+        },
+        {
+          "name": "--sc-progress-width",
+          "annotation": "prop",
+          "docs": "Width of the progress bar - default: 100%"
         }
       ],
       "slots": [],

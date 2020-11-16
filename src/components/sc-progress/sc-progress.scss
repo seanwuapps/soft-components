@@ -66,11 +66,26 @@
   --sc-progress-ring-thickness: var(--sc-root-spacing, 8px);
 
   /**
+    @prop --sc-progress-circular-gap:
+      Gap between the inner and outer parts of the circular ring
+      - default: 8px
+  */
+  --sc-progress-circular-gap: 8px;
+
+  /**
     @prop --sc-progress-circular-size:
       Width and height of the circular progress bar
       - default: 100px
   */
   --sc-progress-circular-size: 100px;
+
+  /**
+    @prop --sc-progress-ring-color:
+      Color of the circular progress ring
+      - default: var(--sc-active-color, orange)
+  */
+  --sc-progress-ring-color: var(--sc-active-color, orange);
+
   display: block;
   @include engraved(0.1);
   @include round;
@@ -124,13 +139,19 @@
   }
   .label {
     position: absolute;
-    top: var(--sc-progress-ring-thickness);
-    left: var(--sc-progress-ring-thickness);
+    top: calc(
+      var(--sc-progress-ring-thickness) + var(--sc-progress-circular-gap)
+    );
+    left: calc(
+      var(--sc-progress-ring-thickness) + var(--sc-progress-circular-gap)
+    );
     width: calc(
-      var(--sc-progress-circular-size) - 2 * var(--sc-progress-ring-thickness)
+      var(--sc-progress-circular-size) - (2 * var(--sc-progress-circular-gap)) -
+        (2 * var(--sc-progress-ring-thickness))
     );
     height: calc(
-      var(--sc-progress-circular-size) - 2 * var(--sc-progress-ring-thickness)
+      var(--sc-progress-circular-size) - (2 * var(--sc-progress-circular-gap)) -
+        (2 * var(--sc-progress-ring-thickness))
     );
     z-index: 2;
     border-radius: 50%;
@@ -151,7 +172,7 @@
     transform: rotate(var(--sc-progress-circular-initial-rotate));
     transform-origin: 50% 50%;
     fill: transparent;
-    stroke: red;
+    stroke: var(--sc-progress-ring-color);
     stroke-width: var(--sc-progress-ring-thickness);
     stroke-dasharray: var(--sc-progress-circular-stroke-dasharray);
     stroke-dashoffset: var(--sc-progress-circular-stroke-dashoffset);
