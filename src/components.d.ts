@@ -248,7 +248,7 @@ export namespace Components {
         /**
           * Set shape of the progress indicator to be circular
          */
-        "circular": boolean;
+        "circular"?: boolean;
         /**
           * Use indeterminate mode for the progress bar when you do not know how long an operation will take.
          */
@@ -257,6 +257,10 @@ export namespace Components {
           * Percentage of progress bar
          */
         "percentage"?: number;
+        /**
+          * Size for circular progress in pixels
+         */
+        "size"?: number;
     }
     interface ScToggle {
         /**
@@ -633,6 +637,10 @@ declare namespace LocalJSX {
           * Percentage of progress bar
          */
         "percentage"?: number;
+        /**
+          * Size for circular progress in pixels
+         */
+        "size"?: number;
     }
     interface ScToggle {
         /**

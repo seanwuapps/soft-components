@@ -57,6 +57,20 @@
     --sc-animation-timing-function,
     ease-in-out
   );
+
+  /**
+    @prop --sc-progress-ring-thickness:
+      Thickness of the circular progress bar
+      - default: var(--sc-root-spacing, 8px)
+  */
+  --sc-progress-ring-thickness: var(--sc-root-spacing, 8px);
+
+  /**
+    @prop --sc-progress-circular-size:
+      Width and height of the circular progress bar
+      - default: 100px
+  */
+  --sc-progress-circular-size: 100px;
   display: block;
   @include engraved(0.1);
   @include round;
@@ -96,5 +110,54 @@
   .inner {
     animation: progress var(--sc-progress-animation-duration)
       var(--sc-progress-animation-timing-function) infinite;
+  }
+}
+
+:host(.circular) {
+  @include engraved(0);
+  border-radius: 50%;
+  width: auto;
+  height: auto;
+  display: inline-block;
+  .circular-container {
+    position: relative;
+  }
+  .label {
+    position: absolute;
+    top: var(--sc-progress-ring-thickness);
+    left: var(--sc-progress-ring-thickness);
+    width: calc(
+      var(--sc-progress-circular-size) - 2 * var(--sc-progress-ring-thickness)
+    );
+    height: calc(
+      var(--sc-progress-circular-size) - 2 * var(--sc-progress-ring-thickness)
+    );
+    z-index: 2;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include raised(0.2);
+  }
+  .progress-ring {
+    position: relative;
+    z-index: 1;
+    width: var(--sc-progress-circular-size);
+    height: var(--sc-progress-circular-size);
+  }
+  .progress-ring__circle {
+    @include transition(stroke-dashoffset);
+    transform: rotate(var(--sc-progress-circular-initial-rotate));
+    transform-origin: 50% 50%;
+    fill: transparent;
+    stroke: red;
+    stroke-width: var(--sc-progress-ring-thickness);
+    stroke-dasharray: var(--sc-progress-circular-stroke-dasharray);
+    stroke-dashoffset: var(--sc-progress-circular-stroke-dashoffset);
+    stroke-linecap: round;
+    // stroke-width: 10px;
+    // width: 120px;
+    // height: 120px;
   }
 }
