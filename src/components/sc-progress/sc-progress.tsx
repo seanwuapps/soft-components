@@ -29,7 +29,6 @@ export class ScProgress {
   circleEl = null
 
   renderCircular(size) {
-    console.log(size)
     const radius = size / 2
     const gapPercent = 0
     const offsetFactor = (100 - gapPercent) / 100
@@ -45,7 +44,12 @@ export class ScProgress {
     const rotate = -270 + (360 * gapPercent) / 100 / 2
 
     return (
-      <div class="circular-container">
+      <div
+        class="circular-container"
+        style={{
+          '--sc-progress-circular-size': `${size}px`,
+        }}
+      >
         <svg class="progress-ring">
           <circle
             ref={el => (this.circleEl = el)}
@@ -61,8 +65,6 @@ export class ScProgress {
             }}
           />
         </svg>
-        {/* inner shadow */}
-        <div class="inner"></div>
         {/* label display */}
         <div class="label">{this.percentage} %</div>
       </div>

@@ -68,7 +68,7 @@
   /**
     @prop --sc-progress-circular-gap:
       Gap between the inner and outer parts of the circular ring
-      - default: 8px
+      - default: 10px
   */
   --sc-progress-circular-gap: 8px;
 
@@ -139,18 +139,21 @@
   }
   .label {
     position: absolute;
-    top: calc(
-      var(--sc-progress-ring-thickness) + var(--sc-progress-circular-gap)
-    );
-    left: calc(
-      var(--sc-progress-ring-thickness) + var(--sc-progress-circular-gap)
-    );
+    // top: calc(
+    //   var(--sc-progress-ring-thickness) + var(--sc-progress-circular-gap)
+    // );
+    // left: calc(
+    //   var(--sc-progress-ring-thickness) + var(--sc-progress-circular-gap)
+    // );
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: calc(
-      var(--sc-progress-circular-size) - (2 * var(--sc-progress-circular-gap)) -
+      var(--sc-progress-circular-size) - var(--sc-progress-circular-gap) -
         (2 * var(--sc-progress-ring-thickness))
     );
     height: calc(
-      var(--sc-progress-circular-size) - (2 * var(--sc-progress-circular-gap)) -
+      var(--sc-progress-circular-size) - var(--sc-progress-circular-gap) -
         (2 * var(--sc-progress-ring-thickness))
     );
     z-index: 2;
@@ -159,18 +162,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    @include raised(0.2);
+    @include raised(0.25);
   }
   .progress-ring {
     position: relative;
     z-index: 1;
     width: var(--sc-progress-circular-size);
     height: var(--sc-progress-circular-size);
+    @include engraved(0.25);
+    border-radius: 50%;
+    padding: calc(var(--sc-progress-circular-gap) / 2);
   }
   .progress-ring__circle {
     @include transition(stroke-dashoffset);
     transform: rotate(var(--sc-progress-circular-initial-rotate));
-    transform-origin: 50% 50%;
+    transform-origin: center center;
     fill: transparent;
     stroke: var(--sc-progress-ring-color);
     stroke-width: var(--sc-progress-ring-thickness);
