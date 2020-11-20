@@ -58,19 +58,6 @@
     ease-in-out
   );
 
-  /**
-    @prop --sc-progress-ring-thickness:
-      Thickness of the circular progress bar
-      - default: var(--sc-root-spacing, 8px)
-  */
-  --sc-progress-ring-thickness: var(--sc-root-spacing, 8px);
-
-  /**
-    @prop --sc-progress-circular-gap:
-      Gap between the inner and outer parts of the circular ring
-      - default: 10px
-  */
-  --sc-progress-circular-gap: 8px;
 
   /**
     @prop --sc-progress-circular-size:
@@ -86,6 +73,13 @@
   */
   --sc-progress-ring-color: var(--sc-active-color, orange);
 
+  /**
+    @prop --sc-progress-circular-initial-rotate:
+      Initial rotation of the progress ring. 0 means starting from right-center
+      - default: 90deg
+  */
+  --sc-progress-circular-initial-rotate: 90deg;
+
   display: block;
   @include engraved(0.1);
   @include round;
@@ -93,6 +87,9 @@
   height: auto;
   overflow: hidden;
   padding: var(--sc-progress-padding-y) var(--sc-progress-padding-x);
+  * {
+    box-sizing: border-box;
+  }
   .inner {
     @include raised(0.1);
     height: var(--sc-progress-height);
@@ -138,24 +135,16 @@
     position: relative;
   }
   .label {
+    --sc-progress-cicular-label-size: calc(
+      var(--sc-progress-circular-size) - 4 * var(--sc-progress-stroke-width)
+    );
     position: absolute;
-    // top: calc(
-    //   var(--sc-progress-ring-thickness) + var(--sc-progress-circular-gap)
-    // );
-    // left: calc(
-    //   var(--sc-progress-ring-thickness) + var(--sc-progress-circular-gap)
-    // );
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: calc(
-      var(--sc-progress-circular-size) - var(--sc-progress-circular-gap) -
-        (2 * var(--sc-progress-ring-thickness))
-    );
-    height: calc(
-      var(--sc-progress-circular-size) - var(--sc-progress-circular-gap) -
-        (2 * var(--sc-progress-ring-thickness))
-    );
+    width: var(--sc-progress-cicular-label-size);
+    height: var(--sc-progress-cicular-label-size);
+    padding: 8px;
     z-index: 2;
     border-radius: 50%;
     text-align: center;
@@ -163,6 +152,8 @@
     align-items: center;
     justify-content: center;
     @include raised(0.25);
+    overflow: hidden;
+    text-overflow: hidden
   }
   .progress-ring {
     position: relative;
@@ -171,7 +162,7 @@
     height: var(--sc-progress-circular-size);
     @include engraved(0.25);
     border-radius: 50%;
-    padding: calc(var(--sc-progress-circular-gap) / 2);
+    padding: calc(var(--sc-progress-stroke-width));
   }
   .progress-ring__circle {
     @include transition(stroke-dashoffset);
@@ -179,7 +170,7 @@
     transform-origin: center center;
     fill: transparent;
     stroke: var(--sc-progress-ring-color);
-    stroke-width: var(--sc-progress-ring-thickness);
+    stroke-width: var(--sc-progress-stroke-width);
     stroke-dasharray: var(--sc-progress-circular-stroke-dasharray);
     stroke-dashoffset: var(--sc-progress-circular-stroke-dashoffset);
     stroke-linecap: round;

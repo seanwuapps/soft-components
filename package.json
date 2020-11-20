@@ -34,7 +34,7 @@
     "commit": "git add . & git commit -m \"Committed via npm\""
   },
   "devDependencies": {
-    "@stencil/core": "^2.1.1",
+    "@stencil/core": "^2.3.0",
     "@stencil/postcss": "^1.0.1",
     "@stencil/sass": "^1.3.2",
     "@types/autoprefixer": "^9.7.2",
