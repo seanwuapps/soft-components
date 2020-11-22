@@ -29,13 +29,19 @@ export class ScProgress {
   circleEl = null
 
   renderCircular(size) {
-    const radius = size / 2
-    const max = size * Math.PI // c
+    
+    // const gapPercent = 0
+    // const offsetFactor = (100 - gapPercent) / 100
+    // const max = offsetFactor * (size * Math.PI) // c
+
+    const max = size * Math.PI
     const offset = (1 - this.percentage / 100) * max
-
     const strokeWidth = size / 10
-    const innerRadius = radius - strokeWidth * 3
-
+    
+    /**
+     * -270: rotate starting point to bottom center
+     */
+    // const rotate = -270 + (360 * gapPercent) / 100 / 2
 
     return (
       <div
@@ -43,6 +49,7 @@ export class ScProgress {
         style={{
           '--sc-progress-circular-size': `${size}px`,
           '--sc-progress-stroke-width': `${strokeWidth}px`,
+          // '--sc-progress-circular-initial-rotate': `${rotate}deg`
         }}
       >
         <svg class="progress-ring" viewBox="0 0 100 100">

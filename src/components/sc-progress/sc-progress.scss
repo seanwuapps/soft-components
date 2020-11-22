@@ -58,7 +58,6 @@
     ease-in-out
   );
 
-
   /**
     @prop --sc-progress-circular-size:
       Width and height of the circular progress bar
@@ -136,7 +135,7 @@
   }
   .label {
     --sc-progress-cicular-label-size: calc(
-      var(--sc-progress-circular-size) - 4 * var(--sc-progress-stroke-width)
+      var(--sc-progress-circular-size) - 3 * var(--sc-progress-stroke-width)
     );
     position: absolute;
     top: 50%;
@@ -153,7 +152,7 @@
     justify-content: center;
     @include raised(0.25);
     overflow: hidden;
-    text-overflow: hidden
+    text-overflow: hidden;
   }
   .progress-ring {
     position: relative;
@@ -162,7 +161,7 @@
     height: var(--sc-progress-circular-size);
     @include engraved(0.25);
     border-radius: 50%;
-    padding: calc(var(--sc-progress-stroke-width));
+    padding: calc(var(--sc-progress-stroke-width) / 2);
   }
   .progress-ring__circle {
     @include transition(stroke-dashoffset);
