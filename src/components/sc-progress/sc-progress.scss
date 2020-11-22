@@ -99,22 +99,9 @@
 :host(.indeterminate) {
   @keyframes progress {
     0% {
-      // transform-origin: left;
-      // transform: scaleX(0);
       transform: translateX(-110%);
     }
-    // 50% {
-    //   // transform-origin: left;
-    //   // transform: scaleX(1);
-    //   transform: translateX(0%);
-    // }
-    // 50.1% {
-    //   // transform-origin: right;
-    //   // transform: scaleX(1);
-    // }
     100% {
-      // transform-origin: right;
-      // transform: scaleX(0);
       transform: translateX(110%);
     }
   }
@@ -132,6 +119,8 @@
   display: inline-block;
   .circular-container {
     position: relative;
+    width: var(--sc-progress-circular-size);
+    height: var(--sc-progress-circular-size);
   }
   .label {
     --sc-progress-cicular-label-size: calc(
@@ -176,5 +165,45 @@
     // stroke-width: 10px;
     // width: 120px;
     // height: 120px;
+  }
+}
+
+:host(.circular.indeterminate) {
+  // SVG styles.
+  svg {
+    animation: 2s linear infinite svg-animation;
+  }
+
+  // SVG animation.
+  @keyframes svg-animation {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+  @keyframes progress-circle {
+    0%,
+    25% {
+      stroke-dashoffset: 280;
+      transform: rotate(0);
+    }
+
+    50%,
+    75% {
+      stroke-dashoffset: 75;
+      transform: rotate(45deg);
+    }
+
+    100% {
+      stroke-dashoffset: 280;
+      transform: rotate(360deg);
+    }
+  }
+  .progress-ring__circle {
+    stroke-dasharray: 283;
+    stroke-dashoffset: 280;
+    animation: 1.4s ease-in-out infinite both progress-circle;
   }
 }
