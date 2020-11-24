@@ -11,21 +11,28 @@
       Height of the progress bar
       - default: var(--sc-root-spacing, 8px)
   */
-  --sc-progress-height: var(--sc-root-spacing, 8px);
+  --sc-progress-height: 16px; //var(--sc-root-spacing, 8px);
 
   /**
-    @prop --sc-progress-bar-inner-color:
+    @prop --sc-progress-color:
       Color of the inner progress bar
       - default: var(--sc-active-color, #3ab877)
   */
-  --sc-progress-bar-inner-color: var(--sc-active-color, #3ab877);
+  --sc-progress-color: var(--sc-active-color, #3ab877);
+
+  /**
+    @prop --sc-progress-label-color:
+      Color of the progress label
+      - default: currentColor
+  */
+  --sc-progress-label-color: currentColor;
 
   /**
     @prop --sc-progress-border-radius:
       Radius of the progress bar
-      - default: var(--sc-border-radius, 4px)
+      - default: var(--sc-border-radius, 8px)
   */
-  --sc-progress-border-radius: var(--sc-border-radius, 4px);
+  --sc-progress-border-radius: var(--sc-border-radius, 8px);
 
   /**
     @prop --sc-progress-padding-x:
@@ -66,13 +73,6 @@
   --sc-progress-circular-size: 100px;
 
   /**
-    @prop --sc-progress-ring-color:
-      Color of the circular progress ring
-      - default: var(--sc-active-color, orange)
-  */
-  --sc-progress-ring-color: var(--sc-active-color, orange);
-
-  /**
     @prop --sc-progress-circular-initial-rotate:
       Initial rotation of the progress ring. 0 means starting from right-center
       - default: 90deg
@@ -81,7 +81,7 @@
 
   display: block;
   @include engraved(0.1);
-  @include round;
+  border-radius: var(--sc-progress-border-radius);
   width: var(--sc-progress-width);
   height: auto;
   overflow: hidden;
@@ -92,8 +92,19 @@
   .inner {
     @include raised(0.1);
     height: var(--sc-progress-height);
-    background: var(--sc-progress-bar-inner-color);
+    background: var(--sc-progress-color);
     border-radius: var(--sc-progress-border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .label {
+      width: auto;
+      margin: 0 auto;
+      font-size: calc(0.8 * var(--sc-progress-height));
+      height: 100%;
+      display: inline-block;
+      color: var(--sc-progress-label-color);
+    }
   }
 }
 :host(.indeterminate) {
@@ -142,6 +153,8 @@
     @include raised(0.25);
     overflow: hidden;
     text-overflow: hidden;
+    font-size: calc(var(--sc-progress-cicular-label-size) / 5);
+    color: var(--sc-progress-label-color);
   }
   .progress-ring {
     position: relative;
@@ -157,7 +170,7 @@
     transform: rotate(var(--sc-progress-circular-initial-rotate));
     transform-origin: center center;
     fill: transparent;
-    stroke: var(--sc-progress-ring-color);
+    stroke: var(--sc-progress-color);
     stroke-width: var(--sc-progress-stroke-width);
     stroke-dasharray: var(--sc-progress-circular-stroke-dasharray);
     stroke-dashoffset: var(--sc-progress-circular-stroke-dashoffset);
@@ -171,7 +184,8 @@
 :host(.circular.indeterminate) {
   // SVG styles.
   svg {
-    animation: 2s linear infinite svg-animation;
+    animation: svg-animation var(--sc-progress-animation-duration) linear
+      infinite;
   }
 
   // SVG animation.
@@ -204,6 +218,7 @@
   .progress-ring__circle {
     stroke-dasharray: 283;
     stroke-dashoffset: 280;
-    animation: 1.4s ease-in-out infinite both progress-circle;
+    animation: progress-circle var(--sc-progress-animation-duration)
+      var(--sc-progress-animation-timing-function) infinite both;
   }
 }

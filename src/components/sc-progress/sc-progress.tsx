@@ -26,43 +26,14 @@ export class ScProgress {
    */
   @Prop() size?: number = 100
 
+  /**
+   * Label to be displayed inside the progress
+   */
+  @Prop() label?: string = ''
+
   circleEl = null
 
   spinnerAnimationId = null
-
-  startIndeterminateAnimation() {
-    let upper = 1000
-    let lower = 0
-    let dashoffset = upper
-
-    let goingDown = true
-    let speed = 1 //
-    const frame = () => {
-      if (dashoffset < lower) {
-        goingDown = false
-      }
-
-      if (dashoffset > upper) {
-        goingDown = true
-      }
-      if (goingDown) {
-        dashoffset -= speed
-      } else {
-        dashoffset += speed
-      }
-
-      console.log(dashoffset)
-      this.circleEl.style.cssText = 'stroke-dashoffset: ' + dashoffset
-      // requestAnimationFrame(frame)
-    }
-    this.spinnerAnimationId = requestAnimationFrame(frame)
-  }
-
-  disconnectedCallback() {
-    if (this.spinnerAnimationId) {
-      cancelAnimationFrame(this.spinnerAnimationId)
-    }
-  }
 
   renderCircular(size) {
     // commented codes are attempts to do gapped circular progress bar.
@@ -73,10 +44,6 @@ export class ScProgress {
      * -270: rotate starting point to bottom center
      */
     // const rotate = -270 + (360 * gapPercent) / 100 / 2
-
-    if (this.indeterminate) {
-      // this.startIndeterminateAnimation()
-    }
 
     const max = size * Math.PI
     const offset = (1 - this.percentage / 100) * max
@@ -107,9 +74,7 @@ export class ScProgress {
           />
         </svg>
         {/* label display */}
-        <div class="label">
-          {this.percentage !== null ? this.percentage + '%' : ''}
-        </div>
+        <div class="label">{this.label}</div>
       </div>
     )
   }
@@ -121,7 +86,9 @@ export class ScProgress {
         {circular ? (
           this.renderCircular(size)
         ) : (
-          <div class="inner" style={{ width: `${percentage}%` }}></div>
+          <div class="inner" style={{ width: `${percentage}%` }}>
+            {this.label.length ? <span class="label">{this.label}</span> : null}
+          </div>
         )}
       </Host>
     )

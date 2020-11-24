@@ -254,6 +254,10 @@ export namespace Components {
          */
         "indeterminate": boolean;
         /**
+          * Label to be displayed inside the progress
+         */
+        "label"?: string;
+        /**
           * Percentage of progress bar
          */
         "percentage"?: number;
@@ -633,6 +637,10 @@ declare namespace LocalJSX {
           * Use indeterminate mode for the progress bar when you do not know how long an operation will take.
          */
         "indeterminate"?: boolean;
+        /**
+          * Label to be displayed inside the progress
+         */
+        "label"?: string;
         /**
           * Percentage of progress bar
          */
