@@ -1,9 +1,9 @@
 {
-  "timestamp": "2020-11-16T10:51:37",
+  "timestamp": "2020-11-24T10:57:46",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.1.1",
-    "typescriptVersion": "4.0.3"
+    "version": "2.3.0",
+    "typescriptVersion": "4.0.5"
   },
   "components": [
     {
@@ -1418,7 +1418,9 @@
       "readme": "# sc-progress\n\n\n",
       "docs": "",
       "docsTags": [],
-      "usage": {},
+      "usage": {
+        "sc-progress": "<div class=\"intro\">\nNeumorphic style progress indicator. Supports both linear (bar) and circular (ring) styles, with various options for size, color and label \n</div>\n\n\n### Linear progress bar\nThe progress is set by the `percentage` attribute, make sure it's a number between 0 to 100.\nYou can add label on to the progress bar by setting the `label` attribute. \n`--sc-progress-color` and `--sc-progress-label-color` custom CSS properties are available for customising the colors.\n```html\n<sc-progress percentage=\"20\" label=\"20%\"></sc-progress>\n<sc-progress percentage=\"40\" label=\"40%\" style=\"--sc-progress-height: 4px\"></sc-progress>\n<sc-progress percentage=\"60\" label=\"60%\" style=\"--sc-progress-color: blue; --sc-progress-label-color: white\"></sc-progress>\n```\n\n### Circular progress ring\nSimply add `circular` attribute to turn a progress bar to a progress ring. \nYou can also adjust the `size` attribute to fit your needs. \nHere are some examples\n\n```html\n<sc-progress percentage=\"0\" circular label=\"0_0\" size=\"100\"></sc-progress>\n<sc-progress percentage=\"40\" circular size=\"50\"></sc-progress>\n<sc-progress percentage=\"60\" label=\"60%\" circular size=\"100\" style=\"--sc-progress-color: red\"></sc-progress>\n<sc-progress percentage=\"90\" label=\"90%\" circular size=\"140\" style=\"--sc-progress-color: lime\"></sc-progress>\n<sc-progress percentage=\"100\" label=\"Done\" circular size=\"180\" style=\"--sc-progress-color: #3399aa\"></sc-progress>\n```\n\n### Indeterminate state\n\nAdd `indeterminate` attribute when you don't know how much progress is made. Perfect for loading animation.\n\n```html\n<sc-progress indeterminate></sc-progress>\n<sc-progress indeterminate style=\"--sc-progress-height: 4px\"></sc-progress>\n<sc-progress indeterminate circular></sc-progress>\n<sc-progress indeterminate circular label=\"Loading\" size=\"200\" ></sc-progress>\n```\n"
+      },
       "props": [
         {
           "name": "circular",
@@ -1452,6 +1454,23 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Label to be displayed inside the progress",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {
@@ -1504,19 +1523,14 @@
           "docs": "Animation timing function of the indeterminate progress bar - default: var(--sc-animation-timing-function, ease)"
         },
         {
-          "name": "--sc-progress-bar-inner-color",
-          "annotation": "prop",
-          "docs": "Color of the inner progress bar - default: var(--sc-active-color, #3ab877)"
-        },
-        {
           "name": "--sc-progress-border-radius",
           "annotation": "prop",
-          "docs": "Radius of the progress bar - default: var(--sc-border-radius, 4px)"
+          "docs": "Radius of the progress bar - default: var(--sc-border-radius, 8px)"
         },
         {
-          "name": "--sc-progress-circular-gap",
+          "name": "--sc-progress-circular-initial-rotate",
           "annotation": "prop",
-          "docs": "Gap between the inner and outer parts of the circular ring - default: 8px"
+          "docs": "Initial rotation of the progress ring. 0 means starting from right-center - default: 90deg"
         },
         {
           "name": "--sc-progress-circular-size",
@@ -1524,9 +1538,19 @@
           "docs": "Width and height of the circular progress bar - default: 100px"
         },
         {
+          "name": "--sc-progress-color",
+          "annotation": "prop",
+          "docs": "Color of the inner progress bar - default: var(--sc-active-color, #3ab877)"
+        },
+        {
           "name": "--sc-progress-height",
           "annotation": "prop",
           "docs": "Height of the progress bar - default: var(--sc-root-spacing, 8px)"
+        },
+        {
+          "name": "--sc-progress-label-color",
+          "annotation": "prop",
+          "docs": "Color of the progress label - default: currentColor"
         },
         {
           "name": "--sc-progress-padding-x",
@@ -1537,16 +1561,6 @@
           "name": "--sc-progress-padding-y",
           "annotation": "prop",
           "docs": "Vertical inner padding - default: 4px"
-        },
-        {
-          "name": "--sc-progress-ring-color",
-          "annotation": "prop",
-          "docs": "Color of the circular progress ring - default: var(--sc-active-color, orange)"
-        },
-        {
-          "name": "--sc-progress-ring-thickness",
-          "annotation": "prop",
-          "docs": "Thickness of the circular progress bar - default: var(--sc-root-spacing, 8px)"
         },
         {
           "name": "--sc-progress-width",

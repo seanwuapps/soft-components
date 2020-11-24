@@ -82,7 +82,12 @@ export class ScProgress {
   render() {
     const { percentage, indeterminate, circular, size } = this
     return (
-      <Host class={{ indeterminate, circular }}>
+      <Host
+        class={{ indeterminate, circular }}
+        aria-valuenow={percentage}
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
         {circular ? (
           this.renderCircular(size)
         ) : (
