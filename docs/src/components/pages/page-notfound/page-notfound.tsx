@@ -8,6 +8,7 @@ export class PageNotfound {
   render() {
     return (
       <Host>
+        <seo-tags page-title="Oops..." description="Oops the requested page cannot be found."></seo-tags>
         <div class="page-not-found">
           <sc-card engraved class="text-center pa-4">
             <img class="not-found-image mb-2" src="/assets/img/404.svg" alt="Alien abduction illustration" />

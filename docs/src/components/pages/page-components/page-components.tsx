@@ -81,11 +81,9 @@ export class PageComponents {
 
     const { usage, methods } = this.component;
 
-    // console.log({ usage: usage[tag] });
     return (
       <Host>
-        <app-meta page-title={`${name} | Soft Components`}></app-meta>
-
+        <seo-tags page-title={name}></seo-tags>
         <article>
           {/* Title */}
           <section class="component-title">

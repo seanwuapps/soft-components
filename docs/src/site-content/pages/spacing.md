@@ -1,3 +1,7 @@
+---
+title: Spacing
+description: Tools to help you space things out.
+---
 # Spacing
 
 Spacing can be controlled by the global CSS variable called `--sc-root-spacing` which defaults to `8px`

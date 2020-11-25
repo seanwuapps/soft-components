@@ -1,3 +1,7 @@
+---
+title: Attributions
+description: Soft Components is built on top of these technologies
+---
 # Attributions
 
 - Components generated with Stencil

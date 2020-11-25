@@ -21,6 +21,8 @@ export class PageStandard {
 
   @Prop() history: RouterHistory;
 
+  meta: { title: string; description: string } = null;
+
   // private content = '';
   @Watch('match')
   async loadPage() {
@@ -36,6 +38,7 @@ export class PageStandard {
       this.notfound = false;
       let text = await response.text();
       this.content = md.render(text);
+      this.meta = md.meta;
     } catch (error) {
       this.notfound = true;
     } finally {
@@ -43,7 +46,7 @@ export class PageStandard {
     }
   }
 
-  async componentDidLoad() {
+  async componentWillLoad() {
     await this.loadPage();
   }
 
@@ -62,11 +65,13 @@ export class PageStandard {
     }
 
     if (this.loading) {
-      return <p>Loading...</p>;
+      return <sc-progress indeterminate circular></sc-progress>;
     }
     const { page } = this.match.params;
+    const { title, description } = this.meta;
     return (
       <Host>
+        <seo-tags pageTitle={title} description={description}></seo-tags>
         <div class="content" innerHTML={this.content}></div>
         <div class="content-bottom text-center text-left-lg">
           <sc-button block bordered flat icon-text href={`https://github.com/seanwuapps/soft-components/edit/master/docs/src/site-content/pages/${page}.md`} target="_blank">

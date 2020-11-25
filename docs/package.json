@@ -35,6 +35,7 @@
     "linkable-title": "^1.2.1",
     "markdown-it": "^11.0.1",
     "markdown-it-anchor": "^6.0.0",
+    "markdown-it-meta": "0.0.1",
     "seanwu-logo": "^1.1.0",
     "simplebar": "^6.0.0-beta.8",
     "soft-components": "file:.."

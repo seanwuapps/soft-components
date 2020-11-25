@@ -1,6 +1,8 @@
 import markdown from 'markdown-it';
-// import mdAnchor from 'markdown-it-anchor';
+import meta from "markdown-it-meta";
 import hljs from 'highlight.js';
+
+
 export const md = markdown({
   html: true,
   linkify: true,
@@ -12,7 +14,7 @@ export const md = markdown({
     }
     return '<hl-code code="' + escape(str) + '" language="text"></hl-code>';
   },
-});
+}).use(meta);
 
 export const mdUsage = markdown({
   html: true,
@@ -25,4 +27,4 @@ export const mdUsage = markdown({
     }
     return '<code-block hide-tag code="' + escape(str) + '"></code-block>';
   },
-});
+}).use(meta);

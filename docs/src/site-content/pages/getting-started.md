@@ -1,3 +1,8 @@
+---
+title: Getting started
+description: How to start using soft components in your project.
+---
+
 # Getting started
 
 To start using these neumorphism components, you will need to include 2 files, spoiler alert, it's the `css` and `js` files
@@ -7,6 +12,7 @@ To start using these neumorphism components, you will need to include 2 files, s
 There are a few ways you can get started with Soft Components:
 
 ### CDN
+
 ```html
 <link rel="stylesheet" href="//unpkg.com/soft-components/dist/soft-components/soft-components.css" />
 <script type="module" src="//unpkg.com/soft-components/dist/soft-components/soft-components.esm.js"></script>

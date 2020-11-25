@@ -1,3 +1,7 @@
+---
+title: The theory
+description: The theory behind the design for soft components 
+---
 # Theory
 
 ## Neumorphism

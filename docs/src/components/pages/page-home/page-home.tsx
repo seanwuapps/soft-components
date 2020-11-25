@@ -1,19 +1,17 @@
 import { Component, Host, h, State } from '@stencil/core';
-import {md} from '../../../helpers/md'
+import { md } from '../../../helpers/md';
 @Component({
   tag: 'page-home',
   styleUrl: 'page-home.css',
 })
 export class PageHome {
+  @State() loading: boolean = false;
 
-  @State() loading: boolean = false
+  @State() notfound: boolean = false;
 
-  @State() notfound: boolean = false
-
-  @State() content: string = 'Loading...'
+  @State() content: string = 'Loading...';
 
   async componentWillLoad() {
-
     this.loading = true;
     try {
       let response = await fetch('/site-content/pages/index.md');
@@ -33,6 +31,7 @@ export class PageHome {
   render() {
     return (
       <Host>
+        <seo-tags pageTitle="Home" description="A set of decorative web components inspired by the neumorphism design"></seo-tags>
         <div class="flex justify-between">
           <div class="w-6">
             <div innerHTML={this.content}></div>

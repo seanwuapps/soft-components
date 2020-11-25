@@ -1,3 +1,7 @@
+---
+title: Web component
+description: A gentle introduction to web components
+---
 # Web components
 
 Soft Components are compiled into [Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components), this means it's supported by all modern browsers regardless of which JavaScript framework you might use.

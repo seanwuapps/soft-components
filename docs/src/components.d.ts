@@ -14,11 +14,6 @@ export namespace Components {
     }
     interface AppLogo {
     }
-    interface AppMeta {
-        "description"?: string;
-        "image"?: string;
-        "pageTitle"?: string;
-    }
     interface AppNav {
     }
     interface AppRoot {
@@ -57,6 +52,11 @@ export namespace Components {
          */
         "match": MatchResults;
     }
+    interface SeoTags {
+        "description"?: string;
+        "image"?: string;
+        "pageTitle": string;
+    }
     interface ThemeSetter {
     }
     interface UtterancesDiv {
@@ -86,12 +86,6 @@ declare global {
     var HTMLAppLogoElement: {
         prototype: HTMLAppLogoElement;
         new (): HTMLAppLogoElement;
-    };
-    interface HTMLAppMetaElement extends Components.AppMeta, HTMLStencilElement {
-    }
-    var HTMLAppMetaElement: {
-        prototype: HTMLAppMetaElement;
-        new (): HTMLAppMetaElement;
     };
     interface HTMLAppNavElement extends Components.AppNav, HTMLStencilElement {
     }
@@ -159,6 +153,12 @@ declare global {
         prototype: HTMLPageStandardElement;
         new (): HTMLPageStandardElement;
     };
+    interface HTMLSeoTagsElement extends Components.SeoTags, HTMLStencilElement {
+    }
+    var HTMLSeoTagsElement: {
+        prototype: HTMLSeoTagsElement;
+        new (): HTMLSeoTagsElement;
+    };
     interface HTMLThemeSetterElement extends Components.ThemeSetter, HTMLStencilElement {
     }
     var HTMLThemeSetterElement: {
@@ -175,7 +175,6 @@ declare global {
         "app-footer": HTMLAppFooterElement;
         "app-header": HTMLAppHeaderElement;
         "app-logo": HTMLAppLogoElement;
-        "app-meta": HTMLAppMetaElement;
         "app-nav": HTMLAppNavElement;
         "app-root": HTMLAppRootElement;
         "code-block": HTMLCodeBlockElement;
@@ -187,6 +186,7 @@ declare global {
         "page-home": HTMLPageHomeElement;
         "page-notfound": HTMLPageNotfoundElement;
         "page-standard": HTMLPageStandardElement;
+        "seo-tags": HTMLSeoTagsElement;
         "theme-setter": HTMLThemeSetterElement;
         "utterances-div": HTMLUtterancesDivElement;
     }
@@ -197,11 +197,6 @@ declare namespace LocalJSX {
     interface AppHeader {
     }
     interface AppLogo {
-    }
-    interface AppMeta {
-        "description"?: string;
-        "image"?: string;
-        "pageTitle"?: string;
     }
     interface AppNav {
     }
@@ -241,6 +236,11 @@ declare namespace LocalJSX {
          */
         "match"?: MatchResults;
     }
+    interface SeoTags {
+        "description"?: string;
+        "image"?: string;
+        "pageTitle"?: string;
+    }
     interface ThemeSetter {
         "onThemeChanged"?: (event: CustomEvent<boolean>) => void;
     }
@@ -256,7 +256,6 @@ declare namespace LocalJSX {
         "app-footer": AppFooter;
         "app-header": AppHeader;
         "app-logo": AppLogo;
-        "app-meta": AppMeta;
         "app-nav": AppNav;
         "app-root": AppRoot;
         "code-block": CodeBlock;
@@ -268,6 +267,7 @@ declare namespace LocalJSX {
         "page-home": PageHome;
         "page-notfound": PageNotfound;
         "page-standard": PageStandard;
+        "seo-tags": SeoTags;
         "theme-setter": ThemeSetter;
         "utterances-div": UtterancesDiv;
     }
@@ -279,7 +279,6 @@ declare module "@stencil/core" {
             "app-footer": LocalJSX.AppFooter & JSXBase.HTMLAttributes<HTMLAppFooterElement>;
             "app-header": LocalJSX.AppHeader & JSXBase.HTMLAttributes<HTMLAppHeaderElement>;
             "app-logo": LocalJSX.AppLogo & JSXBase.HTMLAttributes<HTMLAppLogoElement>;
-            "app-meta": LocalJSX.AppMeta & JSXBase.HTMLAttributes<HTMLAppMetaElement>;
             "app-nav": LocalJSX.AppNav & JSXBase.HTMLAttributes<HTMLAppNavElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
             "code-block": LocalJSX.CodeBlock & JSXBase.HTMLAttributes<HTMLCodeBlockElement>;
@@ -291,6 +290,7 @@ declare module "@stencil/core" {
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
             "page-notfound": LocalJSX.PageNotfound & JSXBase.HTMLAttributes<HTMLPageNotfoundElement>;
             "page-standard": LocalJSX.PageStandard & JSXBase.HTMLAttributes<HTMLPageStandardElement>;
+            "seo-tags": LocalJSX.SeoTags & JSXBase.HTMLAttributes<HTMLSeoTagsElement>;
             "theme-setter": LocalJSX.ThemeSetter & JSXBase.HTMLAttributes<HTMLThemeSetterElement>;
             "utterances-div": LocalJSX.UtterancesDiv & JSXBase.HTMLAttributes<HTMLUtterancesDivElement>;
         }

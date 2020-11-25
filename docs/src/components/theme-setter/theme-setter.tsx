@@ -13,7 +13,7 @@ export class ThemeSetter {
 
   @Event() themeChanged: EventEmitter<boolean>;
 
-  componentDidLoad() {
+  componentWillLoad() {
     this.setColor();
   }
 

@@ -1,3 +1,8 @@
+---
+title: Home
+---
+
+
 # Soft components
 
 A set of **decorative** web components inspired by the neumorphism design
