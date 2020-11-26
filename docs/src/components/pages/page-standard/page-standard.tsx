@@ -68,10 +68,10 @@ export class PageStandard {
       return <sc-progress indeterminate circular></sc-progress>;
     }
     const { page } = this.match.params;
-    const { title, description } = this.meta;
+
     return (
       <Host>
-        <seo-tags pageTitle={title} description={description}></seo-tags>
+        <seo-tags pageTitle={this.meta ? this.meta.title : 'Soft Components'} description={this.meta ? this.meta.description : null}></seo-tags>
         <div class="content" innerHTML={this.content}></div>
         <div class="content-bottom text-center text-left-lg">
           <sc-button block bordered flat icon-text href={`https://github.com/seanwuapps/soft-components/edit/master/docs/src/site-content/pages/${page}.md`} target="_blank">

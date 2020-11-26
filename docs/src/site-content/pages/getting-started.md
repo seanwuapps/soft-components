@@ -35,6 +35,5 @@ npm i soft-components
 
 
 ## CSS framework integration
-Soft components should work with most frameworks as all the styles are scoped within each component. 
+Soft components should work with most CSS frameworks as all the styles are scoped within each component. 
 All soft component CSS variables starts with `--sc-` to avoid collision.
-All CodePen demos you'll see will use Twitter Bootstrap's grid system. 
