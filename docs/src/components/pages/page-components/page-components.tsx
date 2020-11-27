@@ -23,12 +23,40 @@ export class PageComponents {
 
   @State() filteredProps: Array<JsonDocsProp> = [];
 
+  @State() usageContent: string = '';
+
+  @State() loading: boolean = false;
+  @State() notfound: boolean = false;
+
+  @State() name: string = '';
+  methods: any;
+
+  meta: { title: string; description: string } = null;
+
   @Watch('match')
   async loadComponent() {
     const { tag } = this.match.params;
+    this.loading = true;
     if (tag.startsWith('sc-')) {
-      this.component = await this.getComponentData(tag);
-      this.filteredProps = this.component?.props;
+      try {
+        this.component = await this.getComponentData(tag);
+        if (this.component) {
+          this.filteredProps = this.component?.props;
+          const { usage, methods } = this.component;
+          if (usage[tag]) {
+            this.usageContent = mdUsage.render(usage[tag]);
+            // this.meta = mdUsage.meta;
+            this.name = getName(this.component);
+            this.methods = methods;
+          }
+        }
+      } catch (error) {
+        this.notfound = true;
+      } finally {
+        this.loading = false;
+      }
+    } else {
+      this.notfound = true;
     }
   }
 
@@ -73,31 +101,31 @@ export class PageComponents {
   }
 
   render() {
-    const { tag } = this.match.params;
-    if (!tag || !this.component) {
+    if (this.notfound) {
       return <page-notfound></page-notfound>;
     }
-    const name = getName(this.component);
 
-    const { usage, methods } = this.component;
+    if (this.loading) {
+      return <sc-progress indeterminate circular></sc-progress>;
+    }
 
     return (
       <Host>
-        <seo-tags page-title={name}></seo-tags>
+        <seo-tags page-title={this.name} description={this.meta?.description}></seo-tags>
         <article>
           {/* Title */}
           <section class="component-title">
-            <h1>{name}</h1>
+            <h1>{this.name}</h1>
           </section>
           {/* Usage */}
-          {usage[tag] && (
+          {this.usageContent?.length ? (
             <section class="usage">
               <linkable-title id="usage" tag="h2">
                 Usage
               </linkable-title>
-              <div innerHTML={mdUsage.render(usage[tag])}></div>
+              <div innerHTML={this.usageContent}></div>
             </section>
-          )}
+          ) : null}
           {/* Props */}
           {this.component.props && (
             <section>
@@ -150,7 +178,7 @@ export class PageComponents {
             </section>
           )}
           {/* Events */}
-          {this.component.events.length > 0 && (
+          {this.component.events?.length > 0 && (
             <section>
               <linkable-title id="Events" tag="h2">
                 Events
@@ -187,7 +215,7 @@ export class PageComponents {
             </section>
           )}
           {/* Methods */}
-          {methods.length > 0 && (
+          {this.methods?.length && (
             <section>
               <linkable-title id="Methods" tag="h2">
                 Methods
@@ -200,7 +228,7 @@ export class PageComponents {
                     <div class="w-3 th">Signature</div>
                   </div>
                   <div class="table-body engraved-1">
-                    {methods.map(method => (
+                    {this.methods.map(method => (
                       <div class="flex tr">
                         <div class="w-2 py-2">
                           <span class="th-mobile">Method</span>
