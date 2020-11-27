@@ -5,12 +5,13 @@ import Helmet from '@stencil/helmet';
   tag: 'seo-tags',
 })
 export class SeoTags {
-  @Prop() pageTitle: string;
+  @Prop() pageTitle?: string = 'Soft Components';
   @Prop() description?: string = 'Soft Components is a set of web components inspired by Neumorphism design.';
   @Prop() image?: string = 'https://soft.components.rocks/assets/img/logo-mobile.png';
 
   render() {
-    const { pageTitle, description, image } = this;
+    let { pageTitle, description, image } = this;
+
     return (
       <Helmet>
         <title>{pageTitle} | Soft Components</title>

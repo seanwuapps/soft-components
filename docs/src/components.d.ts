@@ -55,7 +55,7 @@ export namespace Components {
     interface SeoTags {
         "description"?: string;
         "image"?: string;
-        "pageTitle": string;
+        "pageTitle"?: string;
     }
     interface ThemeSetter {
     }

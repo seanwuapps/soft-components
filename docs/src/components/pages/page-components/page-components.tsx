@@ -23,7 +23,7 @@ export class PageComponents {
 
   @State() filteredProps: Array<JsonDocsProp> = [];
 
-  @State() usageContent: string = '';
+  usageContent: string = '';
 
   @State() loading: boolean = false;
   @State() notfound: boolean = false;
@@ -39,7 +39,7 @@ export class PageComponents {
     this.loading = true;
     if (tag.startsWith('sc-')) {
       try {
-        this.component = await this.getComponentData(tag);
+        this.component = this.getComponentData(tag);
         if (this.component) {
           this.filteredProps = this.component?.props;
           const { usage, methods } = this.component;
@@ -64,8 +64,8 @@ export class PageComponents {
     return docsData.components.find(component => component.tag === tag);
   }
 
-  async componentWillLoad() {
-    await this.loadComponent();
+  componentWillLoad() {
+    this.loadComponent();
   }
 
   componentDidRender() {
@@ -111,7 +111,7 @@ export class PageComponents {
 
     return (
       <Host>
-        <seo-tags page-title={this.name} description={this.meta?.description}></seo-tags>
+        <seo-tags pageTitle={this.name} description={this.meta?.description}></seo-tags>
         <article>
           {/* Title */}
           <section class="component-title">
