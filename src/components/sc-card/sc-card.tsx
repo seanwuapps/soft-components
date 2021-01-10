@@ -1,6 +1,6 @@
 import { Component, Host, h, Prop, Element } from '@stencil/core'
 import { hasSlot } from '../../utils/component'
-
+import { handleRayTracing } from '../../utils/ray-tracer'
 @Component({
   tag: 'sc-card',
   styleUrl: 'sc-card.scss',
@@ -30,6 +30,9 @@ export class Card {
    */
   @Prop({ reflect: true }) bordered?: boolean | undefined = false
 
+  /**
+   * Position of featured media in the card
+   */
   @Prop({ reflect: true }) mediaPosition?:
     | 'top'
     | 'left'
@@ -38,6 +41,11 @@ export class Card {
     | 'start' // responsive top left
     | 'end' // responsive bottom right
     | undefined = null
+
+  /**
+   * Use mouse as the light source (ray-tracing)
+   */
+  @Prop() rayTracing?: boolean = false
 
   hasCustomTitle: boolean
 
@@ -49,6 +57,13 @@ export class Card {
     this.hasCustomTitle = hasSlot(this.el, 'custom-title')
     this.hasOverflowMenu = hasSlot(this.el, 'overflow-menu')
     this.hasMedia = hasSlot(this.el, 'media-content')
+  }
+
+  componentDidLoad() {
+    if (this.rayTracing) {
+      this.el.classList.add('ray-tracing')
+      window.addEventListener('mousemove', e => handleRayTracing(e, this.el))
+    }
   }
 
   render() {

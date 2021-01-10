@@ -71,6 +71,7 @@ export class PageStandard {
 
     return (
       <Host>
+        {this.meta.title}
         <seo-tags pageTitle={this.meta ? this.meta.title : 'Soft Components'} description={this.meta ? this.meta.description : null}></seo-tags>
         <div class="content" innerHTML={this.content}></div>
         <div class="content-bottom text-center text-left-lg">

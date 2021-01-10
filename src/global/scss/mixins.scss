@@ -1,9 +1,12 @@
 @function highlight($factor: 1) {
-  @return (-10px * $factor) (-10px * $factor) (30px * $factor) 0
+  @return calc(var(--sc-highlight-dist-x) * #{$factor})
+    calc(var(--sc-highlight-dist-y) * #{$factor}) calc(30px * #{$factor}) 0
     highlightColor();
 }
 @function shadow($factor: 1) {
-  @return (10px * $factor) (10px * $factor) (30px * $factor) 0 shadowColor();
+  @return calc(var(--sc-shadow-dist-x) * #{$factor})
+    calc(var(--sc-shadow-dist-y) * #{$factor}) calc(30px * #{$factor}) 0
+    shadowColor();
 }
 @function highlightColor() {
   @return var(--sc-highlight-color, rgba(255, 255, 255, 0.2));
@@ -85,4 +88,11 @@
 @mixin browserFocus() {
   outline: 5px auto Highlight;
   outline: 5px auto -webkit-focus-ring-color;
+}
+
+@mixin rayTracing() {
+  &.ray-tracing {
+    transition: box-shadow var(--sc-animation-duration, 0.3s)
+      var(--sc-animation-timing-function, ease);
+  }
 }

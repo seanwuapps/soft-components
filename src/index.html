@@ -37,14 +37,18 @@
 
   </style>
 </head>
-
+<script>
+</script>
 <body class="pa-5">
   <div class="container">
     <div class="row">
       <div class="col-md-10">
         <sc-accordion multiple>
+          <sc-accordion-item heading="Dial">
+            <sc-dial min="10" max="90" step="5"></sc-dial>
 
-          <sc-accordion-item heading="Progress" active>
+          </sc-accordion-item>
+          <sc-accordion-item heading="Progress">
             <sc-progress indeterminate style="--sc-progress-height: 4px"></sc-progress>
             <sc-progress indeterminate></sc-progress>
             <sc-progress indeterminate circular></sc-progress>
@@ -67,15 +71,7 @@
             <sc-toggle label="Toggle small" name="test3" value="3" size="sm"></sc-toggle>
           </sc-accordion-item>
           <sc-accordion-item heading="Inputs">
-            <div class="mb-5">
-              color
-              <sc-color label="Color" name="color"></sc-color>
 
-              <sc-input type="color">
-              </sc-input>
-
-              <sc-color-picker></sc-color-picker>
-            </div>
             <div class="mb-5">
               date
               <sc-input type="date">
@@ -125,18 +121,8 @@
               </sc-input>
             </div>
             <div class="mb-5">
-              reset
-              <sc-input type="reset">
-              </sc-input>
-            </div>
-            <div class="mb-5">
               search
               <sc-input type="search">
-              </sc-input>
-            </div>
-            <div class="mb-5">
-              submit
-              <sc-input type="submit">
               </sc-input>
             </div>
             <div class="mb-5">
@@ -283,6 +269,10 @@
             </sc-button>
 
 
+            <sc-button ray-tracing>
+              Ray tracing button
+            </sc-button>
+
           </sc-accordion-item>
           <sc-accordion-item heading="Cards" >
             <h2>Text based cards</h2>
@@ -312,6 +302,35 @@
                 </sc-card>
               </div>
             </div>
+
+            <h2>Ray tracing</h2>
+            <div class="row">
+              <div class="col">
+                <sc-card ray-tracing card-title="Card" card-subtitle="I'm normal card">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis
+                  adipisci ut dolores ipsam perspiciatis maxime, eaque eos ipsa possimus officia quia voluptate numquam?
+                  Tempora, id?
+                </sc-card>
+              </div>
+              <div class="col">
+                <sc-card ray-tracing engraved card-title="Card" card-subtitle="I'm engraved card">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis
+                  dolores
+                  commodi, cupiditate mollitia aspernatur sit aperiam quibusdam eligendi, rem eveniet, quod aliquam eos
+                  fuga
+                  corporis a.
+                </sc-card>
+              </div>
+              <div class="col">
+                <sc-card ray-tracing bordered card-title="Card" card-subtitle="I'm bordered card">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum
+                  exercitationem commodi porro eveniet atque. Atque dolorum quasi sit! Quasi magnam aliquam neque sit
+                  natus
+                  officiis odit.
+                </sc-card>
+              </div>
+            </div>
+
 
             <h2>Media cards</h2>
             <div class="row">

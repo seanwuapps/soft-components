@@ -9,9 +9,9 @@ sc-toggle {
   /**
     @prop --sc-toggle-button-size:
       Size of the toggle button. Note, if elements has `size="sm"` attribute, the size will be half of this value.
-      - default: calc(var(--sc-border-radius, 1em) * 2 + 1em)
+      - default: 40px
   */
-  --sc-toggle-button-size: var(--sc-border-radius, 40px);
+  --sc-toggle-button-size: 40px;
 
   /**
     @prop --sc-toggle-active-bg-color:

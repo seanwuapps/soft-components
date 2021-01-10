@@ -51,19 +51,16 @@
   /**
     @prop --sc-progress-animation-duration:
       Animation duration of the indeterminate progress bar
-      - default: var(--sc-animation-duration, 0.4s)
+      - default: 2s
   */
-  --sc-progress-animation-duration: var(--sc-animation-duration, 2s);
+  --sc-progress-animation-duration: 2s;
 
   /**
     @prop --sc-progress-animation-timing-function:
       Animation timing function of the indeterminate progress bar
       - default: var(--sc-animation-timing-function, ease)
   */
-  --sc-progress-animation-timing-function: var(
-    --sc-animation-timing-function,
-    ease-in-out
-  );
+  --sc-progress-animation-timing-function: ease-in-out;
 
   /**
     @prop --sc-progress-circular-size:

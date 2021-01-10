@@ -7,6 +7,8 @@ import {
   Prop,
   h,
 } from '@stencil/core'
+// import throttle from 'lodash.throttle'
+import { handleRayTracing } from '../../utils/ray-tracer'
 /**
  * @slot - Content is placed between the named slots if provided without a slot.
  */
@@ -91,6 +93,11 @@ export class ScButton {
   @Prop() circle?: boolean = false
 
   /**
+   * Use mouse as the light source (ray-tracing)
+   */
+  @Prop() rayTracing?: boolean = false
+
+  /**
    * Emitted when the button has focus.
    */
   @Event() focusEvent!: EventEmitter<void>
@@ -115,6 +122,18 @@ export class ScButton {
 
   private onClick = () => {
     this.clickEvent.emit()
+  }
+  componentDidLoad() {
+    if (this.rayTracing) {
+      this.el.classList.add('ray-tracing')
+      window.addEventListener('mousemove', e => handleRayTracing(e, this.el))
+    }
+  }
+
+  disconnectedCallback() {
+    // if (this.rayTracing) {
+    //   window.removeEventListener('mousemove', throttle(handleRayTracing, 200))
+    // }
   }
 
   render() {

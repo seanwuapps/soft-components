@@ -84,6 +84,10 @@ export namespace Components {
          */
         "iconText"?: boolean | undefined;
         /**
+          * Use mouse as the light source (ray-tracing)
+         */
+        "rayTracing"?: boolean;
+        /**
           * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
          */
         "rel": string | undefined;
@@ -113,6 +117,9 @@ export namespace Components {
           * if true, card will appear engraved instead of raised by default.
          */
         "engraved"?: boolean | undefined;
+        /**
+          * Position of featured media in the card
+         */
         "mediaPosition"?: | 'top'
     | 'left'
     | 'right'
@@ -120,6 +127,10 @@ export namespace Components {
     | 'start' // responsive top left
     | 'end' // responsive bottom right
     | undefined;
+        /**
+          * Use mouse as the light source (ray-tracing)
+         */
+        "rayTracing"?: boolean;
     }
     interface ScColor {
         /**
@@ -456,6 +467,10 @@ declare namespace LocalJSX {
          */
         "onFocusEvent"?: (event: CustomEvent<void>) => void;
         /**
+          * Use mouse as the light source (ray-tracing)
+         */
+        "rayTracing"?: boolean;
+        /**
           * Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).
          */
         "rel"?: string | undefined;
@@ -485,6 +500,9 @@ declare namespace LocalJSX {
           * if true, card will appear engraved instead of raised by default.
          */
         "engraved"?: boolean | undefined;
+        /**
+          * Position of featured media in the card
+         */
         "mediaPosition"?: | 'top'
     | 'left'
     | 'right'
@@ -492,6 +510,10 @@ declare namespace LocalJSX {
     | 'start' // responsive top left
     | 'end' // responsive bottom right
     | undefined;
+        /**
+          * Use mouse as the light source (ray-tracing)
+         */
+        "rayTracing"?: boolean;
     }
     interface ScColor {
         /**

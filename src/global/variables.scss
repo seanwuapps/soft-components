@@ -16,4 +16,10 @@ html {
   --sc-animation-timing-function: ease;
   /* spacing */
   --sc-root-spacing: 8px;
+
+  /* ray-tracing */
+  --sc-highlight-dist-x: -10px;
+  --sc-highlight-dist-y: -10px;
+  --sc-shadow-dist-x: 10px;
+  --sc-shadow-dist-y: 10px;
 }
