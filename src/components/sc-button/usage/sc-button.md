@@ -83,5 +83,10 @@ Combine attributes together to have a party
 </sc-button>
 ```
 
-
+You can add `ray-tracing` attribute to make it use the mouse as the light source, this could be used to draw more attention to the element.
+```html
+<sc-button ray-tracing>
+  Look at me!
+</sc-button>
+```
 
