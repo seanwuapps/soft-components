@@ -73,3 +73,22 @@ Card heading section can be customised with the `custom-title` slot.
   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, modi animi possimus fugiat accusamus vitae tempore suscipit asperiores eum cum nihil amet natus impedit iure
 </sc-card>
 ```
+
+
+## Ray tracing
+
+You can add `ray-tracing` attribute to make it use the mouse as the light source, this could be used to draw more attention to the element.
+
+Please note the ray-tracing feature modifies the CSS variables that's shared between components, if you have other components inside the cards that uses the highlight and shadow variables they will use the mouse as light source too. 
+
+```html
+<sc-card ray-tracing class="ma-4" card-title="Card" card-subtitle="I'm normal card">
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis
+</sc-card>
+<sc-card ray-tracing class="ma-4" engraved card-title="Card" card-subtitle="I'm engraved card">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis
+</sc-card>
+<sc-card ray-tracing class="ma-4" bordered card-title="Card" card-subtitle="I'm bordered card">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum
+</sc-card>
+```
