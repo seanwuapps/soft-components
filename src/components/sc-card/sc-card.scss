@@ -210,3 +210,7 @@
     background-color: var(--sc-card-bg-color);
   }
 }
+
+:host(.ray-tracing) {
+  @include rayTracing();
+}

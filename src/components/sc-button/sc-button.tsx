@@ -7,8 +7,6 @@ import {
   Prop,
   h,
 } from '@stencil/core'
-// import throttle from 'lodash.throttle'
-import { handleRayTracing } from '../../utils/ray-tracer'
 /**
  * @slot - Content is placed between the named slots if provided without a slot.
  */
@@ -123,18 +121,6 @@ export class ScButton {
   private onClick = () => {
     this.clickEvent.emit()
   }
-  componentDidLoad() {
-    if (this.rayTracing) {
-      this.el.classList.add('ray-tracing')
-      window.addEventListener('mousemove', e => handleRayTracing(e, this.el))
-    }
-  }
-
-  disconnectedCallback() {
-    // if (this.rayTracing) {
-    //   window.removeEventListener('mousemove', throttle(handleRayTracing, 200))
-    // }
-  }
 
   render() {
     const {
@@ -173,6 +159,7 @@ export class ScButton {
           circle,
         }}
       >
+        {this.rayTracing && <sc-ray-tracer element={this.el}></sc-ray-tracer>}
         <TagType
           {...attrs}
           disabled={disabled}

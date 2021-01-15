@@ -178,7 +178,7 @@ export class PageComponents {
             </section>
           )}
           {/* Events */}
-          {this.component.events?.length > 0 && (
+          {this.component.events?.length > 0 ? (
             <section>
               <linkable-title id="Events" tag="h2">
                 Events
@@ -213,9 +213,9 @@ export class PageComponents {
                 </div>
               </div>
             </section>
-          )}
+          ) : null}
           {/* Methods */}
-          {this.methods?.length && (
+          {this.methods?.length ? (
             <section>
               <linkable-title id="Methods" tag="h2">
                 Methods
@@ -250,7 +250,7 @@ export class PageComponents {
                 </div>
               </div>
             </section>
-          )}
+          ) : null}
         </article>
 
         {/* comments */}

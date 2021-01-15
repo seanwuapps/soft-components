@@ -12,9 +12,23 @@ const bound = num => {
   return num
 }
 
+const mouseInEl = (mouseX, mouseY, elX, elY, width, height) => {
+  return (
+    elX < mouseX &&
+    mouseX < elX + width &&
+    elY < mouseY &&
+    mouseY < elY + height
+  )
+}
+
 export function handleRayTracing(e: MouseEvent, element: HTMLElement) {
   const { clientX: mouseX, clientY: mouseY } = e
-  const { x: elX, y: elY } = element.getBoundingClientRect()
+  const { x: elX, y: elY, width, height } = element.getBoundingClientRect()
+
+  // do nothing when mouse is inside the element
+  if (mouseInEl(mouseX, mouseY, elX, elY, width, height)) {
+    return
+  }
 
   const diffX = mouseX - elX
   const diffY = mouseY - elY
@@ -22,15 +36,16 @@ export function handleRayTracing(e: MouseEvent, element: HTMLElement) {
   let propX = bound((maxShadowDistance * diffX) / maxDetectionDistance)
   let propY = bound((maxShadowDistance * diffY) / maxDetectionDistance)
 
-  element.style.cssText = `
+  const step = () => {
+    element.style.cssText = `
   --sc-highlight-dist-x: ${propX}px;
   --sc-highlight-dist-y: ${propY}px;
   --sc-shadow-dist-x: ${-propX}px;
   --sc-shadow-dist-y: ${-propY}px;
   `
+  }
 
-  console.log({ elX, elY })
-  console.log({ mouseX, mouseY })
+  requestAnimationFrame(step)
 }
 
 const rayTracer = {

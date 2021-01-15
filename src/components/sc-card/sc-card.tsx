@@ -1,6 +1,5 @@
 import { Component, Host, h, Prop, Element } from '@stencil/core'
 import { hasSlot } from '../../utils/component'
-import { handleRayTracing } from '../../utils/ray-tracer'
 @Component({
   tag: 'sc-card',
   styleUrl: 'sc-card.scss',
@@ -59,17 +58,11 @@ export class Card {
     this.hasMedia = hasSlot(this.el, 'media-content')
   }
 
-  componentDidLoad() {
-    if (this.rayTracing) {
-      this.el.classList.add('ray-tracing')
-      window.addEventListener('mousemove', e => handleRayTracing(e, this.el))
-    }
-  }
-
   render() {
     const { engraved, bordered } = this
     return (
       <Host class={{ engraved, bordered }}>
+        {this.rayTracing && <sc-ray-tracer element={this.el}></sc-ray-tracer>}
         {this.hasMedia && (
           <div class="card-media">
             <slot name="media-content"></slot>

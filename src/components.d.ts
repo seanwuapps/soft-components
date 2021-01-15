@@ -277,6 +277,9 @@ export namespace Components {
          */
         "size"?: number;
     }
+    interface ScRayTracer {
+        "element": HTMLElement;
+    }
     interface ScToggle {
         /**
           * aria labelby
@@ -355,6 +358,12 @@ declare global {
         prototype: HTMLScProgressElement;
         new (): HTMLScProgressElement;
     };
+    interface HTMLScRayTracerElement extends Components.ScRayTracer, HTMLStencilElement {
+    }
+    var HTMLScRayTracerElement: {
+        prototype: HTMLScRayTracerElement;
+        new (): HTMLScRayTracerElement;
+    };
     interface HTMLScToggleElement extends Components.ScToggle, HTMLStencilElement {
     }
     var HTMLScToggleElement: {
@@ -369,6 +378,7 @@ declare global {
         "sc-color": HTMLScColorElement;
         "sc-input": HTMLScInputElement;
         "sc-progress": HTMLScProgressElement;
+        "sc-ray-tracer": HTMLScRayTracerElement;
         "sc-toggle": HTMLScToggleElement;
     }
 }
@@ -672,6 +682,9 @@ declare namespace LocalJSX {
          */
         "size"?: number;
     }
+    interface ScRayTracer {
+        "element"?: HTMLElement;
+    }
     interface ScToggle {
         /**
           * aria labelby
@@ -734,6 +747,7 @@ declare namespace LocalJSX {
         "sc-color": ScColor;
         "sc-input": ScInput;
         "sc-progress": ScProgress;
+        "sc-ray-tracer": ScRayTracer;
         "sc-toggle": ScToggle;
     }
 }
@@ -748,6 +762,7 @@ declare module "@stencil/core" {
             "sc-color": LocalJSX.ScColor & JSXBase.HTMLAttributes<HTMLScColorElement>;
             "sc-input": LocalJSX.ScInput & JSXBase.HTMLAttributes<HTMLScInputElement>;
             "sc-progress": LocalJSX.ScProgress & JSXBase.HTMLAttributes<HTMLScProgressElement>;
+            "sc-ray-tracer": LocalJSX.ScRayTracer & JSXBase.HTMLAttributes<HTMLScRayTracerElement>;
             "sc-toggle": LocalJSX.ScToggle & JSXBase.HTMLAttributes<HTMLScToggleElement>;
         }
     }

@@ -91,8 +91,5 @@
 }
 
 @mixin rayTracing() {
-  &.ray-tracing {
-    transition: box-shadow var(--sc-animation-duration, 0.3s)
-      var(--sc-animation-timing-function, ease);
-  }
+  transition: box-shadow 0.1s ease;
 }
