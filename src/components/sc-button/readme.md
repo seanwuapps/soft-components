@@ -93,25 +93,33 @@ Combine attributes together to have a party
 </sc-button>
 ```
 
+You can add `ray-tracing` attribute to make it use the mouse as the light source, this could be used to draw more attention to the element.
+```html
+<sc-button ray-tracing>
+  Look at me!
+</sc-button>
+```
+
 
 
 ## Properties
 
-| Property   | Attribute   | Description                                                                                                                                                                                                                                                                               | Type                              | Default     |
-| ---------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----------- |
-| `active`   | `active`    | Set active state for the button                                                                                                                                                                                                                                                           | `boolean`                         | `false`     |
-| `block`    | `block`     | Make button `display: block`                                                                                                                                                                                                                                                              | `boolean`                         | `false`     |
-| `bordered` | `bordered`  | If prop exists, button will have an engraved-styled border                                                                                                                                                                                                                                | `boolean`                         | `false`     |
-| `circle`   | `circle`    | Make button circle shaped                                                                                                                                                                                                                                                                 | `boolean`                         | `false`     |
-| `disabled` | `disabled`  | If `true`, the user cannot interact with the button.                                                                                                                                                                                                                                      | `boolean`                         | `false`     |
-| `download` | `download`  | This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want). | `string`                          | `undefined` |
-| `flat`     | `flat`      | Make button flat                                                                                                                                                                                                                                                                          | `boolean`                         | `false`     |
-| `href`     | `href`      | Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.                                                                                                                                                                   | `string`                          | `undefined` |
-| `icon`     | `icon`      | Icon only button                                                                                                                                                                                                                                                                          | `boolean`                         | `false`     |
-| `iconText` | `icon-text` | If this button has both icon and text                                                                                                                                                                                                                                                     | `boolean`                         | `false`     |
-| `rel`      | `rel`       | Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).                                                                                                    | `string`                          | `undefined` |
-| `target`   | `target`    | Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.                                                                                                                                       | `string`                          | `undefined` |
-| `type`     | `type`      | The type of the button.                                                                                                                                                                                                                                                                   | `"button" \| "reset" \| "submit"` | `'button'`  |
+| Property     | Attribute     | Description                                                                                                                                                                                                                                                                               | Type                              | Default     |
+| ------------ | ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- | ----------- |
+| `active`     | `active`      | Set active state for the button                                                                                                                                                                                                                                                           | `boolean`                         | `false`     |
+| `block`      | `block`       | Make button `display: block`                                                                                                                                                                                                                                                              | `boolean`                         | `false`     |
+| `bordered`   | `bordered`    | If prop exists, button will have an engraved-styled border                                                                                                                                                                                                                                | `boolean`                         | `false`     |
+| `circle`     | `circle`      | Make button circle shaped                                                                                                                                                                                                                                                                 | `boolean`                         | `false`     |
+| `disabled`   | `disabled`    | If `true`, the user cannot interact with the button.                                                                                                                                                                                                                                      | `boolean`                         | `false`     |
+| `download`   | `download`    | This attribute instructs browsers to download a URL instead of navigating to it, so the user will be prompted to save it as a local file. If the attribute has a value, it is used as the pre-filled file name in the Save prompt (the user can still change the file name if they want). | `string`                          | `undefined` |
+| `flat`       | `flat`        | Make button flat                                                                                                                                                                                                                                                                          | `boolean`                         | `false`     |
+| `href`       | `href`        | Contains a URL or a URL fragment that the hyperlink points to. If this property is set, an anchor tag will be rendered.                                                                                                                                                                   | `string`                          | `undefined` |
+| `icon`       | `icon`        | Icon only button                                                                                                                                                                                                                                                                          | `boolean`                         | `false`     |
+| `iconText`   | `icon-text`   | If this button has both icon and text                                                                                                                                                                                                                                                     | `boolean`                         | `false`     |
+| `rayTracing` | `ray-tracing` | Use mouse as the light source (ray-tracing)                                                                                                                                                                                                                                               | `boolean`                         | `false`     |
+| `rel`        | `rel`         | Specifies the relationship of the target object to the link object. The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).                                                                                                    | `string`                          | `undefined` |
+| `target`     | `target`      | Specifies where to display the linked URL. Only applies when an `href` is provided. Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`.                                                                                                                                       | `string`                          | `undefined` |
+| `type`       | `type`        | The type of the button.                                                                                                                                                                                                                                                                   | `"button" \| "reset" \| "submit"` | `'button'`  |
 
 
 ## Events
@@ -149,6 +157,19 @@ Combine attributes together to have a party
 | `--sc-button-vertical-align`         | vertical align of the button - default: top                            |
 | `--sc-button-width`                  | Set fixed width for button - default: auto                             |
 
+
+## Dependencies
+
+### Depends on
+
+- [sc-ray-tracer](../sc-ray-tracer)
+
+### Graph
+```mermaid
+graph TD;
+  sc-button --> sc-ray-tracer
+  style sc-button fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

@@ -59,6 +59,7 @@ Soft components are built with the help of [Stencil](https://stenciljs.com/).
 ## Components roadmap
 
 - [x] `sc-progress` - progress bar
+- [ ] `sc-range` - `input type="range"` equivalent
 - [ ] `sc-dial` - dial input
 - [ ] `sc-radio` - radio button
 - [ ] `sc-select` - `select` dropdown box

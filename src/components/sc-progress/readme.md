@@ -65,7 +65,7 @@ Add `indeterminate` attribute when you don't know how much progress is made. Per
 
 | Name                                      | Description                                                                                                      |
 | ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `--sc-progress-animation-duration`        | Animation duration of the indeterminate progress bar - default: var(--sc-animation-duration, 0.4s)               |
+| `--sc-progress-animation-duration`        | Animation duration of the indeterminate progress bar - default: 2s                                               |
 | `--sc-progress-animation-timing-function` | Animation timing function of the indeterminate progress bar - default: var(--sc-animation-timing-function, ease) |
 | `--sc-progress-border-radius`             | Radius of the progress bar - default: var(--sc-border-radius, 8px)                                               |
 | `--sc-progress-circular-initial-rotate`   | Initial rotation of the progress ring. 0 means starting from right-center - default: 90deg                       |

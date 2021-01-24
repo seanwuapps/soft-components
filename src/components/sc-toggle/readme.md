@@ -57,13 +57,13 @@ Add a `size="sm"` attribute to make it more compact
 
 ## CSS Custom Properties
 
-| Name                           | Description                                                                                                                                                          |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `--sc-toggle-active-bg-color`  | Background color of the toggle when active/checked - default: var(--sc-active-color, #c586c0)                                                                        |
-| `--sc-toggle-active-btn-color` | Toggle button color when active/checked - default: #fff                                                                                                              |
-| `--sc-toggle-bg-color`         | Default background color in the toggle slide area - default: var(--sc-bg-color, #eee)                                                                                |
-| `--sc-toggle-button-color`     | Toggle button color - default: #fff                                                                                                                                  |
-| `--sc-toggle-button-size`      | Size of the toggle button. Note, if elements has `size="sm"` attribute, the size will be half of this value. - default: calc(var(--sc-border-radius, 1em) * 2 + 1em) |
+| Name                           | Description                                                                                                                  |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| `--sc-toggle-active-bg-color`  | Background color of the toggle when active/checked - default: var(--sc-active-color, #c586c0)                                |
+| `--sc-toggle-active-btn-color` | Toggle button color when active/checked - default: #fff                                                                      |
+| `--sc-toggle-bg-color`         | Default background color in the toggle slide area - default: var(--sc-bg-color, #eee)                                        |
+| `--sc-toggle-button-color`     | Toggle button color - default: #fff                                                                                          |
+| `--sc-toggle-button-size`      | Size of the toggle button. Note, if elements has `size="sm"` attribute, the size will be half of this value. - default: 40px |
 
 
 ----------------------------------------------

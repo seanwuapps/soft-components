@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^9.0.0",
-    "@stencil/core": "^2.1.2",
+    "@stencil/core": "^2.3.0",
     "@stencil/helmet": "^0.3.2",
     "@stencil/postcss": "^1.0.1",
     "@stencil/router": "^1.0.1",

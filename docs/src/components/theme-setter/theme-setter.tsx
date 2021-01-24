@@ -14,7 +14,7 @@ export class ThemeSetter {
   @Event() themeChanged: EventEmitter<boolean>;
 
   componentWillLoad() {
-    this.setColor();
+    // this.setColor();
   }
 
   setColor() {

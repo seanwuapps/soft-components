@@ -86,6 +86,25 @@ Card heading section can be customised with the `custom-title` slot.
 ```
 
 
+## Ray tracing
+
+You can add `ray-tracing` attribute to make it use the mouse as the light source, this could be used to draw more attention to the element.
+
+Please note the ray-tracing feature modifies the CSS variables that's shared between components, if you have other components inside the cards that uses the highlight and shadow variables they will use the mouse as light source too. 
+
+```html
+<sc-card ray-tracing class="ma-4" card-title="Card" card-subtitle="I'm normal card">
+  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis
+</sc-card>
+<sc-card ray-tracing class="ma-4" engraved card-title="Card" card-subtitle="I'm engraved card">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis
+</sc-card>
+<sc-card ray-tracing class="ma-4" bordered card-title="Card" card-subtitle="I'm bordered card">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum
+</sc-card>
+```
+
+
 
 ## Properties
 
@@ -95,7 +114,8 @@ Card heading section can be customised with the `custom-title` slot.
 | `cardSubtitle`  | `card-subtitle`  | Subtitle of the card                                             | `string`                                                     | `undefined` |
 | `cardTitle`     | `card-title`     | Title of the card                                                | `string`                                                     | `undefined` |
 | `engraved`      | `engraved`       | if true, card will appear engraved instead of raised by default. | `boolean`                                                    | `false`     |
-| `mediaPosition` | `media-position` |                                                                  | `"bottom" \| "end" \| "left" \| "right" \| "start" \| "top"` | `null`      |
+| `mediaPosition` | `media-position` | Position of featured media in the card                           | `"bottom" \| "end" \| "left" \| "right" \| "start" \| "top"` | `null`      |
+| `rayTracing`    | `ray-tracing`    | Use mouse as the light source (ray-tracing)                      | `boolean`                                                    | `false`     |
 
 
 ## CSS Custom Properties
@@ -118,6 +138,19 @@ Card heading section can be customised with the `custom-title` slot.
 | `--sc-card-title-font-weight`     | Title font weight                                                                                                       |
 | `--sc-card-title-text-color`      | Title text color                                                                                                        |
 
+
+## Dependencies
+
+### Depends on
+
+- [sc-ray-tracer](../sc-ray-tracer)
+
+### Graph
+```mermaid
+graph TD;
+  sc-card --> sc-ray-tracer
+  style sc-card fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

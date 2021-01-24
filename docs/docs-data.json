@@ -1,9 +1,9 @@
 {
-  "timestamp": "2021-01-02T06:58:13",
+  "timestamp": "2021-01-24T23:48:57",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.1.1",
-    "typescriptVersion": "4.0.3"
+    "version": "2.3.0",
+    "typescriptVersion": "4.0.5"
   },
   "components": [
     {
@@ -279,7 +279,7 @@
         }
       ],
       "usage": {
-        "sc-button": "<div class=\"intro\">\nA button is the most identifiable component for neumorphism designs. You can customise the use of a button in various ways. \n</div>\n\n```html\n<sc-button aria-label=\"Default button\" onclick=\"alert('yo')\">Button</sc-button>\n```\n\nYou can use it the same way as an `<a>` tag.\n\n```html\n<!-- Anchor -->\n<sc-button aria-label=\"Anchor tag\" href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\">\nAnchor\n</sc-button>\n```\n\nAdd a `block` attribute to create a block level button.\n\n```html\n<!-- Block level -->\n<sc-button aria-label=\"Block level button\" block>Block Button</sc-button>\n```\n\nUse `icon` attribute to adjust styles to fit an icon into the button.\n\n```html\n<sc-button aria-label=\"Icon button\" icon>\n  <i class='bx bx-drink'></i>\n</sc-button>\n```\n\nUse `icon-text` attribute to center align icon and text.\n\n```html\n<sc-button aria-label=\"Icon and text button\" icon-text>\n  <i class='bx bx-drink'></i>\n  Text\n</sc-button>\n\n<sc-button aria-label=\"Icon and text button\" icon-text>\n  Text\n  <i class='bx bx-drink'></i>\n</sc-button>\n```\nUse `bordered` attribute to add a reflective border\n\n```html\n<sc-button aria-label=\"Icon button with a reflective border\" bordered icon>\n  <i class='bx bx-drink'></i>\n</sc-button>\n```\n\nUse `circle` attribute to create a circle shaped button\n\n```html\n<sc-button aria-label=\"Circled button with image\" circle>\n  <img src=\"https://github.com/seanwuapps.png\" alt=\"avatar\" width=\"100%\">\n</sc-button>\n```\n\nUse `flat` attribute to make button blend in with the surface (not a11y friendly)\n\n```html\n<sc-button aria-label=\"Flat button\" flat>\n  Flat button\n</sc-button>\n```\n\n\nCombine attributes together to have a party\n\n```html\n\n<h6>Circle icon</h6>\n<sc-button aria-label=\"Circle icon\" icon circle>\n  <i class='bx bx-drink'></i>\n</sc-button>\n\n<h6>Circle bordered</h6>\n<sc-button aria-label=\"Circle bordered\" circle bordered>\n  <img src=\"https://github.com/seanwuapps.png\" alt=\"avatar\" width=\"100%\">\n</sc-button>\n```\n\n\n\n"
+        "sc-button": "<div class=\"intro\">\nA button is the most identifiable component for neumorphism designs. You can customise the use of a button in various ways. \n</div>\n\n```html\n<sc-button aria-label=\"Default button\" onclick=\"alert('yo')\">Button</sc-button>\n```\n\nYou can use it the same way as an `<a>` tag.\n\n```html\n<!-- Anchor -->\n<sc-button aria-label=\"Anchor tag\" href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\">\nAnchor\n</sc-button>\n```\n\nAdd a `block` attribute to create a block level button.\n\n```html\n<!-- Block level -->\n<sc-button aria-label=\"Block level button\" block>Block Button</sc-button>\n```\n\nUse `icon` attribute to adjust styles to fit an icon into the button.\n\n```html\n<sc-button aria-label=\"Icon button\" icon>\n  <i class='bx bx-drink'></i>\n</sc-button>\n```\n\nUse `icon-text` attribute to center align icon and text.\n\n```html\n<sc-button aria-label=\"Icon and text button\" icon-text>\n  <i class='bx bx-drink'></i>\n  Text\n</sc-button>\n\n<sc-button aria-label=\"Icon and text button\" icon-text>\n  Text\n  <i class='bx bx-drink'></i>\n</sc-button>\n```\nUse `bordered` attribute to add a reflective border\n\n```html\n<sc-button aria-label=\"Icon button with a reflective border\" bordered icon>\n  <i class='bx bx-drink'></i>\n</sc-button>\n```\n\nUse `circle` attribute to create a circle shaped button\n\n```html\n<sc-button aria-label=\"Circled button with image\" circle>\n  <img src=\"https://github.com/seanwuapps.png\" alt=\"avatar\" width=\"100%\">\n</sc-button>\n```\n\nUse `flat` attribute to make button blend in with the surface (not a11y friendly)\n\n```html\n<sc-button aria-label=\"Flat button\" flat>\n  Flat button\n</sc-button>\n```\n\n\nCombine attributes together to have a party\n\n```html\n\n<h6>Circle icon</h6>\n<sc-button aria-label=\"Circle icon\" icon circle>\n  <i class='bx bx-drink'></i>\n</sc-button>\n\n<h6>Circle bordered</h6>\n<sc-button aria-label=\"Circle bordered\" circle bordered>\n  <img src=\"https://github.com/seanwuapps.png\" alt=\"avatar\" width=\"100%\">\n</sc-button>\n```\n\nYou can add `ray-tracing` attribute to make it use the mouse as the light source, this could be used to draw more attention to the element.\n```html\n<sc-button ray-tracing>\n  Look at me!\n</sc-button>\n```\n\n"
       },
       "props": [
         {
@@ -440,6 +440,23 @@
           "attr": "icon-text",
           "reflectToAttr": false,
           "docs": "If this button has both icon and text",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "rayTracing",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "ray-tracing",
+          "reflectToAttr": false,
+          "docs": "Use mouse as the light source (ray-tracing)",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -620,8 +637,14 @@
       ],
       "parts": [],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "sc-ray-tracer"
+      ],
+      "dependencyGraph": {
+        "sc-button": [
+          "sc-ray-tracer"
+        ]
+      }
     },
     {
       "filePath": "./src/components/sc-card/sc-card.tsx",
@@ -631,7 +654,7 @@
       "docs": "",
       "docsTags": [],
       "usage": {
-        "sc-card": "<div class=\"intro\">\n  A card contains a set of relevant content on a single topic.\n</div>\n\n## Text based cards\n\nCard's content can be added into the card via the default slot. `card-title` and `card-subtitle` properties are available to add styled card heading.\n\nAdd `engraved` to make the card appear to be sunk into the surface.\n\nAdd `bordered` to give the card a border that's reflective to the light source.\n\n```html\n<sc-card class=\"ma-4\" card-title=\"Card\" card-subtitle=\"I'm normal card\">\n  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis\n</sc-card>\n<sc-card class=\"ma-4\" engraved card-title=\"Card\" card-subtitle=\"I'm engraved card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis\n</sc-card>\n<sc-card class=\"ma-4\" bordered card-title=\"Card\" card-subtitle=\"I'm bordered card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum\n</sc-card>\n```\n\n<h2>Media cards</h2>\n\n`slot=\"media-content\"` can be used inside the card element to show featured media.\n\n```html\n<sc-card class=\"ma-4\" card-title=\"Top media\" card-subtitle=\"5 Feb 2020\" media-position=\"top\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Bottom media\" card-subtitle=\"5 Feb 2020\" media-position=\"bottom\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Left media\" card-subtitle=\"5 Feb 2020\" media-position=\"left\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Right media\" card-subtitle=\"5 Feb 2020\" media-position=\"right\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n```\n\n\n## Customise card title\n\nCard heading section can be customised with the `custom-title` slot. \n\n```html\n<sc-card class=\"ma-4\">\n  <div slot=\"custom-title\">\n    <div>\n      <mark>Customise title with <code>slot=\"custom-title\"</code></mark>\n    </div>\n    <div>\n      <marquee>Go bananas inside the slot <img\n          src=\"https://ph-files.imgix.net/caf5608a-67ec-4f9f-acb5-db0052c33bed?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=80&h=80\"\n          alt=\"party parrot\" width=\"20\"></marquee>\n    </div>\n  </div>\n  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, modi animi possimus fugiat accusamus vitae tempore suscipit asperiores eum cum nihil amet natus impedit iure\n</sc-card>\n```"
+        "sc-card": "<div class=\"intro\">\n  A card contains a set of relevant content on a single topic.\n</div>\n\n## Text based cards\n\nCard's content can be added into the card via the default slot. `card-title` and `card-subtitle` properties are available to add styled card heading.\n\nAdd `engraved` to make the card appear to be sunk into the surface.\n\nAdd `bordered` to give the card a border that's reflective to the light source.\n\n```html\n<sc-card class=\"ma-4\" card-title=\"Card\" card-subtitle=\"I'm normal card\">\n  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis\n</sc-card>\n<sc-card class=\"ma-4\" engraved card-title=\"Card\" card-subtitle=\"I'm engraved card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis\n</sc-card>\n<sc-card class=\"ma-4\" bordered card-title=\"Card\" card-subtitle=\"I'm bordered card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum\n</sc-card>\n```\n\n<h2>Media cards</h2>\n\n`slot=\"media-content\"` can be used inside the card element to show featured media.\n\n```html\n<sc-card class=\"ma-4\" card-title=\"Top media\" card-subtitle=\"5 Feb 2020\" media-position=\"top\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Bottom media\" card-subtitle=\"5 Feb 2020\" media-position=\"bottom\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Left media\" card-subtitle=\"5 Feb 2020\" media-position=\"left\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Right media\" card-subtitle=\"5 Feb 2020\" media-position=\"right\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n```\n\n\n## Customise card title\n\nCard heading section can be customised with the `custom-title` slot. \n\n```html\n<sc-card class=\"ma-4\">\n  <div slot=\"custom-title\">\n    <div>\n      <mark>Customise title with <code>slot=\"custom-title\"</code></mark>\n    </div>\n    <div>\n      <marquee>Go bananas inside the slot <img\n          src=\"https://ph-files.imgix.net/caf5608a-67ec-4f9f-acb5-db0052c33bed?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=80&h=80\"\n          alt=\"party parrot\" width=\"20\"></marquee>\n    </div>\n  </div>\n  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, modi animi possimus fugiat accusamus vitae tempore suscipit asperiores eum cum nihil amet natus impedit iure\n</sc-card>\n```\n\n\n## Ray tracing\n\nYou can add `ray-tracing` attribute to make it use the mouse as the light source, this could be used to draw more attention to the element.\n\nPlease note the ray-tracing feature modifies the CSS variables that's shared between components, if you have other components inside the cards that uses the highlight and shadow variables they will use the mouse as light source too. \n\n```html\n<sc-card ray-tracing class=\"ma-4\" card-title=\"Card\" card-subtitle=\"I'm normal card\">\n  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis\n</sc-card>\n<sc-card ray-tracing class=\"ma-4\" engraved card-title=\"Card\" card-subtitle=\"I'm engraved card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis\n</sc-card>\n<sc-card ray-tracing class=\"ma-4\" bordered card-title=\"Card\" card-subtitle=\"I'm bordered card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum\n</sc-card>\n```\n"
       },
       "props": [
         {
@@ -706,7 +729,7 @@
           "mutable": false,
           "attr": "media-position",
           "reflectToAttr": true,
-          "docs": "",
+          "docs": "Position of featured media in the card",
           "docsTags": [],
           "default": "null",
           "values": [
@@ -733,6 +756,23 @@
             {
               "value": "top",
               "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "rayTracing",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "ray-tracing",
+          "reflectToAttr": false,
+          "docs": "Use mouse as the light source (ray-tracing)",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
             }
           ],
           "optional": true,
@@ -822,8 +862,14 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "sc-ray-tracer"
+      ],
+      "dependencyGraph": {
+        "sc-card": [
+          "sc-ray-tracer"
+        ]
+      }
     },
     {
       "filePath": "./src/components/sc-color/sc-color.tsx",
@@ -1515,7 +1561,7 @@
         {
           "name": "--sc-progress-animation-duration",
           "annotation": "prop",
-          "docs": "Animation duration of the indeterminate progress bar - default: var(--sc-animation-duration, 0.4s)"
+          "docs": "Animation duration of the indeterminate progress bar - default: 2s"
         },
         {
           "name": "--sc-progress-animation-timing-function",
@@ -1573,6 +1619,51 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "./src/components/sc-ray-tracer/sc-ray-tracer.tsx",
+      "encapsulation": "shadow",
+      "tag": "sc-ray-tracer",
+      "readme": "# sc-ray-tracer\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "element",
+          "type": "HTMLElement",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "HTMLElement"
+            }
+          ],
+          "optional": false,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [
+        "sc-button",
+        "sc-card"
+      ],
+      "dependencies": [],
+      "dependencyGraph": {
+        "sc-button": [
+          "sc-ray-tracer"
+        ],
+        "sc-card": [
+          "sc-ray-tracer"
+        ]
+      }
     },
     {
       "filePath": "./src/components/sc-toggle/sc-toggle.tsx",
@@ -1799,7 +1890,7 @@
         {
           "name": "--sc-toggle-button-size",
           "annotation": "prop",
-          "docs": "Size of the toggle button. Note, if elements has `size=\"sm\"` attribute, the size will be half of this value. - default: calc(var(--sc-border-radius, 1em) * 2 + 1em)"
+          "docs": "Size of the toggle button. Note, if elements has `size=\"sm\"` attribute, the size will be half of this value. - default: 40px"
         }
       ],
       "slots": [],
