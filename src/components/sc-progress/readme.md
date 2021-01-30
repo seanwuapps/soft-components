@@ -58,7 +58,7 @@ Add `indeterminate` attribute when you don't know how much progress is made. Per
 | `indeterminate` | `indeterminate` | Use indeterminate mode for the progress bar when you do not know how long an operation will take. | `boolean` | `false` |
 | `label`         | `label`         | Label to be displayed inside the progress                                                         | `string`  | `''`    |
 | `percentage`    | `percentage`    | Percentage of progress bar                                                                        | `number`  | `null`  |
-| `size`          | `size`          | Size for circular progress in pixels                                                              | `number`  | `100`   |
+| `radius`        | `radius`        | radius for circular progress in pixels                                                            | `number`  | `50`    |
 
 
 ## CSS Custom Properties
@@ -77,6 +77,19 @@ Add `indeterminate` attribute when you don't know how much progress is made. Per
 | `--sc-progress-padding-y`                 | Vertical inner padding - default: 4px                                                                            |
 | `--sc-progress-width`                     | Width of the progress bar - default: 100%                                                                        |
 
+
+## Dependencies
+
+### Used by
+
+ - [sc-dial](../sc-dial)
+
+### Graph
+```mermaid
+graph TD;
+  sc-dial --> sc-progress
+  style sc-progress fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

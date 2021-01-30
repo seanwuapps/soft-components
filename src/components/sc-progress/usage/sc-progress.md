@@ -19,11 +19,11 @@ You can also adjust the `size` attribute to fit your needs.
 Here are some examples
 
 ```html
-<sc-progress percentage="0" circular label="0_0" size="100"></sc-progress>
-<sc-progress percentage="40" circular size="50"></sc-progress>
-<sc-progress percentage="60" label="60%" circular size="100" style="--sc-progress-color: red"></sc-progress>
-<sc-progress percentage="90" label="90%" circular size="140" style="--sc-progress-color: lime"></sc-progress>
-<sc-progress percentage="100" label="Done" circular size="180" style="--sc-progress-color: #3399aa"></sc-progress>
+<sc-progress percentage="0" circular label="0_0" radius="50"></sc-progress>
+<sc-progress percentage="40" circular radius="30"></sc-progress>
+<sc-progress percentage="60" label="60%" circular radius="50" style="--sc-progress-color: red"></sc-progress>
+<sc-progress percentage="90" label="90%" circular radius="70" style="--sc-progress-color: lime"></sc-progress>
+<sc-progress percentage="100" label="Done" circular radius="100" style="--sc-progress-color: #3399aa"></sc-progress>
 ```
 
 ### Indeterminate state
@@ -34,5 +34,5 @@ Add `indeterminate` attribute when you don't know how much progress is made. Per
 <sc-progress indeterminate></sc-progress>
 <sc-progress indeterminate style="--sc-progress-height: 4px"></sc-progress>
 <sc-progress indeterminate circular></sc-progress>
-<sc-progress indeterminate circular label="Loading" size="200" ></sc-progress>
+<sc-progress indeterminate circular label="Loading" radius="100" ></sc-progress>
 ```

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2021-01-24T23:48:57",
+  "timestamp": "2021-01-26T05:42:35",
   "compiler": {
     "name": "@stencil/core",
     "version": "2.3.0",
@@ -909,6 +909,100 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "./src/components/sc-dial/sc-dial.tsx",
+      "encapsulation": "shadow",
+      "tag": "sc-dial",
+      "readme": "# sc-dial\n\n\n",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "value",
+          "type": "string",
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "blurEvent",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the input loses focus.",
+          "docsTags": []
+        },
+        {
+          "event": "changeEvent",
+          "detail": "any",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the value has changed.",
+          "docsTags": []
+        },
+        {
+          "event": "focusEvent",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the input has focus.",
+          "docsTags": []
+        },
+        {
+          "event": "inputEvent",
+          "detail": "KeyboardEvent",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when a keyboard input occurred.",
+          "docsTags": []
+        },
+        {
+          "event": "keyDownEvent",
+          "detail": "void",
+          "bubbles": true,
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when a key is pressed down",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [
+        {
+          "name": "rotator",
+          "docs": ""
+        }
+      ],
+      "dependents": [],
+      "dependencies": [
+        "sc-progress"
+      ],
+      "dependencyGraph": {
+        "sc-dial": [
+          "sc-progress"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/sc-input/sc-input.tsx",
       "encapsulation": "none",
       "tag": "sc-input",
@@ -1537,14 +1631,14 @@
           "required": false
         },
         {
-          "name": "size",
+          "name": "radius",
           "type": "number",
           "mutable": false,
-          "attr": "size",
+          "attr": "radius",
           "reflectToAttr": false,
-          "docs": "Size for circular progress in pixels",
+          "docs": "radius for circular progress in pixels",
           "docsTags": [],
-          "default": "100",
+          "default": "50",
           "values": [
             {
               "type": "number"
@@ -1616,9 +1710,15 @@
       ],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "sc-dial"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "sc-dial": [
+          "sc-progress"
+        ]
+      }
     },
     {
       "filePath": "./src/components/sc-ray-tracer/sc-ray-tracer.tsx",

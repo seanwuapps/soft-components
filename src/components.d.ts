@@ -138,6 +138,14 @@ export namespace Components {
          */
         "label"?: string;
     }
+    interface ScDial {
+        "max"?: number;
+        "min"?: number;
+        "radius"?: number;
+        "setValue": (value: any) => Promise<void>;
+        "step"?: number;
+        "value"?: number | null;
+    }
     interface ScInput {
         /**
           * If the value of the type attribute is `"file"`, then this attribute will indicate the types of files that the server accepts, otherwise it will be ignored. The value must be a comma-separated list of unique content type specifiers.
@@ -256,6 +264,7 @@ export namespace Components {
         "value"?: string | null;
     }
     interface ScProgress {
+        "angleGap"?: number;
         /**
           * Set shape of the progress indicator to be circular
          */
@@ -273,9 +282,9 @@ export namespace Components {
          */
         "percentage"?: number;
         /**
-          * Size for circular progress in pixels
+          * radius for circular progress in pixels
          */
-        "size"?: number;
+        "radius"?: number;
     }
     interface ScRayTracer {
         "element": HTMLElement;
@@ -346,6 +355,12 @@ declare global {
         prototype: HTMLScColorElement;
         new (): HTMLScColorElement;
     };
+    interface HTMLScDialElement extends Components.ScDial, HTMLStencilElement {
+    }
+    var HTMLScDialElement: {
+        prototype: HTMLScDialElement;
+        new (): HTMLScDialElement;
+    };
     interface HTMLScInputElement extends Components.ScInput, HTMLStencilElement {
     }
     var HTMLScInputElement: {
@@ -376,6 +391,7 @@ declare global {
         "sc-button": HTMLScButtonElement;
         "sc-card": HTMLScCardElement;
         "sc-color": HTMLScColorElement;
+        "sc-dial": HTMLScDialElement;
         "sc-input": HTMLScInputElement;
         "sc-progress": HTMLScProgressElement;
         "sc-ray-tracer": HTMLScRayTracerElement;
@@ -531,6 +547,33 @@ declare namespace LocalJSX {
          */
         "label"?: string;
     }
+    interface ScDial {
+        "max"?: number;
+        "min"?: number;
+        /**
+          * Emitted when the input loses focus.
+         */
+        "onBlurEvent"?: (event: CustomEvent<void>) => void;
+        /**
+          * Emitted when the value has changed.
+         */
+        "onChangeEvent"?: (event: CustomEvent<any>) => void;
+        /**
+          * Emitted when the input has focus.
+         */
+        "onFocusEvent"?: (event: CustomEvent<void>) => void;
+        /**
+          * Emitted when a keyboard input occurred.
+         */
+        "onInputEvent"?: (event: CustomEvent<KeyboardEvent>) => void;
+        /**
+          * Emitted when a key is pressed down
+         */
+        "onKeyDownEvent"?: (event: CustomEvent<void>) => void;
+        "radius"?: number;
+        "step"?: number;
+        "value"?: number | null;
+    }
     interface ScInput {
         /**
           * If the value of the type attribute is `"file"`, then this attribute will indicate the types of files that the server accepts, otherwise it will be ignored. The value must be a comma-separated list of unique content type specifiers.
@@ -661,6 +704,7 @@ declare namespace LocalJSX {
         "value"?: string | null;
     }
     interface ScProgress {
+        "angleGap"?: number;
         /**
           * Set shape of the progress indicator to be circular
          */
@@ -678,9 +722,9 @@ declare namespace LocalJSX {
          */
         "percentage"?: number;
         /**
-          * Size for circular progress in pixels
+          * radius for circular progress in pixels
          */
-        "size"?: number;
+        "radius"?: number;
     }
     interface ScRayTracer {
         "element"?: HTMLElement;
@@ -745,6 +789,7 @@ declare namespace LocalJSX {
         "sc-button": ScButton;
         "sc-card": ScCard;
         "sc-color": ScColor;
+        "sc-dial": ScDial;
         "sc-input": ScInput;
         "sc-progress": ScProgress;
         "sc-ray-tracer": ScRayTracer;
@@ -760,6 +805,7 @@ declare module "@stencil/core" {
             "sc-button": LocalJSX.ScButton & JSXBase.HTMLAttributes<HTMLScButtonElement>;
             "sc-card": LocalJSX.ScCard & JSXBase.HTMLAttributes<HTMLScCardElement>;
             "sc-color": LocalJSX.ScColor & JSXBase.HTMLAttributes<HTMLScColorElement>;
+            "sc-dial": LocalJSX.ScDial & JSXBase.HTMLAttributes<HTMLScDialElement>;
             "sc-input": LocalJSX.ScInput & JSXBase.HTMLAttributes<HTMLScInputElement>;
             "sc-progress": LocalJSX.ScProgress & JSXBase.HTMLAttributes<HTMLScProgressElement>;
             "sc-ray-tracer": LocalJSX.ScRayTracer & JSXBase.HTMLAttributes<HTMLScRayTracerElement>;

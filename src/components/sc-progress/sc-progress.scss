@@ -132,7 +132,7 @@
   }
   .label {
     --sc-progress-cicular-label-size: calc(
-      var(--sc-progress-circular-size) - 3 * var(--sc-progress-stroke-width)
+      var(--sc-progress-circular-size) - 5 * var(--sc-progress-stroke-width)
     );
     position: absolute;
     top: 50%;
@@ -160,7 +160,7 @@
     height: var(--sc-progress-circular-size);
     @include engraved(0.25);
     border-radius: 50%;
-    padding: calc(var(--sc-progress-stroke-width) / 2);
+    // padding: calc(var(--sc-progress-stroke-width) / 2);
   }
   .progress-ring__circle {
     @include transition(stroke-dashoffset);

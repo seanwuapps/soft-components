@@ -1,0 +1,23 @@
+:host {
+  display: inline-block;
+  --sc-dial-angle: 0deg;
+
+  .pointer-wrapper {
+    display: block;
+    transform: rotate(-180deg);
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    border: 1px solid blue;
+    cursor: pointer;
+    .pointer {
+      display: block;
+      // transition: transform 0s var(--sc-animation-timing-function, ease);
+      transform-origin: center center;
+      transform: rotate(var(--sc-dial-angle));
+      will-change: transform;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

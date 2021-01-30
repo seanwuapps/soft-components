@@ -1,11 +1,11 @@
-import { Component, Host, h, Prop } from '@stencil/core'
-
+import { Component, Host, h, Prop, Element } from '@stencil/core'
 @Component({
   tag: 'sc-progress',
   styleUrl: 'sc-progress.scss',
   shadow: true,
 })
 export class ScProgress {
+  @Element() hostEl: HTMLElement
   /**
    * Percentage of progress bar
    */
@@ -22,20 +22,22 @@ export class ScProgress {
   @Prop() circular?: boolean = false
 
   /**
-   * Size for circular progress in pixels
+   * radius for circular progress in pixels
    */
-  @Prop() size?: number = 100
+  @Prop() radius?: number = 50
 
   /**
    * Label to be displayed inside the progress
    */
   @Prop() label?: string = ''
 
+  @Prop() angleGap?: number = 0
+
   circleEl = null
 
   spinnerAnimationId = null
 
-  renderCircular(size) {
+  renderCircular(radius) {
     // commented codes are attempts to do gapped circular progress bar.
     // const gapPercent = 0
     // const offsetFactor = (100 - gapPercent) / 100
@@ -44,10 +46,12 @@ export class ScProgress {
      * -270: rotate starting point to bottom center
      */
     // const rotate = -270 + (360 * gapPercent) / 100 / 2
+    var circumference = radius * 2 * Math.PI
 
-    const max = size * Math.PI
-    const offset = (1 - this.percentage / 100) * max
-    const strokeWidth = size / 10
+    const offset = (1 - this.percentage / 100) * circumference
+    const strokeWidth = radius / 10
+
+    const size = 2 * (radius + strokeWidth)
 
     return (
       <div
@@ -59,28 +63,32 @@ export class ScProgress {
           // '--sc-progress-circular-initial-rotate': `${rotate}deg`
         }}
       >
-        <svg class="progress-ring" viewBox="0 0 100 100">
+        <svg class="progress-ring">
           <circle
             ref={el => (this.circleEl = el)}
             class="progress-ring__circle"
             stroke-width={strokeWidth}
-            r="50"
-            cx="50%"
-            cy="50%"
+            stroke-linecap="butt"
+            r={radius}
+            cx={size / 2}
+            cy={size / 2}
             style={{
-              '--sc-progress-circular-stroke-dasharray': `${max} ${max * 2}`,
+              '--sc-progress-circular-stroke-dasharray': `${circumference} ${circumference}`,
               '--sc-progress-circular-stroke-dashoffset': `${offset}`,
             }}
           />
         </svg>
         {/* label display */}
-        <div class="label">{this.label}</div>
+        <div class="label">
+          <slot name="label"></slot>
+          {this.label}
+        </div>
       </div>
     )
   }
 
   render() {
-    const { percentage, indeterminate, circular, size } = this
+    const { percentage, indeterminate, circular, radius } = this
     return (
       <Host
         class={{ indeterminate, circular }}
@@ -89,7 +97,7 @@ export class ScProgress {
         aria-valuemax="100"
       >
         {circular ? (
-          this.renderCircular(size)
+          this.renderCircular(radius)
         ) : (
           <div class="inner" style={{ width: `${percentage}%` }}>
             {this.label.length ? <span class="label">{this.label}</span> : null}
