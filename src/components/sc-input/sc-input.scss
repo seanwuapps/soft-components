@@ -29,6 +29,7 @@ sc-input {
     color: var(--sc-input-text-color);
     font-size: var(--sc-input-font-size);
     width: 100%;
+    box-sizing: border-box;
     ::placeholder {
       color: currentColor;
     }
