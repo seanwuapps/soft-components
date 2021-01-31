@@ -1,6 +1,5 @@
 import { Component, Prop } from '@stencil/core'
 import { handleRayTracing } from '../../utils/ray-tracer'
-import debounce from 'lodash.debounce'
 @Component({
   tag: 'sc-ray-tracer',
   shadow: true,
@@ -8,15 +7,16 @@ import debounce from 'lodash.debounce'
 export class ScRayTracer {
   @Prop() element: HTMLElement
 
+  handleEvent(e) {
+    handleRayTracing(e, this.element)
+  }
+
   componentDidLoad() {
     this.element.classList.add('ray-tracing')
-    window.addEventListener(
-      'mousemove',
-      debounce(e => handleRayTracing(e, this.element), 10)
-    )
+    window.addEventListener('mousemove', this.handleEvent.bind(this))
   }
 
   disconnectedCallback() {
-    window.removeEventListener('mousemove', debounce(handleRayTracing, 10))
+    window.removeEventListener('mousemove', this.handleEvent.bind(this))
   }
 }
