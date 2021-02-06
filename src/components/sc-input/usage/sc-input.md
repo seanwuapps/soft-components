@@ -18,36 +18,99 @@ There are input types that has dedicated components for them. Here's a list of i
 - File: coming soon 
 - Range: coming soon
 
-
+Basic text input
 ```html
-<form method="get" action="/">
-  <sc-input class="mb-2" block label="Email" type="email" required name="email" id="email"></sc-input>
-
-  <sc-input class="mb-2" block label="Password" type="password" required name="password" maxlength="6" id="password">
-  </sc-input>
-
-  <sc-button block type="submit" style="--sc-button-bg-color: #333; --sc-button-text-color: #fff;">
-    Submit
-  </sc-button>
-</form>
+<sc-input label="Text input" type="text"></sc-input>
 ```
 
 You can set `engraved` level for individual inputs
 
 ```html
-<sc-input engraved="1" label="Input" type="text" name="text"></sc-input>
-<sc-input engraved="2" label="Input" type="text" name="text"></sc-input>
-<sc-input engraved="3" label="Input" type="text" name="text"></sc-input>
+<sc-input engraved="1" label="Engraved 1" type="text"></sc-input>
+<sc-input engraved="3" label="Engraved 3" type="text"></sc-input>
+<sc-input engraved="5" label="Engraved 5" type="text"></sc-input>
 ```
 
 
 Add the `block` attribute to make it take the full width
 ```html
-<sc-input block label="Input" type="text" name="text"></sc-input>
+<sc-input block label="Block input" type="text"></sc-input>
+```
+
+Radio buttons
+```html
+<sc-input label="One" type="radio" name="test" value="1">
+</sc-input>
+<sc-input label="Two" type="radio" name="test" value="2"></sc-input>
+<sc-input label="Three" type="radio" name="test" value="3" disabled></sc-input>
+<sc-input label="Four" type="radio" name="test" value="4"></sc-input>
+```
+
+Other input types (browser god please help)
+```html
+<div class="mb-5">
+  date
+  <sc-input type="date">
+  </sc-input>
+</div>
+<div class="mb-5">
+  datetime
+  <sc-input type="datetime-local">
+  </sc-input>
+</div>
+<div class="mb-5">
+  email
+  <sc-input type="email" >
+  </sc-input>
+</div>
+<div class="mb-5">
+  file
+  <sc-input type="file">
+  </sc-input>
+</div>
+<div class="mb-5">
+  month
+  <sc-input type="month">
+  </sc-input>
+</div>
+<div class="mb-5">
+  number
+  <sc-input type="number">
+  </sc-input>
+</div>
+<div class="mb-5">
+  password
+  <sc-input type="password">
+  </sc-input>
+</div>
+<div class="mb-5">
+  range
+  <sc-input type="range">
+  </sc-input>
+</div>
+<div class="mb-5">
+  search
+  <sc-input type="search">
+  </sc-input>
+</div>
+<div class="mb-5">
+  tel
+  <sc-input type="tel">
+  </sc-input>
+</div>
+<div class="mb-5">
+  Time
+  <sc-input type="time">
+  </sc-input>
+
+  Week
+  <sc-input type="week">
+  </sc-input>
+</div>
 ```
 
 
-<div class="mb-5">
+<!-- <div class="mb-5">
   checkbox
   <sc-input type="checkbox">
   </sc-input>
@@ -134,4 +197,4 @@ Add the `block` attribute to make it take the full width
 <sc-input type="url">
 </sc-input>
 <sc-input type="week">
-</sc-input>
+</sc-input> -->
