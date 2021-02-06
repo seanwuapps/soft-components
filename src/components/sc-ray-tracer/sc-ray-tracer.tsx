@@ -1,19 +1,32 @@
-import { Component, Prop } from '@stencil/core'
+import { Component, Method, Prop, Watch } from '@stencil/core'
 import { handleRayTracing } from '../../utils/ray-tracer'
 @Component({
   tag: 'sc-ray-tracer',
   shadow: true,
 })
 export class ScRayTracer {
-  @Prop() element: HTMLElement
+  @Prop({ mutable: true }) element: HTMLElement = null
 
   handleEvent(e) {
     handleRayTracing(e, this.element)
   }
 
-  componentDidLoad() {
-    this.element.classList.add('ray-tracing')
-    window.addEventListener('mousemove', this.handleEvent.bind(this))
+  @Watch('element')
+  initiate() {
+    if (this.element) {
+      this.element.classList.add('ray-tracing')
+      window.addEventListener('mousemove', this.handleEvent.bind(this))
+    }
+    console.log('initiated')
+  }
+
+  @Method()
+  async setElement(target: HTMLElement) {
+    this.element = target
+  }
+
+  componentWillLoad() {
+    this.initiate()
   }
 
   disconnectedCallback() {

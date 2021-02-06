@@ -1,18 +1,32 @@
 :host {
   display: inline-block;
   --sc-dial-angle: 0deg;
+  /**
+    @prop --sc-dial-size:
+      Size (diameter) of the dial control
+      - default: 80px
+  */
+  --sc-dial-size: 80px;
 
-  .pointer-wrapper {
+  .dial-circle {
     display: block;
     transform: rotate(-180deg);
-    height: 100%;
-    width: 100%;
+    height: var(--sc-dial-size);
+    width: var(--sc-dial-size);
+
     border-radius: 50%;
     border: 1px solid blue;
+    position: relative;
     cursor: pointer;
     .pointer {
-      display: block;
-      // transition: transform 0s var(--sc-animation-timing-function, ease);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       transform-origin: center center;
       transform: rotate(var(--sc-dial-angle));
       will-change: transform;

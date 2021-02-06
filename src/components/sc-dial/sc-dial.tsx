@@ -21,14 +21,24 @@ export class ScDial {
 
   @Prop({ mutable: true }) value?: number | null = 50
 
-  @State() inValue: number = this.value
-
+  /**
+   * Radius in pixels (can be changed via CSS variable --sc-dial-radius)
+   */
   @Prop() radius?: number = 50
 
+  /**
+   * Max value of dial
+   */
   @Prop() max?: number = 100
 
+  /**
+   * Min value of dial
+   */
   @Prop() min?: number = 0
 
+  /**
+   * Step value of each change
+   */
   @Prop() step?: number = 1
 
   /**
@@ -60,22 +70,20 @@ export class ScDial {
 
   @State() focused: boolean = false
 
-  private percent: number
-  private rotation: number
+  @State() percent: number = 0
+  private rotation: number = 0
 
   @Method()
   async setValue(value) {
     const { min, max, step } = this
     if (value < min) {
       this.value = min
-      return
-    }
-    if (value > max) {
+    } else if (value > max) {
       this.value = max
-      return
+    } else {
+      this.value = Math.ceil(value / step) * step
     }
 
-    this.value = Math.ceil(value / step) * step
     this.percent = (this.value / (max - min)) * 100
     this.rotation = (this.percent * 360) / 100
   }
@@ -89,6 +97,7 @@ export class ScDial {
       Math.floor(elBox.left) + document.body.scrollLeft + elBox.width / 2
     this.centerY =
       Math.floor(elBox.top) + document.body.scrollTop + elBox.height / 2
+    this.setValue(this.value)
 
     this.hostEl.addEventListener('mousewheel', e => this.handleScroll(e))
     this.hostEl.addEventListener('touchstart', () =>
@@ -97,7 +106,6 @@ export class ScDial {
     this.hostEl.addEventListener('mousedown', () =>
       this.handleMoveStart('mousemove', 'mouseup')
     )
-    this.setValue(this.value)
   }
   disconnectedCallback() {
     this.hostEl.removeEventListener('mousewheel', this.handleScroll.bind(this))
@@ -143,35 +151,25 @@ export class ScDial {
     if (angleDeg < 0) {
       angleDeg += 360
     }
-    // angleDeg = angleDeg % 360
+    angleDeg = angleDeg % 360
 
     const newPercent = angleDeg / 360
     const newVal = newPercent * this.max
     console.log({ percent: this.percent, newPercent, released: this.released })
-    if (this.percent > 0 && newPercent < 100 && !this.released) {
+    if (!this.released) {
       this.setValue(newVal)
     }
   }
 
   render() {
-    const { percent, rotation, value } = this
+    const { percent, rotation, value, radius } = this
     return (
       <Host>
-        <sc-progress
-          circular
-          percentage={percent}
-          radius={this.radius}
-          style={{ '--sc-animation-duration': '0.15s' }}
-        >
-          <div class="pointer-wrapper" slot="label">
-            <div
-              class="pointer"
-              style={{ '--sc-dial-angle': `${rotation}deg` }}
-            >
-              ▲
-            </div>
+        <div class="dial-circle" style={{ '--sc-dial-radius': `${radius}px` }}>
+          <div class="pointer" style={{ '--sc-dial-angle': `${rotation}deg` }}>
+            ▲
           </div>
-        </sc-progress>
+        </div>
         {value}
       </Host>
     )

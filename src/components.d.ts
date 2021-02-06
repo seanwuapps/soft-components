@@ -139,10 +139,22 @@ export namespace Components {
         "label"?: string;
     }
     interface ScDial {
+        /**
+          * Max value of dial
+         */
         "max"?: number;
+        /**
+          * Min value of dial
+         */
         "min"?: number;
+        /**
+          * Radius in pixels (can be changed via CSS variable --sc-dial-radius)
+         */
         "radius"?: number;
         "setValue": (value: any) => Promise<void>;
+        /**
+          * Step value of each change
+         */
         "step"?: number;
         "value"?: number | null;
     }
@@ -288,6 +300,7 @@ export namespace Components {
     }
     interface ScRayTracer {
         "element": HTMLElement;
+        "setElement": (target: HTMLElement) => Promise<void>;
     }
     interface ScToggle {
         /**
@@ -548,7 +561,13 @@ declare namespace LocalJSX {
         "label"?: string;
     }
     interface ScDial {
+        /**
+          * Max value of dial
+         */
         "max"?: number;
+        /**
+          * Min value of dial
+         */
         "min"?: number;
         /**
           * Emitted when the input loses focus.
@@ -570,7 +589,13 @@ declare namespace LocalJSX {
           * Emitted when a key is pressed down
          */
         "onKeyDownEvent"?: (event: CustomEvent<void>) => void;
+        /**
+          * Radius in pixels (can be changed via CSS variable --sc-dial-radius)
+         */
         "radius"?: number;
+        /**
+          * Step value of each change
+         */
         "step"?: number;
         "value"?: number | null;
     }
