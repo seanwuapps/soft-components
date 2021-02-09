@@ -147,11 +147,11 @@ export namespace Components {
           * Min value of dial
          */
         "min"?: number;
-        /**
-          * Radius in pixels (can be changed via CSS variable --sc-dial-radius)
-         */
-        "radius"?: number;
         "setValue": (value: any) => Promise<void>;
+        /**
+          * Diameter in pixels (can be changed via CSS variable --sc-dial-size)
+         */
+        "size"?: number;
         /**
           * Step value of each change
          */
@@ -590,9 +590,9 @@ declare namespace LocalJSX {
          */
         "onKeyDownEvent"?: (event: CustomEvent<void>) => void;
         /**
-          * Radius in pixels (can be changed via CSS variable --sc-dial-radius)
+          * Diameter in pixels (can be changed via CSS variable --sc-dial-size)
          */
-        "radius"?: number;
+        "size"?: number;
         /**
           * Step value of each change
          */

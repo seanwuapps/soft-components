@@ -22,19 +22,19 @@ export class ScDial {
   @Prop({ mutable: true }) value?: number | null = 50
 
   /**
-   * Radius in pixels (can be changed via CSS variable --sc-dial-radius)
+   * Diameter in pixels (can be changed via CSS variable --sc-dial-size)
    */
-  @Prop() radius?: number = 50
+  @Prop() size?: number = 80
 
   /**
    * Max value of dial
    */
-  @Prop() max?: number = 100
+  @Prop() max?: number
 
   /**
    * Min value of dial
    */
-  @Prop() min?: number = 0
+  @Prop() min?: number
 
   /**
    * Step value of each change
@@ -76,15 +76,21 @@ export class ScDial {
   @Method()
   async setValue(value) {
     const { min, max, step } = this
-    if (value < min) {
+    if (typeof min !== 'undefined' && value < min) {
       this.value = min
-    } else if (value > max) {
-      this.value = max
-    } else {
-      this.value = Math.ceil(value / step) * step
+      return
     }
+    if (typeof max !== 'undefined' && value > max) {
+      this.value = max
+      return
+    }
+    this.value = Math.ceil(value / step) * step
 
-    this.percent = (this.value / (max - min)) * 100
+    let total = 100
+    if (typeof min !== 'undefined' && typeof max !== 'undefined') {
+      total = max - min
+    }
+    this.percent = ((this.value % total) / total) * 100
     this.rotation = (this.percent * 360) / 100
   }
 
@@ -114,29 +120,26 @@ export class ScDial {
   handleScroll(e) {
     e.preventDefault()
 
-    var deltaX = -e.detail || e.wheelDeltaX
-    var deltaY = -e.detail || e.wheelDeltaY
-    var direction =
+    const deltaX = -e.detail || e.wheelDeltaX
+    const deltaY = -e.detail || e.wheelDeltaY
+    const direction =
       deltaX > 0 || deltaY < 0 ? 1 : deltaX < 0 || deltaY > 0 ? -1 : 0
-    this.setValue(this.value + direction * this.step)
+    direction > 0 ? this.stepUp() : this.stepDown()
   }
 
-  private released: boolean = true
   handleMoveStart(onMove, onEnd) {
-    this.released = false
-    var fnc = this.updateOnMove.bind(this)
-    var body = document.body
+    const fnc = this.updateOnMove.bind(this)
+    const body = document.body
     body.addEventListener(onMove, fnc, false)
     body.addEventListener(
       onEnd,
       () => {
-        this.released = true
         body.removeEventListener(onMove, fnc, false)
       },
       false
     )
   }
-
+  private lastDeg: number = 0
   updateOnMove(event) {
     event.preventDefault()
     const e = event.changedTouches ? event.changedTouches[0] : event
@@ -151,21 +154,37 @@ export class ScDial {
     if (angleDeg < 0) {
       angleDeg += 360
     }
-    angleDeg = angleDeg % 360
 
-    const newPercent = angleDeg / 360
-    const newVal = newPercent * this.max
-    console.log({ percent: this.percent, newPercent, released: this.released })
-    if (!this.released) {
-      this.setValue(newVal)
+    if (this.lastDeg < angleDeg) {
+      console.log('step up', this.lastDeg, angleDeg)
+      this.stepUp()
     }
+
+    if (this.lastDeg > angleDeg) {
+      this.stepDown()
+    }
+
+    this.lastDeg = angleDeg
+    // const newPercent = angleDeg / 360
+    // const newVal = newPercent * this.max
+    // console.log({ percent: this.percent, newPercent, released: this.released })
+    // if (!this.released) {
+    //   this.setValue(newVal)
+    // }
+  }
+
+  private stepUp() {
+    this.setValue(this.value + this.step)
+  }
+  private stepDown() {
+    this.setValue(this.value - this.step)
   }
 
   render() {
-    const { percent, rotation, value, radius } = this
+    const { value, size, rotation } = this
     return (
-      <Host>
-        <div class="dial-circle" style={{ '--sc-dial-radius': `${radius}px` }}>
+      <Host style={{ '--sc-dial-size': `${size}px` }}>
+        <div class="dial-circle">
           <div class="pointer" style={{ '--sc-dial-angle': `${rotation}deg` }}>
             ▲
           </div>

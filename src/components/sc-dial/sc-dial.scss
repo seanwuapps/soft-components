@@ -1,5 +1,4 @@
 :host {
-  display: inline-block;
   --sc-dial-angle: 0deg;
   /**
     @prop --sc-dial-size:
@@ -8,30 +7,33 @@
   */
   --sc-dial-size: 80px;
 
+  display: inline-block;
+  height: var(--sc-dial-size);
+  width: var(--sc-dial-size);
+  @include raised(0.2);
+  border-radius: 50%;
+
   .dial-circle {
     display: block;
     transform: rotate(-180deg);
-    height: var(--sc-dial-size);
-    width: var(--sc-dial-size);
-
-    border-radius: 50%;
-    border: 1px solid blue;
     position: relative;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
     .pointer {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
       position: absolute;
+      border-radius: 50%;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      box-sizing: border-box;
       transform-origin: center center;
       transform: rotate(var(--sc-dial-angle));
       will-change: transform;
-      height: 100%;
-      width: 100%;
     }
   }
 }
