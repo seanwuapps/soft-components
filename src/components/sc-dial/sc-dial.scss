@@ -14,6 +14,7 @@
   border-radius: 50%;
 
   .dial-circle {
+    user-select: none;
     display: block;
     transform: rotate(-180deg);
     position: relative;
@@ -33,6 +34,7 @@
       box-sizing: border-box;
       transform-origin: center center;
       transform: rotate(var(--sc-dial-angle));
+      transition: transform 0.3s linear;
       will-change: transform;
     }
   }

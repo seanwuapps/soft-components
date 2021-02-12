@@ -10,7 +10,7 @@ import {
   Element,
 } from '@stencil/core'
 // import { validityMessages } from '../../utils/validity-messages'
-
+import throttle from 'lodash.throttle'
 @Component({
   tag: 'sc-dial',
   styleUrl: 'sc-dial.scss',
@@ -91,8 +91,17 @@ export class ScDial {
       return
     }
     this.value = Math.ceil(value / step) * step
-
     this.rotation = ((this.value % this.total) / this.total) * 360
+  }
+
+  handleScroll(e) {
+    e.preventDefault()
+
+    const deltaX = -e.detail || e.wheelDeltaX
+    const deltaY = -e.detail || e.wheelDeltaY
+    const direction =
+      deltaX > 0 || deltaY < 0 ? 1 : deltaX < 0 || deltaY > 0 ? -1 : 0
+    direction < 0 ? this.stepUp() : this.stepDown()
   }
 
   private centerX: number
@@ -115,30 +124,28 @@ export class ScDial {
     this.setValue(this.value)
 
     this.hostEl.addEventListener('mousewheel', e => this.handleScroll(e))
-    this.hostEl.addEventListener('touchstart', () =>
-      this.handleMoveStart('touchmove', 'touchend')
+    this.hostEl.addEventListener('touchstart', e =>
+      this.handleMoveStart(e, 'touchmove', 'touchend')
     )
-    this.hostEl.addEventListener('mousedown', () =>
-      this.handleMoveStart('mousemove', 'mouseup')
+    this.hostEl.addEventListener('mousedown', e =>
+      this.handleMoveStart(e, 'mousemove', 'mouseup')
     )
   }
   disconnectedCallback() {
     this.hostEl.removeEventListener('mousewheel', this.handleScroll.bind(this))
   }
 
-  handleScroll(e) {
-    e.preventDefault()
+  private startingDeg: number
+  @State() degDiff: number
 
-    const deltaX = -e.detail || e.wheelDeltaX
-    const deltaY = -e.detail || e.wheelDeltaY
-    const direction =
-      deltaX > 0 || deltaY < 0 ? 1 : deltaX < 0 || deltaY > 0 ? -1 : 0
-    direction < 0 ? this.stepUp() : this.stepDown()
-  }
+  private lastDeg: number = 0
+  @State() cycles: number = 0
 
-  handleMoveStart(onMove, onEnd) {
-    const fnc = this.updateOnMove.bind(this)
+  handleMoveStart(e, onMove, onEnd) {
+    const fnc = throttle(this.updateOnMove.bind(this), 200)
     const body = document.body
+    this.startingDeg = this.getDegFromPointer(e)
+
     body.addEventListener(onMove, fnc, false)
     body.addEventListener(
       onEnd,
@@ -148,11 +155,7 @@ export class ScDial {
       false
     )
   }
-  private lastDeg: number = 0
-  @State() cycles: number = 0
-
-  updateOnMove(event) {
-    event.preventDefault()
+  private getDegFromPointer(event) {
     const e = event.changedTouches ? event.changedTouches[0] : event
     const x = e.pageX
     const y = e.pageY
@@ -165,34 +168,38 @@ export class ScDial {
     if (angleDeg < 0) {
       angleDeg += 360
     }
-    const degDiff = angleDeg - this.lastDeg
 
-    console.log({ angleDeg })
-    // 359 to 1
-    if (angleDeg >= 360 - this.oneStepDeg && degDiff > 0) {
-      if (this.max) {
-        return
-      }
-      // trigger over 1 cycle
-      this.cycles += 1
+    return angleDeg
+  }
+
+  updateOnMove(event) {
+    event.preventDefault()
+    const angleDeg = this.getDegFromPointer(event)
+    // const degDiff = angleDeg - this.lastDeg
+    this.degDiff = angleDeg - this.startingDeg
+    console.log({ diff: this.degDiff })
+    // // 359 to 1
+    // if (angleDeg >= 360 - this.oneStepDeg && degDiff > 0) {
+    //   if (this.max) {
+    //     return
+    //   }
+    //   // trigger over 1 cycle
+    //   this.cycles += 1
+    // }
+
+    // // 1 to 359
+    // if (angleDeg <= this.oneStepDeg) {
+    //   if (this.min) {
+    //     return
+    //   }
+    //   this.cycles -= 1
+    // }
+    if (this.degDiff > this.oneStepDeg) {
+      this.stepUp()
     }
 
-    // 1 to 359
-    if (angleDeg <= this.oneStepDeg) {
-      if (this.min) {
-        console.log('yo')
-        return
-      }
-      this.cycles -= 1
-    }
-    if (degDiff > this.oneStepDeg) {
-      this.stepUp(degDiff)
-      this.lastDeg = angleDeg
-    }
-
-    if (degDiff < -1 * this.oneStepDeg) {
-      this.stepDown(degDiff)
-      this.lastDeg = angleDeg
+    if (this.degDiff < -1 * this.oneStepDeg) {
+      this.stepDown()
     }
 
     // const newPercent = angleDeg / 360
@@ -204,7 +211,6 @@ export class ScDial {
   }
 
   private getNewValueFromDegDiff(degDiff) {
-    console.log({ degDiff })
     return this.value + (degDiff / 360) * this.total
   }
 
@@ -221,8 +227,21 @@ export class ScDial {
     this.setValue(newVal)
   }
 
+  // private updateRotation(direction) {
+  //   switch (this.diff) {
+  //     case 1:
+  //       this.rotation += this.oneStepDeg
+  //       break
+  //     case -1:
+  //       this.rotation -= this.oneStepDeg
+  //       break
+  //     default:
+  //       break
+  //   }
+  // }
+
   render() {
-    const { value, size, rotation, cycles } = this
+    const { value, size, rotation, cycles, degDiff, startingDeg } = this
     return (
       <Host style={{ '--sc-dial-size': `${size}px` }}>
         <div class="dial-circle">
@@ -231,7 +250,9 @@ export class ScDial {
           </div>
         </div>
         {value}
-        Cycles {cycles}
+        <div>Cycles {cycles}</div>
+        <div>startingDeg {startingDeg}</div>
+        <div>degDiff {degDiff}</div>
       </Host>
     )
   }
