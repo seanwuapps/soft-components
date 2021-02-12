@@ -73,6 +73,12 @@ export class ScDial {
   @State() percent: number = 0
   private rotation: number = 0
 
+  /**
+   * total steps of one full circle (360 deg)
+   */
+  private total: number
+  private oneStepDeg: number
+
   @Method()
   async setValue(value) {
     const { min, max, step } = this
@@ -86,12 +92,7 @@ export class ScDial {
     }
     this.value = Math.ceil(value / step) * step
 
-    let total = 100
-    if (typeof min !== 'undefined' && typeof max !== 'undefined') {
-      total = max - min
-    }
-    this.percent = ((this.value % total) / total) * 100
-    this.rotation = (this.percent * 360) / 100
+    this.rotation = ((this.value % this.total) / this.total) * 360
   }
 
   private centerX: number
@@ -99,6 +100,14 @@ export class ScDial {
 
   componentDidLoad() {
     const elBox = this.hostEl.getBoundingClientRect()
+    const { min, max, step } = this
+    this.total = 100 * step
+    if (typeof min !== 'undefined' && typeof max !== 'undefined') {
+      this.total = max - min
+    }
+
+    this.oneStepDeg = (step / this.total) * 360
+    console.log({ oneStepDeg: this.oneStepDeg })
     this.centerX =
       Math.floor(elBox.left) + document.body.scrollLeft + elBox.width / 2
     this.centerY =
@@ -124,7 +133,7 @@ export class ScDial {
     const deltaY = -e.detail || e.wheelDeltaY
     const direction =
       deltaX > 0 || deltaY < 0 ? 1 : deltaX < 0 || deltaY > 0 ? -1 : 0
-    direction > 0 ? this.stepUp() : this.stepDown()
+    direction < 0 ? this.stepUp() : this.stepDown()
   }
 
   handleMoveStart(onMove, onEnd) {
@@ -140,6 +149,8 @@ export class ScDial {
     )
   }
   private lastDeg: number = 0
+  @State() cycles: number = 0
+
   updateOnMove(event) {
     event.preventDefault()
     const e = event.changedTouches ? event.changedTouches[0] : event
@@ -154,17 +165,36 @@ export class ScDial {
     if (angleDeg < 0) {
       angleDeg += 360
     }
+    const degDiff = angleDeg - this.lastDeg
 
-    if (this.lastDeg < angleDeg) {
-      console.log('step up', this.lastDeg, angleDeg)
-      this.stepUp()
+    console.log({ angleDeg })
+    // 359 to 1
+    if (angleDeg >= 360 - this.oneStepDeg && degDiff > 0) {
+      if (this.max) {
+        return
+      }
+      // trigger over 1 cycle
+      this.cycles += 1
     }
 
-    if (this.lastDeg > angleDeg) {
-      this.stepDown()
+    // 1 to 359
+    if (angleDeg <= this.oneStepDeg) {
+      if (this.min) {
+        console.log('yo')
+        return
+      }
+      this.cycles -= 1
+    }
+    if (degDiff > this.oneStepDeg) {
+      this.stepUp(degDiff)
+      this.lastDeg = angleDeg
     }
 
-    this.lastDeg = angleDeg
+    if (degDiff < -1 * this.oneStepDeg) {
+      this.stepDown(degDiff)
+      this.lastDeg = angleDeg
+    }
+
     // const newPercent = angleDeg / 360
     // const newVal = newPercent * this.max
     // console.log({ percent: this.percent, newPercent, released: this.released })
@@ -173,15 +203,26 @@ export class ScDial {
     // }
   }
 
-  private stepUp() {
-    this.setValue(this.value + this.step)
+  private getNewValueFromDegDiff(degDiff) {
+    console.log({ degDiff })
+    return this.value + (degDiff / 360) * this.total
   }
-  private stepDown() {
-    this.setValue(this.value - this.step)
+
+  private stepUp(degDiff = null) {
+    const newVal = degDiff
+      ? this.getNewValueFromDegDiff(degDiff)
+      : this.value + this.step
+    this.setValue(newVal)
+  }
+  private stepDown(degDiff = null) {
+    const newVal = degDiff
+      ? this.getNewValueFromDegDiff(degDiff)
+      : this.value - this.step
+    this.setValue(newVal)
   }
 
   render() {
-    const { value, size, rotation } = this
+    const { value, size, rotation, cycles } = this
     return (
       <Host style={{ '--sc-dial-size': `${size}px` }}>
         <div class="dial-circle">
@@ -190,6 +231,7 @@ export class ScDial {
           </div>
         </div>
         {value}
+        Cycles {cycles}
       </Host>
     )
   }
