@@ -79,6 +79,13 @@ export class ScDial {
   private total: number
   private oneStepDeg: number
 
+  // record the starting state when on mouse down/touchstart
+  private startingDeg: number
+  private startingValue: number
+  @State() degDiff: number
+
+  @State() cycles: number = 0
+
   @Method()
   async setValue(value) {
     const { min, max, step } = this
@@ -90,7 +97,7 @@ export class ScDial {
       this.value = max
       return
     }
-    this.value = Math.ceil(value / step) * step
+    this.value = Math.ceil(value / step) * step + this.cycles * this.total
     this.rotation = ((this.value % this.total) / this.total) * 360
   }
 
@@ -106,11 +113,10 @@ export class ScDial {
 
   private centerX: number
   private centerY: number
-
   componentDidLoad() {
     const elBox = this.hostEl.getBoundingClientRect()
     const { min, max, step } = this
-    this.total = 100 * step
+    this.total = 36 * step
     if (typeof min !== 'undefined' && typeof max !== 'undefined') {
       this.total = max - min
     }
@@ -135,16 +141,12 @@ export class ScDial {
     this.hostEl.removeEventListener('mousewheel', this.handleScroll.bind(this))
   }
 
-  private startingDeg: number
-  @State() degDiff: number
-
-  private lastDeg: number = 0
-  @State() cycles: number = 0
-
   handleMoveStart(e, onMove, onEnd) {
-    const fnc = throttle(this.updateOnMove.bind(this), 200)
+    const fnc = throttle(this.updateOnMove.bind(this), 40)
     const body = document.body
-    this.startingDeg = this.getDegFromPointer(e)
+    const { deg } = this.getDegFromPointer(e)
+    this.startingDeg = deg
+    this.startingValue = this.value
 
     body.addEventListener(onMove, fnc, false)
     body.addEventListener(
@@ -155,13 +157,41 @@ export class ScDial {
       false
     )
   }
+
+  private quadrant: number
+  private lastQuadrant: number
+
+  private mouseDirectionX?: 'left' | 'right' = null
+  private mouseDirectionY?: 'up' | 'down' = null
+
+  private mousePrevX?: number = 0
+  private mousePrevY?: number = 0
+
   private getDegFromPointer(event) {
     const e = event.changedTouches ? event.changedTouches[0] : event
     const x = e.pageX
     const y = e.pageY
 
+    // get mouse direction
+    if (x < this.mousePrevX) {
+      this.mouseDirectionX = 'left'
+    }
+    if (x > this.mousePrevX) {
+      this.mouseDirectionX = 'right'
+    }
+    if (y < this.mousePrevY) {
+      this.mouseDirectionY = 'up'
+    }
+    if (y > this.mousePrevY) {
+      this.mouseDirectionY = 'down'
+    }
+    this.mousePrevX = x
+    this.mousePrevY = y
+
+    // get angle
     const diffX = this.centerX - x
     const diffY = this.centerY - y
+
     const angleRad = Math.atan2(diffY, diffX) //rad
     let angleDeg = (angleRad * 180) / Math.PI + 90
 
@@ -169,37 +199,33 @@ export class ScDial {
       angleDeg += 360
     }
 
-    return angleDeg
+    return {
+      deg: angleDeg,
+      x,
+      y,
+      diffX,
+      diffY,
+    }
   }
 
   updateOnMove(event) {
     event.preventDefault()
-    const angleDeg = this.getDegFromPointer(event)
+    const { deg: angleDeg, x, y, diffX, diffY } = this.getDegFromPointer(event)
     // const degDiff = angleDeg - this.lastDeg
     this.degDiff = angleDeg - this.startingDeg
-    console.log({ diff: this.degDiff })
-    // // 359 to 1
-    // if (angleDeg >= 360 - this.oneStepDeg && degDiff > 0) {
-    //   if (this.max) {
-    //     return
-    //   }
-    //   // trigger over 1 cycle
-    //   this.cycles += 1
-    // }
-
-    // // 1 to 359
-    // if (angleDeg <= this.oneStepDeg) {
-    //   if (this.min) {
-    //     return
-    //   }
-    //   this.cycles -= 1
-    // }
+    console.log({ x, y, diffX, diffY })
+    // if diff in degree is larger than 1 step, step over
     if (this.degDiff > this.oneStepDeg) {
-      this.stepUp()
+      if (this.lastQuadrant === 4 && this.quadrant === 1) {
+        console.log('yo')
+        if (this.max) {
+          return
+        }
+      }
+      this.stepUp(this.degDiff)
     }
-
     if (this.degDiff < -1 * this.oneStepDeg) {
-      this.stepDown()
+      this.stepDown(this.degDiff)
     }
 
     // const newPercent = angleDeg / 360
@@ -210,19 +236,19 @@ export class ScDial {
     // }
   }
 
-  private getNewValueFromDegDiff(degDiff) {
-    return this.value + (degDiff / 360) * this.total
+  private valueDiff(degDiff) {
+    return Math.floor(degDiff / this.oneStepDeg) * this.step
   }
 
   private stepUp(degDiff = null) {
     const newVal = degDiff
-      ? this.getNewValueFromDegDiff(degDiff)
+      ? this.startingValue + this.valueDiff(degDiff)
       : this.value + this.step
     this.setValue(newVal)
   }
   private stepDown(degDiff = null) {
     const newVal = degDiff
-      ? this.getNewValueFromDegDiff(degDiff)
+      ? this.startingValue + this.valueDiff(degDiff)
       : this.value - this.step
     this.setValue(newVal)
   }
@@ -241,18 +267,30 @@ export class ScDial {
   // }
 
   render() {
-    const { value, size, rotation, cycles, degDiff, startingDeg } = this
+    const {
+      value,
+      size,
+      rotation,
+      quadrant,
+      lastQuadrant,
+      mouseDirectionX,
+      mouseDirectionY,
+      startingDeg,
+      startingValue,
+    } = this
     return (
       <Host style={{ '--sc-dial-size': `${size}px` }}>
         <div class="dial-circle">
           <div class="pointer" style={{ '--sc-dial-angle': `${rotation}deg` }}>
-            ▲
+            <div class="pointer-circle"></div>
+          </div>
+
+          <div class="temp">
+            {value}
+            <div>MDX {mouseDirectionX}</div>
+            <div>MDY {mouseDirectionY}</div>
           </div>
         </div>
-        {value}
-        <div>Cycles {cycles}</div>
-        <div>startingDeg {startingDeg}</div>
-        <div>degDiff {degDiff}</div>
       </Host>
     )
   }
