@@ -71,7 +71,7 @@ export class ScDial {
   @State() focused: boolean = false
 
   @State() percent: number = 0
-  private rotation: number = 0
+  @State() rotation: number = 0
 
   /**
    * total steps of one full circle (360 deg)
@@ -89,6 +89,7 @@ export class ScDial {
   @Method()
   async setValue(value) {
     const { min, max, step } = this
+    this.value = Math.ceil(value / step) * step
     if (typeof min !== 'undefined' && value < min) {
       this.value = min
       return
@@ -97,8 +98,10 @@ export class ScDial {
       this.value = max
       return
     }
-    this.value = Math.ceil(value / step) * step + this.cycles * this.total
-    this.rotation = ((this.value % this.total) / this.total) * 360
+  }
+
+  private setRotationByValue(value) {
+    this.rotation = ((value % this.total) / this.total) * 360
   }
 
   handleScroll(e) {
@@ -122,12 +125,13 @@ export class ScDial {
     }
 
     this.oneStepDeg = (step / this.total) * 360
-    console.log({ oneStepDeg: this.oneStepDeg })
+    // console.log({ oneStepDeg: this.oneStepDeg })
     this.centerX =
       Math.floor(elBox.left) + document.body.scrollLeft + elBox.width / 2
     this.centerY =
       Math.floor(elBox.top) + document.body.scrollTop + elBox.height / 2
     this.setValue(this.value)
+    this.setRotationByValue(this.value)
 
     this.hostEl.addEventListener('mousewheel', e => this.handleScroll(e))
     this.hostEl.addEventListener('touchstart', e =>
@@ -216,11 +220,15 @@ export class ScDial {
     console.log({ x, y, diffX, diffY })
     // if diff in degree is larger than 1 step, step over
     if (this.degDiff > this.oneStepDeg) {
-      if (this.lastQuadrant === 4 && this.quadrant === 1) {
+      if (
+        x > this.centerX &&
+        y > this.centerY &&
+        this.mouseDirectionX === 'left'
+      ) {
         console.log('yo')
-        if (this.max) {
-          return
-        }
+        // if (!isNaN(this.max)) {
+        //   return
+        // }
       }
       this.stepUp(this.degDiff)
     }
@@ -245,12 +253,14 @@ export class ScDial {
       ? this.startingValue + this.valueDiff(degDiff)
       : this.value + this.step
     this.setValue(newVal)
+    this.setRotationByValue(newVal)
   }
   private stepDown(degDiff = null) {
     const newVal = degDiff
       ? this.startingValue + this.valueDiff(degDiff)
       : this.value - this.step
     this.setValue(newVal)
+    this.setRotationByValue(newVal)
   }
 
   // private updateRotation(direction) {

@@ -10,7 +10,7 @@
   display: inline-block;
   height: var(--sc-dial-size);
   width: var(--sc-dial-size);
-  @include raised(0.4);
+  @include raised(0.6);
   border-radius: 50%;
 
   .dial-circle {
