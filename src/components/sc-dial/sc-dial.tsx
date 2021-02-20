@@ -86,18 +86,24 @@ export class ScDial {
 
   @State() cycles: number = 0
 
+  private reachedMax: boolean = false
+  private reachedMin: boolean = false
+
   @Method()
   async setValue(value) {
     const { min, max, step } = this
-    this.value = Math.ceil(value / step) * step
-    if (typeof min !== 'undefined' && value < min) {
+    if (!isNaN(min) && value <= min) {
+      this.reachedMin = true
       this.value = min
       return
     }
-    if (typeof max !== 'undefined' && value > max) {
+    if (!isNaN(max) && value >= max) {
+      this.reachedMax = true
       this.value = max
       return
     }
+
+    this.value = Math.ceil(value / step) * step
   }
 
   private setRotationByValue(value) {
@@ -249,18 +255,26 @@ export class ScDial {
   }
 
   private stepUp(degDiff = null) {
+    if (this.reachedMax) {
+      return
+    }
     const newVal = degDiff
       ? this.startingValue + this.valueDiff(degDiff)
       : this.value + this.step
     this.setValue(newVal)
     this.setRotationByValue(newVal)
+    this.reachedMin = false
   }
   private stepDown(degDiff = null) {
+    if (this.reachedMin) {
+      return
+    }
     const newVal = degDiff
       ? this.startingValue + this.valueDiff(degDiff)
       : this.value - this.step
     this.setValue(newVal)
     this.setRotationByValue(newVal)
+    this.reachedMax = false
   }
 
   // private updateRotation(direction) {
@@ -281,8 +295,8 @@ export class ScDial {
       value,
       size,
       rotation,
-      quadrant,
-      lastQuadrant,
+      reachedMax,
+      reachedMin,
       mouseDirectionX,
       mouseDirectionY,
       startingDeg,
@@ -297,8 +311,8 @@ export class ScDial {
 
           <div class="temp">
             {value}
-            <div>MDX {mouseDirectionX}</div>
-            <div>MDY {mouseDirectionY}</div>
+            <div>max? {reachedMax ? 'true' : 'false'}</div>
+            <div>min? {reachedMin ? 'true' : 'false'}</div>
           </div>
         </div>
       </Host>

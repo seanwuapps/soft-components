@@ -55,7 +55,7 @@ sc-input {
     display: block;
     width: 100%;
   }
-
+  // radio button
   &[type='radio'] {
     border-radius: 50%;
     position: relative;
@@ -100,5 +100,12 @@ sc-input {
         }
       }
     }
+  }
+
+  // range
+  &[type='range'] {
+    -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+    width: 100%; /* Specific width is required for Firefox. */
+    background: transparent; /* Otherwise white in Chrome */
   }
 }
