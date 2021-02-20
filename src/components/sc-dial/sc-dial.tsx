@@ -168,8 +168,8 @@ export class ScDial {
     )
   }
 
-  private quadrant: number
-  private lastQuadrant: number
+  // private quadrant: number
+  // private lastQuadrant: number
 
   private mouseDirectionX?: 'left' | 'right' = null
   private mouseDirectionY?: 'up' | 'down' = null
@@ -231,6 +231,7 @@ export class ScDial {
         y > this.centerY &&
         this.mouseDirectionX === 'left'
       ) {
+        console.log(this.mouseDirectionY)
         console.log('yo')
         // if (!isNaN(this.max)) {
         //   return
@@ -297,10 +298,10 @@ export class ScDial {
       rotation,
       reachedMax,
       reachedMin,
-      mouseDirectionX,
-      mouseDirectionY,
-      startingDeg,
-      startingValue,
+      // mouseDirectionX,
+      // mouseDirectionY,
+      // startingDeg,
+      // startingValue,
     } = this
     return (
       <Host style={{ '--sc-dial-size': `${size}px` }}>
