@@ -225,7 +225,7 @@ sc-button {
     }
   }
 
-  &[disabled] {
+  &.disabled {
     a,
     button {
       box-shadow: none;

@@ -157,6 +157,7 @@ export class ScButton {
           'icon-text': iconText,
           flat,
           circle,
+          disabled,
         }}
       >
         {this.rayTracing && <sc-ray-tracer element={this.el}></sc-ray-tracer>}
