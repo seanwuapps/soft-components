@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { FrostedLevel } from "./utils/glassStyle";
 export namespace Components {
     interface ScAccordion {
         /**
@@ -117,6 +118,8 @@ export namespace Components {
           * if true, card will appear engraved instead of raised by default.
          */
         "engraved"?: boolean | undefined;
+        "frostedLevel"?: FrostedLevel;
+        "glass"?: boolean;
         /**
           * Position of featured media in the card
          */
@@ -539,6 +542,8 @@ declare namespace LocalJSX {
           * if true, card will appear engraved instead of raised by default.
          */
         "engraved"?: boolean | undefined;
+        "frostedLevel"?: FrostedLevel;
+        "glass"?: boolean;
         /**
           * Position of featured media in the card
          */

@@ -1,5 +1,6 @@
 import { Component, Host, h, Prop, Element } from '@stencil/core'
 import { hasSlot } from '../../utils/component'
+import { convertToGlassStyles, FrostedLevel } from '../../utils/glassStyle'
 @Component({
   tag: 'sc-card',
   styleUrl: 'sc-card.scss',
@@ -56,6 +57,15 @@ export class Card {
     this.hasCustomTitle = hasSlot(this.el, 'custom-title')
     this.hasOverflowMenu = hasSlot(this.el, 'overflow-menu')
     this.hasMedia = hasSlot(this.el, 'media-content')
+  }
+
+  @Prop() frostedLevel?: FrostedLevel = 1
+  @Prop() glass?: boolean = false
+
+  componentDidLoad() {
+    if (this.glass) {
+      convertToGlassStyles(this.el, this.frostedLevel)
+    }
   }
 
   render() {
