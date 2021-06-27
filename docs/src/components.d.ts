@@ -39,8 +39,6 @@ export namespace Components {
          */
         "match": MatchResults;
     }
-    interface PageHelperClasses {
-    }
     interface PageHome {
     }
     interface PageNotfound {
@@ -58,6 +56,9 @@ export namespace Components {
         "pageTitle"?: string;
     }
     interface ThemeSetter {
+    }
+    interface TitleBar {
+        "heading": string;
     }
     interface UtterancesDiv {
         "async"?: boolean;
@@ -129,12 +130,6 @@ declare global {
         prototype: HTMLPageComponentsElement;
         new (): HTMLPageComponentsElement;
     };
-    interface HTMLPageHelperClassesElement extends Components.PageHelperClasses, HTMLStencilElement {
-    }
-    var HTMLPageHelperClassesElement: {
-        prototype: HTMLPageHelperClassesElement;
-        new (): HTMLPageHelperClassesElement;
-    };
     interface HTMLPageHomeElement extends Components.PageHome, HTMLStencilElement {
     }
     var HTMLPageHomeElement: {
@@ -165,6 +160,12 @@ declare global {
         prototype: HTMLThemeSetterElement;
         new (): HTMLThemeSetterElement;
     };
+    interface HTMLTitleBarElement extends Components.TitleBar, HTMLStencilElement {
+    }
+    var HTMLTitleBarElement: {
+        prototype: HTMLTitleBarElement;
+        new (): HTMLTitleBarElement;
+    };
     interface HTMLUtterancesDivElement extends Components.UtterancesDiv, HTMLStencilElement {
     }
     var HTMLUtterancesDivElement: {
@@ -182,12 +183,12 @@ declare global {
         "doc-usage": HTMLDocUsageElement;
         "hl-code": HTMLHlCodeElement;
         "page-components": HTMLPageComponentsElement;
-        "page-helper-classes": HTMLPageHelperClassesElement;
         "page-home": HTMLPageHomeElement;
         "page-notfound": HTMLPageNotfoundElement;
         "page-standard": HTMLPageStandardElement;
         "seo-tags": HTMLSeoTagsElement;
         "theme-setter": HTMLThemeSetterElement;
+        "title-bar": HTMLTitleBarElement;
         "utterances-div": HTMLUtterancesDivElement;
     }
 }
@@ -223,8 +224,6 @@ declare namespace LocalJSX {
          */
         "match"?: MatchResults;
     }
-    interface PageHelperClasses {
-    }
     interface PageHome {
     }
     interface PageNotfound {
@@ -243,6 +242,9 @@ declare namespace LocalJSX {
     }
     interface ThemeSetter {
         "onThemeChanged"?: (event: CustomEvent<boolean>) => void;
+    }
+    interface TitleBar {
+        "heading"?: string;
     }
     interface UtterancesDiv {
         "async"?: boolean;
@@ -263,12 +265,12 @@ declare namespace LocalJSX {
         "doc-usage": DocUsage;
         "hl-code": HlCode;
         "page-components": PageComponents;
-        "page-helper-classes": PageHelperClasses;
         "page-home": PageHome;
         "page-notfound": PageNotfound;
         "page-standard": PageStandard;
         "seo-tags": SeoTags;
         "theme-setter": ThemeSetter;
+        "title-bar": TitleBar;
         "utterances-div": UtterancesDiv;
     }
 }
@@ -286,12 +288,12 @@ declare module "@stencil/core" {
             "doc-usage": LocalJSX.DocUsage & JSXBase.HTMLAttributes<HTMLDocUsageElement>;
             "hl-code": LocalJSX.HlCode & JSXBase.HTMLAttributes<HTMLHlCodeElement>;
             "page-components": LocalJSX.PageComponents & JSXBase.HTMLAttributes<HTMLPageComponentsElement>;
-            "page-helper-classes": LocalJSX.PageHelperClasses & JSXBase.HTMLAttributes<HTMLPageHelperClassesElement>;
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
             "page-notfound": LocalJSX.PageNotfound & JSXBase.HTMLAttributes<HTMLPageNotfoundElement>;
             "page-standard": LocalJSX.PageStandard & JSXBase.HTMLAttributes<HTMLPageStandardElement>;
             "seo-tags": LocalJSX.SeoTags & JSXBase.HTMLAttributes<HTMLSeoTagsElement>;
             "theme-setter": LocalJSX.ThemeSetter & JSXBase.HTMLAttributes<HTMLThemeSetterElement>;
+            "title-bar": LocalJSX.TitleBar & JSXBase.HTMLAttributes<HTMLTitleBarElement>;
             "utterances-div": LocalJSX.UtterancesDiv & JSXBase.HTMLAttributes<HTMLUtterancesDivElement>;
         }
     }

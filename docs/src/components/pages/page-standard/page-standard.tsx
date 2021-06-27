@@ -2,6 +2,7 @@ import { Component, Host, h, Prop, Watch, State, Element, Build } from '@stencil
 import { MatchResults, RouterHistory } from '@stencil/router';
 import { md } from '../../../helpers/md';
 import SimpleBar from 'simplebar';
+import state from '../../../store';
 @Component({
   tag: 'page-standard',
   styleUrl: 'page-standard.scss',
@@ -64,15 +65,14 @@ export class PageStandard {
       return <page-notfound></page-notfound>;
     }
 
-    if (this.loading) {
+    if (state.page.loading) {
       return <sc-progress indeterminate circular></sc-progress>;
     }
     const { page } = this.match.params;
 
     return (
       <Host>
-        {this.meta.title}
-        <seo-tags pageTitle={this.meta ? this.meta.title : 'Soft Components'} description={this.meta ? this.meta.description : null}></seo-tags>
+        <seo-tags pageTitle={state.page.meta ? state.page.meta.title : 'Soft components'} description={state.page.meta ? state.page.meta.description : ''}></seo-tags>
         <div class="content" innerHTML={this.content}></div>
         <div class="content-bottom text-center text-left-lg">
           <sc-button block bordered flat icon-text href={`https://github.com/seanwuapps/soft-components/edit/master/docs/src/site-content/pages/${page}.md`} target="_blank">

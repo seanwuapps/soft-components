@@ -119,6 +119,9 @@ export namespace Components {
          */
         "engraved"?: boolean | undefined;
         "frostedLevel"?: FrostedLevel;
+        /**
+          * Turn on glass mode
+         */
         "glass"?: boolean;
         /**
           * Position of featured media in the card
@@ -543,6 +546,9 @@ declare namespace LocalJSX {
          */
         "engraved"?: boolean | undefined;
         "frostedLevel"?: FrostedLevel;
+        /**
+          * Turn on glass mode
+         */
         "glass"?: boolean;
         /**
           * Position of featured media in the card

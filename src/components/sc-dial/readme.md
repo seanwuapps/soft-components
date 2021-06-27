@@ -7,9 +7,13 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type     | Default |
-| -------- | --------- | ----------- | -------- | ------- |
-| `value`  | `value`   |             | `string` | `''`    |
+| Property | Attribute | Description                                                         | Type     | Default     |
+| -------- | --------- | ------------------------------------------------------------------- | -------- | ----------- |
+| `max`    | `max`     | Max value of dial                                                   | `number` | `undefined` |
+| `min`    | `min`     | Min value of dial                                                   | `number` | `undefined` |
+| `size`   | `size`    | Diameter in pixels (can be changed via CSS variable --sc-dial-size) | `number` | `80`        |
+| `step`   | `step`    | Step value of each change                                           | `number` | `1`         |
+| `value`  | `value`   |                                                                     | `number` | `50`        |
 
 
 ## Events
@@ -23,25 +27,25 @@
 | `keyDownEvent` | Emitted when a key is pressed down      | `CustomEvent<void>`          |
 
 
-## Shadow Parts
+## Methods
 
-| Part        | Description |
-| ----------- | ----------- |
-| `"rotator"` |             |
+### `setValue(value: any) => Promise<void>`
 
 
-## Dependencies
 
-### Depends on
+#### Returns
 
-- [sc-progress](../sc-progress)
+Type: `Promise<void>`
 
-### Graph
-```mermaid
-graph TD;
-  sc-dial --> sc-progress
-  style sc-dial fill:#f9f,stroke:#333,stroke-width:4px
-```
+
+
+
+## CSS Custom Properties
+
+| Name             | Description                                         |
+| ---------------- | --------------------------------------------------- |
+| `--sc-dial-size` | Size (diameter) of the dial control - default: 80px |
+
 
 ----------------------------------------------
 

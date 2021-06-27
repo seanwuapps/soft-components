@@ -1,5 +1,6 @@
 import { Component, Host, h, State } from '@stencil/core';
-import { md } from '../../../helpers/md';
+import { renderPage } from '../../../helpers/page';
+import state from '../../../store';
 @Component({
   tag: 'page-home',
   styleUrl: 'page-home.css',
@@ -9,24 +10,8 @@ export class PageHome {
 
   @State() notfound: boolean = false;
 
-  @State() content: string = 'Loading...';
-
   async componentWillLoad() {
-    this.loading = true;
-    try {
-      let response = await fetch('/site-content/pages/index.md');
-      if (response.status !== 200) {
-        throw new Error("Page doesn't exist");
-      }
-
-      this.notfound = false;
-      let text = await response.text();
-      this.content = md.render(text);
-    } catch (error) {
-      this.notfound = true;
-    } finally {
-      this.loading = false;
-    }
+    await renderPage('index');
   }
   render() {
     return (
@@ -34,7 +19,7 @@ export class PageHome {
         <seo-tags pageTitle="Home" description="A set of decorative web components inspired by the neumorphism design"></seo-tags>
         <div class="flex justify-between">
           <div class="w-6">
-            <div innerHTML={this.content}></div>
+            <div innerHTML={state.page.content}></div>
           </div>
           <div class="w-4 px-2">
             <sc-card engraved>

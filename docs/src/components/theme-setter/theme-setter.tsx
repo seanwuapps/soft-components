@@ -1,7 +1,7 @@
 import { Component, Host, h, State, Event } from '@stencil/core';
 import { EventEmitter } from 'codepen-link/dist/types/stencil-public-runtime';
 import Color from 'color';
-import store from '../../store';
+import state from '../../store';
 @Component({
   tag: 'theme-setter',
   styleUrl: 'theme-setter.scss',
@@ -31,7 +31,7 @@ export class ThemeSetter {
 --sc-active-color: ${this.randomColor()};`;
     document.querySelector('body').style.cssText = this.variables;
 
-    store.set('themeIsDark', mainColor.isDark());
+    state.themeIsDark = mainColor.isDark();
   }
 
   private randomColor() {

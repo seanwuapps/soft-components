@@ -77,6 +77,14 @@ Use `flat` attribute to make button blend in with the surface (not a11y friendly
 </sc-button>
 ```
 
+Use `disabled` attribute to disable the button like you're used to.
+
+```html
+<sc-button aria-label="Disabled button" disabled>
+  Disabled button
+</sc-button>
+```
+
 
 Combine attributes together to have a party
 

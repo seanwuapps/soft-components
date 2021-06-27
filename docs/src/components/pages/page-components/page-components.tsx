@@ -5,7 +5,7 @@ import { JsonDocsComponent, JsonDocsProp } from '../../../../docs-data';
 import { getName } from '../../../helpers/components';
 import { md, mdUsage } from '../../../helpers/md';
 import SimpleBar from 'simplebar';
-import store from '../../../store';
+import state from '../../../store';
 
 @Component({
   tag: 'page-components',
@@ -266,7 +266,7 @@ export class PageComponents {
             <utterances-div
               repo="seanwuapps/soft-components"
               issue-term="pathname"
-              theme={store.state.themeIsDark ? 'photon-dark' : 'github-light'}
+              theme={state.themeIsDark ? 'photon-dark' : 'github-light'}
               crossorigin="anonymous"
               async
             ></utterances-div>

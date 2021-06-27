@@ -58,9 +58,14 @@ export class Card {
     this.hasOverflowMenu = hasSlot(this.el, 'overflow-menu')
     this.hasMedia = hasSlot(this.el, 'media-content')
   }
-
-  @Prop() frostedLevel?: FrostedLevel = 1
+  /**
+   * Turn on glass mode
+   */
   @Prop() glass?: boolean = false
+  /**
+   *
+   */
+  @Prop() frostedLevel?: FrostedLevel = 1
 
   componentDidLoad() {
     if (this.glass) {

@@ -1,9 +1,9 @@
 {
-  "timestamp": "2021-01-26T05:42:35",
+  "timestamp": "2021-06-27T11:39:21",
   "compiler": {
     "name": "@stencil/core",
-    "version": "2.3.0",
-    "typescriptVersion": "4.0.5"
+    "version": "2.6.0",
+    "typescriptVersion": "4.2.3"
   },
   "components": [
     {
@@ -279,7 +279,7 @@
         }
       ],
       "usage": {
-        "sc-button": "<div class=\"intro\">\nA button is the most identifiable component for neumorphism designs. You can customise the use of a button in various ways. \n</div>\n\n```html\n<sc-button aria-label=\"Default button\" onclick=\"alert('yo')\">Button</sc-button>\n```\n\nYou can use it the same way as an `<a>` tag.\n\n```html\n<!-- Anchor -->\n<sc-button aria-label=\"Anchor tag\" href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\">\nAnchor\n</sc-button>\n```\n\nAdd a `block` attribute to create a block level button.\n\n```html\n<!-- Block level -->\n<sc-button aria-label=\"Block level button\" block>Block Button</sc-button>\n```\n\nUse `icon` attribute to adjust styles to fit an icon into the button.\n\n```html\n<sc-button aria-label=\"Icon button\" icon>\n  <i class='bx bx-drink'></i>\n</sc-button>\n```\n\nUse `icon-text` attribute to center align icon and text.\n\n```html\n<sc-button aria-label=\"Icon and text button\" icon-text>\n  <i class='bx bx-drink'></i>\n  Text\n</sc-button>\n\n<sc-button aria-label=\"Icon and text button\" icon-text>\n  Text\n  <i class='bx bx-drink'></i>\n</sc-button>\n```\nUse `bordered` attribute to add a reflective border\n\n```html\n<sc-button aria-label=\"Icon button with a reflective border\" bordered icon>\n  <i class='bx bx-drink'></i>\n</sc-button>\n```\n\nUse `circle` attribute to create a circle shaped button\n\n```html\n<sc-button aria-label=\"Circled button with image\" circle>\n  <img src=\"https://github.com/seanwuapps.png\" alt=\"avatar\" width=\"100%\">\n</sc-button>\n```\n\nUse `flat` attribute to make button blend in with the surface (not a11y friendly)\n\n```html\n<sc-button aria-label=\"Flat button\" flat>\n  Flat button\n</sc-button>\n```\n\n\nCombine attributes together to have a party\n\n```html\n\n<h6>Circle icon</h6>\n<sc-button aria-label=\"Circle icon\" icon circle>\n  <i class='bx bx-drink'></i>\n</sc-button>\n\n<h6>Circle bordered</h6>\n<sc-button aria-label=\"Circle bordered\" circle bordered>\n  <img src=\"https://github.com/seanwuapps.png\" alt=\"avatar\" width=\"100%\">\n</sc-button>\n```\n\nYou can add `ray-tracing` attribute to make it use the mouse as the light source, this could be used to draw more attention to the element.\n```html\n<sc-button ray-tracing>\n  Look at me!\n</sc-button>\n```\n\n"
+        "sc-button": "<div class=\"intro\">\nA button is the most identifiable component for neumorphism designs. You can customise the use of a button in various ways. \n</div>\n\n```html\n<sc-button aria-label=\"Default button\" onclick=\"alert('yo')\">Button</sc-button>\n```\n\nYou can use it the same way as an `<a>` tag.\n\n```html\n<!-- Anchor -->\n<sc-button aria-label=\"Anchor tag\" href=\"/\" target=\"_blank\" rel=\"noreferrer\" title=\"button\">\nAnchor\n</sc-button>\n```\n\nAdd a `block` attribute to create a block level button.\n\n```html\n<!-- Block level -->\n<sc-button aria-label=\"Block level button\" block>Block Button</sc-button>\n```\n\nUse `icon` attribute to adjust styles to fit an icon into the button.\n\n```html\n<sc-button aria-label=\"Icon button\" icon>\n  <i class='bx bx-drink'></i>\n</sc-button>\n```\n\nUse `icon-text` attribute to center align icon and text.\n\n```html\n<sc-button aria-label=\"Icon and text button\" icon-text>\n  <i class='bx bx-drink'></i>\n  Text\n</sc-button>\n\n<sc-button aria-label=\"Icon and text button\" icon-text>\n  Text\n  <i class='bx bx-drink'></i>\n</sc-button>\n```\nUse `bordered` attribute to add a reflective border\n\n```html\n<sc-button aria-label=\"Icon button with a reflective border\" bordered icon>\n  <i class='bx bx-drink'></i>\n</sc-button>\n```\n\nUse `circle` attribute to create a circle shaped button\n\n```html\n<sc-button aria-label=\"Circled button with image\" circle>\n  <img src=\"https://github.com/seanwuapps.png\" alt=\"avatar\" width=\"100%\">\n</sc-button>\n```\n\nUse `flat` attribute to make button blend in with the surface (not a11y friendly)\n\n```html\n<sc-button aria-label=\"Flat button\" flat>\n  Flat button\n</sc-button>\n```\n\nUse `disabled` attribute to disable the button like you're used to.\n\n```html\n<sc-button aria-label=\"Disabled button\" disabled>\n  Disabled button\n</sc-button>\n```\n\n\nCombine attributes together to have a party\n\n```html\n\n<h6>Circle icon</h6>\n<sc-button aria-label=\"Circle icon\" icon circle>\n  <i class='bx bx-drink'></i>\n</sc-button>\n\n<h6>Circle bordered</h6>\n<sc-button aria-label=\"Circle bordered\" circle bordered>\n  <img src=\"https://github.com/seanwuapps.png\" alt=\"avatar\" width=\"100%\">\n</sc-button>\n```\n\nYou can add `ray-tracing` attribute to make it use the mouse as the light source, this could be used to draw more attention to the element.\n```html\n<sc-button ray-tracing>\n  Look at me!\n</sc-button>\n```\n\n"
       },
       "props": [
         {
@@ -654,7 +654,7 @@
       "docs": "",
       "docsTags": [],
       "usage": {
-        "sc-card": "<div class=\"intro\">\n  A card contains a set of relevant content on a single topic.\n</div>\n\n## Text based cards\n\nCard's content can be added into the card via the default slot. `card-title` and `card-subtitle` properties are available to add styled card heading.\n\nAdd `engraved` to make the card appear to be sunk into the surface.\n\nAdd `bordered` to give the card a border that's reflective to the light source.\n\n```html\n<sc-card class=\"ma-4\" card-title=\"Card\" card-subtitle=\"I'm normal card\">\n  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis\n</sc-card>\n<sc-card class=\"ma-4\" engraved card-title=\"Card\" card-subtitle=\"I'm engraved card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis\n</sc-card>\n<sc-card class=\"ma-4\" bordered card-title=\"Card\" card-subtitle=\"I'm bordered card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum\n</sc-card>\n```\n\n<h2>Media cards</h2>\n\n`slot=\"media-content\"` can be used inside the card element to show featured media.\n\n```html\n<sc-card class=\"ma-4\" card-title=\"Top media\" card-subtitle=\"5 Feb 2020\" media-position=\"top\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Bottom media\" card-subtitle=\"5 Feb 2020\" media-position=\"bottom\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Left media\" card-subtitle=\"5 Feb 2020\" media-position=\"left\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Right media\" card-subtitle=\"5 Feb 2020\" media-position=\"right\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n```\n\n\n## Customise card title\n\nCard heading section can be customised with the `custom-title` slot. \n\n```html\n<sc-card class=\"ma-4\">\n  <div slot=\"custom-title\">\n    <div>\n      <mark>Customise title with <code>slot=\"custom-title\"</code></mark>\n    </div>\n    <div>\n      <marquee>Go bananas inside the slot <img\n          src=\"https://ph-files.imgix.net/caf5608a-67ec-4f9f-acb5-db0052c33bed?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=80&h=80\"\n          alt=\"party parrot\" width=\"20\"></marquee>\n    </div>\n  </div>\n  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, modi animi possimus fugiat accusamus vitae tempore suscipit asperiores eum cum nihil amet natus impedit iure\n</sc-card>\n```\n\n\n## Ray tracing\n\nYou can add `ray-tracing` attribute to make it use the mouse as the light source, this could be used to draw more attention to the element.\n\nPlease note the ray-tracing feature modifies the CSS variables that's shared between components, if you have other components inside the cards that uses the highlight and shadow variables they will use the mouse as light source too. \n\n```html\n<sc-card ray-tracing class=\"ma-4\" card-title=\"Card\" card-subtitle=\"I'm normal card\">\n  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis\n</sc-card>\n<sc-card ray-tracing class=\"ma-4\" engraved card-title=\"Card\" card-subtitle=\"I'm engraved card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis\n</sc-card>\n<sc-card ray-tracing class=\"ma-4\" bordered card-title=\"Card\" card-subtitle=\"I'm bordered card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum\n</sc-card>\n```\n"
+        "sc-card": "<div class=\"intro\">\n  A card contains a set of relevant content on a single topic.\n</div>\n\n## Text based cards\n\nCard's content can be added into the card via the default slot. `card-title` and `card-subtitle` properties are available to add styled card heading.\n\nAdd `engraved` to make the card appear to be sunk into the surface.\n\nAdd `bordered` to give the card a border that's reflective to the light source.\n\n```html\n<sc-card class=\"ma-4\" card-title=\"Card\" card-subtitle=\"I'm normal card\">\n  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis\n</sc-card>\n<sc-card class=\"ma-4\" engraved card-title=\"Card\" card-subtitle=\"I'm engraved card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis\n</sc-card>\n<sc-card class=\"ma-4\" bordered card-title=\"Card\" card-subtitle=\"I'm bordered card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum\n</sc-card>\n```\n\n<h2>Media cards</h2>\n\n`slot=\"media-content\"` can be used inside the card element to show featured media.\n\n```html\n<sc-card class=\"ma-4\" card-title=\"Top media\" card-subtitle=\"5 Feb 2020\" media-position=\"top\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Bottom media\" card-subtitle=\"5 Feb 2020\" media-position=\"bottom\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Left media\" card-subtitle=\"5 Feb 2020\" media-position=\"left\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n<sc-card class=\"ma-4\" card-title=\"Right media\" card-subtitle=\"5 Feb 2020\" media-position=\"right\">\n  <img slot=\"media-content\" src=\"https://res.cloudinary.com/seanwuapps/image/upload/c_scale,w_800/v1603083086/coffee_ud1ucg.jpg\" alt=\"photo\">\n  <div>\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis rerum veniam natus sapiente porro\n  </div>\n</sc-card>\n```\n\n\n## Customise card title\n\nCard heading section can be customised with the `custom-title` slot. \n\n```html\n<sc-card class=\"ma-4\">\n  <div slot=\"custom-title\">\n    <div>\n      <mark>Customise title with <code>slot=\"custom-title\"</code></mark>\n    </div>\n    <div>\n      <marquee>Go bananas inside the slot <img\n          src=\"https://ph-files.imgix.net/caf5608a-67ec-4f9f-acb5-db0052c33bed?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=80&h=80\"\n          alt=\"party parrot\" width=\"20\"></marquee>\n    </div>\n  </div>\n  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat, modi animi possimus fugiat accusamus vitae tempore suscipit asperiores eum cum nihil amet natus impedit iure\n</sc-card>\n```\n\n\n## Ray tracing\n\nYou can add `ray-tracing` attribute to make it use the mouse as the light source, this could be used to draw more attention to the element.\n\nPlease note the ray-tracing feature modifies the CSS variables that's shared between components, if you have other components inside the cards that uses the highlight and shadow variables they will use the mouse as light source too. \n\n```html\n<sc-card ray-tracing class=\"ma-4\" card-title=\"Card\" card-subtitle=\"I'm normal card\">\n  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis\n</sc-card>\n<sc-card ray-tracing class=\"ma-4\" engraved card-title=\"Card\" card-subtitle=\"I'm engraved card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis\n</sc-card>\n<sc-card ray-tracing class=\"ma-4\" bordered card-title=\"Card\" card-subtitle=\"I'm bordered card\">\n  Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum\n</sc-card>\n```\n\n\n## Glass\n\nYou can achieve the glass-morphism look and feel by simply apply a `glass` property to the component. \n\n```html\n<div class=\"grid-bg\">\n  <sc-card glass class=\"ma-4\" card-title=\"Card\" card-subtitle=\"I'm normal card\">\n    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis\n  </sc-card>\n  <sc-card glass class=\"ma-4\" engraved card-title=\"Card\" card-subtitle=\"I'm engraved card\">\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis\n  </sc-card>\n  <sc-card glass class=\"ma-4\" bordered card-title=\"Card\" card-subtitle=\"I'm bordered card\">\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum\n  </sc-card>\n</div>\n```\n"
       },
       "props": [
         {
@@ -713,6 +713,81 @@
           "attr": "engraved",
           "reflectToAttr": false,
           "docs": "if true, card will appear engraved instead of raised by default.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "frostedLevel",
+          "type": "0 | 1 | 10 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9",
+          "mutable": false,
+          "attr": "frosted-level",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "value": "0",
+              "type": "number"
+            },
+            {
+              "value": "1",
+              "type": "number"
+            },
+            {
+              "value": "10",
+              "type": "number"
+            },
+            {
+              "value": "2",
+              "type": "number"
+            },
+            {
+              "value": "3",
+              "type": "number"
+            },
+            {
+              "value": "4",
+              "type": "number"
+            },
+            {
+              "value": "5",
+              "type": "number"
+            },
+            {
+              "value": "6",
+              "type": "number"
+            },
+            {
+              "value": "7",
+              "type": "number"
+            },
+            {
+              "value": "8",
+              "type": "number"
+            },
+            {
+              "value": "9",
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "glass",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "glass",
+          "reflectToAttr": false,
+          "docs": "Turn on glass mode",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -844,6 +919,11 @@
           "docs": "Subtitle text color"
         },
         {
+          "name": "--sc-card-text-color",
+          "annotation": "prop",
+          "docs": "Text color for the card - default: var(--sc-text-color, #333333)"
+        },
+        {
           "name": "--sc-card-title-font-size",
           "annotation": "prop",
           "docs": "Title text font size."
@@ -918,24 +998,102 @@
       "usage": {},
       "props": [
         {
+          "name": "max",
+          "type": "number",
+          "mutable": false,
+          "attr": "max",
+          "reflectToAttr": false,
+          "docs": "Max value of dial",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "min",
+          "type": "number",
+          "mutable": false,
+          "attr": "min",
+          "reflectToAttr": false,
+          "docs": "Min value of dial",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "number",
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Diameter in pixels (can be changed via CSS variable --sc-dial-size)",
+          "docsTags": [],
+          "default": "80",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "step",
+          "type": "number",
+          "mutable": false,
+          "attr": "step",
+          "reflectToAttr": false,
+          "docs": "Step value of each change",
+          "docsTags": [],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "value",
-          "type": "string",
+          "type": "number",
           "mutable": true,
           "attr": "value",
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
-          "default": "''",
+          "default": "50",
           "values": [
             {
-              "type": "string"
+              "type": "number"
             }
           ],
           "optional": true,
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "setValue",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setValue(value: any) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
       "events": [
         {
           "event": "blurEvent",
@@ -984,23 +1142,18 @@
         }
       ],
       "listeners": [],
-      "styles": [],
-      "slots": [],
-      "parts": [
+      "styles": [
         {
-          "name": "rotator",
-          "docs": ""
+          "name": "--sc-dial-size",
+          "annotation": "prop",
+          "docs": "Size (diameter) of the dial control - default: 80px"
         }
       ],
+      "slots": [],
+      "parts": [],
       "dependents": [],
-      "dependencies": [
-        "sc-progress"
-      ],
-      "dependencyGraph": {
-        "sc-dial": [
-          "sc-progress"
-        ]
-      }
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/sc-input/sc-input.tsx",
@@ -1010,7 +1163,7 @@
       "docs": "",
       "docsTags": [],
       "usage": {
-        "sc-input": "<div class=\"intro\">\nGeneric input component.\n</div>\n\n### *Note* \nIn order to use the `sc-input` element in your normal `form` element for correct form values and validations, this component does not use shadow dom, meaning the styles can be affected by the global css stylesheets.\n\n### Utilises the browser's built-in validations\nThis component passes the `type` attribute to the native `<input>` element used under the hood. So you can use types such as `email`, `number`, `tel`, `url` `password` for their supported browser validation behaviours.\n\n\n### Alternative components for certain types\n\nThere are input types that has dedicated components for them. Here's a list of input types and the component we recommend you use. \n\n- Buttons: `sc-button`\n- Color: `sc-color`\n- File: coming soon \n- Range: coming soon\n\n\n```html\n<form method=\"get\" action=\"/\">\n  <sc-input class=\"mb-2\" block label=\"Email\" type=\"email\" required name=\"email\" id=\"email\"></sc-input>\n\n  <sc-input class=\"mb-2\" block label=\"Password\" type=\"password\" required name=\"password\" maxlength=\"6\" id=\"password\">\n  </sc-input>\n\n  <sc-button block type=\"submit\" style=\"--sc-button-bg-color: #333; --sc-button-text-color: #fff;\">\n    Submit\n  </sc-button>\n</form>\n```\n\nYou can set `engraved` level for individual inputs\n\n```html\n<sc-input engraved=\"1\" label=\"Input\" type=\"text\" name=\"text\"></sc-input>\n<sc-input engraved=\"2\" label=\"Input\" type=\"text\" name=\"text\"></sc-input>\n<sc-input engraved=\"3\" label=\"Input\" type=\"text\" name=\"text\"></sc-input>\n```\n\n\nAdd the `block` attribute to make it take the full width\n```html\n<sc-input block label=\"Input\" type=\"text\" name=\"text\"></sc-input>\n```\n\n\n<div class=\"mb-5\">\n  checkbox\n  <sc-input type=\"checkbox\">\n  </sc-input>\n  <input type=\"checkbox\">\n  </input>\n</div>\n<div class=\"mb-5\">\n  color\n  <sc-input type=\"color\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  date\n  <sc-input type=\"date\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  datetime\n  <sc-input type=\"datetime-local\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  email\n  <sc-input type=\"email\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  file\n  <sc-input type=\"file\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  month\n  <sc-input type=\"month\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  number\n  <sc-input type=\"number\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  password\n  <sc-input type=\"password\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  radio\n  <sc-input type=\"radio\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  range\n  <sc-input type=\"range\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  reset\n  <sc-input type=\"reset\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  search\n  <sc-input type=\"search\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  submit\n  <sc-input type=\"submit\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  tel\n  <sc-input type=\"tel\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  text\n  <sc-input type=\"text\">\n  </sc-input>\n</div>\n<sc-input type=\"time\">\n</sc-input>\n<sc-input type=\"url\">\n</sc-input>\n<sc-input type=\"week\">\n</sc-input>"
+        "sc-input": "<div class=\"intro\">\nGeneric input component.\n</div>\n\n### *Note* \nIn order to use the `sc-input` element in your normal `form` element for correct form values and validations, this component does not use shadow dom, meaning the styles can be affected by the global css stylesheets.\n\n### Utilises the browser's built-in validations\nThis component passes the `type` attribute to the native `<input>` element used under the hood. So you can use types such as `email`, `number`, `tel`, `url` `password` for their supported browser validation behaviours.\n\n\n### Alternative components for certain types\n\nThere are input types that has dedicated components for them. Here's a list of input types and the component we recommend you use. \n\n- Buttons: `sc-button`\n- Color: `sc-color`\n- File: coming soon \n- Range: coming soon\n\nBasic text input\n```html\n<sc-input label=\"Text input\" type=\"text\"></sc-input>\n```\n\nYou can set `engraved` level for individual inputs\n\n```html\n<sc-input engraved=\"1\" label=\"Engraved 1\" type=\"text\"></sc-input>\n<sc-input engraved=\"3\" label=\"Engraved 3\" type=\"text\"></sc-input>\n<sc-input engraved=\"5\" label=\"Engraved 5\" type=\"text\"></sc-input>\n```\n\n\nAdd the `block` attribute to make it take the full width\n```html\n<sc-input block label=\"Block input\" type=\"text\"></sc-input>\n```\n\nRadio buttons\n```html\n<sc-input label=\"One\" type=\"radio\" name=\"test\" value=\"1\">\n</sc-input>\n<sc-input label=\"Two\" type=\"radio\" name=\"test\" value=\"2\"></sc-input>\n<sc-input label=\"Three\" type=\"radio\" name=\"test\" value=\"3\" disabled></sc-input>\n<sc-input label=\"Four\" type=\"radio\" name=\"test\" value=\"4\"></sc-input>\n```\n\nOther input types (browser god please help)\n```html\n<div class=\"mb-5\">\n  date\n  <sc-input type=\"date\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  datetime\n  <sc-input type=\"datetime-local\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  email\n  <sc-input type=\"email\" >\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  file\n  <sc-input type=\"file\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  month\n  <sc-input type=\"month\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  number\n  <sc-input type=\"number\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  password\n  <sc-input type=\"password\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  range\n  <sc-input type=\"range\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  search\n  <sc-input type=\"search\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  tel\n  <sc-input type=\"tel\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  Time\n  <sc-input type=\"time\">\n  </sc-input>\n\n  Week\n  <sc-input type=\"week\">\n  </sc-input>\n</div>\n```\n\n\n<!-- <div class=\"mb-5\">\n  checkbox\n  <sc-input type=\"checkbox\">\n  </sc-input>\n  <input type=\"checkbox\">\n  </input>\n</div>\n<div class=\"mb-5\">\n  color\n  <sc-input type=\"color\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  date\n  <sc-input type=\"date\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  datetime\n  <sc-input type=\"datetime-local\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  email\n  <sc-input type=\"email\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  file\n  <sc-input type=\"file\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  month\n  <sc-input type=\"month\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  number\n  <sc-input type=\"number\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  password\n  <sc-input type=\"password\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  radio\n  <sc-input type=\"radio\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  range\n  <sc-input type=\"range\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  reset\n  <sc-input type=\"reset\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  search\n  <sc-input type=\"search\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  submit\n  <sc-input type=\"submit\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  tel\n  <sc-input type=\"tel\">\n  </sc-input>\n</div>\n<div class=\"mb-5\">\n  text\n  <sc-input type=\"text\">\n  </sc-input>\n</div>\n<sc-input type=\"time\">\n</sc-input>\n<sc-input type=\"url\">\n</sc-input>\n<sc-input type=\"week\">\n</sc-input> -->"
       },
       "props": [
         {
@@ -1559,9 +1712,26 @@
       "docs": "",
       "docsTags": [],
       "usage": {
-        "sc-progress": "<div class=\"intro\">\nNeumorphic style progress indicator. Supports both linear (bar) and circular (ring) styles, with various options for size, color and label \n</div>\n\n\n### Linear progress bar\nThe progress is set by the `percentage` attribute, make sure it's a number between 0 to 100.\nYou can add label on to the progress bar by setting the `label` attribute. \n`--sc-progress-color` and `--sc-progress-label-color` custom CSS properties are available for customising the colors.\n```html\n<sc-progress percentage=\"20\" label=\"20%\"></sc-progress>\n<sc-progress percentage=\"40\" label=\"40%\" style=\"--sc-progress-height: 4px\"></sc-progress>\n<sc-progress percentage=\"60\" label=\"60%\" style=\"--sc-progress-color: blue; --sc-progress-label-color: white\"></sc-progress>\n```\n\n### Circular progress ring\nSimply add `circular` attribute to turn a progress bar to a progress ring. \nYou can also adjust the `size` attribute to fit your needs. \nHere are some examples\n\n```html\n<sc-progress percentage=\"0\" circular label=\"0_0\" size=\"100\"></sc-progress>\n<sc-progress percentage=\"40\" circular size=\"50\"></sc-progress>\n<sc-progress percentage=\"60\" label=\"60%\" circular size=\"100\" style=\"--sc-progress-color: red\"></sc-progress>\n<sc-progress percentage=\"90\" label=\"90%\" circular size=\"140\" style=\"--sc-progress-color: lime\"></sc-progress>\n<sc-progress percentage=\"100\" label=\"Done\" circular size=\"180\" style=\"--sc-progress-color: #3399aa\"></sc-progress>\n```\n\n### Indeterminate state\n\nAdd `indeterminate` attribute when you don't know how much progress is made. Perfect for loading animation.\n\n```html\n<sc-progress indeterminate></sc-progress>\n<sc-progress indeterminate style=\"--sc-progress-height: 4px\"></sc-progress>\n<sc-progress indeterminate circular></sc-progress>\n<sc-progress indeterminate circular label=\"Loading\" size=\"200\" ></sc-progress>\n```\n"
+        "sc-progress": "<div class=\"intro\">\nNeumorphic style progress indicator. Supports both linear (bar) and circular (ring) styles, with various options for size, color and label \n</div>\n\n\n### Linear progress bar\nThe progress is set by the `percentage` attribute, make sure it's a number between 0 to 100.\nYou can add label on to the progress bar by setting the `label` attribute. \n`--sc-progress-color` and `--sc-progress-label-color` custom CSS properties are available for customising the colors.\n```html\n<sc-progress percentage=\"20\" label=\"20%\"></sc-progress>\n<sc-progress percentage=\"40\" label=\"40%\" style=\"--sc-progress-height: 4px\"></sc-progress>\n<sc-progress percentage=\"60\" label=\"60%\" style=\"--sc-progress-color: blue; --sc-progress-label-color: white\"></sc-progress>\n```\n\n### Circular progress ring\nSimply add `circular` attribute to turn a progress bar to a progress ring. \nYou can also adjust the `size` attribute to fit your needs. \nHere are some examples\n\n```html\n<sc-progress percentage=\"0\" circular label=\"0_0\" radius=\"50\"></sc-progress>\n<sc-progress percentage=\"40\" circular radius=\"30\"></sc-progress>\n<sc-progress percentage=\"60\" label=\"60%\" circular radius=\"50\" style=\"--sc-progress-color: red\"></sc-progress>\n<sc-progress percentage=\"90\" label=\"90%\" circular radius=\"70\" style=\"--sc-progress-color: lime\"></sc-progress>\n<sc-progress percentage=\"100\" label=\"Done\" circular radius=\"100\" style=\"--sc-progress-color: #3399aa\"></sc-progress>\n```\n\n### Indeterminate state\n\nAdd `indeterminate` attribute when you don't know how much progress is made. Perfect for loading animation.\n\n```html\n<sc-progress indeterminate></sc-progress>\n<sc-progress indeterminate style=\"--sc-progress-height: 4px\"></sc-progress>\n<sc-progress indeterminate circular></sc-progress>\n<sc-progress indeterminate circular label=\"Loading\" radius=\"100\" ></sc-progress>\n```\n"
       },
       "props": [
+        {
+          "name": "angleGap",
+          "type": "number",
+          "mutable": false,
+          "attr": "angle-gap",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
         {
           "name": "circular",
           "type": "boolean",
@@ -1710,15 +1880,9 @@
       ],
       "slots": [],
       "parts": [],
-      "dependents": [
-        "sc-dial"
-      ],
+      "dependents": [],
       "dependencies": [],
-      "dependencyGraph": {
-        "sc-dial": [
-          "sc-progress"
-        ]
-      }
+      "dependencyGraph": {}
     },
     {
       "filePath": "./src/components/sc-ray-tracer/sc-ray-tracer.tsx",
@@ -1732,10 +1896,11 @@
         {
           "name": "element",
           "type": "HTMLElement",
-          "mutable": false,
+          "mutable": true,
           "reflectToAttr": false,
           "docs": "",
           "docsTags": [],
+          "default": "null",
           "values": [
             {
               "type": "HTMLElement"
@@ -1745,7 +1910,19 @@
           "required": false
         }
       ],
-      "methods": [],
+      "methods": [
+        {
+          "name": "setElement",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "signature": "setElement(target: HTMLElement) => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
       "events": [],
       "listeners": [],
       "styles": [],

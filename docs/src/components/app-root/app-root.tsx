@@ -1,52 +1,24 @@
-import { Component, Host, h, State } from '@stencil/core';
+import { Component, Host, h } from '@stencil/core';
 import 'soft-components';
 import 'linkable-title';
 import 'seanwu-logo';
+import state from '../../store';
 @Component({
   tag: 'app-root',
   styleUrl: 'app-root.scss',
 })
 export class AppRoot {
-  @State() mobileMenuOpen: boolean = false;
   toggleMobileMenu() {
-    this.mobileMenuOpen = !this.mobileMenuOpen;
+    state.mobileMenuOpen = !state.mobileMenuOpen;
   }
 
   render() {
     return (
-      <Host class={`${this.mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
-        <div class="header">
-          <sc-button flat icon bordered onClick={() => this.toggleMobileMenu()} class="mobile-nav-trigger">
-            <box-icon name="menu" size="lg" color="currentColor"></box-icon>
-          </sc-button>
-          <div class="logo-container">
-            <stencil-route-link url="/" exact={true}>
-              <app-logo></app-logo>
-            </stencil-route-link>
-          </div>
-          <div class="spacer">&nbsp;</div>
-        </div>
-        <div class={`mobile-nav ${this.mobileMenuOpen ? 'open' : ''}`}>
-          <div class="mobile-nav-header">
-            <sc-button flat icon bordered class="mobile-nav-trigger" onClick={() => this.toggleMobileMenu()}>
-              <box-icon name="x" size="lg" color="currentColor"></box-icon>
-            </sc-button>
-            <div class="logo-container">
-              <stencil-route-link url="/" exact={true} onClick={() => (this.mobileMenuOpen = false)}>
-                <app-logo></app-logo>
-              </stencil-route-link>
-            </div>
-            <div class="spacer">&nbsp;</div>
-          </div>
-          <app-nav onClick={() => (this.mobileMenuOpen = false)}></app-nav>
-        </div>
-
-        <div class="nav">
-          <app-nav></app-nav>
-        </div>
-
-        <main class="main pa-2">
-          <stencil-router>
+      <Host class={`${state.mobileMenuOpen ? 'mobile-menu-open' : ''}`}>
+        <stencil-router>
+          <app-header></app-header>
+          <title-bar heading={state.page.heading}></title-bar>
+          <main class="main pa-2">
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="page-home" exact={true} />
               <stencil-route url="/:page" component="page-standard" exact={true} />
@@ -54,12 +26,12 @@ export class AppRoot {
               <stencil-route url="/components/:tag" component="page-components" />
               <stencil-route component="page-notfound" />
             </stencil-route-switch>
-          </stencil-router>
-        </main>
-        <footer class="footer pa-4">
-          <app-footer></app-footer>
-        </footer>
-        <theme-setter></theme-setter>
+          </main>
+          <footer class="footer pa-4">
+            <app-footer></app-footer>
+          </footer>
+          <theme-setter></theme-setter>
+        </stencil-router>
       </Host>
     );
   }

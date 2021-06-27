@@ -92,3 +92,22 @@ Please note the ray-tracing feature modifies the CSS variables that's shared bet
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum
 </sc-card>
 ```
+
+
+## Glass
+
+You can achieve the glass-morphism look and feel by simply apply a `glass` property to the component. 
+
+```html
+<div class="grid-bg">
+  <sc-card glass class="ma-4" card-title="Card" card-subtitle="I'm normal card">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis
+  </sc-card>
+  <sc-card glass class="ma-4" engraved card-title="Card" card-subtitle="I'm engraved card">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis
+  </sc-card>
+  <sc-card glass class="ma-4" bordered card-title="Card" card-subtitle="I'm bordered card">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum
+  </sc-card>
+</div>
+```

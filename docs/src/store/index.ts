@@ -1,7 +1,14 @@
 import { createStore } from '@stencil/store';
 
-const store = createStore({
+const { state } = createStore({
   themeIsDark: false,
+  mobileMenuOpen: false,
+  page: {
+    loading: false,
+    heading: null,
+    meta: null,
+    content: null,
+  },
 });
 
-export default store;
+export default state;

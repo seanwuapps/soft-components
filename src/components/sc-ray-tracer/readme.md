@@ -7,9 +7,22 @@
 
 ## Properties
 
-| Property  | Attribute | Description | Type          | Default     |
-| --------- | --------- | ----------- | ------------- | ----------- |
-| `element` | --        |             | `HTMLElement` | `undefined` |
+| Property  | Attribute | Description | Type          | Default |
+| --------- | --------- | ----------- | ------------- | ------- |
+| `element` | --        |             | `HTMLElement` | `null`  |
+
+
+## Methods
+
+### `setElement(target: HTMLElement) => Promise<void>`
+
+
+
+#### Returns
+
+Type: `Promise<void>`
+
+
 
 
 ## Dependencies

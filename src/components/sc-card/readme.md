@@ -105,6 +105,25 @@ Please note the ray-tracing feature modifies the CSS variables that's shared bet
 ```
 
 
+## Glass
+
+You can achieve the glass-morphism look and feel by simply apply a `glass` property to the component. 
+
+```html
+<div class="grid-bg">
+  <sc-card glass class="ma-4" card-title="Card" card-subtitle="I'm normal card">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque natus autem veritatis architecto facilis
+  </sc-card>
+  <sc-card glass class="ma-4" engraved card-title="Card" card-subtitle="I'm engraved card">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quas dolorem voluptatibus facilis
+  </sc-card>
+  <sc-card glass class="ma-4" bordered card-title="Card" card-subtitle="I'm bordered card">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae velit maiores illum
+  </sc-card>
+</div>
+```
+
+
 
 ## Properties
 
@@ -114,6 +133,8 @@ Please note the ray-tracing feature modifies the CSS variables that's shared bet
 | `cardSubtitle`  | `card-subtitle`  | Subtitle of the card                                             | `string`                                                     | `undefined` |
 | `cardTitle`     | `card-title`     | Title of the card                                                | `string`                                                     | `undefined` |
 | `engraved`      | `engraved`       | if true, card will appear engraved instead of raised by default. | `boolean`                                                    | `false`     |
+| `frostedLevel`  | `frosted-level`  |                                                                  | `0 \| 1 \| 10 \| 2 \| 3 \| 4 \| 5 \| 6 \| 7 \| 8 \| 9`       | `1`         |
+| `glass`         | `glass`          | Turn on glass mode                                               | `boolean`                                                    | `false`     |
 | `mediaPosition` | `media-position` | Position of featured media in the card                           | `"bottom" \| "end" \| "left" \| "right" \| "start" \| "top"` | `null`      |
 | `rayTracing`    | `ray-tracing`    | Use mouse as the light source (ray-tracing)                      | `boolean`                                                    | `false`     |
 
@@ -134,6 +155,7 @@ Please note the ray-tracing feature modifies the CSS variables that's shared bet
 | `--sc-card-subtitle-font-size`    | Subtitle font size                                                                                                      |
 | `--sc-card-subtitle-font-weight`  | Subtitle font weight                                                                                                    |
 | `--sc-card-subtitle-text-color`   | Subtitle text color                                                                                                     |
+| `--sc-card-text-color`            | Text color for the card - default: var(--sc-text-color, #333333)                                                        |
 | `--sc-card-title-font-size`       | Title text font size.                                                                                                   |
 | `--sc-card-title-font-weight`     | Title font weight                                                                                                       |
 | `--sc-card-title-text-color`      | Title text color                                                                                                        |
